@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Instalación en Windows | Instalación del Entorno de Prácticas</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Instalación en Windows | Instalación del Entorno de Prácticas" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Instalación en Windows | Instalación del Entorno de Prácticas" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="herramientas.html"/>
+<link rel="next" href="ubu.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Objetivo</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#observaciones"><i class="fa fa-check"></i><b>1.1</b> Observaciones</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#requisitos"><i class="fa fa-check"></i><b>1.2</b> Requisitos</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#contenido"><i class="fa fa-check"></i><b>1.3</b> Contenido</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="herramientas.html"><a href="herramientas.html"><i class="fa fa-check"></i><b>2</b> Herramientas a Instalar</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="herramientas.html"><a href="herramientas.html#qgis-desktop"><i class="fa fa-check"></i><b>2.1</b> <em>QGIS Desktop</em></a></li>
+<li class="chapter" data-level="2.2" data-path="herramientas.html"><a href="herramientas.html#r-y-rstudio"><i class="fa fa-check"></i><b>2.2</b> <em>R</em> y <em>RStudio</em></a></li>
+<li class="chapter" data-level="2.3" data-path="herramientas.html"><a href="herramientas.html#postgresql-postgis-y-pgadmin"><i class="fa fa-check"></i><b>2.3</b> <em>PostgreSQL</em>, <em>PostGIS</em> y <em>PgAdmin</em></a></li>
+<li class="chapter" data-level="2.4" data-path="herramientas.html"><a href="herramientas.html#geoserver"><i class="fa fa-check"></i><b>2.4</b> <em>GeoServer</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="win.html"><a href="win.html"><i class="fa fa-check"></i><b>3</b> Instalación en <em>Windows</em></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="win.html"><a href="win.html#qgis-desktop-1"><i class="fa fa-check"></i><b>3.1</b> <em>QGIS Desktop</em></a></li>
+<li class="chapter" data-level="3.2" data-path="win.html"><a href="win.html#r-y-rstudio-1"><i class="fa fa-check"></i><b>3.2</b> <em>R</em> y <em>RStudio</em></a></li>
+<li class="chapter" data-level="3.3" data-path="win.html"><a href="win.html#postgresql-postgis-y-pgadmin-1"><i class="fa fa-check"></i><b>3.3</b> <em>PostgreSQL</em>, <em>PostGIS</em> y <em>PgAdmin</em></a></li>
+<li class="chapter" data-level="3.4" data-path="win.html"><a href="win.html#geoserver-1"><i class="fa fa-check"></i><b>3.4</b> <em>GeoServer</em></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ubu.html"><a href="ubu.html"><i class="fa fa-check"></i><b>4</b> Instalación en <em>Ubuntu</em></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ubu.html"><a href="ubu.html#qgis-desktop-2"><i class="fa fa-check"></i><b>4.1</b> <em>QGIS Desktop</em></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="ubu.html"><a href="ubu.html#qgis.org"><i class="fa fa-check"></i><b>4.1.1</b> <em>qgis.org</em></a></li>
+<li class="chapter" data-level="4.1.2" data-path="ubu.html"><a href="ubu.html#tienda-de-snap"><i class="fa fa-check"></i><b>4.1.2</b> <em>Tienda de Snap</em></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="ubu.html"><a href="ubu.html#r-y-rstudio-2"><i class="fa fa-check"></i><b>4.2</b> <em>R</em> y <em>RStudio</em></a></li>
+<li class="chapter" data-level="4.3" data-path="ubu.html"><a href="ubu.html#postgresql-postgis-y-pgadmin-2"><i class="fa fa-check"></i><b>4.3</b> <em>PostgreSQL</em>, <em>PostGIS</em> y <em>PgAdmin</em></a></li>
+<li class="chapter" data-level="4.4" data-path="ubu.html"><a href="ubu.html#geoserver-2"><i class="fa fa-check"></i><b>4.4</b> <em>GeoServer</em></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ubu.html"><a href="ubu.html#aplicación-web-independiente"><i class="fa fa-check"></i><b>4.4.1</b> Aplicación web independiente</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ubu.html"><a href="ubu.html#aplicación-tomcat"><i class="fa fa-check"></i><b>4.4.2</b> Aplicación <em>Tomcat</em></a></li>
+<li class="chapter" data-level="4.4.3" data-path="ubu.html"><a href="ubu.html#comprobar-que-funciona"><i class="fa fa-check"></i><b>4.4.3</b> Comprobar que funciona</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Instalación del Entorno de Prácticas</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="win" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Instalación en <em>Windows</em><a href="win.html#win" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Lo he probado en <em>Windows 10</em> y <em>11</em>.</p>
+<div id="qgis-desktop-1" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> <em>QGIS Desktop</em><a href="win.html#qgis-desktop-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>En <a href="https://qgis.org/download/">https://qgis.org/download/</a> hay varias posibilidades para descargar. Creo que lo más sencillo es descargar el archivo <code>.msi</code> e instalarlo directamente.</p></li>
+<li><p>Ofrece dos versiones (<em>Long Term</em> y <em>Latest</em>). Suelo instalar la última versión <em>Long Term</em> disponible.</p></li>
+<li><p>Para probar que funciona, una vez instalado, lo iniciamos:</p>
+<ul>
+<li>En la carpeta que crea en el escritorio ejecutamos el archivo <code>QGIS Desktop 3.XX.X</code> (le añade el número de versión).</li>
+</ul></li>
+</ul>
+</div>
+<div id="r-y-rstudio-1" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> <em>R</em> y <em>RStudio</em><a href="win.html#r-y-rstudio-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>En este caso, descargaremos archivos de instalación <code>.exe</code>.</p></li>
+<li><p>En primer lugar descargamos e instalamos <em>R</em> desde <a href="https://cran.rstudio.com/">https://cran.rstudio.com/</a>.</p></li>
+<li><p>Las opciones de instalación por defecto son adecuadas.</p></li>
+<li><p>A continuación hacemos lo mismo con <em>RStudio</em> desde <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a>.</p></li>
+<li><p>Para comprobar que la instalación está bien instalaremos dos paquetes <em>R</em> que son los que usaremos principalmente: <code>sf</code> <span class="citation">(<a href="#ref-sf2018">Pebesma 2018</a>, <a href="#ref-R-sf">2024</a>; <a href="#ref-sf2023">Pebesma and Bivand 2023</a>)</span> y <code>terra</code> <span class="citation">(<a href="#ref-R-terra">Hijmans 2024</a>)</span>.</p></li>
+<li><p>Usamos directamente <em>RStudio</em> que se comunica con <em>R</em>.</p></li>
+<li><p>En la figura <a href="win.html#fig:rstudio-01">3.1</a> se muestra una posible forma de instalarlos en <em>RStudio</em>:</p>
+<ul>
+<li><p>Creamos un nuevo archivo de tipo <em>R Script</em>.</p></li>
+<li><p>Incluimos las líneas de código de la figura, las seleccionamos y pulsamos sobre el botón <em>Run</em>.</p></li>
+<li><p>Comprobamos que no aparezca ningún mensaje de error en la ventana <em>Console</em> (izquierda) y que aparezcan en la lista de paquetes de la pestaña <em>Packages</em> (derecha).</p></li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rstudio-01"></span>
+<img src="figuras_original/rstudio-01.png" alt="Instalación de paquetes en *RStudio*." width="100%" />
+<p class="caption">
+Figura 3.1: Instalación de paquetes en <em>RStudio</em>.
+</p>
+</div>
+</div>
+<div id="postgresql-postgis-y-pgadmin-1" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> <em>PostgreSQL</em>, <em>PostGIS</em> y <em>PgAdmin</em><a href="win.html#postgresql-postgis-y-pgadmin-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Las instrucciones de instalación están en <a href="https://postgis.net/workshops/postgis-intro/installation.html">https://postgis.net/workshops/postgis-intro/installation.html</a>.</p></li>
+<li><p>He instalado la versión 16.3 de <em>PostgreSQL</em>.</p></li>
+<li><p>Las opciones por defecto son adecuadas.</p></li>
+<li><p>Para <em>PostGIS</em> se recomienda seleccionar todas las opciones en el apartado “Choose Components” de la instalación.</p></li>
+<li><p>Podemos seleccionar la última versión disponible de <em>pgAdmin 4</em> siguiendo las instrucciones.</p></li>
+<li><p>Para acceder debemos recordar la contraseña que indiquemos para <em>PostgreSQL</em>.</p></li>
+<li><p>Comprobamos la instalación abriendo <em>pgAdmin 4</em> y conectándonos al servidor.</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pgadmin-01"></span>
+<img src="figuras_original/pgadmin-01.png" alt="Definir conexión al servirdor *PostgreSQL*." width="100%" />
+<p class="caption">
+Figura 3.2: Definir conexión al servirdor <em>PostgreSQL</em>.
+</p>
+</div>
+<ul>
+<li><p>En la ventana que se abre debemos rellenar datos en dos pestañas:</p>
+<ul>
+<li><em>General &gt; Name</em>: mombre que queramos darle al servidor.</li>
+<li><em>Connection &gt; Host name / address</em>: indicamos el valor <code>localhost</code>.</li>
+<li><em>Connection &gt; Password</em>: la contraseña que hemos indicado en la instalación para el SGBD.</li>
+</ul></li>
+</ul>
+</div>
+<div id="geoserver-1" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> <em>GeoServer</em><a href="win.html#geoserver-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Podemos descargarlo de <a href="https://geoserver.org/release/stable/">https://geoserver.org/release/stable/</a>.</p></li>
+<li><p>He seleccionado la opción de que se instale para un solo usuario y haya que iniciar y detener el servicio.</p></li>
+<li><p>He tenido que instalar <em>Java 11</em> (tenía <em>Java 17</em> y no funciona).</p>
+<ul>
+<li>Lo he obtenido de <a href="https://adoptium.net/es/temurin/archive/?version=11">https://adoptium.net/es/temurin/archive/?version=11</a>.</li>
+</ul></li>
+<li><p>En la carpeta de instalación tenemos los iconos que se muestran en la figura <a href="win.html#fig:geoserver-01">3.3</a>.</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geoserver-01"></span>
+<img src="figuras_original/geoserver-01.png" alt="Carpeta de *GeoServer*." width="35%" />
+<p class="caption">
+Figura 3.3: Carpeta de <em>GeoServer</em>.
+</p>
+</div>
+<ul>
+<li><p>Iniciamos el servidor mediante <code>Star GeoServer</code>.</p>
+<ul>
+<li>Abre una ventana de sistema y, dependiendo de las prestaciones de nuestro ordenador, tarda más o menos.</li>
+<li>Cuando acaba de arrancar, el último mensaje es <code>INFO:oejs.Server:main: Started</code> añadiendo el tiempo que ha tardado.</li>
+</ul></li>
+<li><p>Abrimos <em>GeoServer</em> mediante <em>GeoServer Web Portal</em>: lo abre en nuestro navegador.</p></li>
+<li><p>Accedemos mediante el usuario y contraseña por defecto (son respectivamente <code>admin</code> y <code>geoserver</code>).</p></li>
+<li><p>Comprobamos que funciona accediendo al apartado “Estado del servidor” (en la parte superior izquierda).</p>
+<ul>
+<li>Si está bien, deber aparecer información similar a la que se muestra en la figura <a href="win.html#fig:geoserver-02">3.4</a>.</li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geoserver-02"></span>
+<img src="figuras_original/geoserver-02.png" alt="Estado de *GeoServer*." width="100%" />
+<p class="caption">
+Figura 3.4: Estado de <em>GeoServer</em>.
+</p>
+</div>
+<ul>
+<li>Cuando acabemos, cerramos el servidor mediante <code>Stop GeoServer</code>.</li>
+</ul>
+
+</div>
+</div>
+<h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-R-terra" class="csl-entry">
+Hijmans, Robert J. 2024. <em>Terra: Spatial Data Analysis</em>. <a href="https://rspatial.org/">https://rspatial.org/</a>.
+</div>
+<div id="ref-sf2018" class="csl-entry">
+Pebesma, Edzer. 2018. <span>“<span class="nocase">Simple Features for R: Standardized Support for Spatial Vector Data</span>.”</span> <em><span>The R Journal</span></em> 10 (1): 439–46. <a href="https://doi.org/10.32614/RJ-2018-009">https://doi.org/10.32614/RJ-2018-009</a>.
+</div>
+<div id="ref-R-sf" class="csl-entry">
+———. 2024. <em>Sf: Simple Features for r</em>. <a href="https://r-spatial.github.io/sf/">https://r-spatial.github.io/sf/</a>.
+</div>
+<div id="ref-sf2023" class="csl-entry">
+Pebesma, Edzer, and Roger Bivand. 2023. <em><span class="nocase">Spatial Data Science: With applications in R</span></em>. <span>Chapman and Hall/CRC</span>. <a href="https://doi.org/10.1201/9780429459016">https://doi.org/10.1201/9780429459016</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="herramientas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ubu.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
