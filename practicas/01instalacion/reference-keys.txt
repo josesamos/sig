@@ -19,7 +19,6 @@ geoserver-1
 ubu
 qgis-desktop-2
 qgis.org
-tienda-de-snap
 r-y-rstudio-2
 postgresql-postgis-y-pgadmin-2
 geoserver-2
