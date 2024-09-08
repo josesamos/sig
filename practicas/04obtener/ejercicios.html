@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ejercicios | Obtener y Definir Información Geográfica</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Ejercicios | Obtener y Definir Información Geográfica" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ejercicios | Obtener y Definir Información Geográfica" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="definir-información-geográfica.html"/>
+<link rel="next" href="referencias.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="herramientas.html"><a href="herramientas.html"><i class="fa fa-check"></i><b>2</b> Herramientas a Instalar</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="herramientas.html"><a href="herramientas.html#qgis-desktop"><i class="fa fa-check"></i><b>2.1</b> <em>QGIS Desktop</em></a></li>
+<li class="chapter" data-level="2.2" data-path="herramientas.html"><a href="herramientas.html#r-y-rstudio"><i class="fa fa-check"></i><b>2.2</b> <em>R</em> y <em>RStudio</em></a></li>
+<li class="chapter" data-level="2.3" data-path="herramientas.html"><a href="herramientas.html#postgresql-postgis-y-pgadmin"><i class="fa fa-check"></i><b>2.3</b> <em>PostgreSQL</em>, <em>PostGIS</em> y <em>PgAdmin</em></a></li>
+<li class="chapter" data-level="2.4" data-path="herramientas.html"><a href="herramientas.html#geoserver"><i class="fa fa-check"></i><b>2.4</b> <em>GeoServer</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="capas-temáticas.html"><a href="capas-temáticas.html"><i class="fa fa-check"></i><b>3</b> Capas temáticas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capas-temáticas.html"><a href="capas-temáticas.html#dera"><i class="fa fa-check"></i><b>3.1</b> DERA</a></li>
+<li class="chapter" data-level="3.2" data-path="capas-temáticas.html"><a href="capas-temáticas.html#ideandalucía"><i class="fa fa-check"></i><b>3.2</b> IDEAndalucía</a></li>
+<li class="chapter" data-level="3.3" data-path="capas-temáticas.html"><a href="capas-temáticas.html#openstreetmap"><i class="fa fa-check"></i><b>3.3</b> OpenStreetMap</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html"><i class="fa fa-check"></i><b>4</b> Obtener la zona de trabajo</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#obtener-y-definir-termino-municipal"><i class="fa fa-check"></i><b>4.1</b> Término municipal y mínimo rectángulo que lo contiene</a></li>
+<li class="chapter" data-level="4.2" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#obtener-y-definir-mtn"><i class="fa fa-check"></i><b>4.2</b> Hojas del <em>Mapa Topográfico Nacional</em></a></li>
+<li class="chapter" data-level="4.3" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#hojas-del-mapa-topográfico-de-andalucía"><i class="fa fa-check"></i><b>4.3</b> Hojas del <em>Mapa Topográfico de Andalucía</em></a></li>
+<li class="chapter" data-level="4.4" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#obtener-y-definir-qgis"><i class="fa fa-check"></i><b>4.4</b> Operaciones en QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html"><i class="fa fa-check"></i><b>5</b> Ortofotografía, MDT e información geográfica temática</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#centro-de-descargas-del-cnig"><i class="fa fa-check"></i><b>5.1</b> Centro de Descargas del CNIG</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#ortofotografía"><i class="fa fa-check"></i><b>5.1.1</b> Ortofotografía</a></li>
+<li class="chapter" data-level="5.1.2" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#mdt"><i class="fa fa-check"></i><b>5.1.2</b> MDT</a></li>
+<li class="chapter" data-level="5.1.3" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#cartociudad-corine-land-cover"><i class="fa fa-check"></i><b>5.1.3</b> CartoCiudad, CORINE Land Cover</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#line"><i class="fa fa-check"></i><b>5.2</b> Line@</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#ortofotografía-1"><i class="fa fa-check"></i><b>5.2.1</b> Ortofotografía</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#mdt-1"><i class="fa fa-check"></i><b>5.2.2</b> MDT</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#obtener-y-definir-plano-callejero"><i class="fa fa-check"></i><b>5.2.3</b> Plano callejero</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html"><i class="fa fa-check"></i><b>6</b> Bandas de Satélite</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html#esa"><i class="fa fa-check"></i><b>6.1</b> ESA</a></li>
+<li class="chapter" data-level="6.2" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html#usgs"><i class="fa fa-check"></i><b>6.2</b> USGS</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="definir-información-geográfica.html"><a href="definir-información-geográfica.html"><i class="fa fa-check"></i><b>7</b> Definir información geográfica</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="definir-información-geográfica.html"><a href="definir-información-geográfica.html#crear-datos-vectoriales"><i class="fa fa-check"></i><b>7.1</b> Crear datos vectoriales</a></li>
+<li class="chapter" data-level="7.2" data-path="definir-información-geográfica.html"><a href="definir-información-geográfica.html#georreferenciar-imagen"><i class="fa fa-check"></i><b>7.2</b> Georreferenciar una imagen</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Obtener y Definir Información Geográfica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ejercicios" class="section level1 unnumbered hasAnchor">
+<h1>Ejercicios<a href="ejercicios.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ejercicio-1.-capas-y-metadatos" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 1. Capas y metadatos<a href="ejercicios.html#ejercicio-1.-capas-y-metadatos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para las capas obtenidas en este capítulo que se indiquen obtén, al menos, los datos siguientes y presenta conjuntamente los de todas las capas (p.e., en formato de fichas o de tabla):</p>
+<ul>
+<li>número del ejercicio en el que se ha obtenido,<br />
+</li>
+<li>nombre del archivo,</li>
+<li>formato del archivo,</li>
+<li>tamaño del archivo,</li>
+<li>descripción,</li>
+<li>tipo de capa (ráster: número de bandas, resolución espacial / vectorial: puntos, líneas o polígonos),</li>
+<li>CRS,</li>
+<li>Web/organismo de origen,</li>
+<li>fecha de descarga,</li>
+<li>fecha de los datos (si se conoce),</li>
+<li>datos adicionales (p.e., origen de los datos).</li>
+</ul>
+</div>
+<div id="ejercicio-2.-capas-vectoriales" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 2. Capas vectoriales<a href="ejercicios.html#ejercicio-2.-capas-vectoriales" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A partir de cualquier fuente (pueden ser varias), obtén capas vectoriales sobre los temas siguientes:</p>
+<ul>
+<li>términos municipales,</li>
+<li>una capa compuesta por <strong>líneas</strong> sobre vías de comunicación (p.e., carreteras, caminos, calles, etc.) que tenga datos para tu municipio,</li>
+<li>una capa compuesta por <strong>líneas</strong> sobre red hidrográfica (p.e., ríos, acequias, canalizaciones, etc.) que tenga datos para tu municipio,</li>
+</ul>
+<p>Este ejercicio se documenta con la realización del ejercicio 1.</p>
+</div>
+<div id="ejercicio-3.-geopackage" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 3. <em>GeoPackage</em><a href="ejercicios.html#ejercicio-3.-geopackage" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para el municipio seleccionado, obtén un <em>GeoPackage</em> con las capas y características siguientes:</p>
+<ul>
+<li>el nombre del <em>GeoPackage</em> ha de estar compuesto por el nombre del municipio y tu usuario de correo de la UGR (p.e., en mi caso <code>lanjaron-jsamos</code>).</li>
+<li>contiene una capa vectorial con el término municipal del municipio cuyo nombre está compuesto por el nombre del municipio, tu usuario de correo de la UGR y el código EPSG de la capa (p.e., en mi caso <code>lanjaron-jsamos-25830</code> o <code>lanjaron-jsamos-23030</code>),</li>
+<li>contiene una capa vectorial con el mínimo rectángulo que contiene al término municipal del municipio cuyo nombre está compuesto por el nombre del municipio, “bbox”, tu usuario de correo de la UGR y el código EPSG de la capa (p.e., en mi caso <code>lanjaron-bbox-jsamos-25830</code> o <code>lanjaron-bbox-jsamos-23030</code>),</li>
+<li>una capa para cada conjunto de hojas considerado, con la selección de las hojas que se corresponden con el rectángulo del municipio, cuyo nombre está compuesto por el nombre del municipio, “cuadricula” y el número que identifique el conjunto de hojas: 10, 100, 25 y 50 (p.e, en mi caso <code>lanjaron-cuadricula-10</code>, etc.).</li>
+</ul>
+<p>Estas capas no hay que incluirlas en el ejercicio 1, aunque también hay que conservarlas para utilizarlas en capítulos posteriores.</p>
+<p>Para documentar la realización del ejercicio, captura la imagen donde se muestre el municipio y el mínimo rectángulo que lo contiene (similar a la figura <a href="obtener-la-zona-de-trabajo.html#fig:web-lanjaron-bbox">4.1</a> para Lanjarón), y lista el número de las hojas del municipio para cada conjunto de hojas (p.e., para Lanjarón MTN25: 1026-4, 1027-3, 1041-2, 1041-4, 1042-1 y 1042-3).</p>
+</div>
+<div id="ejercicio-4.-ortofotografía-y-mdt" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 4. Ortofotografía y MDT<a href="ejercicios.html#ejercicio-4.-ortofotografía-y-mdt" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para el municipio seleccionado obtén:</p>
+<ul>
+<li>una <strong>ortofotografía reciente</strong> y un <strong>MDT</strong> que abarquen todo el rectángulo del municipio (p.e., en mi caso, el definido en las capas <code>lanjaron-bbox-jsamos-25830</code> o <code>lanjaron-bbox-jsamos-23030</code>),</li>
+<li>una capa de CartoCiudad que incluya al municipio,</li>
+<li>un mapa de uso/ocupación del suelo de CORINE Land Cover, en formato <em>GeoPackage</em>,</li>
+</ul>
+<p>Este ejercicio se documenta con la realización del ejercicio 1.</p>
+</div>
+<div id="ejercicio-5.-bandas-de-satélite" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 5. Bandas de Satélite<a href="ejercicios.html#ejercicio-5.-bandas-de-satélite" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para la zona del municipio seleccionado, obtén bandas de satélite de fecha reciente y con escasa nubosidad para:</p>
+<ul>
+<li><em>Sentinel-2</em> o <em>Landsat 8</em>.</li>
+</ul>
+<p>Este ejercicio se documenta con la realización del ejercicio 1.</p>
+<!-- {exercise, obtener-capa-vectorial} -->
+<!-- Define un capa vectorial para tu municipio. -->
+<!-- Este ejercicio se documenta con dos capturas de pantalla: una donde se muestre la tabla de atributos y otra presentando la capa con otras capas del municipio. -->
+<!--  -->
+<!-- {exercise, obtener-georreferenciacion} -->
+<!-- Georreferencia una imagen de tu municipio. -->
+<!-- Este ejercicio se documenta con dos capturas de pantalla: una donde se muestren los puntos definidos en la herramienta de georreferenciación y otra presentando la capa con otras capas del municipio. -->
+<!--  -->
+</div>
+<div id="capas-resultado-de-los-ejercicios" class="section level4 unnumbered hasAnchor">
+<h4>Capas resultado de los ejercicios<a href="ejercicios.html#capas-resultado-de-los-ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Las capas siguientes deberán estar disponibles para desarrollar las actividades del resto de capítulos.</p>
+<ol style="list-style-type: decimal">
+<li>Un archivo en formato <em>GeoPackage</em> con:
+<ul>
+<li><strong>término municipal</strong>,</li>
+<li><strong>mínimo rectángulo</strong> que contiene al término municipal,</li>
+</ul></li>
+<li>una capa compuesta por líneas sobre <strong>vías de comunicación</strong>,</li>
+<li>una capa compuesta por líneas sobre <strong>red hidrográfica</strong>,</li>
+<li>archivos de <strong>ortofotografía reciente</strong> que abarque todo el rectángulo del municipio,</li>
+<li>archivos de <strong>MDT</strong> que abarque todo el rectángulo del municipio,</li>
+<li>un archivo de <strong>CartoCiudad</strong> con las capas <strong>manzana</strong> y <strong>portal</strong> de la provincia,</li>
+<li>un archivo de <strong>CORINE Land Cover</strong>, en formato <em>GeoPackage</em>,</li>
+<li><strong>bandas de satélite</strong> <em>Sentinel-2</em> o <em>Landsat 8</em> del municipio, actuales y sin nubes.</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="definir-información-geográfica.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

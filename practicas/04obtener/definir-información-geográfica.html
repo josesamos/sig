@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Definir información geográfica | Obtener y Definir Información Geográfica</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Definir información geográfica | Obtener y Definir Información Geográfica" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Definir información geográfica | Obtener y Definir Información Geográfica" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bandas-de-satélite.html"/>
+<link rel="next" href="ejercicios.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="herramientas.html"><a href="herramientas.html"><i class="fa fa-check"></i><b>2</b> Herramientas a Instalar</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="herramientas.html"><a href="herramientas.html#qgis-desktop"><i class="fa fa-check"></i><b>2.1</b> <em>QGIS Desktop</em></a></li>
+<li class="chapter" data-level="2.2" data-path="herramientas.html"><a href="herramientas.html#r-y-rstudio"><i class="fa fa-check"></i><b>2.2</b> <em>R</em> y <em>RStudio</em></a></li>
+<li class="chapter" data-level="2.3" data-path="herramientas.html"><a href="herramientas.html#postgresql-postgis-y-pgadmin"><i class="fa fa-check"></i><b>2.3</b> <em>PostgreSQL</em>, <em>PostGIS</em> y <em>PgAdmin</em></a></li>
+<li class="chapter" data-level="2.4" data-path="herramientas.html"><a href="herramientas.html#geoserver"><i class="fa fa-check"></i><b>2.4</b> <em>GeoServer</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="capas-temáticas.html"><a href="capas-temáticas.html"><i class="fa fa-check"></i><b>3</b> Capas temáticas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capas-temáticas.html"><a href="capas-temáticas.html#dera"><i class="fa fa-check"></i><b>3.1</b> DERA</a></li>
+<li class="chapter" data-level="3.2" data-path="capas-temáticas.html"><a href="capas-temáticas.html#ideandalucía"><i class="fa fa-check"></i><b>3.2</b> IDEAndalucía</a></li>
+<li class="chapter" data-level="3.3" data-path="capas-temáticas.html"><a href="capas-temáticas.html#openstreetmap"><i class="fa fa-check"></i><b>3.3</b> OpenStreetMap</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html"><i class="fa fa-check"></i><b>4</b> Obtener la zona de trabajo</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#obtener-y-definir-termino-municipal"><i class="fa fa-check"></i><b>4.1</b> Término municipal y mínimo rectángulo que lo contiene</a></li>
+<li class="chapter" data-level="4.2" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#obtener-y-definir-mtn"><i class="fa fa-check"></i><b>4.2</b> Hojas del <em>Mapa Topográfico Nacional</em></a></li>
+<li class="chapter" data-level="4.3" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#hojas-del-mapa-topográfico-de-andalucía"><i class="fa fa-check"></i><b>4.3</b> Hojas del <em>Mapa Topográfico de Andalucía</em></a></li>
+<li class="chapter" data-level="4.4" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#obtener-y-definir-qgis"><i class="fa fa-check"></i><b>4.4</b> Operaciones en QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html"><i class="fa fa-check"></i><b>5</b> Ortofotografía, MDT e información geográfica temática</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#centro-de-descargas-del-cnig"><i class="fa fa-check"></i><b>5.1</b> Centro de Descargas del CNIG</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#ortofotografía"><i class="fa fa-check"></i><b>5.1.1</b> Ortofotografía</a></li>
+<li class="chapter" data-level="5.1.2" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#mdt"><i class="fa fa-check"></i><b>5.1.2</b> MDT</a></li>
+<li class="chapter" data-level="5.1.3" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#cartociudad-corine-land-cover"><i class="fa fa-check"></i><b>5.1.3</b> CartoCiudad, CORINE Land Cover</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#line"><i class="fa fa-check"></i><b>5.2</b> Line@</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#ortofotografía-1"><i class="fa fa-check"></i><b>5.2.1</b> Ortofotografía</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#mdt-1"><i class="fa fa-check"></i><b>5.2.2</b> MDT</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#obtener-y-definir-plano-callejero"><i class="fa fa-check"></i><b>5.2.3</b> Plano callejero</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html"><i class="fa fa-check"></i><b>6</b> Bandas de Satélite</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html#esa"><i class="fa fa-check"></i><b>6.1</b> ESA</a></li>
+<li class="chapter" data-level="6.2" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html#usgs"><i class="fa fa-check"></i><b>6.2</b> USGS</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="definir-información-geográfica.html"><a href="definir-información-geográfica.html"><i class="fa fa-check"></i><b>7</b> Definir información geográfica</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="definir-información-geográfica.html"><a href="definir-información-geográfica.html#crear-datos-vectoriales"><i class="fa fa-check"></i><b>7.1</b> Crear datos vectoriales</a></li>
+<li class="chapter" data-level="7.2" data-path="definir-información-geográfica.html"><a href="definir-información-geográfica.html#georreferenciar-imagen"><i class="fa fa-check"></i><b>7.2</b> Georreferenciar una imagen</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Obtener y Definir Información Geográfica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="definir-información-geográfica" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Definir información geográfica<a href="definir-información-geográfica.html#definir-información-geográfica" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>En este apartado se muestra cómo definir información geográfica. En particular, cómo crear un capa de datos vectoriales y cómo georreferenciar una imagen.</p>
+<div id="crear-datos-vectoriales" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Crear datos vectoriales<a href="definir-información-geográfica.html#crear-datos-vectoriales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Podemos crear datos vectoriales con <em>QGIS</em>. Vamos a obtener una imagen de la Web de nuestro municipio y, a partir de ella, definiremos una capa vectorial.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-def-capa01"></span>
+<img src="figuras_original/def-capa01.png" alt="Archivos disponibles para descargar." width="100%" />
+<p class="caption">
+Figura 7.1: Archivos disponibles para descargar.
+</p>
+</div>
+<p>Una manera de obtener en <em>QGIS</em> una imagen de la Web de nuestro municipio es cargar alguna de las capas obtenidas en el apartado <a href="obtener-la-zona-de-trabajo.html#obtener-y-definir-termino-municipal">4.1</a> (el término municipal o el rectángulo que lo contiene) y usar el complemento <em>QuickMapServices</em>, tal y como se describe en el tema sobre QGIS. El resultado para Lanjarón se muestra en la figura <a href="definir-información-geográfica.html#fig:qgis-def-capa01">7.1</a>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-def-capa02"></span>
+<img src="figuras_original/def-capa02.png" alt="Archivos disponibles para descargar." width="100%" />
+<p class="caption">
+Figura 7.2: Archivos disponibles para descargar.
+</p>
+</div>
+<p>Para crear una nueva capa vectorial, pulsamos sobre <em>Capa &gt; Crear capa</em> y, a continuación, la opción del formato de la capa que queramos crear (figura <a href="definir-información-geográfica.html#fig:qgis-def-capa02">7.2</a>). En la ventana que se abre, seleccionamos el archivo donde guardarla, el nombre de la capa, el tipo de geometría y el CRS, también podemos definir los campos (nombre y tipo) que contendrá la tabla de atributos. Al pulsar sobre el botón <em>Aceptar</em> tenemos una capa vacía creada.</p>
+<p>Para crear elementos en la capa, pulsamos sobre la opción <em>Capa &gt; Conmutar edición</em> y, en la barra de herramientas se activa un botón para añadir elementos a la capa (puntos, líneas o polígonos, según la geometría que hayamos elegido al crearla).</p>
+<p>Una vez pulsamos sobre el botón para añadir un elemento, podemos definirlo pulsando sobre la imagen. Si está compuesto de varios puntos, para acabar de definir un elemento, hay que pulsar sobre el botón derecho del ratón. A continuación, se abre una ventana para definir los atributos asociados al elemento que hayamos incluido en la tabla de atributos.</p>
+<p>Para acabar de definir la capa, pulsamos de nuevo sobre <em>Capa &gt; Conmutar edición</em> y aceptamos los cambios.</p>
+</div>
+<div id="georreferenciar-imagen" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Georreferenciar una imagen<a href="definir-información-geográfica.html#georreferenciar-imagen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-georref01"></span>
+<img src="figuras_original/georref01.png" alt="Imagen para georreferenciar." width="60%" />
+<p class="caption">
+Figura 7.3: Imagen para georreferenciar.
+</p>
+</div>
+<p>Como punto de partida, vamos a tomar una imagen de parte del plano de nuestro municipio obtenido en el apartado <a href="ortofotografía-mdt-e-información-geográfica-temática.html#obtener-y-definir-plano-callejero">5.2.3</a>. En mi caso, la imagen que he considerado es la de la figura <a href="definir-información-geográfica.html#fig:qgis-georref01">7.3</a>, que he salvado como un archivo en formato JPG.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-georref02"></span>
+<img src="figuras_original/georref02.png" alt="Acceso a la herramienta de georreferenciación." width="70%" />
+<p class="caption">
+Figura 7.4: Acceso a la herramienta de georreferenciación.
+</p>
+</div>
+<p>Para georreferenciar una imagen también usaremos <em>QGIS</em>. En primer lugar, cargamos una imagen de nuestro municipio obtenida de la Web, como se describe en el apartado <a href="definir-información-geográfica.html#crear-datos-vectoriales">7.1</a>, para tenerla como referencia. La georreferenciación la haremos mediante la herramienta accesible desde la opción <em>Ráster &gt; Georreferenciador…</em><a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> (figura <a href="definir-información-geográfica.html#fig:qgis-georref02">7.4</a>). Al pulsar sobre esa opción, iniciamos la herramienta de georreferenciación.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-georref03"></span>
+<img src="figuras_original/georref03.png" alt="Herramienta de georreferenciación." width="80%" />
+<p class="caption">
+Figura 7.5: Herramienta de georreferenciación.
+</p>
+</div>
+<p>En primer lugar, debemos cargar el ráster a georreferenciar en la herramienta de georreferenciación. Esta operación se realiza pulsando sobre la opción <em>Archivo &gt; Open Ráster…</em> o sobre el icono de esar operación ubicado en la barra de herramientas, y seleccionando el archivo con la imagen. Como resultado se carga el ráster en la herramienta (figura <a href="definir-información-geográfica.html#fig:qgis-georref03">7.5</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-georref04"></span>
+<img src="figuras_original/georref04.png" alt="Definición de coordenadas de un punto de referencia." width="60%" />
+<p class="caption">
+Figura 7.6: Definición de coordenadas de un punto de referencia.
+</p>
+</div>
+<p>Ahora debemos establecer una relación entre la imagen que acabamos de cargar y la superficie terrestre. Pulsamos sobre <em>Editar &gt; Añadir punto</em> (o sobre el icono de esa operación de la barra de herramientas). Para mostrar que estamos definiendo un punto, cambia la forma de cursor. Pulsamos sobre algún punto significativo de la imagen que queremos georreferenciar y se abre una ventana para definir las coordenadas del punto seleccionado (figura <a href="definir-información-geográfica.html#fig:qgis-georref04">7.6</a>). Si conocemos las coordenadas podemos introducirlas manualmente; pulsando sobre el botón <em>Desde el lienzo del mapa</em>, podemos obtenerlas marcando sobre la imagen que hemos obtenido de la Web, que ya está georreferenciada, pulsando sobre el punto correspondiente.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-georref05"></span>
+<img src="figuras_original/georref05.png" alt="Coordenadas de un punto de referencia definidas." width="60%" />
+<p class="caption">
+Figura 7.7: Coordenadas de un punto de referencia definidas.
+</p>
+</div>
+<p>El resultado obtenido después de pulsar sobre la imagen de la Web, se muestra en la figura <a href="definir-información-geográfica.html#fig:qgis-georref05">7.7</a>. Se obtienen las coordenadas y el CRS en el que se definen.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-georref06"></span>
+<img src="figuras_original/georref06.png" alt="Puntos de referencia definidos." width="80%" />
+<p class="caption">
+Figura 7.8: Puntos de referencia definidos.
+</p>
+</div>
+<p>Hay que repetir esta operación para varios puntos dispersos en la imagen. Los puntos definidos se muestran en la herramienta de georreferenciación (figura <a href="definir-información-geográfica.html#fig:qgis-georref06">7.8</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-georref07"></span>
+<img src="figuras_original/georref07.png" alt="Configuración de la transformación." width="50%" />
+<p class="caption">
+Figura 7.9: Configuración de la transformación.
+</p>
+</div>
+<p>Una vez definidos suficientes puntos (por lo menos 4, pero mejor 6 o más), pulsamos sobre <em>Archivo &gt; Comenzar georreferenciado</em> o sobre el icono equivalente de la barra de herramientas (figura <a href="definir-información-geográfica.html#fig:qgis-georref06">7.8</a>), se abre la ventana que permite definir el método para realizar la operación y configurar el resultado (figura <a href="definir-información-geográfica.html#fig:qgis-georref07">7.9</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-georref08"></span>
+<img src="figuras_original/georref08.png" alt="Resultado de la transformación." width="100%" />
+<p class="caption">
+Figura 7.10: Resultado de la transformación.
+</p>
+</div>
+<p>El resultado obtenido para el ejemplo se muestra en la figura <a href="definir-información-geográfica.html#fig:qgis-georref08">7.10</a>: ha situado la imagen correctamente en la zona donde corresponde, transformando el resto de puntos.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="18">
+<li id="fn18"><p>En la versión de QGIS con la que estoy trabajando esa opción está directamente disponible. En versiones previas, había que activar el complemento <em>Georreferenciador GDAL</em> para que apareciera.<a href="definir-información-geográfica.html#fnref18" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bandas-de-satélite.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ejercicios.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

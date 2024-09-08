@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Bandas de Satélite | Obtener y Definir Información Geográfica</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Bandas de Satélite | Obtener y Definir Información Geográfica" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Bandas de Satélite | Obtener y Definir Información Geográfica" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ortofotografía-mdt-e-información-geográfica-temática.html"/>
+<link rel="next" href="definir-información-geográfica.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="herramientas.html"><a href="herramientas.html"><i class="fa fa-check"></i><b>2</b> Herramientas a Instalar</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="herramientas.html"><a href="herramientas.html#qgis-desktop"><i class="fa fa-check"></i><b>2.1</b> <em>QGIS Desktop</em></a></li>
+<li class="chapter" data-level="2.2" data-path="herramientas.html"><a href="herramientas.html#r-y-rstudio"><i class="fa fa-check"></i><b>2.2</b> <em>R</em> y <em>RStudio</em></a></li>
+<li class="chapter" data-level="2.3" data-path="herramientas.html"><a href="herramientas.html#postgresql-postgis-y-pgadmin"><i class="fa fa-check"></i><b>2.3</b> <em>PostgreSQL</em>, <em>PostGIS</em> y <em>PgAdmin</em></a></li>
+<li class="chapter" data-level="2.4" data-path="herramientas.html"><a href="herramientas.html#geoserver"><i class="fa fa-check"></i><b>2.4</b> <em>GeoServer</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="capas-temáticas.html"><a href="capas-temáticas.html"><i class="fa fa-check"></i><b>3</b> Capas temáticas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capas-temáticas.html"><a href="capas-temáticas.html#dera"><i class="fa fa-check"></i><b>3.1</b> DERA</a></li>
+<li class="chapter" data-level="3.2" data-path="capas-temáticas.html"><a href="capas-temáticas.html#ideandalucía"><i class="fa fa-check"></i><b>3.2</b> IDEAndalucía</a></li>
+<li class="chapter" data-level="3.3" data-path="capas-temáticas.html"><a href="capas-temáticas.html#openstreetmap"><i class="fa fa-check"></i><b>3.3</b> OpenStreetMap</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html"><i class="fa fa-check"></i><b>4</b> Obtener la zona de trabajo</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#obtener-y-definir-termino-municipal"><i class="fa fa-check"></i><b>4.1</b> Término municipal y mínimo rectángulo que lo contiene</a></li>
+<li class="chapter" data-level="4.2" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#obtener-y-definir-mtn"><i class="fa fa-check"></i><b>4.2</b> Hojas del <em>Mapa Topográfico Nacional</em></a></li>
+<li class="chapter" data-level="4.3" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#hojas-del-mapa-topográfico-de-andalucía"><i class="fa fa-check"></i><b>4.3</b> Hojas del <em>Mapa Topográfico de Andalucía</em></a></li>
+<li class="chapter" data-level="4.4" data-path="obtener-la-zona-de-trabajo.html"><a href="obtener-la-zona-de-trabajo.html#obtener-y-definir-qgis"><i class="fa fa-check"></i><b>4.4</b> Operaciones en QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html"><i class="fa fa-check"></i><b>5</b> Ortofotografía, MDT e información geográfica temática</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#centro-de-descargas-del-cnig"><i class="fa fa-check"></i><b>5.1</b> Centro de Descargas del CNIG</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#ortofotografía"><i class="fa fa-check"></i><b>5.1.1</b> Ortofotografía</a></li>
+<li class="chapter" data-level="5.1.2" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#mdt"><i class="fa fa-check"></i><b>5.1.2</b> MDT</a></li>
+<li class="chapter" data-level="5.1.3" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#cartociudad-corine-land-cover"><i class="fa fa-check"></i><b>5.1.3</b> CartoCiudad, CORINE Land Cover</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#line"><i class="fa fa-check"></i><b>5.2</b> Line@</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#ortofotografía-1"><i class="fa fa-check"></i><b>5.2.1</b> Ortofotografía</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#mdt-1"><i class="fa fa-check"></i><b>5.2.2</b> MDT</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ortofotografía-mdt-e-información-geográfica-temática.html"><a href="ortofotografía-mdt-e-información-geográfica-temática.html#obtener-y-definir-plano-callejero"><i class="fa fa-check"></i><b>5.2.3</b> Plano callejero</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html"><i class="fa fa-check"></i><b>6</b> Bandas de Satélite</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html#esa"><i class="fa fa-check"></i><b>6.1</b> ESA</a></li>
+<li class="chapter" data-level="6.2" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html#usgs"><i class="fa fa-check"></i><b>6.2</b> USGS</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="definir-información-geográfica.html"><a href="definir-información-geográfica.html"><i class="fa fa-check"></i><b>7</b> Definir información geográfica</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="definir-información-geográfica.html"><a href="definir-información-geográfica.html#crear-datos-vectoriales"><i class="fa fa-check"></i><b>7.1</b> Crear datos vectoriales</a></li>
+<li class="chapter" data-level="7.2" data-path="definir-información-geográfica.html"><a href="definir-información-geográfica.html#georreferenciar-imagen"><i class="fa fa-check"></i><b>7.2</b> Georreferenciar una imagen</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Obtener y Definir Información Geográfica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bandas-de-satélite" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Bandas de Satélite<a href="bandas-de-satélite.html#bandas-de-satélite" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Como fuentes para bandas de satélite vamos a considerar las webs:</p>
+<ul>
+<li><em>Copernicus Open Access Hub</em> de ESA (<em>European Space Agency</em>) para obtener datos de <em>Sentinel-2</em> y</li>
+<li><em>GloVis</em> de USGS (<em>U.S. Geological Survey</em>) para obtener los datos de <em>Landsat 8</em>.</li>
+</ul>
+<div id="esa" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> ESA<a href="bandas-de-satélite.html#esa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La ESA, en su web <em>Copernicus Open Access Hub</em><a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>, ofrece los datos de los satélites <em>Sentinel</em>. Para acceder a los datos y poder descargarlos, lo primero que tenemos que hacer es registrarnos e identificarnos.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:web-esa01"></span>
+<img src="figuras_original/esa01.png" alt="Copernicus Open Access Hub de ESA en https://scihub.copernicus.eu/dhus/." width="100%" />
+<p class="caption">
+Figura 6.1: <em>Copernicus Open Access Hub</em> de ESA en <a href="https://scihub.copernicus.eu/dhus/">https://scihub.copernicus.eu/dhus/</a>.
+</p>
+</div>
+<p>Al acceder, mediante el ratón, <em>pulsando-arrastrando-soltando</em> para movernos y girando la rueda para acercarnos o alejarnos, nos situamos en la zona de nuestro municipio en el mapa que presenta. En la parte superior del lateral derecho de la ventana, tiene dos botones unidos, etiquetados como <em>Switch to Navegation Mode</em>, y, cuando lo pulsamos se transforma en <em>Switch to Area Mode</em> (figura <a href="bandas-de-satélite.html#fig:web-esa01">6.1</a>). En el primer modo, nos permite movernos, como hemos hecho; en el segundo modo, podemos seleccionar una zona mediante la definición de un polígono. Lo más sencillo es definir un rectángulo <em>pulsando-arrastrando-soltando</em> una zona que incluya a nuestro municipio.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:web-esa02"></span>
+<img src="figuras_original/esa02.png" alt="Selección de la zona de nuestro municipio." width="100%" />
+<p class="caption">
+Figura 6.2: Selección de la zona de nuestro municipio.
+</p>
+</div>
+<p>El resultado de seleccionar la zona de nuestro municipio se muestra en la figura <a href="bandas-de-satélite.html#fig:web-esa02">6.2</a>. No tiene que ser una selección exacta pero sí interesa que sea aproximada para determinar qué productos necesitamos para cubrir el área de trabajo. Con esta selección determinamos la zona de interés para buscar productos.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:web-esa03"></span>
+<img src="figuras_original/esa03.png" alt="Definición de condiciones de búsqueda de productos." width="60%" />
+<p class="caption">
+Figura 6.3: Definición de condiciones de búsqueda de productos.
+</p>
+</div>
+<p>Una vez seleccionada la zona, pulsamos sobre el icono formado por tres barras horizontales, en la zona superior izquierda de la pantalla, en la barra de búsqueda, a la izquierda del carro de la compra. Se abre un formulario donde podemos acabar de definir las condiciones de búsqueda (figura <a href="bandas-de-satélite.html#fig:web-esa03">6.3</a>). En concreto, definimos:</p>
+<ul>
+<li>en el campo <em>Sensing period</em>, un periodo de obtención de los datos reciente,</li>
+<li>marcamos la casilla de selección para <em>Mission: Sentinel-2</em><a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>,</li>
+<li>en el campo <em>Satellite Platform</em> <a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> seleccionamos el valor “S2A_*“,</li>
+<li>en el campo <em>Product Type</em><a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> seleccionamos el valor “S2MSI2A”</li>
+</ul>
+<p>También se pueden definir condiciones sobre la cobertura de nubes y el número de órbita: se pueden consultar los números de órbita descargándose una capa<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> que se puede consultar en <em>Google Earth</em> pero, en este caso, no es necesario porque ya hemos determinado la zona.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:web-esa04"></span>
+<img src="figuras_original/esa04.png" alt="Productos de Sentinel-2 resultado de la búsqueda." width="100%" />
+<p class="caption">
+Figura 6.4: Productos de <em>Sentinel-2</em> resultado de la búsqueda.
+</p>
+</div>
+<p>A continuación, pulsamos sobre el icono en forma de lupa, a la derecha de la misma barra de la zona superior izquierda, para que lleve a cabo la búsqueda. El resultado se muestra en la figura <a href="bandas-de-satélite.html#fig:web-esa04">6.4</a>: en la misma ventana de búsqueda, aparece una lista de resultados. Pulsando sobre cada uno de ellos se marca en el mapa la zona a la que corresponde. Para cada resultado se muestra la fecha de obtención y podemos consultar sus características.</p>
+<p>En este caso, como se puede ver en la figura <a href="bandas-de-satélite.html#fig:web-esa04">6.4</a>, necesitamos dos bloques de datos para cubrir el área del municipio. Seleccionamos los de fecha más reciente. Se puede descargar directamente o bien los añadimos al carro de la compra para descargarlos después.</p>
+<p>La estructura de carpetas de los datos que obtenemos se describe en el documento “Level-2A Product Formatting”<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>. Las bandas (archivos de extensión <code>jp2</code>) están clasificadas según su resolución espacial en carpetas que la indican (<code>R10m</code>, <code>R20m</code> y <code>R60m</code>), dentro de la carpeta <code>IMG_DATA</code> en la carpeta <code>GRANULE</code>.</p>
+</div>
+<div id="usgs" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> USGS<a href="bandas-de-satélite.html#usgs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Podemos descargar directamente datos de <em>Landsat</em> desde GloVis<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a> (<em>USGS Global Visualization Viewer</em>). Lo primero que tenemos que hacer es registrarnos e identificarnos para poder acceder con todas las funcionalidades.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:web-usgs01"></span>
+<img src="figuras_original/usgs01.png" alt="Selección de datos en GloVis en https://glovis.usgs.gov/app?fullscreen=0." width="100%" />
+<p class="caption">
+Figura 6.5: Selección de datos en GloVis en <a href="https://glovis.usgs.gov/app?fullscreen=0">https://glovis.usgs.gov/app?fullscreen=0</a>.
+</p>
+</div>
+<p>En la pantalla de navegación, <em>pulsando-arrastrando-soltando</em> para movernos y girando la rueda del ratón para acercarnos o alejarnos, nos situamos en la zona de nuestro municipio. En la columna de la izquierda de la ventana, titulada “Choose Your Data Set(s)” (figura <a href="bandas-de-satélite.html#fig:web-usgs01">6.5</a>), seleccionamos el conjunto de datos, en este caso el de <em>Landsat 8</em> (pulsando sobre el control <em>Landsat 8 OLI/TIRS C1 Level-1</em>). Podemos definir más condiciones en la parte inferior de esa ventana, por ejemplo, podemos definir un rango de fechas o un mes concreto. Para que tengan efecto estas condiciones adicionales, tenemos que pulsar el botón <em>APPLY</em>, situado en la parte inferior derecha de esa ventana.</p>
+<p>A continuación de la línea del control <em>Landsat 8 OLI/TIRS C1 Level-1</em> que hemos seleccionado, nos indica el número de conjuntos de datos que ha encontrado. Podemos movernos y ver los datos seleccionando el año en la línea de tiempo de la parte inferior central de la ventana y pulsando sobre los botones <em>Next</em> y <em>Previous</em> de la parte inferior derecha. En la parte inferior central de la ventana se muestra la fecha de los datos. Cuando veamos un conjunto de datos que nos interese (es de nuestra zona, de fecha actual, no tiene muchas nubes), lo seleccionamos acercándonos a él (girando la rueda del ratón) y pulsando sobre el botón <em>Select</em> (en la parte inferior derecha). Una vez seleccionado, podemos descargarlo pulsando sobre el botón <em>Download</em> de la misma zona. Adicionalmente, podemos consultar los metadatos pulsando sobre el botón <em>View Metadata</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:web-usgs02"></span>
+<img src="figuras_original/usgs02.png" alt="Archivos disponibles para descargar." width="50%" />
+<p class="caption">
+Figura 6.6: Archivos disponibles para descargar.
+</p>
+</div>
+<p>En la figura <a href="bandas-de-satélite.html#fig:web-usgs02">6.6</a>, se muestra la ventana de descarga de datos para la selección realizada. Además del archivo con las capas (en formato <em>GeoTIFF</em>), hay archivos con medatadatos. Descargamos cada uno de ellos pulsando sobre los botones asociados.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p><a href="https://scihub.copernicus.eu/dhus/">https://scihub.copernicus.eu/dhus/</a><a href="bandas-de-satélite.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p><a href="https://earth.esa.int/web/sentinel/user-guides/sentinel-2-msi/overview">https://earth.esa.int/web/sentinel/user-guides/sentinel-2-msi/overview</a><a href="bandas-de-satélite.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p><a href="https://earth.esa.int/web/sentinel/technical-guides/sentinel-2-msi/msi-instrument">https://earth.esa.int/web/sentinel/technical-guides/sentinel-2-msi/msi-instrument</a><a href="bandas-de-satélite.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p><a href="https://earth.esa.int/web/sentinel/user-guides/sentinel-2-msi/product-types">https://earth.esa.int/web/sentinel/user-guides/sentinel-2-msi/product-types</a><a href="bandas-de-satélite.html#fnref14" class="footnote-back">↩︎</a></p></li>
+<li id="fn15"><p>De <a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-2/satellite-description/orbit" class="uri">https://sentinel.esa.int/web/sentinel/missions/sentinel-2/satellite-description/orbit</a><a href="bandas-de-satélite.html#fnref15" class="footnote-back">↩︎</a></p></li>
+<li id="fn16"><p><a href="https://earth.esa.int/web/sentinel/technical-guides/sentinel-2-msi/level-2a/product-formatting">https://earth.esa.int/web/sentinel/technical-guides/sentinel-2-msi/level-2a/product-formatting</a><a href="bandas-de-satélite.html#fnref16" class="footnote-back">↩︎</a></p></li>
+<li id="fn17"><p><a href="https://glovis.usgs.gov/app?fullscreen=0">https://glovis.usgs.gov/app?fullscreen=0</a><a href="bandas-de-satélite.html#fnref17" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ortofotografía-mdt-e-información-geográfica-temática.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="definir-información-geográfica.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
