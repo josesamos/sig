@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Añadir elementos a la representación las de capas | Cartografía con QGIS</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Añadir elementos a la representación las de capas | Cartografía con QGIS" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Añadir elementos a la representación las de capas | Cartografía con QGIS" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="operaciones-sobre-la-tabla-de-atributos.html"/>
+<link rel="next" href="generar-la-salida-del-proyecto.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> <em>QGIS</em></a></li>
+<li class="chapter" data-level="2" data-path="obtencion-datos-qgis1.html"><a href="obtencion-datos-qgis1.html"><i class="fa fa-check"></i><b>2</b> Obtención de los datos</a></li>
+<li class="chapter" data-level="3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html"><i class="fa fa-check"></i><b>3</b> Entorno de trabajo</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#cambiar-el-idioma"><i class="fa fa-check"></i><b>3.1</b> Cambiar el idioma</a></li>
+<li class="chapter" data-level="3.2" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#configuración-de-la-pantalla-principal"><i class="fa fa-check"></i><b>3.2</b> Configuración de la pantalla principal</a></li>
+<li class="chapter" data-level="3.3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#ubicación-de-los-datos"><i class="fa fa-check"></i><b>3.3</b> Ubicación de los datos</a></li>
+<li class="chapter" data-level="3.4" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#añadir-la-carpeta-de-trabajo-a-favoritos"><i class="fa fa-check"></i><b>3.4</b> Añadir la carpeta de trabajo a <em>Favoritos</em></a></li>
+<li class="chapter" data-level="3.5" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#guardar-el-proyecto"><i class="fa fa-check"></i><b>3.5</b> Guardar el proyecto</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="representación-de-capas.html"><a href="representación-de-capas.html"><i class="fa fa-check"></i><b>4</b> Representación de capas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="representación-de-capas.html"><a href="representación-de-capas.html#coordinate-reference-systems-crs"><i class="fa fa-check"></i><b>4.1</b> Coordinate Reference Systems (CRS)</a></li>
+<li class="chapter" data-level="4.2" data-path="representación-de-capas.html"><a href="representación-de-capas.html#añadir-capas"><i class="fa fa-check"></i><b>4.2</b> Añadir capas</a></li>
+<li class="chapter" data-level="4.3" data-path="representación-de-capas.html"><a href="representación-de-capas.html#cambiar-la-representación-de-una-capa"><i class="fa fa-check"></i><b>4.3</b> Cambiar la representación de una capa</a></li>
+<li class="chapter" data-level="4.4" data-path="representación-de-capas.html"><a href="representación-de-capas.html#acercar-o-alejar-las-capas"><i class="fa fa-check"></i><b>4.4</b> Acercar o alejar las capas</a></li>
+<li class="chapter" data-level="4.5" data-path="representación-de-capas.html"><a href="representación-de-capas.html#qgis1-complementos"><i class="fa fa-check"></i><b>4.5</b> Complementos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html"><i class="fa fa-check"></i><b>5</b> Explorar una capa</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#identificar-elementos-de-una-capa"><i class="fa fa-check"></i><b>5.1</b> Identificar elementos de una capa</a></li>
+<li class="chapter" data-level="5.2" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#seleccionar-elementos-mediante-la-tabla-de-atributos"><i class="fa fa-check"></i><b>5.2</b> Seleccionar elementos mediante la tabla de atributos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html"><i class="fa fa-check"></i><b>6</b> Operaciones sobre la tabla de atributos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#capas-con-solo-tabla-de-atributos"><i class="fa fa-check"></i><b>6.1</b> Capas con solo tabla de atributos</a></li>
+<li class="chapter" data-level="6.2" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#añadir-un-campo-a-la-tabla-de-atributos"><i class="fa fa-check"></i><b>6.2</b> Añadir un campo a la tabla de atributos</a></li>
+<li class="chapter" data-level="6.3" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#unir-tablas-de-atributos"><i class="fa fa-check"></i><b>6.3</b> Unir tablas de atributos</a></li>
+<li class="chapter" data-level="6.4" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#consultas-sobre-la-tabla-de-atributos"><i class="fa fa-check"></i><b>6.4</b> Consultas sobre la tabla de atributos</a></li>
+<li class="chapter" data-level="6.5" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#guardar-una-capa"><i class="fa fa-check"></i><b>6.5</b> Guardar una capa</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html"><i class="fa fa-check"></i><b>7</b> Añadir elementos a la representación las de capas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#mostrar-etiquetas"><i class="fa fa-check"></i><b>7.1</b> Mostrar etiquetas</a></li>
+<li class="chapter" data-level="7.2" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#representar-información-numérica"><i class="fa fa-check"></i><b>7.2</b> Representar información numérica</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html"><i class="fa fa-check"></i><b>8</b> Generar la salida del proyecto</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#guardar-como-una-imagen-o-pdf"><i class="fa fa-check"></i><b>8.1</b> Guardar como una imagen o PDF</a></li>
+<li class="chapter" data-level="8.2" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#imprimir-un-mapa"><i class="fa fa-check"></i><b>8.2</b> Imprimir un mapa</a></li>
+<li class="chapter" data-level="8.3" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#generar-un-mapa-para-la-web"><i class="fa fa-check"></i><b>8.3</b> Generar un mapa para la Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cartografía con <em>QGIS</em></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="añadir-elementos-a-la-representación-las-de-capas" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Añadir elementos a la representación las de capas<a href="añadir-elementos-a-la-representación-las-de-capas.html#añadir-elementos-a-la-representación-las-de-capas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="mostrar-etiquetas" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Mostrar etiquetas<a href="añadir-elementos-a-la-representación-las-de-capas.html#mostrar-etiquetas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Si queremos etiquetar los datos que representemos mediante alguna información disponible en la capa, podemos hacerlo en el apartado <em>Etiquetas</em> de la ventana <em>Layer properties</em> de la capa: se puede definir qué campo mostrar en el campo <em>Valor</em>, generalmente se usa el campo que contenga el nombre de los elementos. Las posibilidades de presentación son muy numerosas.</p>
+<p>Es posible que las tildes de los nombres no se muestren adecuadamente. Este problema generalmente se debe a que no está leyendo los datos con la codificación adecuada. Hay muchas codificaciones posibles pero, generalmente, el problema se debe a que la capa tiene codificación <code>UTF-8</code> y se ha considerado que tiene la del sistema (<code>System</code>) o viceversa. Si ocurre esto, podemos cambiar la codificación en el apartado <em>Fuente</em> de la misma ventana.</p>
+</div>
+<div id="representar-información-numérica" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Representar información numérica<a href="añadir-elementos-a-la-representación-las-de-capas.html#representar-información-numérica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Podemos etiquetar los elementos con campos de texto o numéricos. En el caso de datos numéricos, una forma alternativa de representar este tipo de información es mediante colores, generando un mapa de coropletas (también llamado mapa coropleto o coroplético), generalmente asociados a capas que representan polígonos.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-simbologia"></span>
+<img src="figuras_original/simbologia.png" alt="Definición de la simbología para representar un capa." width="90%" />
+<p class="caption">
+Figura 7.1: Definición de la simbología para representar un capa.
+</p>
+</div>
+<p>Para definir esta forma de representación, accedemos al apartado <em>Simbología</em> de la ventana <em>Layer properties</em> de la capa (figura <a href="añadir-elementos-a-la-representación-las-de-capas.html#fig:qgis-simbologia">7.1</a>). En lugar de <em>Símbolo único</em> seleccionamos <em>Graduado</em> en el primer campo de la ventana; en el campo valor, seleccionamos la columna a representar que ha de ser forzosamente de tipo numérico. De entre todas las posibilidades que ofrece, las fundamentales son elegir la rampa de color a utilizar y, en el campo <em>Modo</em>, el método de definición de intervalos junto con el número de clases en el campo <em>Clases</em>.</p>
+<p>Dependiendo del orden en que definamos los campos, es posible que debamos pulsar sobre el botón <em>Clasificar</em> para que realice la clasificación de los valores. Si hacemos cambios, mediante el botón <em>Borrar todo</em> se elimina la clasificación anterior (la nueva clasifación se añadiría pulsando sobre <em>Clasificar</em>).</p>
+<p>Si hemos definido previamente un nivel de transparencia para representar la capa mediante <em>Símbolo único</em>, podemos cambiarlo desde el apartado <em>Representación de capas</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-simbologia-histograma"></span>
+<img src="figuras_original/simbologia-histograma.png" alt="Histograma para la definición de la simbología de un capa." width="90%" />
+<p class="caption">
+Figura 7.2: Histograma para la definición de la simbología de un capa.
+</p>
+</div>
+<p>Adicionalmente, si seleccionamos la pestaña <em>Histograma</em> y pulsamos sobre el botón <em>Cargar valores</em>, nos muestra una representación de los valores de la variable seleccionada que puede ayudarnos a definir los intervalos (figura <a href="añadir-elementos-a-la-representación-las-de-capas.html#fig:qgis-simbologia-histograma">7.2</a>).</p>
+<p>Una vez pulsamos sobre el botón <em>Aceptar</em> para llevar a acabo la operación, el mapa se colorea según la rampa de colores seleccionada y la leyenda asociada se muestra en la ventana <em>Capas</em>, pulsando sobre la flecha a la izquierda del nombre de la capa.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="operaciones-sobre-la-tabla-de-atributos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="generar-la-salida-del-proyecto.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

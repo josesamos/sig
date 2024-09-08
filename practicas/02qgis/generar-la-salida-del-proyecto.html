@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 Generar la salida del proyecto | Cartografía con QGIS</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 Generar la salida del proyecto | Cartografía con QGIS" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 Generar la salida del proyecto | Cartografía con QGIS" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="añadir-elementos-a-la-representación-las-de-capas.html"/>
+<link rel="next" href="ejercicios.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> <em>QGIS</em></a></li>
+<li class="chapter" data-level="2" data-path="obtencion-datos-qgis1.html"><a href="obtencion-datos-qgis1.html"><i class="fa fa-check"></i><b>2</b> Obtención de los datos</a></li>
+<li class="chapter" data-level="3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html"><i class="fa fa-check"></i><b>3</b> Entorno de trabajo</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#cambiar-el-idioma"><i class="fa fa-check"></i><b>3.1</b> Cambiar el idioma</a></li>
+<li class="chapter" data-level="3.2" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#configuración-de-la-pantalla-principal"><i class="fa fa-check"></i><b>3.2</b> Configuración de la pantalla principal</a></li>
+<li class="chapter" data-level="3.3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#ubicación-de-los-datos"><i class="fa fa-check"></i><b>3.3</b> Ubicación de los datos</a></li>
+<li class="chapter" data-level="3.4" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#añadir-la-carpeta-de-trabajo-a-favoritos"><i class="fa fa-check"></i><b>3.4</b> Añadir la carpeta de trabajo a <em>Favoritos</em></a></li>
+<li class="chapter" data-level="3.5" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#guardar-el-proyecto"><i class="fa fa-check"></i><b>3.5</b> Guardar el proyecto</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="representación-de-capas.html"><a href="representación-de-capas.html"><i class="fa fa-check"></i><b>4</b> Representación de capas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="representación-de-capas.html"><a href="representación-de-capas.html#coordinate-reference-systems-crs"><i class="fa fa-check"></i><b>4.1</b> Coordinate Reference Systems (CRS)</a></li>
+<li class="chapter" data-level="4.2" data-path="representación-de-capas.html"><a href="representación-de-capas.html#añadir-capas"><i class="fa fa-check"></i><b>4.2</b> Añadir capas</a></li>
+<li class="chapter" data-level="4.3" data-path="representación-de-capas.html"><a href="representación-de-capas.html#cambiar-la-representación-de-una-capa"><i class="fa fa-check"></i><b>4.3</b> Cambiar la representación de una capa</a></li>
+<li class="chapter" data-level="4.4" data-path="representación-de-capas.html"><a href="representación-de-capas.html#acercar-o-alejar-las-capas"><i class="fa fa-check"></i><b>4.4</b> Acercar o alejar las capas</a></li>
+<li class="chapter" data-level="4.5" data-path="representación-de-capas.html"><a href="representación-de-capas.html#qgis1-complementos"><i class="fa fa-check"></i><b>4.5</b> Complementos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html"><i class="fa fa-check"></i><b>5</b> Explorar una capa</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#identificar-elementos-de-una-capa"><i class="fa fa-check"></i><b>5.1</b> Identificar elementos de una capa</a></li>
+<li class="chapter" data-level="5.2" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#seleccionar-elementos-mediante-la-tabla-de-atributos"><i class="fa fa-check"></i><b>5.2</b> Seleccionar elementos mediante la tabla de atributos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html"><i class="fa fa-check"></i><b>6</b> Operaciones sobre la tabla de atributos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#capas-con-solo-tabla-de-atributos"><i class="fa fa-check"></i><b>6.1</b> Capas con solo tabla de atributos</a></li>
+<li class="chapter" data-level="6.2" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#añadir-un-campo-a-la-tabla-de-atributos"><i class="fa fa-check"></i><b>6.2</b> Añadir un campo a la tabla de atributos</a></li>
+<li class="chapter" data-level="6.3" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#unir-tablas-de-atributos"><i class="fa fa-check"></i><b>6.3</b> Unir tablas de atributos</a></li>
+<li class="chapter" data-level="6.4" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#consultas-sobre-la-tabla-de-atributos"><i class="fa fa-check"></i><b>6.4</b> Consultas sobre la tabla de atributos</a></li>
+<li class="chapter" data-level="6.5" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#guardar-una-capa"><i class="fa fa-check"></i><b>6.5</b> Guardar una capa</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html"><i class="fa fa-check"></i><b>7</b> Añadir elementos a la representación las de capas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#mostrar-etiquetas"><i class="fa fa-check"></i><b>7.1</b> Mostrar etiquetas</a></li>
+<li class="chapter" data-level="7.2" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#representar-información-numérica"><i class="fa fa-check"></i><b>7.2</b> Representar información numérica</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html"><i class="fa fa-check"></i><b>8</b> Generar la salida del proyecto</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#guardar-como-una-imagen-o-pdf"><i class="fa fa-check"></i><b>8.1</b> Guardar como una imagen o PDF</a></li>
+<li class="chapter" data-level="8.2" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#imprimir-un-mapa"><i class="fa fa-check"></i><b>8.2</b> Imprimir un mapa</a></li>
+<li class="chapter" data-level="8.3" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#generar-un-mapa-para-la-web"><i class="fa fa-check"></i><b>8.3</b> Generar un mapa para la Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cartografía con <em>QGIS</em></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="generar-la-salida-del-proyecto" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Generar la salida del proyecto<a href="generar-la-salida-del-proyecto.html#generar-la-salida-del-proyecto" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>En este apartado vamos a generar salidas para nuestro proyecto en varios formatos.</p>
+<div id="guardar-como-una-imagen-o-pdf" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Guardar como una imagen o PDF<a href="generar-la-salida-del-proyecto.html#guardar-como-una-imagen-o-pdf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La manera más inmediata de generar los resultados de nuestro proyecto es guardarlo como un archivo de imagen o en formato pdf, pulsando sobre <em>Proyecto &gt; Importar/Exportar &gt; Exportar mapa a imagen…</em> o bien <em>Exportar mapa a PDF…</em>: genera una imagen o un archivo PDF a partir de lo que se muestra en el área de visualización.</p>
+</div>
+<div id="imprimir-un-mapa" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Imprimir un mapa<a href="generar-la-salida-del-proyecto.html#imprimir-un-mapa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-composicion-impresion"></span>
+<img src="figuras_original/composicion-impresion.png" alt="Acceso a composición de impresión en la barra de herramientas." width="30%" />
+<p class="caption">
+Figura 8.1: Acceso a composición de impresión en la barra de herramientas.
+</p>
+</div>
+<p><em>QGIS</em> incluye una herramienta de diseño de mapas, accesible pulsando sobre <em>Proyecto &gt; Nueva composición de impresión…</em> o bien desde la barra de herramientas (figura <a href="generar-la-salida-del-proyecto.html#fig:qgis-composicion-impresion">8.1</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-composicion-impresion-pantalla"></span>
+<img src="figuras_original/composicion-impresion-pantalla.png" alt="Pantalla de la herramienta de composición de impresión." width="100%" />
+<p class="caption">
+Figura 8.2: Pantalla de la herramienta de composición de impresión.
+</p>
+</div>
+<p>Esta herramienta, que se muestra en la figura <a href="generar-la-salida-del-proyecto.html#fig:qgis-composicion-impresion-pantalla">8.2</a>, nos permite definir los componentes adicionales de un mapa (escala, título, leyenda, etc.), partiendo de la imagen generada en el área de visualización.</p>
+<p>Para añadir la imagen del área de visualización, pulsamos sobre <em>Añadir mapa</em> en la columna de la izquierda y, a continuación, <em>pulsando-arrastrando-soltando</em>, trazamos sobre la superficie de trabajo el rectángulo donde se situará el mapa.</p>
+<p>Usando la misma barra de herramientas de la izquierda añadimos:</p>
+<ul>
+<li>título (<em>Añadir Etiqueta</em>),</li>
+<li>escala (<em>Añadir Barra de escala</em>),</li>
+<li>leyenda (<em>Añadir Leyenda</em>),</li>
+<li>flecha del norte (<em>Añadir Flecha del Norte</em>).</li>
+</ul>
+<p>Las propiedades de cada elemento añadido se pueden definir en la ventana situada en la parte derecha, seleccionando la pestaña <em>Propiedades del elemento</em> (en la parte inferior).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-composicion-impresion-leyenda"></span>
+<img src="figuras_original/composicion-impresion-leyenda.png" alt="Configuración de la leyenda del mapa." width="45%" />
+<p class="caption">
+Figura 8.3: Configuración de la leyenda del mapa.
+</p>
+</div>
+<p>Uno de los elementos a configurar es la leyenda. A partir de las capas definidas se genera automáticamente pero, demarcando el campo <em>Auto actualizar</em> (figura <a href="generar-la-salida-del-proyecto.html#fig:qgis-composicion-impresion-leyenda">8.3</a>) permite editar los elementos incluidos.</p>
+<p>Cuando hayamos acabado la definición, podemos exportarlo como PDF pulsando sobre <em>Diseño &gt; Exportar como PDF…</em>.</p>
+<p>Cuando cerramos la herramienta de composición, desde QGIS podemos acceder a las composiciones previamente diseñadas pulsando sobre <em>Proyecto &gt; Administrador de composiciones…</em>.</p>
+</div>
+<div id="generar-un-mapa-para-la-web" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Generar un mapa para la Web<a href="generar-la-salida-del-proyecto.html#generar-un-mapa-para-la-web" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Si queremos generar un mapa para la Web a partir del proyecto actual, podemos usar el complemento <em>qgis2web</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-qgis2web"></span>
+<img src="figuras_original/qgis2web.png" alt="Acceso al complemento qgis2web." width="95%" />
+<p class="caption">
+Figura 8.4: Acceso al complemento <em>qgis2web</em>.
+</p>
+</div>
+<p>Una vez instalado, accedemos a él desde la opción <em>Web &gt; qgis2web &gt; Create Web map</em> (figura <a href="generar-la-salida-del-proyecto.html#fig:qgis-qgis2web">8.4</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-qgis2web-pantalla"></span>
+<img src="figuras_original/qgis2web-pantalla.png" alt="Ventana de qgis2web." width="85%" />
+<p class="caption">
+Figura 8.5: Ventana de <em>qgis2web</em>.
+</p>
+</div>
+<p>En la ventana que se abre (figura <a href="generar-la-salida-del-proyecto.html#fig:qgis-qgis2web-pantalla">8.5</a>), seleccionamos las capas que queremos que se muestren. Pulsando sobre el botón <em>Update preview</em> podemos ver el resultado que obtenemos según la selección realizada. Si pulsamos sobre el botón <em>Export</em>, se realiza la generación de los archivos necesarios usando la librería indicada (<em>OpenLayers</em>, <em>Leaflet</em> o <em>Mapbox GL JS</em>) y el resultado se puede ver de forma inmediata en el navegador<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>. Genera los archivos necesarios para incluir directamente el resultado en nuestra aplicación Web. Se puede configurar la ubicación de estos archivos desde la pestaña <em>Export</em>.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p>Si no se abre directamente, basta con abrir con el navegador el archivo <code>index.html</code>, situado en la carpeta que hemos indicado para que se guarde el resultado.<a href="generar-la-salida-del-proyecto.html#fnref11" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="añadir-elementos-a-la-representación-las-de-capas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ejercicios.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

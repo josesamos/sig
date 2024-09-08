@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Obtención de los datos | Cartografía con QGIS</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Obtención de los datos | Cartografía con QGIS" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Obtención de los datos | Cartografía con QGIS" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="entorno-de-trabajo.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> <em>QGIS</em></a></li>
+<li class="chapter" data-level="2" data-path="obtencion-datos-qgis1.html"><a href="obtencion-datos-qgis1.html"><i class="fa fa-check"></i><b>2</b> Obtención de los datos</a></li>
+<li class="chapter" data-level="3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html"><i class="fa fa-check"></i><b>3</b> Entorno de trabajo</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#cambiar-el-idioma"><i class="fa fa-check"></i><b>3.1</b> Cambiar el idioma</a></li>
+<li class="chapter" data-level="3.2" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#configuración-de-la-pantalla-principal"><i class="fa fa-check"></i><b>3.2</b> Configuración de la pantalla principal</a></li>
+<li class="chapter" data-level="3.3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#ubicación-de-los-datos"><i class="fa fa-check"></i><b>3.3</b> Ubicación de los datos</a></li>
+<li class="chapter" data-level="3.4" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#añadir-la-carpeta-de-trabajo-a-favoritos"><i class="fa fa-check"></i><b>3.4</b> Añadir la carpeta de trabajo a <em>Favoritos</em></a></li>
+<li class="chapter" data-level="3.5" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#guardar-el-proyecto"><i class="fa fa-check"></i><b>3.5</b> Guardar el proyecto</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="representación-de-capas.html"><a href="representación-de-capas.html"><i class="fa fa-check"></i><b>4</b> Representación de capas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="representación-de-capas.html"><a href="representación-de-capas.html#coordinate-reference-systems-crs"><i class="fa fa-check"></i><b>4.1</b> Coordinate Reference Systems (CRS)</a></li>
+<li class="chapter" data-level="4.2" data-path="representación-de-capas.html"><a href="representación-de-capas.html#añadir-capas"><i class="fa fa-check"></i><b>4.2</b> Añadir capas</a></li>
+<li class="chapter" data-level="4.3" data-path="representación-de-capas.html"><a href="representación-de-capas.html#cambiar-la-representación-de-una-capa"><i class="fa fa-check"></i><b>4.3</b> Cambiar la representación de una capa</a></li>
+<li class="chapter" data-level="4.4" data-path="representación-de-capas.html"><a href="representación-de-capas.html#acercar-o-alejar-las-capas"><i class="fa fa-check"></i><b>4.4</b> Acercar o alejar las capas</a></li>
+<li class="chapter" data-level="4.5" data-path="representación-de-capas.html"><a href="representación-de-capas.html#qgis1-complementos"><i class="fa fa-check"></i><b>4.5</b> Complementos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html"><i class="fa fa-check"></i><b>5</b> Explorar una capa</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#identificar-elementos-de-una-capa"><i class="fa fa-check"></i><b>5.1</b> Identificar elementos de una capa</a></li>
+<li class="chapter" data-level="5.2" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#seleccionar-elementos-mediante-la-tabla-de-atributos"><i class="fa fa-check"></i><b>5.2</b> Seleccionar elementos mediante la tabla de atributos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html"><i class="fa fa-check"></i><b>6</b> Operaciones sobre la tabla de atributos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#capas-con-solo-tabla-de-atributos"><i class="fa fa-check"></i><b>6.1</b> Capas con solo tabla de atributos</a></li>
+<li class="chapter" data-level="6.2" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#añadir-un-campo-a-la-tabla-de-atributos"><i class="fa fa-check"></i><b>6.2</b> Añadir un campo a la tabla de atributos</a></li>
+<li class="chapter" data-level="6.3" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#unir-tablas-de-atributos"><i class="fa fa-check"></i><b>6.3</b> Unir tablas de atributos</a></li>
+<li class="chapter" data-level="6.4" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#consultas-sobre-la-tabla-de-atributos"><i class="fa fa-check"></i><b>6.4</b> Consultas sobre la tabla de atributos</a></li>
+<li class="chapter" data-level="6.5" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#guardar-una-capa"><i class="fa fa-check"></i><b>6.5</b> Guardar una capa</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html"><i class="fa fa-check"></i><b>7</b> Añadir elementos a la representación las de capas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#mostrar-etiquetas"><i class="fa fa-check"></i><b>7.1</b> Mostrar etiquetas</a></li>
+<li class="chapter" data-level="7.2" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#representar-información-numérica"><i class="fa fa-check"></i><b>7.2</b> Representar información numérica</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html"><i class="fa fa-check"></i><b>8</b> Generar la salida del proyecto</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#guardar-como-una-imagen-o-pdf"><i class="fa fa-check"></i><b>8.1</b> Guardar como una imagen o PDF</a></li>
+<li class="chapter" data-level="8.2" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#imprimir-un-mapa"><i class="fa fa-check"></i><b>8.2</b> Imprimir un mapa</a></li>
+<li class="chapter" data-level="8.3" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#generar-un-mapa-para-la-web"><i class="fa fa-check"></i><b>8.3</b> Generar un mapa para la Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cartografía con <em>QGIS</em></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="obtencion-datos-qgis1" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Obtención de los datos<a href="obtencion-datos-qgis1.html#obtencion-datos-qgis1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Vamos a trabajar con datos elaborados a partir de datos obtenidos de <span class="citation">IDE (<a href="#ref-ideandalucia2017">2017</a>)</span> e <span class="citation">INE (<a href="#ref-ine2019">2019</a>)</span> para los municipios de la provincia de Granada hasta el año 2018, disponibles en <a href="https://doi.org/10.6084/m9.figshare.11295644.v1">https://doi.org/10.6084/m9.figshare.11295644.v1</a>.</p>
+<p>Vamos a completar estos datos con otros obtenidos del <a href="https://www.ine.es/dynt3/inebase/index.htm?padre=525">INE (Instituto Nacional de Estadística)</a>, de 2019 en adelante. Para cada municipio de Granada, obtendremos los datos del número de mujeres y hombres contabilizados cada 1 de Enero, desde el año 2019 hasta el último año publicado.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ine-provincia"></span>
+<img src="figuras_original/ine01.png" alt="Descarga de datos del [Padrón municipal (INE)](https://www.ine.es/dynt3/inebase/index.htm?padre=525)." width="100%" />
+<p class="caption">
+Figura 2.1: Descarga de datos del <a href="https://www.ine.es/dynt3/inebase/index.htm?padre=525">Padrón municipal (INE)</a>.
+</p>
+</div>
+<p>Los datos de las distintas provincias se pueden obtener del <a href="https://www.ine.es/dynt3/inebase/index.htm?padre=525">INE</a>, cuya página se muestra en la figura <a href="obtencion-datos-qgis1.html#fig:ine-provincia">2.1</a>. Pulsando sobre el enlace de la provincia de Granada (<em>Granada: Población por municipios y sexo</em>), accedemos a la pantalla de consulta para sus datos.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ine-provincia-consulta"></span>
+<img src="figuras_original/ine02.png" alt="Configuración de la consulta." width="100%" />
+<p class="caption">
+Figura 2.2: Configuración de la consulta.
+</p>
+</div>
+<p>La figura <a href="obtencion-datos-qgis1.html#fig:ine-provincia-consulta">2.2</a> muestra la pantalla de configuración de la consulta: en ella podemos seleccionar los valores a consultar y la configuración de cabeceras de filas y columnas. En particular, seleccionamos los años posteriores a 2018 en el campo <em>Periodo</em> y todos los valores del campo <em>Sexo</em>. Todos los valores del campo <em>Municipios</em> están seleccionados.</p>
+<p>En lo que se refiere a la forma de presentación de la tabla, dejamos el campo <em>Municipios</em> en la filas y, <em>pulsando-arrastrando-soltando</em>, definimos <em>Periodo</em> y <em>Sexo</em> en la columnas. A continuación, pulsamos sobre el botón <em>Consultar selección</em> (figura <a href="obtencion-datos-qgis1.html#fig:ine-provincia-consulta">2.2</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ine-provincia-resultado"></span>
+<img src="figuras_original/ine03.png" alt="Resultado de la consulta." width="100%" />
+<p class="caption">
+Figura 2.3: Resultado de la consulta.
+</p>
+</div>
+<p>En la figura <a href="obtencion-datos-qgis1.html#fig:ine-provincia-resultado">2.3</a> se muestra el resultado de la consulta para los datos disponibles en 2021. Descargamos el resultado en forma de archivo pulsando sobre el botón <em>Descargar</em> (en la parte superior derecha). Nos permite seleccionar el formato de los datos. Si queremos que se conserve la estructura de la tabla, debemos seleccionar uno de los formatos de <em>Excel</em><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ine-provincia-excel"></span>
+<img src="figuras_original/excel01.png" alt="Resultado de la consulta en *Excel*." width="100%" />
+<p class="caption">
+Figura 2.4: Resultado de la consulta en <em>Excel</em>.
+</p>
+</div>
+<p>La figura <a href="obtencion-datos-qgis1.html#fig:ine-provincia-excel">2.4</a> muestra parte del contenido del archivo <em>Excel</em> obtenido. La tabla tiene una cabecera y un pie (no mostrado en la figura) que debemos eliminar. Adicionalmente, cada columna debe tener un nombre de campo adecuado, como combinación de los datos que muestra.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ine-provincia-excel-mod"></span>
+<img src="figuras_original/excel02.png" alt="Resultado de la consulta en *Excel* modificado." width="100%" />
+<p class="caption">
+Figura 2.5: Resultado de la consulta en <em>Excel</em> modificado.
+</p>
+</div>
+<p>En la figura <a href="obtencion-datos-qgis1.html#fig:ine-provincia-excel-mod">2.5</a> podemos ver parte del contenido del archivo <em>Excel</em> una vez modificado: se le ha añadido el nombre a cada columna en función de los datos que contiene, en particular, para los datos del censo se incluye el periodo y una letra para cada valor del campo <em>Sexo</em> (<code>T</code>, <code>H</code> y <code>M</code> para <code>Total</code>, <code>Hombres</code> y <code>Mujeres</code>, respectivamente). También se han eliminado las filas que componen el pie de la tabla.</p>
+
+</div>
+<h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-ideandalucia2017" class="csl-entry">
+IDE, Andalucía. 2017. <em>Infraestructura de Datos Espaciales de Andalucía</em>. Junta de Andalucía, http://www.ideandalucia.es.
+</div>
+<div id="ref-ine2019" class="csl-entry">
+INE. 2019. <em>INEbase / Nomenclátor: Población Del Padrón Continuo Por Unidad Poblacional</em>. Instituto Nacional de Estadística, http://www.ine.es/nomen2/index.do.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Si usamos la versión 3 de <em>QGIS</em>, deberemos descargar el archivo en formato <strong>xlsx</strong> ya que en formato <em>xls</em> no permite modificar los datos de la tabla.<a href="obtencion-datos-qgis1.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="entorno-de-trabajo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

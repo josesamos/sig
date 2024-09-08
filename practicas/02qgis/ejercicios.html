@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ejercicios | Cartografía con QGIS</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Ejercicios | Cartografía con QGIS" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ejercicios | Cartografía con QGIS" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="generar-la-salida-del-proyecto.html"/>
+<link rel="next" href="referencias.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> <em>QGIS</em></a></li>
+<li class="chapter" data-level="2" data-path="obtencion-datos-qgis1.html"><a href="obtencion-datos-qgis1.html"><i class="fa fa-check"></i><b>2</b> Obtención de los datos</a></li>
+<li class="chapter" data-level="3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html"><i class="fa fa-check"></i><b>3</b> Entorno de trabajo</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#cambiar-el-idioma"><i class="fa fa-check"></i><b>3.1</b> Cambiar el idioma</a></li>
+<li class="chapter" data-level="3.2" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#configuración-de-la-pantalla-principal"><i class="fa fa-check"></i><b>3.2</b> Configuración de la pantalla principal</a></li>
+<li class="chapter" data-level="3.3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#ubicación-de-los-datos"><i class="fa fa-check"></i><b>3.3</b> Ubicación de los datos</a></li>
+<li class="chapter" data-level="3.4" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#añadir-la-carpeta-de-trabajo-a-favoritos"><i class="fa fa-check"></i><b>3.4</b> Añadir la carpeta de trabajo a <em>Favoritos</em></a></li>
+<li class="chapter" data-level="3.5" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#guardar-el-proyecto"><i class="fa fa-check"></i><b>3.5</b> Guardar el proyecto</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="representación-de-capas.html"><a href="representación-de-capas.html"><i class="fa fa-check"></i><b>4</b> Representación de capas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="representación-de-capas.html"><a href="representación-de-capas.html#coordinate-reference-systems-crs"><i class="fa fa-check"></i><b>4.1</b> Coordinate Reference Systems (CRS)</a></li>
+<li class="chapter" data-level="4.2" data-path="representación-de-capas.html"><a href="representación-de-capas.html#añadir-capas"><i class="fa fa-check"></i><b>4.2</b> Añadir capas</a></li>
+<li class="chapter" data-level="4.3" data-path="representación-de-capas.html"><a href="representación-de-capas.html#cambiar-la-representación-de-una-capa"><i class="fa fa-check"></i><b>4.3</b> Cambiar la representación de una capa</a></li>
+<li class="chapter" data-level="4.4" data-path="representación-de-capas.html"><a href="representación-de-capas.html#acercar-o-alejar-las-capas"><i class="fa fa-check"></i><b>4.4</b> Acercar o alejar las capas</a></li>
+<li class="chapter" data-level="4.5" data-path="representación-de-capas.html"><a href="representación-de-capas.html#qgis1-complementos"><i class="fa fa-check"></i><b>4.5</b> Complementos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html"><i class="fa fa-check"></i><b>5</b> Explorar una capa</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#identificar-elementos-de-una-capa"><i class="fa fa-check"></i><b>5.1</b> Identificar elementos de una capa</a></li>
+<li class="chapter" data-level="5.2" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#seleccionar-elementos-mediante-la-tabla-de-atributos"><i class="fa fa-check"></i><b>5.2</b> Seleccionar elementos mediante la tabla de atributos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html"><i class="fa fa-check"></i><b>6</b> Operaciones sobre la tabla de atributos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#capas-con-solo-tabla-de-atributos"><i class="fa fa-check"></i><b>6.1</b> Capas con solo tabla de atributos</a></li>
+<li class="chapter" data-level="6.2" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#añadir-un-campo-a-la-tabla-de-atributos"><i class="fa fa-check"></i><b>6.2</b> Añadir un campo a la tabla de atributos</a></li>
+<li class="chapter" data-level="6.3" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#unir-tablas-de-atributos"><i class="fa fa-check"></i><b>6.3</b> Unir tablas de atributos</a></li>
+<li class="chapter" data-level="6.4" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#consultas-sobre-la-tabla-de-atributos"><i class="fa fa-check"></i><b>6.4</b> Consultas sobre la tabla de atributos</a></li>
+<li class="chapter" data-level="6.5" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#guardar-una-capa"><i class="fa fa-check"></i><b>6.5</b> Guardar una capa</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html"><i class="fa fa-check"></i><b>7</b> Añadir elementos a la representación las de capas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#mostrar-etiquetas"><i class="fa fa-check"></i><b>7.1</b> Mostrar etiquetas</a></li>
+<li class="chapter" data-level="7.2" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#representar-información-numérica"><i class="fa fa-check"></i><b>7.2</b> Representar información numérica</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html"><i class="fa fa-check"></i><b>8</b> Generar la salida del proyecto</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#guardar-como-una-imagen-o-pdf"><i class="fa fa-check"></i><b>8.1</b> Guardar como una imagen o PDF</a></li>
+<li class="chapter" data-level="8.2" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#imprimir-un-mapa"><i class="fa fa-check"></i><b>8.2</b> Imprimir un mapa</a></li>
+<li class="chapter" data-level="8.3" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#generar-un-mapa-para-la-web"><i class="fa fa-check"></i><b>8.3</b> Generar un mapa para la Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cartografía con <em>QGIS</em></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ejercicios" class="section level1 unnumbered hasAnchor">
+<h1>Ejercicios<a href="ejercicios.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Realiza los ejercicios y entrega un solo documento en formato PDF en la tarea correspondiente de PRADO.</p>
+<div id="ejercicio-1.-datos-de-granada" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 1. Datos de Granada<a href="ejercicios.html#ejercicio-1.-datos-de-granada" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Descarga de <a href="https://doi.org/10.6084/m9.figshare.11295644.v1">https://doi.org/10.6084/m9.figshare.11295644.v1</a> el archivo <code>Granada.zip</code> que contiene los archivos de las capas que se usarán como fuente de datos. Extrae todos archivos y sitúalos en una carpeta de trabajo. No es necesario documentar la realización de este apartado.</p>
+<p>Obtén los datos del censo de los municipios de Granada para los años posteriores a 2018 en formato de tabla. Documenta este ejercicio mediante una captura de pantalla de la tabla de datos con las cabeceras de las columnas con nombres definidos según el criterio descrito en esta sección.</p>
+</div>
+<div id="ejercicio-2.-representación-inicial" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 2. Representación inicial<a href="ejercicios.html#ejercicio-2.-representación-inicial" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Representa las capas de la provincia de Granada facilitadas junto a una capa obtenida de la Web (distinta a la utilizada en esta actividad).</p>
+<ul>
+<li>Define colores adecuados para los elementos representados en las capas.</li>
+<li>Define un nivel de transparencia en la capa de municipios.</li>
+<li>Representa los datos a una escala definida por un número “redondo”.</li>
+<li>Guarda el proyecto de manera que tu usuario de correo electrónico de tu cuenta de la Universidad forme parte del nombre del archivo.</li>
+</ul>
+<p>Para documentar la realización del ejercicio, captura <strong>una pantalla completa de <em>QGIS</em></strong> donde se muestre la lista de capas representadas y el resultado obtenido (por ejemplo, las figuras <a href="entorno-de-trabajo.html#fig:qgis-pantalla-principal">3.3</a>, <a href="representación-de-capas.html#fig:qgis-representa-inicial">4.3</a> y <a href="representación-de-capas.html#fig:qgis-complementos-quickmap-capa">4.10</a> son capturas de pantallas completas de <em>QGIS</em>).</p>
+</div>
+<div id="ejercicio-3.-actualizar-datos-del-censo" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 3. Actualizar datos del censo<a href="ejercicios.html#ejercicio-3.-actualizar-datos-del-censo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para la capa de municipios, actualiza la tabla de atributos con los datos del censo para los últimos años disponibles (los posteriores a 2018).</p>
+<ul>
+<li><p>Una vez actualizada la tabla de atributos, define un campo llamado <code>Incremento</code> como el resultado de restar el total de la población del último año respecto al año anterior.</p></li>
+<li><p>Define un filtro que seleccione los municipios que hayan aumentado su población en el último año.</p></li>
+<li><p>Guarda la capa con todas las filas como un <em>shapefile</em> cuyo nombre incluya tu nombre de usuario de correo.</p></li>
+<li><p>Guarda la capa filtrada como un <em>shapefile</em> cuyo nombre incluya tu nombre de usuario de correo y la palabra “filtro”.</p></li>
+</ul>
+<p>Para documentar la realización del ejercicio, captura una pantalla completa de la tabla de atributos de cada una de las capas guardadas donde se vean los nuevos campos añadidos.</p>
+</div>
+<div id="ejercicio-4.-etiquetas-y-simbología" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 4. Etiquetas y simbología<a href="ejercicios.html#ejercicio-4.-etiquetas-y-simbología" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para la capa de municipios, una vez actualizada con los datos del censo:</p>
+<ul>
+<li><p>Define un campo llamado <code>tpc_inc</code> que represente el porcentaje de incremento de la población del último año respecto al año anterior.</p></li>
+<li><p>Representa el mapa mediante coropletas basadas en el campo <code>tpc_inc</code> para todos los municipios de la provincia.</p></li>
+</ul>
+<p>Define etiquetas para alguna de las capas.</p>
+<p>Para documentar la realización del ejercicio, captura una pantalla completa de <em>QGIS</em> donde se muestre el resultado, junto con la leyenda de colores en la ventana <em>Capas</em>.</p>
+</div>
+<div id="ejercicio-5.-resultado-del-proyecto" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 5. Resultado del proyecto<a href="ejercicios.html#ejercicio-5.-resultado-del-proyecto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Genera una composición de impresión cuyo nombre sea tu nombre de usuario de correo, basada en el proyecto, que incluya un mapa, título, escala, leyenda y flecha del norte.</p>
+<p>Genera un mapa para la Web a partir del proyecto.</p>
+<p>Para documentar la realización del ejercicio, captura una pantalla completa de la herramienta de composición de impresión y otra del mapa para la Web generado.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="generar-la-salida-del-proyecto.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

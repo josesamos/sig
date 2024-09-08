@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Operaciones sobre la tabla de atributos | Cartografía con QGIS</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Operaciones sobre la tabla de atributos | Cartografía con QGIS" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Operaciones sobre la tabla de atributos | Cartografía con QGIS" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="explorar-una-capa.html"/>
+<link rel="next" href="añadir-elementos-a-la-representación-las-de-capas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> <em>QGIS</em></a></li>
+<li class="chapter" data-level="2" data-path="obtencion-datos-qgis1.html"><a href="obtencion-datos-qgis1.html"><i class="fa fa-check"></i><b>2</b> Obtención de los datos</a></li>
+<li class="chapter" data-level="3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html"><i class="fa fa-check"></i><b>3</b> Entorno de trabajo</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#cambiar-el-idioma"><i class="fa fa-check"></i><b>3.1</b> Cambiar el idioma</a></li>
+<li class="chapter" data-level="3.2" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#configuración-de-la-pantalla-principal"><i class="fa fa-check"></i><b>3.2</b> Configuración de la pantalla principal</a></li>
+<li class="chapter" data-level="3.3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#ubicación-de-los-datos"><i class="fa fa-check"></i><b>3.3</b> Ubicación de los datos</a></li>
+<li class="chapter" data-level="3.4" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#añadir-la-carpeta-de-trabajo-a-favoritos"><i class="fa fa-check"></i><b>3.4</b> Añadir la carpeta de trabajo a <em>Favoritos</em></a></li>
+<li class="chapter" data-level="3.5" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html#guardar-el-proyecto"><i class="fa fa-check"></i><b>3.5</b> Guardar el proyecto</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="representación-de-capas.html"><a href="representación-de-capas.html"><i class="fa fa-check"></i><b>4</b> Representación de capas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="representación-de-capas.html"><a href="representación-de-capas.html#coordinate-reference-systems-crs"><i class="fa fa-check"></i><b>4.1</b> Coordinate Reference Systems (CRS)</a></li>
+<li class="chapter" data-level="4.2" data-path="representación-de-capas.html"><a href="representación-de-capas.html#añadir-capas"><i class="fa fa-check"></i><b>4.2</b> Añadir capas</a></li>
+<li class="chapter" data-level="4.3" data-path="representación-de-capas.html"><a href="representación-de-capas.html#cambiar-la-representación-de-una-capa"><i class="fa fa-check"></i><b>4.3</b> Cambiar la representación de una capa</a></li>
+<li class="chapter" data-level="4.4" data-path="representación-de-capas.html"><a href="representación-de-capas.html#acercar-o-alejar-las-capas"><i class="fa fa-check"></i><b>4.4</b> Acercar o alejar las capas</a></li>
+<li class="chapter" data-level="4.5" data-path="representación-de-capas.html"><a href="representación-de-capas.html#qgis1-complementos"><i class="fa fa-check"></i><b>4.5</b> Complementos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html"><i class="fa fa-check"></i><b>5</b> Explorar una capa</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#identificar-elementos-de-una-capa"><i class="fa fa-check"></i><b>5.1</b> Identificar elementos de una capa</a></li>
+<li class="chapter" data-level="5.2" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#seleccionar-elementos-mediante-la-tabla-de-atributos"><i class="fa fa-check"></i><b>5.2</b> Seleccionar elementos mediante la tabla de atributos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html"><i class="fa fa-check"></i><b>6</b> Operaciones sobre la tabla de atributos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#capas-con-solo-tabla-de-atributos"><i class="fa fa-check"></i><b>6.1</b> Capas con solo tabla de atributos</a></li>
+<li class="chapter" data-level="6.2" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#añadir-un-campo-a-la-tabla-de-atributos"><i class="fa fa-check"></i><b>6.2</b> Añadir un campo a la tabla de atributos</a></li>
+<li class="chapter" data-level="6.3" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#unir-tablas-de-atributos"><i class="fa fa-check"></i><b>6.3</b> Unir tablas de atributos</a></li>
+<li class="chapter" data-level="6.4" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#consultas-sobre-la-tabla-de-atributos"><i class="fa fa-check"></i><b>6.4</b> Consultas sobre la tabla de atributos</a></li>
+<li class="chapter" data-level="6.5" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#guardar-una-capa"><i class="fa fa-check"></i><b>6.5</b> Guardar una capa</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html"><i class="fa fa-check"></i><b>7</b> Añadir elementos a la representación las de capas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#mostrar-etiquetas"><i class="fa fa-check"></i><b>7.1</b> Mostrar etiquetas</a></li>
+<li class="chapter" data-level="7.2" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#representar-información-numérica"><i class="fa fa-check"></i><b>7.2</b> Representar información numérica</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html"><i class="fa fa-check"></i><b>8</b> Generar la salida del proyecto</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#guardar-como-una-imagen-o-pdf"><i class="fa fa-check"></i><b>8.1</b> Guardar como una imagen o PDF</a></li>
+<li class="chapter" data-level="8.2" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#imprimir-un-mapa"><i class="fa fa-check"></i><b>8.2</b> Imprimir un mapa</a></li>
+<li class="chapter" data-level="8.3" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#generar-un-mapa-para-la-web"><i class="fa fa-check"></i><b>8.3</b> Generar un mapa para la Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cartografía con <em>QGIS</em></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="operaciones-sobre-la-tabla-de-atributos" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Operaciones sobre la tabla de atributos<a href="operaciones-sobre-la-tabla-de-atributos.html#operaciones-sobre-la-tabla-de-atributos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Una vez mostrada la selección de registros de la tabla de atributos, en este apartado vamos a realizar varias operaciones de modificación de la misma.</p>
+<div id="capas-con-solo-tabla-de-atributos" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Capas con solo tabla de atributos<a href="operaciones-sobre-la-tabla-de-atributos.html#capas-con-solo-tabla-de-atributos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-capa-tabla-atributos"></span>
+<img src="figuras_original/capa-tabla-atributos.png" alt="Capa de tabla de atributos." width="100%" />
+<p class="caption">
+Figura 6.1: Capa de tabla de atributos.
+</p>
+</div>
+<p>Cada capa tiene su propia tabla de atributos pero también podemos tener capas con solo la tabla de atributos, sin elementos geométricos. Si añadimos una de estas capas a la ventana <em>Capas</em>, no cambia nada en la representación que realiza <em>QGIS</em>.</p>
+<p>En la figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-capa-tabla-atributos">6.1</a>, se muestra la tabla de atributos de la capa con los datos del censo de los municipios de Granada para los últimos años.</p>
+<p>Como veremos a continuación, podemos trabajar con estos datos para combinarlos con otras capas, por eso necesitamos añadirlos al conjunto de capas. Para este caso en particular, nos interesará combinar los datos del censo actuales con los almacenados en la capa de municipios, que contiene los datos del censo desde 2014 a 2018 asociados a información geográfica de los municipios.</p>
+</div>
+<div id="añadir-un-campo-a-la-tabla-de-atributos" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Añadir un campo a la tabla de atributos<a href="operaciones-sobre-la-tabla-de-atributos.html#añadir-un-campo-a-la-tabla-de-atributos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Se puede modificar la tabla de atributos de cualquier capa. Una de las modificaciones más frecuentes es añadir un campo nuevo definido a partir de otros campos. En este ejemplo, vamos a modificar la tabla de atributos de la capa que solo contiene esa tabla. Todas las tablas de atributos se modifican de la misma forma.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-tabla-atributos-conmutar"></span>
+<img src="figuras_original/tabla-atributos-conmutar.png" alt="Conmutar el modo edición." width="100%" />
+<p class="caption">
+Figura 6.2: Conmutar el modo edición.
+</p>
+</div>
+<p>Para modificar la tabla de atributos de una capa, en primer lugar debemos pulsar sobre el icono <em>Conmutar el modo edición</em> (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-conmutar">6.2</a>), así se activan los iconos de las operaciones de modificación no activos previamente<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-tabla-atributos-calculadora-abrir"></span>
+<img src="figuras_original/tabla-atributos-calculadora-abrir.png" alt="Abrir calculadora de campos." width="90%" />
+<p class="caption">
+Figura 6.3: Abrir calculadora de campos.
+</p>
+</div>
+<p>Para añadir un nuevo campo a partir de otros, podemos usar la calculadora de campos. Para ello pulsamos sobre el icono <em>Abrir calculadora de campos</em> de la barra de herramientas de la tabla de atributos (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-calculadora-abrir">6.3</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-tabla-atributos-calculadora"></span>
+<img src="figuras_original/tabla-atributos-calculadora.png" alt="Calculadora de campos." width="80%" />
+<p class="caption">
+Figura 6.4: Calculadora de campos.
+</p>
+</div>
+<p>Mediante la calculadora de campos, definimos el nombre y tipo del nuevo campo, así como la expresión para obtener sus valores. En la definición de esta función podemos usar funciones de varios tipos y los valores de otros campos (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-calculadora">6.4</a>). Por ejemplo, si queremos obtener el código de cada municipio, observamos que corresponde a las 5 primeras posiciones del campo <code>Municipio</code><a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>, se pueden obtener mediante la función <code>substr</code>, disponible en el grupo de funciones <code>Cadena</code>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-tabla-atributos-calculadora-resultado"></span>
+<img src="figuras_original/tabla-atributos-calculadora-resultado.png" alt="Resultado de la definición de un campo calculado." width="100%" />
+<p class="caption">
+Figura 6.5: Resultado de la definición de un campo calculado.
+</p>
+</div>
+<p>El resultado obtenido se muestra en la figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-calculadora-resultado">6.5</a>: la tabla incluye una nueva columna con el nombre definido (<code>Código</code>) y los valores devueltos por la función asociada.</p>
+<p>Al añadir un campo a la tabla de atributos en una capa de la ventana <em>Capas</em> el campo se añade físicamente al archivo de la capa, es decir, <strong>se modifica el archivo original de la capa</strong>.</p>
+</div>
+<div id="unir-tablas-de-atributos" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Unir tablas de atributos<a href="operaciones-sobre-la-tabla-de-atributos.html#unir-tablas-de-atributos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para unir dos tablas de atributos, estas deben compartir algún campo con <strong>valores</strong> en común, los nombres de los campos utilizados para definir la unión no es relevante.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-tabla-atributos-union"></span>
+<img src="figuras_original/tabla-atributos-union.png" alt="Operación de unión en la ventana Layer Properties de una capa." width="90%" />
+<p class="caption">
+Figura 6.6: Operación de unión en la ventana <em>Layer Properties</em> de una capa.
+</p>
+</div>
+<p>La operación de unión se define desde el apartado <em>Uniones</em> en la ventana <em>Layer Properties</em> de la capa donde queremos que quede el resultado de la operación (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-union">6.6</a>). En este caso, vamos a completar los datos de la capa de municipios con los datos actuales obtenidos de censo. Para definir una nueva unión, pulsamos sobre el botón <em>Añadir unión nueva</em>, como resultado se abre la ventana <em>Añadir unión vectorial</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-tabla-atributos-union-def"></span>
+<img src="figuras_original/tabla-atributos-union-def.png" alt="Ventana de definición de la unión." width="60%" />
+<p class="caption">
+Figura 6.7: Ventana de definición de la unión.
+</p>
+</div>
+<p>En la ventana <em>Añadir unión vectorial</em> (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-union-def">6.7</a>), seleccionamos la capa con la que vamos a definir la unión y los campos que comparten valores, en este caso, los campos que contienen los códigos de los municipios.</p>
+<p>Los campos de la tabla seleccionada se añadirán a la tabla de la capa. Para evitar repeticiones en los nombres y diferenciarlos, se puede definir un prefijo, por defecto, compuesto por el nombre de la tabla. En este caso, no necesitamos ningún prefijo, por lo que marcamos la opción <em>Prefijo de nombre de campo personalizado</em> y eliminamos el prefijo definido por defecto.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-tabla-atributos-union-resultado"></span>
+<img src="figuras_original/tabla-atributos-union-resultado.png" alt="Resultado de la unión definida." width="90%" />
+<p class="caption">
+Figura 6.8: Resultado de la unión definida.
+</p>
+</div>
+<p>Al pulsar sobre el botón <em>Aceptar</em>, la unión queda definida. Podemos modificarla o eliminarla, si fuese necesario. También podemos definir más uniones a partir de la misma tabla (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-union-resultado">6.8</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-tabla-atributos-union-resultado-tabla"></span>
+<img src="figuras_original/tabla-atributos-union-resultado-tabla.png" alt="Organizar las columnas de la tabla de atributos." width="100%" />
+<p class="caption">
+Figura 6.9: Organizar las columnas de la tabla de atributos.
+</p>
+</div>
+<p>El resultado de la unión lo podemos ver abriendo la tabla de atributos: añade las columnas de la tabla seleccionada al final de la tabla, con los valores asociados según los campos considerados para definir la operación. En caso de no necesitar todos los campos añadidos, o bien, considerar más adecuado otro orden en ellos, podemos pulsar sobre el icono <em>Organize columns</em> de la tabla de atributos (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-union-resultado-tabla">6.9</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-tabla-atributos-union-organizar"></span>
+<img src="figuras_original/tabla-atributos-union-organizar.png" alt="Ventana de organización de columnas de la tabla de atributos." width="45%" />
+<p class="caption">
+Figura 6.10: Ventana de organización de columnas de la tabla de atributos.
+</p>
+</div>
+<p>Como resultado, se abre la ventana <em>Organizar columnas de la tabla</em>, que permite deseleccionar las columnas que no queramos que se muestren o bien cambiar el orden de presentación de estas. Por ejemplo, aunque el orden no sea relevante, podemos querer tenerlas ordenadas según el año (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-union-organizar">6.10</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-tabla-atributos-union-resultado-tabla-fin"></span>
+<img src="figuras_original/tabla-atributos-union-resultado-tabla-fin.png" alt="Tabla de atributos resultado de la unión." width="100%" />
+<p class="caption">
+Figura 6.11: Tabla de atributos resultado de la unión.
+</p>
+</div>
+<p>En la figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-union-resultado-tabla-fin">6.11</a>, se muestra la tabla de atributos de la capa de municipios resultado de la unión, después de haber reorganizado las columnas. En ella tenemos los datos del censo actualizados.</p>
+<p>Sería de esperar que la tabla de atributos tal y como está definida en la figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-tabla-atributos-union-resultado-tabla-fin">6.11</a> fuese la tabla de atributos de la capa en todas las operaciones. Como veremos a continuación, en algunas situaciones no es así:</p>
+<ul>
+<li>se distingue entre los atributos propios y los definidos como resultado de la unión y no permite trabajar con ellos,</li>
+<li>no se mantiene el orden definido en la reorganización de los atributos.</li>
+</ul>
+</div>
+<div id="consultas-sobre-la-tabla-de-atributos" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Consultas sobre la tabla de atributos<a href="operaciones-sobre-la-tabla-de-atributos.html#consultas-sobre-la-tabla-de-atributos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Supongamos que queremos seleccionar los <strong>municipios cuya población haya aumentado durante el último año</strong>. Podemos definir consultas de filtrado de filas sobre la tabla de atributos de una capa mediante el <em>Constructor de consultas</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-constructor-consultas"></span>
+<img src="figuras_original/constructor-consultas.png" alt="Acceso al Constructor de consultas." width="90%" />
+<p class="caption">
+Figura 6.12: Acceso al <em>Constructor de consultas</em>.
+</p>
+</div>
+<p>Para definir una consulta sobre una capa, abrimos la ventana <em>Layer Properties</em> de la capa y, en el apartado <em>Fuente</em>, en la esquina inferior derecha, pulsamos sobre el botón <em>Constructor de consultas</em> (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-constructor-consultas">6.12</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-constructor-consultas-definicion-inicial"></span>
+<img src="figuras_original/constructor-consultas-definicion-inicial.png" alt="Ventana del Constructor de consultas." width="75%" />
+<p class="caption">
+Figura 6.13: Ventana del <em>Constructor de consultas</em>.
+</p>
+</div>
+<p>En la ventana del <em>Constructor de consultas</em> (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-constructor-consultas-definicion-inicial">6.13</a>), podemos ver que, en el apartado <em>Campos</em>, solo aparecen los campos originales de la tabla de atributos, no aparecen los campos obtenidos mediante la unión con la tabla de datos actuales del censo.</p>
+<p>Una posibilidad para definir la consulta deseada (municipios cuya población haya aumentado durante el último año) es añadir un campo <code>Incremento</code> a la tabla de atributos, definido como la diferencia de población entre los dos últimos años, y definir la consulta sobre él.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-constructor-consultas-definicion"></span>
+<img src="figuras_original/constructor-consultas-definicion.png" alt="Ventana del Constructor de consultas con un nuevo campo añadido." width="75%" />
+<p class="caption">
+Figura 6.14: Ventana del <em>Constructor de consultas</em> con un nuevo campo añadido.
+</p>
+</div>
+<p>Una vez realizada esta operación, ahora podemos ver en la ventana del <em>Constructor de consultas</em> (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-constructor-consultas-definicion">6.14</a>) que aparece el nuevo campo <code>Incremento</code> añadido. Aunque está definido a partir campos de la tabla obtenidos mediante la operación de unión, este campo se añade a la tabla y es accesible desde el <em>Constructor de consultas</em>.</p>
+<p>Podemos consultar los valores de un campo seleccionándolo en la ventana <em>Campos</em> y pulsando sobre los botones <em>Muestra</em> o <em>Todos</em>. Pulsando <em>doble-clic</em> sobre un campo, se añade a la ventana <em>Provider Specific Filter Expression</em> para definir la expresión de filtro. Completamos la expresión pulsando sobre los botones de los operadores y/o sobre los valores de la ventana <em>Valores</em> o tecleando los operadores y valores necesarios.</p>
+<p>Si pulsamos sobre el botón <em>Probar</em>, nos muestra en una ventana el número de filas que cumplen la condición, resultado de la consulta.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-constructor-consultas-resultado"></span>
+<img src="figuras_original/constructor-consultas-resultado.png" alt="Resultado del Constructor de consultas." width="90%" />
+<p class="caption">
+Figura 6.15: Resultado del <em>Constructor de consultas</em>.
+</p>
+</div>
+<p>En la figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-constructor-consultas-resultado">6.15</a>, se muestra el resultado de la definición de la consulta: en la ventana <em>Filtro de objeto del proveedor</em> se muestra el filtro definido.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-constructor-consultas-resultado-capas"></span>
+<img src="figuras_original/constructor-consultas-resultado-capas.png" alt="Resultado del Constructor de consultas en la ventana Capas." width="45%" />
+<p class="caption">
+Figura 6.16: Resultado del <em>Constructor de consultas</em> en la ventana <em>Capas</em>.
+</p>
+</div>
+<p>Una vez aceptamos las modificaciones y cerramos esta ventana, en la ventana <em>Capas</em>, a la derecha del nombre de la capa, se muestra el símbolo de un filtro y, al situar el ratón sobre él, se muestra la definición del filtro (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-constructor-consultas-resultado-capas">6.16</a>).</p>
+<p>Si abrimos la tabla de atributos de la capa, podemos comprobar que solo contiene las filas que cumplen la condición definida.</p>
+</div>
+<div id="guardar-una-capa" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Guardar una capa<a href="operaciones-sobre-la-tabla-de-atributos.html#guardar-una-capa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-guardar-capa"></span>
+<img src="figuras_original/guardar-capa.png" alt="Guardar una capa en un archivo." width="80%" />
+<p class="caption">
+Figura 6.17: Guardar una capa en un archivo.
+</p>
+</div>
+<p>Para guardar una capa en un archivo, seleccionamos la capa y pulsamos sobre la opción <em>Capa &gt; Guardar como…</em> (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-guardar-capa">6.17</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-guardar-capa-datos"></span>
+<img src="figuras_original/guardar-capa-datos.png" alt="Datos para guardar una capa en un archivo." width="60%" />
+<p class="caption">
+Figura 6.18: Datos para guardar una capa en un archivo.
+</p>
+</div>
+<p>En la ventana que se abre (figura <a href="operaciones-sobre-la-tabla-de-atributos.html#fig:qgis-guardar-capa-datos">6.18</a>), en el campo <em>Formato</em>, seleccionamos el formato de la nueva capa; en el campo <em>Nombre de archivo</em>, seleccionamos la ubicación y definimos el nombre del archivo; podemos cambiar el CRS de la capa en el campo <em>SRC</em>, en este caso se recalculan las coordenadas de acuerdo con el CRS seleccionado; en el campo <em>Codificación</em> podemos definir la codificación de los datos almacenados; asimismo, podemos seleccionar los campos que queremos almacenar<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>. Si seleccionamos la opción <em>Añadir archivo guardado al mapa</em>, la nueva capa se añade automáticamente a la ventana <em>Capas</em>.</p>
+<p>Aspectos importantes a tener en cuenta al guardar una capa son los siguientes:</p>
+<ul>
+<li><p>Esta es la manera de <strong>obtener una capa con un CRS distinto del original recalculando las coordenadas</strong> (si se cambia en las propiedades de la capa, se asigna el nuevo CRS a las coordenadas almacenadas).</p></li>
+<li><p><strong>Solo se almacenarán los registros seleccionados</strong> en ese momento. Es decir, si mediante la definición de un filtro hemos realizado una selección de registros de la tabla de atributos, la nueva capa guardada solo incluirá esos registros.</p></li>
+<li><p>La tabla de atributos de la nueva capa <strong>incluirá todas las columnas de la tabla actual</strong>, también las procedentes de la operación de unión con otras tablas, aunque en la organización de columnas las hayamos definido como no visibles, sin tener en cuenta tampoco el orden definido.</p></li>
+</ul>
+<p>En este caso, nos puede interesar guardar una nueva versión de la capa original que contenga todos los campos y todas las filas, y otra versión que contenga solo las filas filtradas. Es decir, deberíamos eliminar el filtro definido. Para no tener que deshacer y repetir el trabajo ya realizado, podemos usar la operación <em>Capa &gt; Duplicar capa(s)</em> (también disponible en el menú contextual de la capa), para añadir una copia de la capa a la ventana <em>Capas</em>. Podemos modificar una de las copias de la capa eliminando el filtro definido (abriendo el <em>Constructor de consultas</em> de la capa y pulsando sobre el botón <em>Limpiar</em>) y guardar cada una de las capas así obtenidas en un archivo.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>Algunas operaciones conmutan el modo edición automáticamente.<a href="operaciones-sobre-la-tabla-de-atributos.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>El resultado será válido para cada municipio, aunque no para la provincia que tiene dos posiciones, cuyos datos no necesitamos.<a href="operaciones-sobre-la-tabla-de-atributos.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>Por ejemplo, en este caso sí se guardan los campos procedentes de la operación de unión, pero no se ha tenido en cuenta la selección de campos que hicimos ni la reordenación de estos.<a href="operaciones-sobre-la-tabla-de-atributos.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="explorar-una-capa.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="añadir-elementos-a-la-representación-las-de-capas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
