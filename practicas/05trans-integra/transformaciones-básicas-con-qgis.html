@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Transformaciones básicas con QGIS | Transformar e Integrar Información Geográfica</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Transformaciones básicas con QGIS | Transformar e Integrar Información Geográfica" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Transformaciones básicas con QGIS | Transformar e Integrar Información Geográfica" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="transformaciones-básicas-con-r.html"/>
+<link rel="next" href="ejercicios.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html"><i class="fa fa-check"></i><b>2</b> Datos de partida y transformaciones a realizar</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html#transformar-e-integrar-datos-partida"><i class="fa fa-check"></i><b>2.1</b> Datos de partida</a></li>
+<li class="chapter" data-level="2.2" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html#transformaciones-a-realizar"><i class="fa fa-check"></i><b>2.2</b> Transformaciones a realizar</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html"><i class="fa fa-check"></i><b>3</b> Transformaciones básicas con <em>R</em></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#leer-una-capa"><i class="fa fa-check"></i><b>3.1</b> Leer una capa</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#leer-una-capa-vectorial"><i class="fa fa-check"></i><b>3.1.1</b> Leer una capa vectorial</a></li>
+<li class="chapter" data-level="3.1.2" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#leer-una-capa-ráster"><i class="fa fa-check"></i><b>3.1.2</b> Leer una capa ráster</a></li>
+<li class="chapter" data-level="3.1.3" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#componer-un-ráster-virtual-a-partir-de-varios-ráster"><i class="fa fa-check"></i><b>3.1.3</b> Componer un ráster virtual a partir de varios ráster</a></li>
+<li class="chapter" data-level="3.1.4" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#obtener-un-ráster-multibanda-a-partir-de-varias-bandas"><i class="fa fa-check"></i><b>3.1.4</b> Obtener un ráster multibanda a partir de varias bandas</a></li>
+<li class="chapter" data-level="3.1.5" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#obtener-un-ráster-con-las-bandas-de-satélite"><i class="fa fa-check"></i><b>3.1.5</b> Obtener un ráster con las bandas de satélite</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#reproyectar-una-capa"><i class="fa fa-check"></i><b>3.2</b> Reproyectar una capa</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#reproyectar-una-capa-vectorial"><i class="fa fa-check"></i><b>3.2.1</b> Reproyectar una capa vectorial</a></li>
+<li class="chapter" data-level="3.2.2" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#reproyectar-una-capa-ráster"><i class="fa fa-check"></i><b>3.2.2</b> Reproyectar una capa ráster</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#guardar-una-capa"><i class="fa fa-check"></i><b>3.3</b> Guardar una capa</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#transformar-e-integrar-guardar-capa-vectorial"><i class="fa fa-check"></i><b>3.3.1</b> Guardar una capa vectorial</a></li>
+<li class="chapter" data-level="3.3.2" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#guardar-una-capa-ráster"><i class="fa fa-check"></i><b>3.3.2</b> Guardar una capa ráster</a></li>
+<li class="chapter" data-level="3.3.3" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#guardar-las-bandas-de-satélite"><i class="fa fa-check"></i><b>3.3.3</b> Guardar las bandas de satélite</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#recortar-una-capa"><i class="fa fa-check"></i><b>3.4</b> Recortar una capa</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#recortar-una-capa-vectorial"><i class="fa fa-check"></i><b>3.4.1</b> Recortar una capa vectorial</a></li>
+<li class="chapter" data-level="3.4.2" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#recortar-una-capa-ráster"><i class="fa fa-check"></i><b>3.4.2</b> Recortar una capa ráster</a></li>
+<li class="chapter" data-level="3.4.3" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#recortar-las-bandas-de-satélite"><i class="fa fa-check"></i><b>3.4.3</b> Recortar las bandas de satélite</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#tratar-los-archivos-de-una-o-varias-carpetas"><i class="fa fa-check"></i><b>3.5</b> Tratar los archivos de una o varias carpetas</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#obtener-y-tratar-los-archivos-de-una-carpeta"><i class="fa fa-check"></i><b>3.5.1</b> Obtener y tratar los archivos de una carpeta</a></li>
+<li class="chapter" data-level="3.5.2" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#obtener-y-tratar-los-archivos-de-varias-carpetas"><i class="fa fa-check"></i><b>3.5.2</b> Obtener y tratar los archivos de varias carpetas</a></li>
+<li class="chapter" data-level="3.5.3" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#descomprimir-todos-los-archivos-de-una-carpeta"><i class="fa fa-check"></i><b>3.5.3</b> Descomprimir todos los archivos de una carpeta</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#otras-operaciones"><i class="fa fa-check"></i><b>3.6</b> Otras operaciones</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#copiar-estilos-entre-archivos-geopackage"><i class="fa fa-check"></i><b>3.6.1</b> Copiar estilos entre archivos <em>GeoPackage</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html"><i class="fa fa-check"></i><b>4</b> Transformaciones básicas con <em>QGIS</em></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#codificación-de-los-caracteres-en-una-capa"><i class="fa fa-check"></i><b>4.1</b> Codificación de los caracteres en una capa</a></li>
+<li class="chapter" data-level="4.2" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#reproyectar-una-capa-1"><i class="fa fa-check"></i><b>4.2</b> Reproyectar una capa</a></li>
+<li class="chapter" data-level="4.3" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#componer-un-ráster-virtual-a-partir-de-varios-ráster-1"><i class="fa fa-check"></i><b>4.3</b> Componer un ráster virtual a partir de varios ráster</a></li>
+<li class="chapter" data-level="4.4" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#recortar-una-capa-ráster-1"><i class="fa fa-check"></i><b>4.4</b> Recortar una capa ráster</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#mediante-un-rectángulo-2"><i class="fa fa-check"></i><b>4.4.1</b> Mediante un rectángulo</a></li>
+<li class="chapter" data-level="4.4.2" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#mediante-cualquier-polígono-2"><i class="fa fa-check"></i><b>4.4.2</b> Mediante cualquier polígono</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#recortar-una-capa-vectorial-1"><i class="fa fa-check"></i><b>4.5</b> Recortar una capa vectorial</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#recortar-cualquier-capa-vectorial"><i class="fa fa-check"></i><b>4.5.1</b> Recortar cualquier capa vectorial</a></li>
+<li class="chapter" data-level="4.5.2" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#copiar-y-pegar-el-estilo-de-una-capa-vectorial"><i class="fa fa-check"></i><b>4.5.2</b> Copiar y pegar el estilo de una capa vectorial</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#consideraciones-previas"><i class="fa fa-check"></i>Consideraciones previas</a></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#enunciados"><i class="fa fa-check"></i>Enunciados</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Transformar e Integrar Información Geográfica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="transformaciones-básicas-con-qgis" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Transformaciones básicas con <em>QGIS</em><a href="transformaciones-básicas-con-qgis.html#transformaciones-básicas-con-qgis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="codificación-de-los-caracteres-en-una-capa" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Codificación de los caracteres en una capa<a href="transformaciones-básicas-con-qgis.html#codificación-de-los-caracteres-en-una-capa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Podemos comprobar si la codificación de los caracteres de una capa es correcta observando palabras que lleven tilde, por ejemplo abriendo la tabla de atributos de la capa y viendo las columnas con datos de nombres.</p>
+<p>Hay muchas codificaciones posibles pero, generalmente, en caso de observar que no se muestran correctamente palabras con tilde, el problema se debe a que la capa tiene codificación <code>UTF-8</code> y se ha considerado que tiene la del sistema (<code>System</code>) o viceversa. Si ocurre esto, podemos cambiar la codificación en el apartado <em>Fuente</em> de la ventana <em>Layer Properties</em> de la capa (se abre desde el menú contextual de la capa o bien pulsando sobre la opción <em>Capa &gt; Propiedades de la capa…</em>).</p>
+</div>
+<div id="reproyectar-una-capa-1" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Reproyectar una capa<a href="transformaciones-básicas-con-qgis.html#reproyectar-una-capa-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para cambiar el SRC de una capa (reproyectarla), lo que hacemos es guardar una nueva capa a partir de la original. Como vimos en el apartado <a href="transformaciones-básicas-con-r.html#guardar-una-capa">3.3</a>, seleccionamos la capa y pulsamos sobre la opción <em>Capa &gt; Guardar como…</em>, también se puede hacer la misma operación desde el menú contextual de la capa, pulsamos sobre <em>Exportar &gt; Guardar objetos como…</em></p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-guardar-capa-vectorial-como"></span>
+<img src="figuras_original/guardar-capa-vectorial-como.png" alt="Seleccionar SRC al guardar una capa en un archivo." width="70%" />
+<p class="caption">
+Figura 4.1: Seleccionar SRC al guardar una capa en un archivo.
+</p>
+</div>
+<p>En la ventana que se abre (figura <a href="transformaciones-básicas-con-qgis.html#fig:qgis-guardar-capa-vectorial-como">4.1</a>), definimos el formato de la nueva capa, su nombre y ubicación, y, en el campo <em>SRC</em>, pulsando sobre el icono <em>Seleccionar SRC</em> que hay a su derecha, seleccionamos el nuevo SRC<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-selector-src"></span>
+<img src="figuras_original/selector-src.png" alt="Selección del SRC." width="80%" />
+<p class="caption">
+Figura 4.2: Selección del SRC.
+</p>
+</div>
+<p>La selección del SRC se lleva a cabo en la ventana de la figura <a href="transformaciones-básicas-con-qgis.html#fig:qgis-selector-src">4.2</a>, si conocemos el código EPSG de la nueva capa, lo podemos introducir en el campo <em>Filtrar</em> y seleccionamos el SRC correspondiente.</p>
+<p>Esta operación se puede aplicar tanto a capas vectoriales como a capas ráster.</p>
+</div>
+<div id="componer-un-ráster-virtual-a-partir-de-varios-ráster-1" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Componer un ráster virtual a partir de varios ráster<a href="transformaciones-básicas-con-qgis.html#componer-un-ráster-virtual-a-partir-de-varios-ráster-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Si trabajamos con una zona relativamente amplia, seguramente hayamos obtenido varias capas ráster que, conjuntamente, cubren la zona de trabajo, probablemente cubran incluso una zona más amplia que la que necesitamos. Hay varias posibilidades para operar conjuntamente con todas las capas, por ejemplo, podríamos fusionarlas en un solo ráster (se genera una nueva capa con todos los datos). Otra posibilidad más sencilla es generar un ráster virtual a partir de los componentes (ocupa poco espacio nuevo porque se basa en las otras capas). Esta última posibilidad es adecuada sobre todo si después vamos a recortar el ráster resultante, por tanto, es la que vamos a considerar.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-construir-raster-virtual"></span>
+<img src="figuras_original/construir-raster-virtual.png" alt="Construir un ráster virtual." width="100%" />
+<p class="caption">
+Figura 4.3: Construir un ráster virtual.
+</p>
+</div>
+<p>Para definir un ráster virtual a partir de varias capas, cargamos todas las capas en el visor para poder apreciar el ráster que forman conjuntamente. A continuación, pulsamos sobre <em>Ráster &gt; Miscelaneous &gt; Construir ráster virtual…</em> (figura <a href="transformaciones-básicas-con-qgis.html#fig:qgis-construir-raster-virtual">4.3</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-construir-raster-virtual2"></span>
+<img src="figuras_original/construir-raster-virtual2.png" alt="Opciones para construir un ráster virtual." width="60%" />
+<p class="caption">
+Figura 4.4: Opciones para construir un ráster virtual.
+</p>
+</div>
+<p>En la ventana que se abre (figura <a href="transformaciones-básicas-con-qgis.html#fig:qgis-construir-raster-virtual2">4.4</a>), en el campo <em>Input layers</em>, pulsando sobre el botón con puntos suspensivos situado a la derecha, seleccionamos las capas que compondrán el ráster: si solo hemos cargado las capas del ráster (recomendable), podemos seleccionar todas las capas pulsando sobre el botón <em>Seleccionar todo</em>. Dado que todas las capas tendrán la misma resolución, no afecta el criterio que elijamos en el campo <em>Resolution</em> (puede obtener la resolución media, la más fina o la más gruesa). Es muy importante tener <strong>deseleccionada</strong> la opción <em>Place each input file into a separate band</em> porque, en caso de estar seleccionada, el resultado sería un ráster multibanda y no es lo que necesitamos. En la parte inferior de la ventana, en <em>Llamada a la consola de GDAL/OGR</em>, se muestra el código que se genera en función de los parámetros que vamos definiendo. Para generar esta nueva capa, <em>QGIS</em> se basa en la funcionalidad que ofrecen las librerías <em>GDAL/OGR</em>. Si vamos a usar la capa virtual en otros proyectos, podemos salvarla indicando el nombre del archivo en el campo <em>Virtual</em>; si solo queremos operar con la nueva capa, podemos dejar que la guarde en un archivo temporal. Una vez definidos todos los parámetros, pulsamos sobre el botón <em>Ejecutar</em> para llevar a cabo el proceso de definición de la nueva capa. En la pestaña <em>Registro</em> de la ventana nos indica que lo va haciendo y también avisa cuando haya terminado.</p>
+<p>Una vez generada la nueva capa (le asigna el nombre <code>Virtual</code>), para simplificar, podemos eliminar las capas componentes del visor de capas y trabajar solo con la nueva capa virtual (recomendable).</p>
+<p>Si al realizar operaciones sobre el raster virtual, podemos probar a salvarlo como una capa, iniciar un nuevo proyecto con la nueva capa y realizar las operaciones sobre ella.</p>
+</div>
+<div id="recortar-una-capa-ráster-1" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Recortar una capa ráster<a href="transformaciones-básicas-con-qgis.html#recortar-una-capa-ráster-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para recortar una capa ráster, vamos a contemplar dos posibilidades: recortarla mediante un rectángulo orientado de Norte a Sur o hacerlo mediante cualquier polígono. En ambos casos, vamos a usar una capa vectorial como máscara de la operación de recorte.</p>
+<p>Cuando vayamos a aplicar operaciones en las que intervengan varias capas, es importante que todas las capas tengan el mismo SRC<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. Por otro lado, evitaremos reproyectar capas ráster: si la capa vectorial no tiene el mismo SRC que la capa ráster, generaremos una nueva capa vectorial reproyectando la capa original.</p>
+<div id="mediante-un-rectángulo-2" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Mediante un rectángulo<a href="transformaciones-básicas-con-qgis.html#mediante-un-rectángulo-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Visualizamos la capa ráster y la capa vectorial (rectángulo orientado de Norte a Sur) conjuntamente, y pulsamos sobre <em>Ráster &gt; Extraction &gt; Cortar ráster por capa de máscara…</em></p>
+<p>Se abre una ventana para definir los parámetros de la operación. Seleccionamos en el campo <em>Capa de entrada</em> la capa ráster y en el campo <em>Capa de máscara</em> la capa vectorial (aquí podemos comprobar que las capas tengan el mismo SRC). Comprobamos que la única opción seleccionada sea <em>Match the extent of the clipped raster to the extent of the mask layer</em> (<em>Ajustar la extensión del ráster cortado a la extensión de la capa de máscara</em>). En el campo <em>Cortado (máscara)</em>, pulsando sobre el botón con puntos suspensivos situado a su derecha, elegimos la opción <em>Guardar a archivo…</em> e indicamos la ubicación, el nombre y el tipo: el tipo debe ser <em>TIF files</em>. También marcamos la opción <em>Abrir el archivo de salida después de ejecutar el algoritmo</em>. El comando que ha generado con la configuración que hemos indicado, se puede ver en el apartado <em>Llamada a la consola GDAL/OGR</em>. Para ejecutar la operación, pulsamos sobre el botón <em>Ejecutar</em>. El resultado nos lo muestra en la pestaña <em>Registro</em> de la misma ventana de definición de parámetros. Podemos cerrar la ventana y desactivar las otras capas para ver el resultado en la capa que llama con el nombre que hayamos indicado para el archivo de salida.</p>
+</div>
+<div id="mediante-cualquier-polígono-2" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Mediante cualquier polígono<a href="transformaciones-básicas-con-qgis.html#mediante-cualquier-polígono-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para recortar un ráster por cualquier polígono, al igual que para un rectángulo, visualizamos la capa ráster y la capa vectorial conjuntamente, y pulsamos sobre <em>Ráster &gt; Extracción &gt; Cortar ráster por capa de máscara…</em></p>
+<p>Para mantener los bordes de la capa vectorial, en la definición de los parámetros de la operación de recorte, hemos de seleccionar la opción <em>Crear una banda alfa de salida</em><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. El resto de parámetros se definen igual que para el recorte mediante un rectángulo.</p>
+</div>
+</div>
+<div id="recortar-una-capa-vectorial-1" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Recortar una capa vectorial<a href="transformaciones-básicas-con-qgis.html#recortar-una-capa-vectorial-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para recortar una capa vectorial, vamos a presentar la operación básica de recorte y, en casos donde la capa original tenga un estilo predefinido, adicionalmente vamos a copiar el estilo de la capa.</p>
+<p>Al igual que para las capas ráster, cuando vayamos a aplicar operaciones en las que intervengan varias capas, es importante que todas las capas tengan el mismo SRC. En el caso de trabajar con capas vectoriales, se podría reproyectar cualquiera de ellas. Si vamos a recortar una capa, generalmente será de mayor tamaño que la capa que vamos a recortar, entonces reproyectaremos la capa de máscara para la operación de recorte.</p>
+<div id="recortar-cualquier-capa-vectorial" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Recortar cualquier capa vectorial<a href="transformaciones-básicas-con-qgis.html#recortar-cualquier-capa-vectorial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Visualizamos las dos capas vectoriales conjuntamente, y pulsamos sobre <em>Vector &gt; Geoprocessing Tools &gt; Cortar…</em></p>
+<p>Se abre una ventana para definir los parámetros de la operación. Seleccionamos en el campo <em>Capa de entrada</em> la capa vectorial a recortar y en el campo <em>Capa de superposición</em> la capa vectorial a usar como plantilla (aquí podemos comprobar que las capas tengan el mismo SRC). En el campo <em>Cortado</em>, pulsando sobre el botón con puntos suspensivos situado a su derecha, elegimos la opción <em>Guardar a archivo…</em> e indicamos la ubicación, el nombre y el tipo. También marcamos la opción <em>Abrir el archivo de salida después de ejecutar el algoritmo</em>. El comando que ha generado con la configuración que hemos indicado, se puede ver en el apartado <em>Llamada a la consola GDAL/OGR</em>. Para ejecutar la operación, pulsamos sobre el botón <em>Ejecutar</em>. El resultado nos lo muestra en la pestaña <em>Registro</em> de la misma ventana de definición de parámetros. Podemos cerrar la ventana y desactivar las otras capas para ver el resultado.</p>
+</div>
+<div id="copiar-y-pegar-el-estilo-de-una-capa-vectorial" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Copiar y pegar el estilo de una capa vectorial<a href="transformaciones-básicas-con-qgis.html#copiar-y-pegar-el-estilo-de-una-capa-vectorial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si comparamos el estilo de la capa resultado con el estilo de la capa original, observamos que la capa resultado lo ha perdido. Se puede copiar el estilo de una capa vectorial y aplicárselo a otra, en este caso, a la capa resultado.</p>
+<p>Para copiar el estilo de una capa, en el menú contextual de la capa, pulsamos sobre <em>Estilos &gt; Copiar estilo &gt; Totas las categorías de estilo</em>. De igual forma, en el menú contextual de la capa destino, pulsamos sobre <em>Estilos &gt; Pegar estilo &gt; Totas las categorías de estilo</em>.</p>
+<p>Para guardar ese estilo asociado a la capa, lo hacemos desde el menú contextual de la capa, pulsando sobre la opción <em>Exportar &gt; Guardar como archivo de definición de capa…</em> e indicamos la carpeta y el nombre del archivo.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-guardar-estilo"></span>
+<img src="figuras_original/guardar-estilo.png" alt="Guardar el estilo de una capa." width="80%" />
+<p class="caption">
+Figura 4.5: Guardar el estilo de una capa.
+</p>
+</div>
+<p>Si usáramos un <em>GeoPackage</em> (o una BD <em>PostGIS</em>) en lugar de un Shapefile para guardar la capa, podríamos guardar el estilo dentro del propio <em>GeoPackage</em>. Accedemos a la ventana de propiedades de la capa almacenada en un <em>GeoPackage</em> y, en el apartado <em>Simbología</em>, pulsamos sobre la flecha del botón <em>Estilo</em> y seleccionamos la opción <em>Guardar estilo…</em> (figura <a href="transformaciones-básicas-con-qgis.html#fig:qgis-guardar-estilo">4.5</a>). En la ventana que se abre, seleccionamos <em>GeoPackage</em> como destino del estilo, le damos un nombre al estilo e indicamos que se use como estilo predeterminado para la capa.</p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>Seleccionamos el SRC correspondiente a la zona de nuestro municipio (no el de la figura).<a href="transformaciones-básicas-con-qgis.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>En principio deberían funcionar igual con distinto SRC, la experiencia es que se evitan errores y las operaciones se ejecutan más rápido si en cada una solo se realiza una transformación.<a href="transformaciones-básicas-con-qgis.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Si no seleccionamos esta opción, recorta el ráster por el polígono pero, adicionalmente, lo incluye en un rectángulo orientado de Norte a Sur y al resto de celdas de este le asigna el valor 0.<a href="transformaciones-básicas-con-qgis.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="transformaciones-básicas-con-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ejercicios.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
