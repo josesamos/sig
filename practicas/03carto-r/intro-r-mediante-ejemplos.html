@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Introducción a R mediante ejemplos | Cartografía con R</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Introducción a R mediante ejemplos | Cartografía con R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Introducción a R mediante ejemplos | Cartografía con R" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="representación-de-capas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html"><i class="fa fa-check"></i><b>2</b> Introducción a <em>R</em> mediante ejemplos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#entorno-de-trabajo"><i class="fa fa-check"></i><b>2.1</b> Entorno de trabajo</a></li>
+<li class="chapter" data-level="2.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#funcionamiento-general"><i class="fa fa-check"></i><b>2.2</b> Funcionamiento general</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#asignación-y-operaciones-aritméticas"><i class="fa fa-check"></i><b>2.2.1</b> Asignación y operaciones aritméticas</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#constantes-y-funciones"><i class="fa fa-check"></i><b>2.2.2</b> Constantes y funciones</a></li>
+<li class="chapter" data-level="2.2.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#definición-y-operaciones-matemáticas-con-vectores"><i class="fa fa-check"></i><b>2.2.3</b> Definición y operaciones matemáticas con vectores</a></li>
+<li class="chapter" data-level="2.2.4" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#selección-de-elementos-en-un-vector"><i class="fa fa-check"></i><b>2.2.4</b> Selección de elementos en un vector</a></li>
+<li class="chapter" data-level="2.2.5" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#unión-de-vectores"><i class="fa fa-check"></i><b>2.2.5</b> Unión de vectores</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#estructuras-de-datos"><i class="fa fa-check"></i><b>2.3</b> Estructuras de datos</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#vector"><i class="fa fa-check"></i><b>2.3.1</b> <em>Vector</em></a></li>
+<li class="chapter" data-level="2.3.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#r-data-frame"><i class="fa fa-check"></i><b>2.3.2</b> <em>Data frame</em></a></li>
+<li class="chapter" data-level="2.3.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#matrix"><i class="fa fa-check"></i><b>2.3.3</b> <em>Matrix</em></a></li>
+<li class="chapter" data-level="2.3.4" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#factor"><i class="fa fa-check"></i><b>2.3.4</b> <em>Factor</em></a></li>
+<li class="chapter" data-level="2.3.5" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#list"><i class="fa fa-check"></i><b>2.3.5</b> <em>List</em></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#control-de-flujo"><i class="fa fa-check"></i><b>2.4</b> Control de flujo</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#iteraciones"><i class="fa fa-check"></i><b>2.4.1</b> Iteraciones</a></li>
+<li class="chapter" data-level="2.4.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#ejecución-condicional"><i class="fa fa-check"></i><b>2.4.2</b> Ejecución condicional</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#funciones"><i class="fa fa-check"></i><b>2.5</b> Funciones</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#función-con-parámetros-con-valores-por-defecto"><i class="fa fa-check"></i><b>2.5.1</b> Función con parámetros con valores por defecto</a></li>
+<li class="chapter" data-level="2.5.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#función-a-la-que-se-pasa-otra-función-como-parámetro"><i class="fa fa-check"></i><b>2.5.2</b> Función a la que se pasa otra función como parámetro</a></li>
+<li class="chapter" data-level="2.5.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#ámbito-de-las-variables"><i class="fa fa-check"></i><b>2.5.3</b> Ámbito de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#leer-y-escribir-estructuras-de-datos"><i class="fa fa-check"></i><b>2.6</b> Leer y escribir estructuras de datos</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#guardar-un-data-frame-en-un-archivo-y-volverlo-a-leer"><i class="fa fa-check"></i><b>2.6.1</b> Guardar un data frame en un archivo y volverlo a leer</a></li>
+<li class="chapter" data-level="2.6.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#guardar-y-leer-un-data-frame-e-interperetar-strings-como-factores"><i class="fa fa-check"></i><b>2.6.2</b> Guardar y leer un data frame, e interperetar strings como factores</a></li>
+<li class="chapter" data-level="2.6.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#guardar-y-leer-una-matriz"><i class="fa fa-check"></i><b>2.6.3</b> Guardar y leer una matriz</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#plots-básicos"><i class="fa fa-check"></i><b>2.7</b> Plots básicos</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#diagrama-de-dispersión-e-histograma"><i class="fa fa-check"></i><b>2.7.1</b> Diagrama de dispersión e histograma</a></li>
+<li class="chapter" data-level="2.7.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#línea-con-puntos"><i class="fa fa-check"></i><b>2.7.2</b> Línea con puntos</a></li>
+<li class="chapter" data-level="2.7.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#polígonos-y-plots-múltiples"><i class="fa fa-check"></i><b>2.7.3</b> Polígonos y plots múltiples</a></li>
+<li class="chapter" data-level="2.7.4" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#rectángulos-colores-y-transparencia"><i class="fa fa-check"></i><b>2.7.4</b> Rectángulos, colores y transparencia</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#paquetes"><i class="fa fa-check"></i><b>2.8</b> Paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="representación-de-capas.html"><a href="representación-de-capas.html"><i class="fa fa-check"></i><b>3</b> Representación de capas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="representación-de-capas.html"><a href="representación-de-capas.html#obtencion-datos-r1"><i class="fa fa-check"></i><b>3.1</b> Obtención de los datos</a></li>
+<li class="chapter" data-level="3.2" data-path="representación-de-capas.html"><a href="representación-de-capas.html#leer-capas"><i class="fa fa-check"></i><b>3.2</b> Leer capas</a></li>
+<li class="chapter" data-level="3.3" data-path="representación-de-capas.html"><a href="representación-de-capas.html#representar-capas"><i class="fa fa-check"></i><b>3.3</b> Representar capas</a></li>
+<li class="chapter" data-level="3.4" data-path="representación-de-capas.html"><a href="representación-de-capas.html#cambiar-el-color-y-otros-elementos-de-una-capa"><i class="fa fa-check"></i><b>3.4</b> Cambiar el color y otros elementos de una capa</a></li>
+<li class="chapter" data-level="3.5" data-path="representación-de-capas.html"><a href="representación-de-capas.html#importar-una-imagen-desde-la-web"><i class="fa fa-check"></i><b>3.5</b> Importar una imagen desde la Web</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html"><i class="fa fa-check"></i><b>4</b> Explorar una capa</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#acceder-a-elementos-de-una-capa"><i class="fa fa-check"></i><b>4.1</b> Acceder a elementos de una capa</a></li>
+<li class="chapter" data-level="4.2" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#tabla-de-atributos-de-una-capa"><i class="fa fa-check"></i><b>4.2</b> Tabla de atributos de una capa</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html"><i class="fa fa-check"></i><b>5</b> Operaciones sobre la tabla de atributos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#lectura-de-una-tabla-en-un-data-frame"><i class="fa fa-check"></i><b>5.1</b> Lectura de una tabla en un <em>data frame</em></a></li>
+<li class="chapter" data-level="5.2" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#añadir-un-campo-a-la-tabla-de-atributos"><i class="fa fa-check"></i><b>5.2</b> Añadir un campo a la tabla de atributos</a></li>
+<li class="chapter" data-level="5.3" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#unir-tablas-de-atributos"><i class="fa fa-check"></i><b>5.3</b> Unir tablas de atributos</a></li>
+<li class="chapter" data-level="5.4" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#consultas-sobre-la-tabla-de-atributos"><i class="fa fa-check"></i><b>5.4</b> Consultas sobre la tabla de atributos</a></li>
+<li class="chapter" data-level="5.5" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#guardar-una-capa"><i class="fa fa-check"></i><b>5.5</b> Guardar una capa</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html"><i class="fa fa-check"></i><b>6</b> Añadir elementos a la representación las de capas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#mostrar-etiquetas"><i class="fa fa-check"></i><b>6.1</b> Mostrar etiquetas</a></li>
+<li class="chapter" data-level="6.2" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#representar-información-numérica"><i class="fa fa-check"></i><b>6.2</b> Representar información numérica</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html"><i class="fa fa-check"></i><b>7</b> Generar la salida del proyecto</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#guardar-como-una-imagen"><i class="fa fa-check"></i><b>7.1</b> Guardar como una imagen</a></li>
+<li class="chapter" data-level="7.2" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#imprimir-un-mapa"><i class="fa fa-check"></i><b>7.2</b> Imprimir un mapa</a></li>
+<li class="chapter" data-level="7.3" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#generar-un-mapa-para-la-web"><i class="fa fa-check"></i><b>7.3</b> Generar un mapa para la Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cartografía con <em>R</em></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro-r-mediante-ejemplos" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Introducción a <em>R</em> mediante ejemplos<a href="intro-r-mediante-ejemplos.html#intro-r-mediante-ejemplos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A continuación, se van a introducir distintos aspectos de <em>R</em> mediante ejemplos. No pretende ser un resumen de <em>R</em> sino un repaso de aspectos que se van a utilizar al tratar información geográfica. Se pueden encontrar verdaderas introducciones a <em>R</em>, por ejemplo, en:</p>
+<ul>
+<li>W. J. Owen: <em>The R Guide</em><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</li>
+<li>G. Rodríguez: <em>Introducing R</em><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</li>
+<li>P. Torfs, C. Braue: <em>A (very) short introduction to R</em><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</li>
+<li>W. N. Venables, D. M. Smith and the R Core Team: <em>An Introduction to R</em><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</li>
+</ul>
+<p><em>The R Guide</em> de W. J. Owen es posiblemente la más conocida.</p>
+<div id="entorno-de-trabajo" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Entorno de trabajo<a href="intro-r-mediante-ejemplos.html#entorno-de-trabajo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:r-new-script"></span>
+<img src="figuras_original/new-script.png" alt="Crear un nuevo script." width="100%" />
+<p class="caption">
+Figura 2.1: Crear un nuevo script.
+</p>
+</div>
+<p>Trabajaremos con <em>R</em> desde <em>RStudio</em>: iniciamos <em>RStudio</em> que a su vez inicia <em>R</em>. La manera más inmediata de realizar un desarrollo sencillo en <em>R</em> es creando un nuevo archivo de <em>R</em> (un script)<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>, como se muestra en la figura <a href="intro-r-mediante-ejemplos.html#fig:r-new-script">2.1</a>, pulsando sobre el icono <em>New file</em> y seleccionando la opción <em>R Script</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:r-run-script"></span>
+<img src="figuras_original/run-script.png" alt="Ejecutar un nuevo script." width="100%" />
+<p class="caption">
+Figura 2.2: Ejecutar un nuevo script.
+</p>
+</div>
+<p>La ventana de <em>RStudio</em> tiene cuatro zonas (figura <a href="intro-r-mediante-ejemplos.html#fig:r-run-script">2.2</a>). La parte superior izquierda corresponde al archivo <em>R</em> que acabamos de crear. En esta zona iremos escribiendo el código <em>R</em> que desarrollemos (en este caso, copiando-y-pegando el de las figuras siguientes). Para ejecutar una línea de código, situamos el cursor en cualquier parte de la línea y pulsamos sobre el botón <em>Run</em> (figura <a href="intro-r-mediante-ejemplos.html#fig:r-run-script">2.2</a>). El cursor se sitúa en la línea siguiente para que podamos ejecutarla al volver a pulsar sobre el mismo botón<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>. En la ventana inferior izquierda, <em>Console</em>, se muestran las instrucciones que se envían a <em>R</em> y el resultado que este devuelve. Si se ha creado o modificado una variable, el resultado se puede ver en la ventana de la parte superior derecha, <em>Environment</em>.</p>
+</div>
+<div id="funcionamiento-general" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Funcionamiento general<a href="intro-r-mediante-ejemplos.html#funcionamiento-general" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="asignación-y-operaciones-aritméticas" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Asignación y operaciones aritméticas<a href="intro-r-mediante-ejemplos.html#asignación-y-operaciones-aritméticas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuación, se muestran dos formas de asignación (<code>=</code> y <code>&lt;-</code>). En la mayoría de la situaciones resultan equivalentes; puede haber diferencias dependiendo del ámbito de las variables. En las guías de estilo de <em>R</em> se recomienda usar una de ellas pero <strong>siempre la misma</strong>. Al poner una asignación entre paréntesis adicionalmente se presenta el resultado obtenido.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro-r-mediante-ejemplos.html#cb1-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb1-2"><a href="intro-r-mediante-ejemplos.html#cb1-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb1-3"><a href="intro-r-mediante-ejemplos.html#cb1-3" tabindex="-1"></a>x <span class="sc">+</span> y</span>
+<span id="cb1-4"><a href="intro-r-mediante-ejemplos.html#cb1-4" tabindex="-1"></a>z <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb1-5"><a href="intro-r-mediante-ejemplos.html#cb1-5" tabindex="-1"></a>z</span>
+<span id="cb1-6"><a href="intro-r-mediante-ejemplos.html#cb1-6" tabindex="-1"></a>(z <span class="ot">&lt;-</span> x <span class="sc">+</span> y)</span>
+<span id="cb1-7"><a href="intro-r-mediante-ejemplos.html#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="intro-r-mediante-ejemplos.html#cb1-8" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">3</span></span>
+<span id="cb1-9"><a href="intro-r-mediante-ejemplos.html#cb1-9" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb1-10"><a href="intro-r-mediante-ejemplos.html#cb1-10" tabindex="-1"></a>x <span class="sc">+</span> y</span>
+<span id="cb1-11"><a href="intro-r-mediante-ejemplos.html#cb1-11" tabindex="-1"></a>z <span class="ot">=</span> x <span class="sc">+</span> y</span>
+<span id="cb1-12"><a href="intro-r-mediante-ejemplos.html#cb1-12" tabindex="-1"></a>z</span>
+<span id="cb1-13"><a href="intro-r-mediante-ejemplos.html#cb1-13" tabindex="-1"></a>(<span class="at">z =</span> x <span class="sc">+</span> y)</span></code></pre></div>
+</div>
+<div id="constantes-y-funciones" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Constantes y funciones<a href="intro-r-mediante-ejemplos.html#constantes-y-funciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En <em>R</em> se pueden usar funciones y constantes predefinidas. Obtenemos ayuda sobre lo que hace una función ejecutando la línea con <code>?</code> y el nombre de la función. La ayuda aparecerá en la zona inferior derecha de la ventana, se activará automáticamente la pestaña <em>Help</em>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro-r-mediante-ejemplos.html#cb2-1" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> z</span>
+<span id="cb2-2"><a href="intro-r-mediante-ejemplos.html#cb2-2" tabindex="-1"></a><span class="fu">sqrt</span>(z)</span>
+<span id="cb2-3"><a href="intro-r-mediante-ejemplos.html#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="intro-r-mediante-ejemplos.html#cb2-4" tabindex="-1"></a>?sqrt</span></code></pre></div>
+<p>Pulsando sobre el botón <em>Show in new window</em> de la zona de ayuda de la ventana, se abre la ayuda en una nueva ventana, para poder leerla más fácilmente.</p>
+</div>
+<div id="definición-y-operaciones-matemáticas-con-vectores" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Definición y operaciones matemáticas con vectores<a href="intro-r-mediante-ejemplos.html#definición-y-operaciones-matemáticas-con-vectores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuación, se define un vector numérico y se realizan operaciones con él. Observa las diferencias entre la clase de los resultados que se obtienen (número o vector).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro-r-mediante-ejemplos.html#cb3-1" tabindex="-1"></a>r1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb3-2"><a href="intro-r-mediante-ejemplos.html#cb3-2" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> r1</span>
+<span id="cb3-3"><a href="intro-r-mediante-ejemplos.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="intro-r-mediante-ejemplos.html#cb3-4" tabindex="-1"></a>r2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb3-5"><a href="intro-r-mediante-ejemplos.html#cb3-5" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> r2</span>
+<span id="cb3-6"><a href="intro-r-mediante-ejemplos.html#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="intro-r-mediante-ejemplos.html#cb3-7" tabindex="-1"></a><span class="fu">sum</span>(r1)</span>
+<span id="cb3-8"><a href="intro-r-mediante-ejemplos.html#cb3-8" tabindex="-1"></a><span class="fu">sqrt</span>(r1)</span>
+<span id="cb3-9"><a href="intro-r-mediante-ejemplos.html#cb3-9" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sqrt</span>(r1), <span class="dv">2</span>)</span>
+<span id="cb3-10"><a href="intro-r-mediante-ejemplos.html#cb3-10" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="intro-r-mediante-ejemplos.html#cb3-11" tabindex="-1"></a>r1<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb3-12"><a href="intro-r-mediante-ejemplos.html#cb3-12" tabindex="-1"></a>r1 <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb3-13"><a href="intro-r-mediante-ejemplos.html#cb3-13" tabindex="-1"></a>r1 <span class="sc">*</span> <span class="dv">2</span></span></code></pre></div>
+</div>
+<div id="selección-de-elementos-en-un-vector" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Selección de elementos en un vector<a href="intro-r-mediante-ejemplos.html#selección-de-elementos-en-un-vector" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los elementos de un vector se pueden seleccionar mediante diversos métodos. A continuación, se muestran algunos de ellos: un vector de índices, un vector de índices de los elementos que no se incluyen en el resultado, un vector de booleanos. En este último caso, se muestra cómo definirlo explícitamente o bien obtenerlo como resultado de una operación de comparación.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="intro-r-mediante-ejemplos.html#cb4-1" tabindex="-1"></a>r1[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span>
+<span id="cb4-2"><a href="intro-r-mediante-ejemplos.html#cb4-2" tabindex="-1"></a>r1[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">6</span>)]</span>
+<span id="cb4-3"><a href="intro-r-mediante-ejemplos.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="intro-r-mediante-ejemplos.html#cb4-4" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(r1)</span>
+<span id="cb4-5"><a href="intro-r-mediante-ejemplos.html#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="intro-r-mediante-ejemplos.html#cb4-6" tabindex="-1"></a>r1 <span class="sc">&gt;</span> <span class="dv">3</span></span>
+<span id="cb4-7"><a href="intro-r-mediante-ejemplos.html#cb4-7" tabindex="-1"></a>r1[r1 <span class="sc">&gt;</span> <span class="dv">3</span>]</span>
+<span id="cb4-8"><a href="intro-r-mediante-ejemplos.html#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="intro-r-mediante-ejemplos.html#cb4-9" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb4-10"><a href="intro-r-mediante-ejemplos.html#cb4-10" tabindex="-1"></a>r1[s]</span>
+<span id="cb4-11"><a href="intro-r-mediante-ejemplos.html#cb4-11" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="intro-r-mediante-ejemplos.html#cb4-12" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="sc">!</span>s</span>
+<span id="cb4-13"><a href="intro-r-mediante-ejemplos.html#cb4-13" tabindex="-1"></a>r1[s1]</span>
+<span id="cb4-14"><a href="intro-r-mediante-ejemplos.html#cb4-14" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="intro-r-mediante-ejemplos.html#cb4-15" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> r1 <span class="sc">&gt;</span> <span class="dv">3</span></span>
+<span id="cb4-16"><a href="intro-r-mediante-ejemplos.html#cb4-16" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="intro-r-mediante-ejemplos.html#cb4-17" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;María&quot;</span>, <span class="st">&quot;Carmen&quot;</span>, <span class="st">&quot;Guillermo&quot;</span>, <span class="st">&quot;Ana&quot;</span>, <span class="st">&quot;Sergio&quot;</span>, </span>
+<span id="cb4-18"><a href="intro-r-mediante-ejemplos.html#cb4-18" tabindex="-1"></a>       <span class="st">&quot;Lara&quot;</span>, <span class="st">&quot;Lucas&quot;</span>)</span>
+<span id="cb4-19"><a href="intro-r-mediante-ejemplos.html#cb4-19" tabindex="-1"></a>n[s2]</span>
+<span id="cb4-20"><a href="intro-r-mediante-ejemplos.html#cb4-20" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="intro-r-mediante-ejemplos.html#cb4-21" tabindex="-1"></a>n[<span class="dv">2</span>]</span>
+<span id="cb4-22"><a href="intro-r-mediante-ejemplos.html#cb4-22" tabindex="-1"></a>n[<span class="sc">-</span><span class="dv">2</span>]</span>
+<span id="cb4-23"><a href="intro-r-mediante-ejemplos.html#cb4-23" tabindex="-1"></a>n[<span class="sc">-</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>)]</span></code></pre></div>
+</div>
+<div id="unión-de-vectores" class="section level3 hasAnchor" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> Unión de vectores<a href="intro-r-mediante-ejemplos.html#unión-de-vectores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Mediante la función <code>c()</code> se combinan elementos para formar un vector. Como se muestra a continuación, los elementos pueden ser también vectores. Como todos los elementos de un vector han de ser del mismo tipo, el tipo del resultado ha de ser el más general de los tipos de los vectores implicados, entendiendo por este, el tipo al que se puedan transformar el resto de tipos sin perder información.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="intro-r-mediante-ejemplos.html#cb5-1" tabindex="-1"></a>(n2 <span class="ot">&lt;-</span> <span class="fu">c</span>(n, n))</span>
+<span id="cb5-2"><a href="intro-r-mediante-ejemplos.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="intro-r-mediante-ejemplos.html#cb5-3" tabindex="-1"></a>(n3 <span class="ot">&lt;-</span> <span class="fu">c</span>(n, r1, s))</span>
+<span id="cb5-4"><a href="intro-r-mediante-ejemplos.html#cb5-4" tabindex="-1"></a>(n4 <span class="ot">&lt;-</span> <span class="fu">c</span>(r1, s, n))</span>
+<span id="cb5-5"><a href="intro-r-mediante-ejemplos.html#cb5-5" tabindex="-1"></a>(n5 <span class="ot">&lt;-</span> <span class="fu">c</span>(r1, s))</span></code></pre></div>
+</div>
+</div>
+<div id="estructuras-de-datos" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Estructuras de datos<a href="intro-r-mediante-ejemplos.html#estructuras-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="vector" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> <em>Vector</em><a href="intro-r-mediante-ejemplos.html#vector" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuación, podemos ver los valores y tamaño por defecto de un vector cuando se crea, según los parámetros que indiquemos o si lo creamos implícitamente; también se muestran distintas posibilidades que ofrece la función <code>rep()</code> para crear vectores.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="intro-r-mediante-ejemplos.html#cb6-1" tabindex="-1"></a>(v1 <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode=</span><span class="st">&quot;numeric&quot;</span>, <span class="at">length =</span> <span class="dv">7</span>))</span>
+<span id="cb6-2"><a href="intro-r-mediante-ejemplos.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="intro-r-mediante-ejemplos.html#cb6-3" tabindex="-1"></a>(v2 <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="dv">7</span>))</span>
+<span id="cb6-4"><a href="intro-r-mediante-ejemplos.html#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="intro-r-mediante-ejemplos.html#cb6-5" tabindex="-1"></a>(v3 <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode=</span><span class="st">&quot;numeric&quot;</span>))</span>
+<span id="cb6-6"><a href="intro-r-mediante-ejemplos.html#cb6-6" tabindex="-1"></a>v3[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb6-7"><a href="intro-r-mediante-ejemplos.html#cb6-7" tabindex="-1"></a>v3</span>
+<span id="cb6-8"><a href="intro-r-mediante-ejemplos.html#cb6-8" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="intro-r-mediante-ejemplos.html#cb6-9" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times =</span> <span class="dv">7</span>)</span>
+<span id="cb6-10"><a href="intro-r-mediante-ejemplos.html#cb6-10" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">times =</span> <span class="dv">2</span>)</span>
+<span id="cb6-11"><a href="intro-r-mediante-ejemplos.html#cb6-11" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">each =</span> <span class="dv">2</span>)       </span>
+<span id="cb6-12"><a href="intro-r-mediante-ejemplos.html#cb6-12" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">times =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>))</span>
+<span id="cb6-13"><a href="intro-r-mediante-ejemplos.html#cb6-13" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">each =</span> <span class="dv">2</span>, <span class="at">len =</span> <span class="dv">6</span>)    </span>
+<span id="cb6-14"><a href="intro-r-mediante-ejemplos.html#cb6-14" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">each =</span> <span class="dv">2</span>, <span class="at">times =</span> <span class="dv">3</span>)  </span></code></pre></div>
+</div>
+<div id="r-data-frame" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> <em>Data frame</em><a href="intro-r-mediante-ejemplos.html#r-data-frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Podemos crear un <em>data frame</em> a partir de vectores, a los que les asignamos nombre dentro de la estructura: son las columnas del <em>data frame</em>, como se muestra a continuación. Un <em>data frame</em> puede tener tantas columnas como deseemos (no necesariamente dos como en los ejemplos siguientes). Podemos acceder a las columnas mediante su nombre o bien su posición en la estructura. Los vectores que forman las columnas pueden no tener el mismo número de elementos, siempre que el mayor sea múltipo del resto.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="intro-r-mediante-ejemplos.html#cb7-1" tabindex="-1"></a>n</span>
+<span id="cb7-2"><a href="intro-r-mediante-ejemplos.html#cb7-2" tabindex="-1"></a>r1</span>
+<span id="cb7-3"><a href="intro-r-mediante-ejemplos.html#cb7-3" tabindex="-1"></a>(d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">persona =</span> n, <span class="at">puntos =</span> r1))</span>
+<span id="cb7-4"><a href="intro-r-mediante-ejemplos.html#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="intro-r-mediante-ejemplos.html#cb7-5" tabindex="-1"></a>d<span class="sc">$</span>persona</span>
+<span id="cb7-6"><a href="intro-r-mediante-ejemplos.html#cb7-6" tabindex="-1"></a>d<span class="sc">$</span>puntos</span>
+<span id="cb7-7"><a href="intro-r-mediante-ejemplos.html#cb7-7" tabindex="-1"></a><span class="fu">colnames</span>(d)</span>
+<span id="cb7-8"><a href="intro-r-mediante-ejemplos.html#cb7-8" tabindex="-1"></a><span class="fu">colnames</span>(d) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;person&quot;</span>, <span class="st">&quot;score&quot;</span>)</span>
+<span id="cb7-9"><a href="intro-r-mediante-ejemplos.html#cb7-9" tabindex="-1"></a>d<span class="sc">$</span>score</span>
+<span id="cb7-10"><a href="intro-r-mediante-ejemplos.html#cb7-10" tabindex="-1"></a>d[, <span class="st">&quot;score&quot;</span>]</span>
+<span id="cb7-11"><a href="intro-r-mediante-ejemplos.html#cb7-11" tabindex="-1"></a>d[, <span class="dv">2</span>]</span>
+<span id="cb7-12"><a href="intro-r-mediante-ejemplos.html#cb7-12" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="intro-r-mediante-ejemplos.html#cb7-13" tabindex="-1"></a>d[<span class="dv">2</span>,]</span>
+<span id="cb7-14"><a href="intro-r-mediante-ejemplos.html#cb7-14" tabindex="-1"></a>d[<span class="dv">2</span>, <span class="dv">2</span>]</span>
+<span id="cb7-15"><a href="intro-r-mediante-ejemplos.html#cb7-15" tabindex="-1"></a>d[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, ]</span>
+<span id="cb7-16"><a href="intro-r-mediante-ejemplos.html#cb7-16" tabindex="-1"></a>d[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">7</span>), ]</span>
+<span id="cb7-17"><a href="intro-r-mediante-ejemplos.html#cb7-17" tabindex="-1"></a>d[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>]</span>
+<span id="cb7-18"><a href="intro-r-mediante-ejemplos.html#cb7-18" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="intro-r-mediante-ejemplos.html#cb7-19" tabindex="-1"></a>n2</span>
+<span id="cb7-20"><a href="intro-r-mediante-ejemplos.html#cb7-20" tabindex="-1"></a>(d2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">persona =</span> n2, <span class="at">puntos =</span> r1))</span>
+<span id="cb7-21"><a href="intro-r-mediante-ejemplos.html#cb7-21" tabindex="-1"></a>(d3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">persona =</span> n2, <span class="at">puntos =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)))</span>
+<span id="cb7-22"><a href="intro-r-mediante-ejemplos.html#cb7-22" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="intro-r-mediante-ejemplos.html#cb7-23" tabindex="-1"></a><span class="co"># Error: arguments imply differing number of rows: 14, 3</span></span>
+<span id="cb7-24"><a href="intro-r-mediante-ejemplos.html#cb7-24" tabindex="-1"></a><span class="co"># (d4 &lt;- data.frame(persona = n2, puntos = c(1, 2, 3))) </span></span></code></pre></div>
+</div>
+<div id="matrix" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> <em>Matrix</em><a href="intro-r-mediante-ejemplos.html#matrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuación, se muestran distintas formas de definir una matriz (<em>matrix</em>), según sus dimensiones y el orden de creación (por filas o por columnas). Asimismo, podemos ver cómo se le pueden asignar nombres a las filas y columnas de la matriz, y acceder a los elementos por nombre o por posición.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="intro-r-mediante-ejemplos.html#cb8-1" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">0</span>)</span>
+<span id="cb8-2"><a href="intro-r-mediante-ejemplos.html#cb8-2" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">1</span>)</span>
+<span id="cb8-3"><a href="intro-r-mediante-ejemplos.html#cb8-3" tabindex="-1"></a><span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb8-4"><a href="intro-r-mediante-ejemplos.html#cb8-4" tabindex="-1"></a><span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb8-5"><a href="intro-r-mediante-ejemplos.html#cb8-5" tabindex="-1"></a><span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-6"><a href="intro-r-mediante-ejemplos.html#cb8-6" tabindex="-1"></a>(m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">3</span>))</span>
+<span id="cb8-7"><a href="intro-r-mediante-ejemplos.html#cb8-7" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="intro-r-mediante-ejemplos.html#cb8-8" tabindex="-1"></a><span class="fu">colnames</span>(m) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb8-9"><a href="intro-r-mediante-ejemplos.html#cb8-9" tabindex="-1"></a><span class="fu">rownames</span>(m) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;z&quot;</span>)</span>
+<span id="cb8-10"><a href="intro-r-mediante-ejemplos.html#cb8-10" tabindex="-1"></a>m</span>
+<span id="cb8-11"><a href="intro-r-mediante-ejemplos.html#cb8-11" tabindex="-1"></a>m[, <span class="dv">2</span>]</span>
+<span id="cb8-12"><a href="intro-r-mediante-ejemplos.html#cb8-12" tabindex="-1"></a>m[, <span class="st">&quot;b&quot;</span>]</span>
+<span id="cb8-13"><a href="intro-r-mediante-ejemplos.html#cb8-13" tabindex="-1"></a>m[<span class="dv">2</span>, ]</span>
+<span id="cb8-14"><a href="intro-r-mediante-ejemplos.html#cb8-14" tabindex="-1"></a>m[<span class="st">&quot;y&quot;</span>, ]</span>
+<span id="cb8-15"><a href="intro-r-mediante-ejemplos.html#cb8-15" tabindex="-1"></a>m[<span class="st">&quot;y&quot;</span>, <span class="dv">2</span>]</span></code></pre></div>
+</div>
+<div id="factor" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> <em>Factor</em><a href="intro-r-mediante-ejemplos.html#factor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Cuando incluimos un vector de <em>strings</em> en un <em>data frame</em>, lo trata como un <em>factor</em>: considera los valores distintos (<em>levels</em>) y representa los datos en función de esos valores, como se muestra a continuación. Por defecto, asocia un número a cada nivel pero se puede indicar explícitamente que lo trate como <em>string</em> (mediante <code>stringsAsFactors</code>). Si definimos explícitamente los niveles a tener en cuenta en el <em>factor</em>, no se consideran los valores no incluidos entre los niveles.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="intro-r-mediante-ejemplos.html#cb9-1" tabindex="-1"></a>(d2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">persona =</span> n2, <span class="at">puntos =</span> r1))</span>
+<span id="cb9-2"><a href="intro-r-mediante-ejemplos.html#cb9-2" tabindex="-1"></a>d2<span class="sc">$</span>persona</span>
+<span id="cb9-3"><a href="intro-r-mediante-ejemplos.html#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="intro-r-mediante-ejemplos.html#cb9-4" tabindex="-1"></a>(d3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">persona =</span> n2, <span class="at">puntos =</span> r1, </span>
+<span id="cb9-5"><a href="intro-r-mediante-ejemplos.html#cb9-5" tabindex="-1"></a>                  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb9-6"><a href="intro-r-mediante-ejemplos.html#cb9-6" tabindex="-1"></a>d3<span class="sc">$</span>persona</span>
+<span id="cb9-7"><a href="intro-r-mediante-ejemplos.html#cb9-7" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="intro-r-mediante-ejemplos.html#cb9-8" tabindex="-1"></a>(f <span class="ot">&lt;-</span> <span class="fu">factor</span>(n2))</span>
+<span id="cb9-9"><a href="intro-r-mediante-ejemplos.html#cb9-9" tabindex="-1"></a>(f2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(n2, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Lara&quot;</span>, <span class="st">&quot;Ana&quot;</span>)))</span></code></pre></div>
+</div>
+<div id="list" class="section level3 hasAnchor" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> <em>List</em><a href="intro-r-mediante-ejemplos.html#list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una lista (<em>list</em>) puede estar compuesta por elementos de distinto tipo y número de instancias, como se muestra a continuación. A los elementos se les puede asignar nombres y podemos acceder a ellos por nombre o por posición.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="intro-r-mediante-ejemplos.html#cb10-1" tabindex="-1"></a>(l <span class="ot">&lt;-</span> <span class="fu">list</span>(n2, m, d, <span class="dv">2</span>))</span>
+<span id="cb10-2"><a href="intro-r-mediante-ejemplos.html#cb10-2" tabindex="-1"></a>l[[<span class="dv">2</span>]][<span class="dv">1</span>,]</span>
+<span id="cb10-3"><a href="intro-r-mediante-ejemplos.html#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="intro-r-mediante-ejemplos.html#cb10-4" tabindex="-1"></a>(l2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">nombres =</span> n2, <span class="at">matriz =</span> m, <span class="at">df =</span> d))</span>
+<span id="cb10-5"><a href="intro-r-mediante-ejemplos.html#cb10-5" tabindex="-1"></a>l2[[<span class="dv">2</span>]]</span>
+<span id="cb10-6"><a href="intro-r-mediante-ejemplos.html#cb10-6" tabindex="-1"></a>l2<span class="sc">$</span>matriz</span>
+<span id="cb10-7"><a href="intro-r-mediante-ejemplos.html#cb10-7" tabindex="-1"></a>l2[[<span class="st">&quot;matriz&quot;</span>]]</span></code></pre></div>
+</div>
+</div>
+<div id="control-de-flujo" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Control de flujo<a href="intro-r-mediante-ejemplos.html#control-de-flujo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="iteraciones" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Iteraciones<a href="intro-r-mediante-ejemplos.html#iteraciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuación, se muestran distintas formas de iterar sobre una estructura de ejemplo. También se puede ver que se puede imprimir sin necesidad de iterar por ella.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="intro-r-mediante-ejemplos.html#cb11-1" tabindex="-1"></a><span class="cf">for</span> (nombre <span class="cf">in</span> n) {</span>
+<span id="cb11-2"><a href="intro-r-mediante-ejemplos.html#cb11-2" tabindex="-1"></a>  <span class="fu">print</span>(nombre)</span>
+<span id="cb11-3"><a href="intro-r-mediante-ejemplos.html#cb11-3" tabindex="-1"></a>}</span>
+<span id="cb11-4"><a href="intro-r-mediante-ejemplos.html#cb11-4" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="intro-r-mediante-ejemplos.html#cb11-5" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n)) {</span>
+<span id="cb11-6"><a href="intro-r-mediante-ejemplos.html#cb11-6" tabindex="-1"></a>  <span class="fu">print</span>(n[i])</span>
+<span id="cb11-7"><a href="intro-r-mediante-ejemplos.html#cb11-7" tabindex="-1"></a>}</span>
+<span id="cb11-8"><a href="intro-r-mediante-ejemplos.html#cb11-8" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="intro-r-mediante-ejemplos.html#cb11-9" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb11-10"><a href="intro-r-mediante-ejemplos.html#cb11-10" tabindex="-1"></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="fu">length</span>(n)) {</span>
+<span id="cb11-11"><a href="intro-r-mediante-ejemplos.html#cb11-11" tabindex="-1"></a>  <span class="fu">print</span>(n[i])</span>
+<span id="cb11-12"><a href="intro-r-mediante-ejemplos.html#cb11-12" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb11-13"><a href="intro-r-mediante-ejemplos.html#cb11-13" tabindex="-1"></a>}</span>
+<span id="cb11-14"><a href="intro-r-mediante-ejemplos.html#cb11-14" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="intro-r-mediante-ejemplos.html#cb11-15" tabindex="-1"></a><span class="fu">print</span>(n)</span></code></pre></div>
+</div>
+<div id="ejecución-condicional" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Ejecución condicional<a href="intro-r-mediante-ejemplos.html#ejecución-condicional" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En lo que se refiere a la ejecución condicional, además de la construcción <code>if</code>-<code>else</code>, común en los lenguajes de programación, es destacable la posibilidad de tratar todos los elementos de un vector directamente mediante <code>ifelse</code>, como se muestra a continuación.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="intro-r-mediante-ejemplos.html#cb12-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb12-2"><a href="intro-r-mediante-ejemplos.html#cb12-2" tabindex="-1"></a><span class="cf">if</span> (a <span class="sc">==</span> <span class="dv">3</span>) {</span>
+<span id="cb12-3"><a href="intro-r-mediante-ejemplos.html#cb12-3" tabindex="-1"></a>  <span class="fu">print</span>(a)</span>
+<span id="cb12-4"><a href="intro-r-mediante-ejemplos.html#cb12-4" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb12-5"><a href="intro-r-mediante-ejemplos.html#cb12-5" tabindex="-1"></a>  <span class="fu">print</span>(a<span class="sc">*</span><span class="dv">2</span>)</span>
+<span id="cb12-6"><a href="intro-r-mediante-ejemplos.html#cb12-6" tabindex="-1"></a>}</span>
+<span id="cb12-7"><a href="intro-r-mediante-ejemplos.html#cb12-7" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="intro-r-mediante-ejemplos.html#cb12-8" tabindex="-1"></a><span class="fu">ifelse</span>(n <span class="sc">==</span> <span class="st">&#39;Ana&#39;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb12-9"><a href="intro-r-mediante-ejemplos.html#cb12-9" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="intro-r-mediante-ejemplos.html#cb12-10" tabindex="-1"></a><span class="fu">ifelse</span>(r1 <span class="sc">&lt;</span> <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="funciones" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Funciones<a href="intro-r-mediante-ejemplos.html#funciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="función-con-parámetros-con-valores-por-defecto" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Función con parámetros con valores por defecto<a href="intro-r-mediante-ejemplos.html#función-con-parámetros-con-valores-por-defecto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuación, se muestra la definición y uso de una función con un parámetro con valor por defecto. Las funciones devuelven el último valor calculado, se puede indicar explícitamente el resultado mediante <code>return()</code> aunque no lo recomiendan las guías de estilo de R salvo que no sea la última instrucción de la función.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="intro-r-mediante-ejemplos.html#cb13-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(a, <span class="at">b =</span> <span class="dv">1</span>) {</span>
+<span id="cb13-2"><a href="intro-r-mediante-ejemplos.html#cb13-2" tabindex="-1"></a>  a <span class="sc">+</span> b</span>
+<span id="cb13-3"><a href="intro-r-mediante-ejemplos.html#cb13-3" tabindex="-1"></a>}</span>
+<span id="cb13-4"><a href="intro-r-mediante-ejemplos.html#cb13-4" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="intro-r-mediante-ejemplos.html#cb13-5" tabindex="-1"></a><span class="fu">f</span>(<span class="dv">2</span>)</span>
+<span id="cb13-6"><a href="intro-r-mediante-ejemplos.html#cb13-6" tabindex="-1"></a><span class="fu">f</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
+</div>
+<div id="función-a-la-que-se-pasa-otra-función-como-parámetro" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Función a la que se pasa otra función como parámetro<a href="intro-r-mediante-ejemplos.html#función-a-la-que-se-pasa-otra-función-como-parámetro" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Se pueden definir funciones a las que se pasa como parámetro otra función y, dentro de la función, invocar a la función que se ha pasado, como se hace a continuación.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="intro-r-mediante-ejemplos.html#cb14-1" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(a) {</span>
+<span id="cb14-2"><a href="intro-r-mediante-ejemplos.html#cb14-2" tabindex="-1"></a>  <span class="fu">return</span>(a <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb14-3"><a href="intro-r-mediante-ejemplos.html#cb14-3" tabindex="-1"></a>}</span>
+<span id="cb14-4"><a href="intro-r-mediante-ejemplos.html#cb14-4" tabindex="-1"></a><span class="fu">g</span>(<span class="dv">2</span>)</span>
+<span id="cb14-5"><a href="intro-r-mediante-ejemplos.html#cb14-5" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="intro-r-mediante-ejemplos.html#cb14-6" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="cf">function</span>(k, a) {</span>
+<span id="cb14-7"><a href="intro-r-mediante-ejemplos.html#cb14-7" tabindex="-1"></a>  <span class="fu">k</span>(a)</span>
+<span id="cb14-8"><a href="intro-r-mediante-ejemplos.html#cb14-8" tabindex="-1"></a>}</span>
+<span id="cb14-9"><a href="intro-r-mediante-ejemplos.html#cb14-9" tabindex="-1"></a><span class="fu">h</span>(g, <span class="dv">2</span>)</span>
+<span id="cb14-10"><a href="intro-r-mediante-ejemplos.html#cb14-10" tabindex="-1"></a><span class="fu">h</span>(f, <span class="dv">2</span>)</span></code></pre></div>
+</div>
+<div id="ámbito-de-las-variables" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Ámbito de las variables<a href="intro-r-mediante-ejemplos.html#ámbito-de-las-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Desde una función se puede acceder a una variable global pero esta no se puede modificar desde la función, ni directamente, ni pásandola como parámetro, como se muestra a continuación.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="intro-r-mediante-ejemplos.html#cb15-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb15-2"><a href="intro-r-mediante-ejemplos.html#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="intro-r-mediante-ejemplos.html#cb15-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="cf">function</span>(b) {</span>
+<span id="cb15-4"><a href="intro-r-mediante-ejemplos.html#cb15-4" tabindex="-1"></a>  b <span class="ot">&lt;-</span> b <span class="sc">+</span> a</span>
+<span id="cb15-5"><a href="intro-r-mediante-ejemplos.html#cb15-5" tabindex="-1"></a>  a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb15-6"><a href="intro-r-mediante-ejemplos.html#cb15-6" tabindex="-1"></a>  <span class="fu">return</span>(b)</span>
+<span id="cb15-7"><a href="intro-r-mediante-ejemplos.html#cb15-7" tabindex="-1"></a>}</span>
+<span id="cb15-8"><a href="intro-r-mediante-ejemplos.html#cb15-8" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="intro-r-mediante-ejemplos.html#cb15-9" tabindex="-1"></a><span class="fu">p</span>(a)</span>
+<span id="cb15-10"><a href="intro-r-mediante-ejemplos.html#cb15-10" tabindex="-1"></a>a</span></code></pre></div>
+</div>
+</div>
+<div id="leer-y-escribir-estructuras-de-datos" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Leer y escribir estructuras de datos<a href="intro-r-mediante-ejemplos.html#leer-y-escribir-estructuras-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="guardar-un-data-frame-en-un-archivo-y-volverlo-a-leer" class="section level3 hasAnchor" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Guardar un data frame en un archivo y volverlo a leer<a href="intro-r-mediante-ejemplos.html#guardar-un-data-frame-en-un-archivo-y-volverlo-a-leer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Cuando trabajamos con archivos, es práctico configurar la carpeta de trabajo mediante <code>setwd()</code><a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> porque, de esta forma, basta con indicar el nombre del archivo. También se puede observar en el fragmento de código siguiente que, al escribir y leer un <em>data frame</em>, la estructura que se lee no coincide exactamente con la escrita: se le ha añadido una columna adicional con el número de línea. Si abrimos el archivo generado, se puede comprobar que la columna se ha generado al guardar los datos. Si queremos que no se almacene el número de fila lo tendremos que indicar al guardar el <em>data frame</em>, se hace mediante el parámetro <code>row.names</code>. Se puede observar que la clase del resultado que obtenemos es un <em>data frame</em>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="intro-r-mediante-ejemplos.html#cb16-1" tabindex="-1"></a><span class="co"># setwd(&quot;datos/r&quot;)</span></span>
+<span id="cb16-2"><a href="intro-r-mediante-ejemplos.html#cb16-2" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="intro-r-mediante-ejemplos.html#cb16-3" tabindex="-1"></a>d</span>
+<span id="cb16-4"><a href="intro-r-mediante-ejemplos.html#cb16-4" tabindex="-1"></a><span class="fu">write.csv</span>(d, <span class="st">&quot;marcador.csv&quot;</span>)</span>
+<span id="cb16-5"><a href="intro-r-mediante-ejemplos.html#cb16-5" tabindex="-1"></a>(res <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;marcador.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>))</span>
+<span id="cb16-6"><a href="intro-r-mediante-ejemplos.html#cb16-6" tabindex="-1"></a>res<span class="sc">$</span>person</span>
+<span id="cb16-7"><a href="intro-r-mediante-ejemplos.html#cb16-7" tabindex="-1"></a><span class="fu">class</span>(res)</span></code></pre></div>
+</div>
+<div id="guardar-y-leer-un-data-frame-e-interperetar-strings-como-factores" class="section level3 hasAnchor" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> Guardar y leer un data frame, e interperetar strings como factores<a href="intro-r-mediante-ejemplos.html#guardar-y-leer-un-data-frame-e-interperetar-strings-como-factores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuación, escribe y lee el <em>data frame</em> con el mismo número de columnas. También se indica que interprete como <em>string</em> los valores de los factores que lea.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="intro-r-mediante-ejemplos.html#cb17-1" tabindex="-1"></a><span class="fu">write.csv</span>(d, <span class="st">&quot;marcador.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb17-2"><a href="intro-r-mediante-ejemplos.html#cb17-2" tabindex="-1"></a>(res <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;marcador.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>, </span>
+<span id="cb17-3"><a href="intro-r-mediante-ejemplos.html#cb17-3" tabindex="-1"></a>                 <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb17-4"><a href="intro-r-mediante-ejemplos.html#cb17-4" tabindex="-1"></a>res<span class="sc">$</span>person</span></code></pre></div>
+</div>
+<div id="guardar-y-leer-una-matriz" class="section level3 hasAnchor" number="2.6.3">
+<h3><span class="header-section-number">2.6.3</span> Guardar y leer una matriz<a href="intro-r-mediante-ejemplos.html#guardar-y-leer-una-matriz" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En el caso de guardar y leer una matriz, si le hemos dado nombre a las filas, nos interesa guardar sus nombres y recuperarlos al leer los datos. Se puede observar que leemos un <em>data frame</em>, pero lo podemos transformar en una matriz eliminando la columna correspondiente al nombre de las filas y haciendo una conversión de tipos.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="intro-r-mediante-ejemplos.html#cb18-1" tabindex="-1"></a>m</span>
+<span id="cb18-2"><a href="intro-r-mediante-ejemplos.html#cb18-2" tabindex="-1"></a><span class="fu">write.csv</span>(m, <span class="st">&quot;matriz.csv&quot;</span>)</span>
+<span id="cb18-3"><a href="intro-r-mediante-ejemplos.html#cb18-3" tabindex="-1"></a>(mat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;matriz.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>))</span>
+<span id="cb18-4"><a href="intro-r-mediante-ejemplos.html#cb18-4" tabindex="-1"></a><span class="fu">class</span>(mat)</span>
+<span id="cb18-5"><a href="intro-r-mediante-ejemplos.html#cb18-5" tabindex="-1"></a><span class="fu">rownames</span>(mat) <span class="ot">&lt;-</span> mat[, <span class="dv">1</span>]</span>
+<span id="cb18-6"><a href="intro-r-mediante-ejemplos.html#cb18-6" tabindex="-1"></a>(mat <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(mat[, <span class="sc">-</span><span class="dv">1</span>]))</span>
+<span id="cb18-7"><a href="intro-r-mediante-ejemplos.html#cb18-7" tabindex="-1"></a><span class="fu">class</span>(mat)</span></code></pre></div>
+</div>
+</div>
+<div id="plots-básicos" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Plots básicos<a href="intro-r-mediante-ejemplos.html#plots-básicos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="diagrama-de-dispersión-e-histograma" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Diagrama de dispersión e histograma<a href="intro-r-mediante-ejemplos.html#diagrama-de-dispersión-e-histograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La función genérica para representar gráficamente objetos en <em>R</em> es <code>plot()</code>. Como se muestra a continuación, en este caso, estamos representando puntos. La forma de representación de los puntos se determina mediante el parámetro <code>pch</code><a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>. También podemos utilizar otras funciones para obtener otros tipos de representación, como <code>hist()</code>, a continuación.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="intro-r-mediante-ejemplos.html#cb19-1" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb19-2"><a href="intro-r-mediante-ejemplos.html#cb19-2" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb19-3"><a href="intro-r-mediante-ejemplos.html#cb19-3" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="intro-r-mediante-ejemplos.html#cb19-4" tabindex="-1"></a><span class="fu">plot</span>(x1, y1, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb19-5"><a href="intro-r-mediante-ejemplos.html#cb19-5" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="intro-r-mediante-ejemplos.html#cb19-6" tabindex="-1"></a><span class="fu">hist</span>(x1)</span></code></pre></div>
+</div>
+<div id="línea-con-puntos" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Línea con puntos<a href="intro-r-mediante-ejemplos.html#línea-con-puntos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuación, se muestra cómo usar la misma función <code>plot()</code> para representar los puntos unidos mediante una línea. También se pueden representar puntos en el mismo gráfico.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="intro-r-mediante-ejemplos.html#cb20-1" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">len=</span><span class="dv">100</span>)</span>
+<span id="cb20-2"><a href="intro-r-mediante-ejemplos.html#cb20-2" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">sin</span>(x2)</span>
+<span id="cb20-3"><a href="intro-r-mediante-ejemplos.html#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="intro-r-mediante-ejemplos.html#cb20-4" tabindex="-1"></a><span class="fu">plot</span>(x2, y2, <span class="at">type=</span><span class="st">&#39;l&#39;</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&#39;darkgreen&#39;</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.2</span>, <span class="fl">1.2</span>))</span>
+<span id="cb20-5"><a href="intro-r-mediante-ejemplos.html#cb20-5" tabindex="-1"></a>y2r <span class="ot">&lt;-</span> y2 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
+<span id="cb20-6"><a href="intro-r-mediante-ejemplos.html#cb20-6" tabindex="-1"></a><span class="fu">points</span>(x2, y2r, <span class="at">pch=</span><span class="st">&#39;.&#39;</span>, <span class="at">col=</span><span class="st">&#39;darkred&#39;</span>)</span></code></pre></div>
+</div>
+<div id="polígonos-y-plots-múltiples" class="section level3 hasAnchor" number="2.7.3">
+<h3><span class="header-section-number">2.7.3</span> Polígonos y plots múltiples<a href="intro-r-mediante-ejemplos.html#polígonos-y-plots-múltiples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En el ejemplo siguiente, se divide la superficie de representación en dos partes mediante la función <code>par()</code>, una fila y dos columnas para poder mostrar conjuntamente dos figuras. Posteriormente, cuando se ha hecho la representación, se vuelve a dejar una sola columna mediante la misma función. En las dos representaciones se muestran los mismos datos, la diferencia entre ellas se produce por los parámetros <code>asp</code> (para mantener la proporcionalidad de la figura) y <code>type</code> (para no representar los datos propiamente dichos, sino establecer el área de representación que requieren).</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="intro-r-mediante-ejemplos.html#cb21-1" tabindex="-1"></a><span class="co"># x2 &lt;- seq(0, 2*pi, len=100)</span></span>
+<span id="cb21-2"><a href="intro-r-mediante-ejemplos.html#cb21-2" tabindex="-1"></a><span class="co"># y2 &lt;- sin(x2)</span></span>
+<span id="cb21-3"><a href="intro-r-mediante-ejemplos.html#cb21-3" tabindex="-1"></a>y3 <span class="ot">&lt;-</span> <span class="fu">cos</span>(x2)</span>
+<span id="cb21-4"><a href="intro-r-mediante-ejemplos.html#cb21-4" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="intro-r-mediante-ejemplos.html#cb21-5" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb21-6"><a href="intro-r-mediante-ejemplos.html#cb21-6" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="intro-r-mediante-ejemplos.html#cb21-7" tabindex="-1"></a><span class="fu">plot</span>(y2, y3, <span class="at">asp=</span><span class="dv">1</span>)</span>
+<span id="cb21-8"><a href="intro-r-mediante-ejemplos.html#cb21-8" tabindex="-1"></a><span class="fu">polygon</span>(y2, y3, <span class="at">col=</span><span class="st">&#39;lightgreen&#39;</span>)</span>
+<span id="cb21-9"><a href="intro-r-mediante-ejemplos.html#cb21-9" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="intro-r-mediante-ejemplos.html#cb21-10" tabindex="-1"></a><span class="fu">plot</span>(y2, y3, <span class="at">type=</span><span class="st">&#39;n&#39;</span>)</span>
+<span id="cb21-11"><a href="intro-r-mediante-ejemplos.html#cb21-11" tabindex="-1"></a><span class="fu">polygon</span>(y2, y3, <span class="at">col=</span><span class="st">&#39;lightgreen&#39;</span>)</span>
+<span id="cb21-12"><a href="intro-r-mediante-ejemplos.html#cb21-12" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="intro-r-mediante-ejemplos.html#cb21-13" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span></code></pre></div>
+</div>
+<div id="rectángulos-colores-y-transparencia" class="section level3 hasAnchor" number="2.7.4">
+<h3><span class="header-section-number">2.7.4</span> Rectángulos, colores y transparencia<a href="intro-r-mediante-ejemplos.html#rectángulos-colores-y-transparencia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En el siguiente ejemplo, se muestra el uso de colores y la posibilidad de definir niveles de transparencia: se define mediante el cuarto parámetro de la función <code>rgb()</code>, que es opcional.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="intro-r-mediante-ejemplos.html#cb22-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb22-2"><a href="intro-r-mediante-ejemplos.html#cb22-2" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="intro-r-mediante-ejemplos.html#cb22-3" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">1.5</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">1.5</span>),<span class="at">asp=</span><span class="dv">1</span>, <span class="at">type=</span><span class="st">&#39;n&#39;</span>)</span>
+<span id="cb22-4"><a href="intro-r-mediante-ejemplos.html#cb22-4" tabindex="-1"></a><span class="fu">rect</span>(<span class="sc">-</span><span class="fl">0.5</span>,<span class="sc">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>, <span class="at">border=</span><span class="cn">NA</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>))</span>
+<span id="cb22-5"><a href="intro-r-mediante-ejemplos.html#cb22-5" tabindex="-1"></a><span class="fu">rect</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>))</span>
+<span id="cb22-6"><a href="intro-r-mediante-ejemplos.html#cb22-6" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="intro-r-mediante-ejemplos.html#cb22-7" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">1.5</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.5</span>,<span class="fl">1.5</span>),<span class="at">asp=</span><span class="dv">1</span>, <span class="at">type=</span><span class="st">&#39;n&#39;</span>)</span>
+<span id="cb22-8"><a href="intro-r-mediante-ejemplos.html#cb22-8" tabindex="-1"></a><span class="fu">rect</span>(<span class="sc">-</span><span class="fl">0.5</span>,<span class="sc">-</span><span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>, <span class="at">border=</span><span class="cn">NA</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.7</span>))</span>
+<span id="cb22-9"><a href="intro-r-mediante-ejemplos.html#cb22-9" tabindex="-1"></a><span class="fu">rect</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">0.7</span>))</span>
+<span id="cb22-10"><a href="intro-r-mediante-ejemplos.html#cb22-10" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="intro-r-mediante-ejemplos.html#cb22-11" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span></code></pre></div>
+</div>
+</div>
+<div id="paquetes" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Paquetes<a href="intro-r-mediante-ejemplos.html#paquetes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:r-package-install"></span>
+<img src="figuras_original/package-install.png" alt="Instalar package." width="65%" />
+<p class="caption">
+Figura 2.3: Instalar <em>package</em>.
+</p>
+</div>
+<p>La funcionalidad básica de <em>R</em> se amplía mediante paquetes (<em>packages</em>) que podemos añadir a la instalación. Los paquetes instalados se pueden ver desde la pestaña <em>Packages</em> de la zona inferior derecha de la ventana (figura <a href="intro-r-mediante-ejemplos.html#fig:r-package-install">2.3</a>). Si necesitamos usar un paquete que no está instalado aún, pulsando sobre el botón <em>Install</em> podemos indicar que se instale.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:r-package-browse"></span>
+<img src="figuras_original/package-browse.png" alt="Acceso a la información de un package." width="76%" />
+<p class="caption">
+Figura 2.4: Acceso a la información de un <em>package</em>.
+</p>
+</div>
+<p>Un paquete puede contener funciones y datos. Podemos acceder a la información de un paquete pulsando sobre el primer icono que aparece a la derecha de su nombre y versión, en la pestaña <em>Packages</em> (figura <a href="intro-r-mediante-ejemplos.html#fig:r-package-browse">2.4</a>). Para utilizar el contenido de un paquete fácilmente, tenemos que indicar que se cargue, esto se hace mediante la función <code>library()</code>.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p><a href="https://cran.r-project.org/doc/contrib/Owen-TheRGuide.pdf">https://cran.r-project.org/doc/contrib/Owen-TheRGuide.pdf</a><a href="intro-r-mediante-ejemplos.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p><a href="http://data.princeton.edu/R/introducingR.pdf">http://data.princeton.edu/R/introducingR.pdf</a><a href="intro-r-mediante-ejemplos.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p><a href="https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf">https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf</a><a href="intro-r-mediante-ejemplos.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p><a href="https://cran.r-project.org/doc/manuals/R-intro.pdf">https://cran.r-project.org/doc/manuals/R-intro.pdf</a><a href="intro-r-mediante-ejemplos.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Es recomendable agrupar los scripts que desarrollemos en un proyecto. Antes de crear el primer script crearemos el proyecto desde <em>File &gt; New Project</em>.<a href="intro-r-mediante-ejemplos.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>Si seleccionamos varias líneas, al pulsar sobre el botón <em>Run</em>, se ejecutan todas. En esta actividad, nos interesará ejecutar línea a línea.<a href="intro-r-mediante-ejemplos.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Actualiza el parámetro que se pasa a esta función en el fragmento de código siguiente con tu carpeta de trabajo.<a href="intro-r-mediante-ejemplos.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>En <a href="https://www.statmethods.net/advgraphs/parameters.html">https://www.statmethods.net/advgraphs/parameters.html</a> se pueden consultar los posibles valores que puede tomar este parámetro y el resultado obtenido en cada caso. También hay información de otros parámetros para definir el estilo de las líneas o los colores.<a href="intro-r-mediante-ejemplos.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="representación-de-capas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

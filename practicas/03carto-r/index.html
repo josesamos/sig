@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Cartografía con R</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Cartografía con R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Cartografía con R" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="intro-r-mediante-ejemplos.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html"><i class="fa fa-check"></i><b>2</b> Introducción a <em>R</em> mediante ejemplos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#entorno-de-trabajo"><i class="fa fa-check"></i><b>2.1</b> Entorno de trabajo</a></li>
+<li class="chapter" data-level="2.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#funcionamiento-general"><i class="fa fa-check"></i><b>2.2</b> Funcionamiento general</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#asignación-y-operaciones-aritméticas"><i class="fa fa-check"></i><b>2.2.1</b> Asignación y operaciones aritméticas</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#constantes-y-funciones"><i class="fa fa-check"></i><b>2.2.2</b> Constantes y funciones</a></li>
+<li class="chapter" data-level="2.2.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#definición-y-operaciones-matemáticas-con-vectores"><i class="fa fa-check"></i><b>2.2.3</b> Definición y operaciones matemáticas con vectores</a></li>
+<li class="chapter" data-level="2.2.4" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#selección-de-elementos-en-un-vector"><i class="fa fa-check"></i><b>2.2.4</b> Selección de elementos en un vector</a></li>
+<li class="chapter" data-level="2.2.5" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#unión-de-vectores"><i class="fa fa-check"></i><b>2.2.5</b> Unión de vectores</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#estructuras-de-datos"><i class="fa fa-check"></i><b>2.3</b> Estructuras de datos</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#vector"><i class="fa fa-check"></i><b>2.3.1</b> <em>Vector</em></a></li>
+<li class="chapter" data-level="2.3.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#r-data-frame"><i class="fa fa-check"></i><b>2.3.2</b> <em>Data frame</em></a></li>
+<li class="chapter" data-level="2.3.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#matrix"><i class="fa fa-check"></i><b>2.3.3</b> <em>Matrix</em></a></li>
+<li class="chapter" data-level="2.3.4" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#factor"><i class="fa fa-check"></i><b>2.3.4</b> <em>Factor</em></a></li>
+<li class="chapter" data-level="2.3.5" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#list"><i class="fa fa-check"></i><b>2.3.5</b> <em>List</em></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#control-de-flujo"><i class="fa fa-check"></i><b>2.4</b> Control de flujo</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#iteraciones"><i class="fa fa-check"></i><b>2.4.1</b> Iteraciones</a></li>
+<li class="chapter" data-level="2.4.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#ejecución-condicional"><i class="fa fa-check"></i><b>2.4.2</b> Ejecución condicional</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#funciones"><i class="fa fa-check"></i><b>2.5</b> Funciones</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#función-con-parámetros-con-valores-por-defecto"><i class="fa fa-check"></i><b>2.5.1</b> Función con parámetros con valores por defecto</a></li>
+<li class="chapter" data-level="2.5.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#función-a-la-que-se-pasa-otra-función-como-parámetro"><i class="fa fa-check"></i><b>2.5.2</b> Función a la que se pasa otra función como parámetro</a></li>
+<li class="chapter" data-level="2.5.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#ámbito-de-las-variables"><i class="fa fa-check"></i><b>2.5.3</b> Ámbito de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#leer-y-escribir-estructuras-de-datos"><i class="fa fa-check"></i><b>2.6</b> Leer y escribir estructuras de datos</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#guardar-un-data-frame-en-un-archivo-y-volverlo-a-leer"><i class="fa fa-check"></i><b>2.6.1</b> Guardar un data frame en un archivo y volverlo a leer</a></li>
+<li class="chapter" data-level="2.6.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#guardar-y-leer-un-data-frame-e-interperetar-strings-como-factores"><i class="fa fa-check"></i><b>2.6.2</b> Guardar y leer un data frame, e interperetar strings como factores</a></li>
+<li class="chapter" data-level="2.6.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#guardar-y-leer-una-matriz"><i class="fa fa-check"></i><b>2.6.3</b> Guardar y leer una matriz</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#plots-básicos"><i class="fa fa-check"></i><b>2.7</b> Plots básicos</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#diagrama-de-dispersión-e-histograma"><i class="fa fa-check"></i><b>2.7.1</b> Diagrama de dispersión e histograma</a></li>
+<li class="chapter" data-level="2.7.2" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#línea-con-puntos"><i class="fa fa-check"></i><b>2.7.2</b> Línea con puntos</a></li>
+<li class="chapter" data-level="2.7.3" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#polígonos-y-plots-múltiples"><i class="fa fa-check"></i><b>2.7.3</b> Polígonos y plots múltiples</a></li>
+<li class="chapter" data-level="2.7.4" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#rectángulos-colores-y-transparencia"><i class="fa fa-check"></i><b>2.7.4</b> Rectángulos, colores y transparencia</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="intro-r-mediante-ejemplos.html"><a href="intro-r-mediante-ejemplos.html#paquetes"><i class="fa fa-check"></i><b>2.8</b> Paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="representación-de-capas.html"><a href="representación-de-capas.html"><i class="fa fa-check"></i><b>3</b> Representación de capas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="representación-de-capas.html"><a href="representación-de-capas.html#obtencion-datos-r1"><i class="fa fa-check"></i><b>3.1</b> Obtención de los datos</a></li>
+<li class="chapter" data-level="3.2" data-path="representación-de-capas.html"><a href="representación-de-capas.html#leer-capas"><i class="fa fa-check"></i><b>3.2</b> Leer capas</a></li>
+<li class="chapter" data-level="3.3" data-path="representación-de-capas.html"><a href="representación-de-capas.html#representar-capas"><i class="fa fa-check"></i><b>3.3</b> Representar capas</a></li>
+<li class="chapter" data-level="3.4" data-path="representación-de-capas.html"><a href="representación-de-capas.html#cambiar-el-color-y-otros-elementos-de-una-capa"><i class="fa fa-check"></i><b>3.4</b> Cambiar el color y otros elementos de una capa</a></li>
+<li class="chapter" data-level="3.5" data-path="representación-de-capas.html"><a href="representación-de-capas.html#importar-una-imagen-desde-la-web"><i class="fa fa-check"></i><b>3.5</b> Importar una imagen desde la Web</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html"><i class="fa fa-check"></i><b>4</b> Explorar una capa</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#acceder-a-elementos-de-una-capa"><i class="fa fa-check"></i><b>4.1</b> Acceder a elementos de una capa</a></li>
+<li class="chapter" data-level="4.2" data-path="explorar-una-capa.html"><a href="explorar-una-capa.html#tabla-de-atributos-de-una-capa"><i class="fa fa-check"></i><b>4.2</b> Tabla de atributos de una capa</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html"><i class="fa fa-check"></i><b>5</b> Operaciones sobre la tabla de atributos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#lectura-de-una-tabla-en-un-data-frame"><i class="fa fa-check"></i><b>5.1</b> Lectura de una tabla en un <em>data frame</em></a></li>
+<li class="chapter" data-level="5.2" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#añadir-un-campo-a-la-tabla-de-atributos"><i class="fa fa-check"></i><b>5.2</b> Añadir un campo a la tabla de atributos</a></li>
+<li class="chapter" data-level="5.3" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#unir-tablas-de-atributos"><i class="fa fa-check"></i><b>5.3</b> Unir tablas de atributos</a></li>
+<li class="chapter" data-level="5.4" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#consultas-sobre-la-tabla-de-atributos"><i class="fa fa-check"></i><b>5.4</b> Consultas sobre la tabla de atributos</a></li>
+<li class="chapter" data-level="5.5" data-path="operaciones-sobre-la-tabla-de-atributos.html"><a href="operaciones-sobre-la-tabla-de-atributos.html#guardar-una-capa"><i class="fa fa-check"></i><b>5.5</b> Guardar una capa</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html"><i class="fa fa-check"></i><b>6</b> Añadir elementos a la representación las de capas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#mostrar-etiquetas"><i class="fa fa-check"></i><b>6.1</b> Mostrar etiquetas</a></li>
+<li class="chapter" data-level="6.2" data-path="añadir-elementos-a-la-representación-las-de-capas.html"><a href="añadir-elementos-a-la-representación-las-de-capas.html#representar-información-numérica"><i class="fa fa-check"></i><b>6.2</b> Representar información numérica</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html"><i class="fa fa-check"></i><b>7</b> Generar la salida del proyecto</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#guardar-como-una-imagen"><i class="fa fa-check"></i><b>7.1</b> Guardar como una imagen</a></li>
+<li class="chapter" data-level="7.2" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#imprimir-un-mapa"><i class="fa fa-check"></i><b>7.2</b> Imprimir un mapa</a></li>
+<li class="chapter" data-level="7.3" data-path="generar-la-salida-del-proyecto.html"><a href="generar-la-salida-del-proyecto.html#generar-un-mapa-para-la-web"><i class="fa fa-check"></i><b>7.3</b> Generar un mapa para la Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cartografía con <em>R</em></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Cartografía con <em>R</em></h1>
+<h2 class="subtitle"><em><p>Sistemas de Información Geográfica</p></em></h2>
+<p class="author"><em><p>José Samos Jiménez (<a href="mailto:jsamos@ugr.es" class="email">jsamos@ugr.es</a>)<br>
+Dpto. de Lenguajes y Sistemas Informáticos<br>
+Universidad de Granada</p></em></p>
+<p class="date"><em><p>Curso 2024-2025<br><br>
+<a href="https://doi.org/10.6084/m9.figshare.26799943.v2" class="uri">https://doi.org/10.6084/m9.figshare.26799943.v2</a></p></em></p>
+</div>
+<div id="introducción" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Introducción<a href="index.html#introducción" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>R</em><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> es un proyecto de software libre, se basa en el lenguaje <em>S</em>, desarrollado originalmente en <em>Bell Laboratories</em> en los años 70 y 80 del siglo pasado. <em>R</em> como tal fue desarrollado en la <em>University of Auckland, New Zealand</em>. Comenzó como proyecto en 1992 y la primera versión estable se lanzó en 2000.</p>
+<p>Funciona sobre <em>Linux</em>, <em>Unix</em>, <em>Mac OSX</em>, <em>Windows</em> y <em>Android</em>. Como principales características se puede remarcar la facilitad que presenta para trabajar con estructuras de datos y con gráficos, y el repositorio de paquetes disponibles para su uso.</p>
+<p>En lugar de trabajar directamente sobre <em>R</em>, usaremos <em>RStudio</em><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, entorno de desarrollo integrado (IDE) especialmente pensado para <em>R</em> que permite ejecución paso a paso, visualización del entorno, acceso a la ayuda, formateo del código, definición de proyectos y directorio de trabajo, entre otras funcionalidades.</p>
+<div id="objetivos" class="section level4 unnumbered hasAnchor">
+<h4>Objetivos<a href="index.html#objetivos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Repasar conceptos sobre <em>Información Geográfica</em> explicados en clase de Teoría, materializados en un SIG concreto.</li>
+<li>Introducir <em>R</em> mediante ejemplos y utilizarlo como SIG. No es una introducción exhaustiva sino un primer contacto; se pondrá en práctica:
+<ul>
+<li>Estructuras de datos.</li>
+<li>Control de flujo.</li>
+<li>Funciones.</li>
+<li>Plots básicos.</li>
+<li>Paquetes.</li>
+<li>Visualización de capas.</li>
+<li>Crear un mapa temático.</li>
+</ul></li>
+</ul>
+<p>Las actividades propuestas se basan principalmente en <span class="citation">Lovelace, Nowosad, and Muenchow (<a href="#ref-lovelace2019">2019</a>)</span>, <span class="citation">Brundsdon and Comber (<a href="#ref-brunsdon2019">2019</a>)</span> y <span class="citation">Matloff (<a href="#ref-matloff2011">2011</a>)</span>.</p>
+
+</div>
+</div>
+<h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-brunsdon2019" class="csl-entry">
+Brundsdon, Chris, and Lex Comber. 2019. <em>An Introduction to <span>R</span> for Spatial Analysis &amp; Mapping</em>. 2nd ed. SAGE.
+</div>
+<div id="ref-lovelace2019" class="csl-entry">
+Lovelace, Robin, Jakub Nowosad, and Jannes Muenchow. 2019. <em>Geocomputarion with <span>R</span></em>. 2nd ed. CRC Press. <a href="https://r.geocompx.org/">https://r.geocompx.org/</a>.
+</div>
+<div id="ref-matloff2011" class="csl-entry">
+Matloff, Norman. 2011. <em>The Art of <span>R</span> Programming: A Tour of Statistical Software Design</em>. no starch press.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="https://www.r-project.org/">https://www.r-project.org/</a><a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://www.rstudio.com/">https://www.rstudio.com/</a><a href="index.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="intro-r-mediante-ejemplos.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
