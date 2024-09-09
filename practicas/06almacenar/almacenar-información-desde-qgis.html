@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Almacenar información desde QGIS | Almacenar Información Geográfica</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Almacenar información desde QGIS | Almacenar Información Geográfica" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Almacenar información desde QGIS | Almacenar Información Geográfica" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="almacenar-información-desde-r.html"/>
+<link rel="next" href="almacenar-acceder-mostrar-info.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="almacenar-capas-trabajo.html"><a href="almacenar-capas-trabajo.html"><i class="fa fa-check"></i><b>2</b> Capas de trabajo</a></li>
+<li class="chapter" data-level="3" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html"><i class="fa fa-check"></i><b>3</b> BD <em>SpatiaLite</em>, <em>GeoPackage</em> y <em>PostGIS</em></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#spatialite"><i class="fa fa-check"></i><b>3.1</b> <em>SpatiaLite</em></a></li>
+<li class="chapter" data-level="3.2" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#geopackage"><i class="fa fa-check"></i><b>3.2</b> <em>GeoPackage</em></a></li>
+<li class="chapter" data-level="3.3" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#postgis"><i class="fa fa-check"></i><b>3.3</b> <em>PostGIS</em></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#instalar-la-extensión-postgis-raster"><i class="fa fa-check"></i><b>3.3.1</b> Instalar la extensión <em>PostGIS Raster</em></a></li>
+<li class="chapter" data-level="3.3.2" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#actualizar-postgis-a-una-versión-10-y-conectarse-desde-r"><i class="fa fa-check"></i><b>3.3.2</b> Actualizar <em>PostGIS</em> a una versión &gt;= 10 y conectarse desde <em>R</em></a></li>
+<li class="chapter" data-level="3.3.3" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#crear-una-bd-postgresql-con-las-extensiones-postgis-y-postgis-raster"><i class="fa fa-check"></i><b>3.3.3</b> Crear una BD <em>PostgreSQL</em> con las extensiones <em>PostGIS</em> y <em>PostGIS Raster</em></a></li>
+<li class="chapter" data-level="3.3.4" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#guardar-en-un-archivo-y-restaurar-una-bd-postgresql"><i class="fa fa-check"></i><b>3.3.4</b> Guardar en un archivo y restaurar una BD <em>PostgreSQL</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html"><i class="fa fa-check"></i><b>4</b> Almacenar información desde <em>R</em></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#spatialite-y-geopackage"><i class="fa fa-check"></i><b>4.1</b> <em>SpatiaLite</em> y <em>GeoPackage</em></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#almacenar-una-capa-vectorial"><i class="fa fa-check"></i><b>4.1.1</b> Almacenar una capa vectorial</a></li>
+<li class="chapter" data-level="4.1.2" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#almacenar-una-banda-ráster"><i class="fa fa-check"></i><b>4.1.2</b> Almacenar una banda ráster</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#postgis-1"><i class="fa fa-check"></i><b>4.2</b> <em>PostGIS</em></a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#definir-la-conexión-con-la-bd"><i class="fa fa-check"></i><b>4.2.1</b> Definir la conexión con la BD</a></li>
+<li class="chapter" data-level="4.2.2" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#almacenar-una-capa-vectorial-1"><i class="fa fa-check"></i><b>4.2.2</b> Almacenar una capa vectorial</a></li>
+<li class="chapter" data-level="4.2.3" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#almacenar-un-ráster"><i class="fa fa-check"></i><b>4.2.3</b> Almacenar un ráster</a></li>
+<li class="chapter" data-level="4.2.4" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#finalizar-la-conexión-con-la-bd"><i class="fa fa-check"></i><b>4.2.4</b> Finalizar la conexión con la BD</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html"><i class="fa fa-check"></i><b>5</b> Almacenar información desde <em>QGIS</em></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#tratamiento-como-formato-de-datos"><i class="fa fa-check"></i><b>5.1</b> Tratamiento como formato de datos</a></li>
+<li class="chapter" data-level="5.2" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#tratamiento-como-bd"><i class="fa fa-check"></i><b>5.2</b> Tratamiento como BD</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#almacenar-conexion-bd"><i class="fa fa-check"></i><b>5.2.1</b> Conexión a la BD o creación de la BD</a></li>
+<li class="chapter" data-level="5.2.2" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#añadir-capas"><i class="fa fa-check"></i><b>5.2.2</b> Añadir capas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="almacenar-acceder-mostrar-info.html"><a href="almacenar-acceder-mostrar-info.html"><i class="fa fa-check"></i><b>6</b> Acceder y mostrar información de una BD desde el <em>Administrador de BBDD</em> de <em>QGIS</em></a></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Almacenar Información Geográfica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="almacenar-información-desde-qgis" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Almacenar información desde <em>QGIS</em><a href="almacenar-información-desde-qgis.html#almacenar-información-desde-qgis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Podemos almacenar información en <em>SpatiaLite</em> y <em>GeoPackage</em> tratándolos como un formato de datos más o bien tratándolos como BD. En el caso de <em>PostGIS</em>, solo se puede tratar como BD.</p>
+<div id="tratamiento-como-formato-de-datos" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Tratamiento como formato de datos<a href="almacenar-información-desde-qgis.html#tratamiento-como-formato-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-guardar-capa-vectorial-como-spatialite"></span>
+<img src="figuras_original/guardar-capa-vectorial-como-spatialite.png" alt="Guardar capa vectorial como…" width="60%" />
+<p class="caption">
+Figura 5.1: <em>Guardar capa vectorial como…</em>
+</p>
+</div>
+<p><em>SpatiaLite</em> y <em>GeoPackage</em> se pueden considerar en <em>QGIS</em> como un formato de almacenamiento de datos más. Podemos crear una BD y almacenar en ella varias capas vectoriales accediendo a la operación <em>Guardar capa vectorial como…</em>, desde el menú contextual de la capa o desde el menú <em>Capa</em>, y seleccionando el formato adecuado en cada caso (figura <a href="almacenar-información-desde-qgis.html#fig:qgis-guardar-capa-vectorial-como-spatialite">5.1</a>).</p>
+<p>Para <em>GeoPackage</em> también podemos almacenar varias capas ráster en una BD directamente desde la operación <em>Guardar capa ráster como…</em>, también accesible desde el menú contextual de la capa o desde el menú <em>Capa</em>.</p>
+</div>
+<div id="tratamiento-como-bd" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Tratamiento como BD<a href="almacenar-información-desde-qgis.html#tratamiento-como-bd" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Podemos acceder a las BD de distinto tipo desde el <em>Navegador</em> de <em>QGIS</em>. En el menú contextual de cada tipo de BD podemos acceder a las opciones disponibles.</p>
+<div id="almacenar-conexion-bd" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Conexión a la BD o creación de la BD<a href="almacenar-información-desde-qgis.html#almacenar-conexion-bd" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para <em>SpatiaLite</em> y <em>GeoPackage</em> podemos conectarnos a una BD previamente existente o bien crear una nueva. En el caso de <em>PostGIS</em>, solo podemos conectarnos a BD. Una vez definamos una conexión a una BD podremos acceder a sus capas de la misma forma que si esta estuvieran almacenadas en archivos de tipo vectorial o ráster para trabajar con ellas en nuestro proyecto.</p>
+<div id="spatialite-1" class="section level4 hasAnchor" number="5.2.1.1">
+<h4><span class="header-section-number">5.2.1.1</span> <em>SpatiaLite</em><a href="almacenar-información-desde-qgis.html#spatialite-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-navegador-spatialite"></span>
+<img src="figuras_original/navegador-spatialite.png" alt="Opciones de las BD SpatiaLite en el Navegador." width="40%" />
+<p class="caption">
+Figura 5.2: Opciones de las BD <em>SpatiaLite</em> en el <em>Navegador</em>.
+</p>
+</div>
+<p>En el caso de <em>SpatiaLite</em> podemos conectarnos a una BD o bien crear una nueva (figura <a href="almacenar-información-desde-qgis.html#fig:qgis-navegador-spatialite">5.2</a>).</p>
+<p>Para conectarse a una BD solo es necesario seleccionar el archivo que implementa la BD. De igual forma, para crear una nueva BD, es suficiente con indicar el nombre y ubicación del archivo que la implementará.</p>
+</div>
+<div id="geopackage-1" class="section level4 hasAnchor" number="5.2.1.2">
+<h4><span class="header-section-number">5.2.1.2</span> <em>GeoPackage</em><a href="almacenar-información-desde-qgis.html#geopackage-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-nueva-capa-geopackage"></span>
+<img src="figuras_original/nueva-capa-geopackage.png" alt="Opciones de las BD SpatiaLite en el Navegador." width="50%" />
+<p class="caption">
+Figura 5.3: Opciones de las BD <em>SpatiaLite</em> en el <em>Navegador</em>.
+</p>
+</div>
+<p>En el caso de <em>GeoPackage</em>, funciona exactamente igual que <em>SpatiaLite</em> para conectarse a una BD. Sin embargo, para crear una nueva BD, es necesario definir una tabla para almacenar una capa, se ha de definir al menos el nombre y tipo de la capa, también se pueden definir campos (figura <a href="almacenar-información-desde-qgis.html#fig:qgis-nueva-capa-geopackage">5.3</a>).</p>
+</div>
+<div id="almacenar-conexion-postgis" class="section level4 hasAnchor" number="5.2.1.3">
+<h4><span class="header-section-number">5.2.1.3</span> <em>PostGIS</em><a href="almacenar-información-desde-qgis.html#almacenar-conexion-postgis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-navegador-postgis"></span>
+<img src="figuras_original/navegador-postgis.png" alt="Opciones de las BD PostGIS en el Navegador." width="40%" />
+<p class="caption">
+Figura 5.4: Opciones de las BD <em>PostGIS</em> en el <em>Navegador</em>.
+</p>
+</div>
+<p>En el caso de <em>PostGIS</em> solo podemos realizar operaciones sobre una BD previamente existente (figura <a href="almacenar-información-desde-qgis.html#fig:qgis-navegador-postgis">5.4</a>). En particular, para conectarnos con una BD seleccionamos la opción <em>Conexión nueva…</em></p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-nueva-conexion-postgis"></span>
+<img src="figuras_original/nueva-conexion-postgis.png" alt="Crear una nueva conexión a PostGIS." width="60%" />
+<p class="caption">
+Figura 5.5: Crear una nueva conexión a <em>PostGIS</em>.
+</p>
+</div>
+<p>En la ventana que se abre definimos los datos de la nueva conexión (figura <a href="almacenar-información-desde-qgis.html#fig:qgis-nueva-conexion-postgis">5.5</a>). El nombre de la conexión puede ser cualquiera, no tiene que coincidir con el de la BD. Es recomendable pulsar sobre el botón <em>Probar conexión</em>, nos pedirá el usuario y contraseña (en la instalación de la máquina virtual ambos son <code>postgres</code>) y podremos comprobar si se puede conectar a la BD.</p>
+</div>
+</div>
+<div id="añadir-capas" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Añadir capas<a href="almacenar-información-desde-qgis.html#añadir-capas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="añadir-capas-vectoriales" class="section level4 hasAnchor" number="5.2.2.1">
+<h4><span class="header-section-number">5.2.2.1</span> Añadir capas vectoriales<a href="almacenar-información-desde-qgis.html#añadir-capas-vectoriales" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-administrador-de-bbdd"></span>
+<img src="figuras_original/administrador-de-bbdd.png" alt="Administrador de BBDD." width="80%" />
+<p class="caption">
+Figura 5.6: <em>Administrador de BBDD</em>.
+</p>
+</div>
+<p>Podemos añadir capas vectoriales desde el <em>Administrador de BBDD</em>. Accedemos a él pulsando sobre <em>Base de datos &gt; Administrador de bases de datos…</em> Además de poder definir nuevas conexiones a BD, podemos importar datos vectoriales pulsando sobre <em>Importar capa/archivo…</em> en la barra de herramientas (figura <a href="almacenar-información-desde-qgis.html#fig:qgis-administrador-de-bbdd">5.6</a>).</p>
+</div>
+<div id="añadir-capas-ráster" class="section level4 hasAnchor" number="5.2.2.2">
+<h4><span class="header-section-number">5.2.2.2</span> Añadir capas ráster<a href="almacenar-información-desde-qgis.html#añadir-capas-ráster" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Como BD podemos añadir capas ráster para <em>PostGIS</em>. Una posibilidad es usar la utilidad <code>raster2pgsql</code> para obtener un archivo SQL a partir de un ráster y así poder insertarlo en la BD. Otra es utilizar el complemento <code>PostGIS Raster Import</code> que, una vez instalado, es accesible desde la opción <em>Base de datos &gt; PostGIS Raster Import</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-postgis-raster-import"></span>
+<img src="figuras_original/postgis-raster-import.png" alt="PostGIS Raster Import." width="60%" />
+<p class="caption">
+Figura 5.7: <em>PostGIS Raster Import</em>.
+</p>
+</div>
+<p>En la ventana que se abre (figura <a href="almacenar-información-desde-qgis.html#fig:qgis-postgis-raster-import">5.7</a>), seleccionamos la capa ráster a importar, la conexión de la BD (ha de estar definida previamente), el esquema de la BD (usamos el esquema <code>public</code>) y la tabla donde se almacenará la capa (si no existe la creará).</p>
+<p>Es importante desmarcar la opción <em>Create Raster Overviews</em> porque, en caso contrario, además del ráster, añade varios más obtenidos a partir de él a distintas resoluciones.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="almacenar-información-desde-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="almacenar-acceder-mostrar-info.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
