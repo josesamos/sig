@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Iniciar y parar GeoServer | Servidores de Información Geográfica</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Iniciar y parar GeoServer | Servidores de Información Geográfica" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Iniciar y parar GeoServer | Servidores de Información Geográfica" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="información-de-contacto-y-estado-del-servidor.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html"><i class="fa fa-check"></i><b>2</b> Iniciar y parar <em>GeoServer</em></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#iniciar-geoserver"><i class="fa fa-check"></i><b>2.1</b> Iniciar <em>GeoServer</em></a></li>
+<li class="chapter" data-level="2.2" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#acceder-a-la-página-de-administración-de-geoserver"><i class="fa fa-check"></i><b>2.2</b> Acceder a la página de administración de <em>GeoServer</em></a></li>
+<li class="chapter" data-level="2.3" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#parar-geoserver"><i class="fa fa-check"></i><b>2.3</b> Parar <em>GeoServer</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html"><i class="fa fa-check"></i><b>3</b> Información de contacto y estado del servidor</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html#cambiar-la-información-de-contacto"><i class="fa fa-check"></i><b>3.1</b> Cambiar la información de contacto</a></li>
+<li class="chapter" data-level="3.2" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html#estado-del-servidor"><i class="fa fa-check"></i><b>3.2</b> Estado del servidor</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html"><i class="fa fa-check"></i><b>4</b> Añadir información geográfica</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#espacios-de-trabajo"><i class="fa fa-check"></i><b>4.1</b> Espacios de trabajo</a></li>
+<li class="chapter" data-level="4.2" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#almacenes-de-datos"><i class="fa fa-check"></i><b>4.2</b> Almacenes de datos</a></li>
+<li class="chapter" data-level="4.3" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#presentar-datos-capas"><i class="fa fa-check"></i><b>4.3</b> Capas</a></li>
+<li class="chapter" data-level="4.4" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#previsualización-de-capas"><i class="fa fa-check"></i><b>4.4</b> Previsualización de capas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html"><i class="fa fa-check"></i><b>5</b> Consultar información geográfica desde otras herramientas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-qgis"><i class="fa fa-check"></i><b>5.1</b> Consulta desde <em>QGIS</em></a></li>
+<li class="chapter" data-level="5.2" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-una-aplicación-web"><i class="fa fa-check"></i><b>5.2</b> Consulta desde una aplicación Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Servidores de Información Geográfica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="iniciar-y-parar-geoserver" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Iniciar y parar <em>GeoServer</em><a href="iniciar-y-parar-geoserver.html#iniciar-y-parar-geoserver" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>GeoServer</em> es un servidor Web de datos espaciales: permite publicar datos espaciales mediante los estándares de OGC. Es una aplicación de código abierto desarrollada en <em>Java</em>.</p>
+<p>En relación con la instalación de la herramienta, en el momento de instalar <em>GeoServer</em>, se configura con la ubicación de la carpeta donde está <em>Java</em>. Un problema que he encontrado es que si se actualiza <em>Java</em> y pasa a estar en otra carpeta (cambia el nombre con el número de versión), <em>GeoServer</em> deja de funcionar. La manera más sencilla de arreglarlo es volver a ejecutar el instalador e indicar la nueva carpeta de <em>Java</em>.</p>
+<div id="iniciar-geoserver" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Iniciar <em>GeoServer</em><a href="iniciar-y-parar-geoserver.html#iniciar-geoserver" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-01-start"></span>
+<img src="figuras_original/01-start.png" alt="Iniciar GeoServer." width="10%" />
+<p class="caption">
+Figura 2.1: Iniciar <em>GeoServer</em>.
+</p>
+</div>
+<p>En la instalación, se puede configurar para que se inicie el servidor automáticamente al arrancar el sistema. En lugar de esa opción, he elegido la alternativa de iniciar el servidor manualmente. Se inicia pulsando sobre el icono <em>GeoServer Start</em> del escritorio<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> (figura <a href="iniciar-y-parar-geoserver.html#fig:geosvr-01-start">2.1</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-04-started"></span>
+<img src="figuras_original/04-started.png" alt="Ventana de comandos para el inicio de GeoServer." width="80%" />
+<p class="caption">
+Figura 2.2: Ventana de comandos para el inicio de <em>GeoServer</em>.
+</p>
+</div>
+<p>Para iniciarse, se abre una ventana del Sistema y comienzan a ejecutarse comandos. Tarda un poco en ponerse en marcha. Acaba cuando aparece el mensaje <code>INFO:oejs.Server:main: Started</code>, como puede verse en la última línea de la figura <a href="iniciar-y-parar-geoserver.html#fig:geosvr-04-started">2.2</a>.</p>
+</div>
+<div id="acceder-a-la-página-de-administración-de-geoserver" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Acceder a la página de administración de <em>GeoServer</em><a href="iniciar-y-parar-geoserver.html#acceder-a-la-página-de-administración-de-geoserver" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-02-admin"></span>
+<img src="figuras_original/02-admin.png" alt="Acceder a la página de administración de GeoServer." width="10%" />
+<p class="caption">
+Figura 2.3: Acceder a la página de administración de <em>GeoServer</em>.
+</p>
+</div>
+<p>Una vez está en marcha el servidor, podemos abrir la aplicación de administración en el navegador. Se puede hacer directamente pulsando sobre el icono <em>GeoServer Web Admin Page</em> del escritorio<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> (figura <a href="iniciar-y-parar-geoserver.html#fig:geosvr-02-admin">2.3</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-05-inicio"></span>
+<img src="figuras_original/05-inicio.png" alt="Página de inicio de GeoServer." width="100%" />
+<p class="caption">
+Figura 2.4: Página de inicio de <em>GeoServer</em>.
+</p>
+</div>
+<p>La página de inicio de la aplicación de administración de <em>GeoServer</em> se muestra en la figura <a href="iniciar-y-parar-geoserver.html#fig:geosvr-05-inicio">2.4</a>. En esta página, nos muestra una pantalla de bienvenida y, en la columna de la derecha, lista las <em>Capacidades del servicio</em>: las versiones de los distintos estándares bajo los que puede servir datos. Mediante las opciones de la zona izquierda, podemos obtener información más detallada del servidor, consultar las capas disponibles y demostraciones de posibles operaciones con <em>GeoServer</em>.</p>
+<p>En nuestra instalación, el navegador ha rellenado automáticamente los campos de usuario y contraseña, por lo que no es necesario introducirlos de nuevo. En caso necesario, el usuario administrador es <code>admin</code> y la contraseña es <code>geoserver</code>. Pulsando sobre el botón <em>Identificarse</em> accedemos a las opciones de administración.</p>
+</div>
+<div id="parar-geoserver" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Parar <em>GeoServer</em><a href="iniciar-y-parar-geoserver.html#parar-geoserver" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-03-stop"></span>
+<img src="figuras_original/03-stop.png" alt="Parar el servidor GeoServer." width="10%" />
+<p class="caption">
+Figura 2.5: Parar el servidor <em>GeoServer</em>.
+</p>
+</div>
+<p>En esta actividad vamos a trabajar con <em>GeoServer</em>, necesitamos que esté funcionando. Cuando la acabemos o, en caso de que quisiéramos pararlo, deberíamos pulsar sobre el icono <em>GeoServer Stop</em> del escritorio<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> (figura <a href="iniciar-y-parar-geoserver.html#fig:geosvr-03-stop">2.5</a>).</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Como resultado se ejecuta el archivo por lotes <code>startup</code> de la carpeta <code>bin</code> de la instalación de <em>Geoserver</em>.<a href="iniciar-y-parar-geoserver.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Como resultado abre en el navegador la URL <code>http://http://localhost:8080/geoserver/web</code>.<a href="iniciar-y-parar-geoserver.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Como resultado se ejecuta el archivo por lotes <code>shutdown</code> de la carpeta <code>bin</code> de la instalación de <em>Geoserver</em>.<a href="iniciar-y-parar-geoserver.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="información-de-contacto-y-estado-del-servidor.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Añadir información geográfica | Servidores de Información Geográfica</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Añadir información geográfica | Servidores de Información Geográfica" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Añadir información geográfica | Servidores de Información Geográfica" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="información-de-contacto-y-estado-del-servidor.html"/>
+<link rel="next" href="consultar-información-geográfica-desde-otras-herramientas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html"><i class="fa fa-check"></i><b>2</b> Iniciar y parar <em>GeoServer</em></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#iniciar-geoserver"><i class="fa fa-check"></i><b>2.1</b> Iniciar <em>GeoServer</em></a></li>
+<li class="chapter" data-level="2.2" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#acceder-a-la-página-de-administración-de-geoserver"><i class="fa fa-check"></i><b>2.2</b> Acceder a la página de administración de <em>GeoServer</em></a></li>
+<li class="chapter" data-level="2.3" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#parar-geoserver"><i class="fa fa-check"></i><b>2.3</b> Parar <em>GeoServer</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html"><i class="fa fa-check"></i><b>3</b> Información de contacto y estado del servidor</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html#cambiar-la-información-de-contacto"><i class="fa fa-check"></i><b>3.1</b> Cambiar la información de contacto</a></li>
+<li class="chapter" data-level="3.2" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html#estado-del-servidor"><i class="fa fa-check"></i><b>3.2</b> Estado del servidor</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html"><i class="fa fa-check"></i><b>4</b> Añadir información geográfica</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#espacios-de-trabajo"><i class="fa fa-check"></i><b>4.1</b> Espacios de trabajo</a></li>
+<li class="chapter" data-level="4.2" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#almacenes-de-datos"><i class="fa fa-check"></i><b>4.2</b> Almacenes de datos</a></li>
+<li class="chapter" data-level="4.3" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#presentar-datos-capas"><i class="fa fa-check"></i><b>4.3</b> Capas</a></li>
+<li class="chapter" data-level="4.4" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#previsualización-de-capas"><i class="fa fa-check"></i><b>4.4</b> Previsualización de capas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html"><i class="fa fa-check"></i><b>5</b> Consultar información geográfica desde otras herramientas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-qgis"><i class="fa fa-check"></i><b>5.1</b> Consulta desde <em>QGIS</em></a></li>
+<li class="chapter" data-level="5.2" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-una-aplicación-web"><i class="fa fa-check"></i><b>5.2</b> Consulta desde una aplicación Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Servidores de Información Geográfica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="añadir-información-geográfica" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Añadir información geográfica<a href="añadir-información-geográfica.html#añadir-información-geográfica" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Para añadir información geográfica a <em>Geoserver</em> se usan tres conceptos:</p>
+<ul>
+<li>espacios de trabajo,</li>
+<li>almacenes de datos,</li>
+<li>capas.</li>
+</ul>
+<p>El <em>espacio de trabajo</em> se puede entender como el espacio de nombres: el nombre que va a permitir agrupar toda la información geográfica que deseemos. Se añadirá como prefijo a los nombres de las capas que se utilicen.</p>
+<p>Asociado a un espacio de trabajo, se pueden definir uno o varios <em>almacenes de datos</em>: el medio donde se almacena la información geográfica. Puede ser una carpeta, un archivo o una BD, entre otros.</p>
+<p>Por último, podemos configurar las <em>capas</em> de información geográfica incluidas en cada almacén de datos. Para acceder a una capa concreta, deberemos indicar también el espacio de trabajo que tiene asociado (el almacén de datos resulta transparente).</p>
+<div id="espacios-de-trabajo" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Espacios de trabajo<a href="añadir-información-geográfica.html#espacios-de-trabajo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-09-espacios-trabajo"></span>
+<img src="figuras_original/09-espacios-trabajo.png" alt="Espacios de trabajo." width="100%" />
+<p class="caption">
+Figura 4.1: Espacios de trabajo.
+</p>
+</div>
+<p>Para acceder a los espacios de trabajo, pulsamos sobre <em>Datos &gt; Espacios de trabajo</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-09-espacios-trabajo">4.1</a>). Podemos ver una lista de los espacios de trabajo existentes en nuestra instancia de <em>GeoServer</em>. Además de poder eliminar cualquier espacio de trabajo, desde esta pantalla podemos crear nuevos espacios.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-10-nuevo-espacio"></span>
+<img src="figuras_original/10-nuevo-espacio.png" alt="Nuevo espacio de trabajo." width="100%" />
+<p class="caption">
+Figura 4.2: Nuevo espacio de trabajo.
+</p>
+</div>
+<p>Para crear un nuevo espacio de trabajo, pulsamos sobre el enlace <em>Agregar un nuevo espacio de trabajo</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-10-nuevo-espacio">4.2</a>) e introducimos los datos: el nombre y una URI. Ambos datos son obligatorios. La URI<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> la usa para definir el espacio de nombres<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> asociado al espacio de trabajo.</p>
+<p>Podemos indicar que el nuevo espacio de trabajo sea el espacio de trabajo por defecto, marcando la opción correspondiente.</p>
+</div>
+<div id="almacenes-de-datos" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Almacenes de datos<a href="añadir-información-geográfica.html#almacenes-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-11-almacenes-datos"></span>
+<img src="figuras_original/11-almacenes-datos.png" alt="Almacenes de datos." width="100%" />
+<p class="caption">
+Figura 4.3: Almacenes de datos.
+</p>
+</div>
+<p>Para acceder a los almacenes de datos, pulsamos sobre <em>Datos &gt; Almacenes de datos</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-11-almacenes-datos">4.3</a>). Podemos ver una lista de los almacenes de datos asociados a espacios de trabajo. Se puede observar que algunos espacios de nombres están relacionados con varios almacenes de datos.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-12-nuevo-almacen-datos"></span>
+<img src="figuras_original/12-nuevo-almacen-datos.png" alt="Nuevo almacén de datos." width="100%" />
+<p class="caption">
+Figura 4.4: Nuevo almacén de datos.
+</p>
+</div>
+<p>Para crear un nuevo almacén de datos, pulsamos sobre el enlace <em>Agregar un nuevo almacén</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-11-almacenes-datos">4.3</a>) y, según los datos sean vectoriales o ráster, seleccionamos el tipo de almacén (figura <a href="añadir-información-geográfica.html#fig:geosvr-12-nuevo-almacen-datos">4.4</a>). También se pueden configurar servidores en cascada si se selecciona como origen de datos otro servidor.</p>
+<p>En este ejemplo, se ha usado <em>PostGIS</em> como almacén de datos vectoriales y archivos <em>GeoTIFF</em> como almacén de datos ráster<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-13-postgis-almacen"></span>
+<img src="figuras_original/13-postgis-almacen.png" alt="PostGIS como almacén de datos." width="100%" />
+<p class="caption">
+Figura 4.5: <em>PostGIS</em> como almacén de datos.
+</p>
+</div>
+<p>La página de configuración de <em>PostGIS</em> como almacén de datos se muestra en la figura <a href="añadir-información-geográfica.html#fig:geosvr-13-postgis-almacen">4.5</a>. Se ha de indicar el espacio de trabajo (en este caso he indicado <code>SIG</code>) y darle un nombre al origen de datos. Además, se indican los parámetros de conexión a la BD.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-14-lista-capas-almacen"></span>
+<img src="figuras_original/14-lista-capas-almacen.png" alt="Lista de capas disponibles en el almacén de datos." width="100%" />
+<p class="caption">
+Figura 4.6: Lista de capas disponibles en el almacén de datos.
+</p>
+</div>
+<p>Una vez realizada la conexión, aparece una lista con las capas disponibles en el almacén de datos (figura <a href="añadir-información-geográfica.html#fig:geosvr-14-lista-capas-almacen">4.6</a>). A esta lista también podemos acceder desde la opción Datos &gt; Capas (la veremos en el apartado <a href="añadir-información-geográfica.html#presentar-datos-capas">4.3</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-22-geotiff-almacen"></span>
+<img src="figuras_original/22-geotiff-almacen.png" alt="Archivo GeoTIFF como almacén de datos." width="100%" />
+<p class="caption">
+Figura 4.7: Archivo <em>GeoTIFF</em> como almacén de datos.
+</p>
+</div>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-23-geotiff-almacen-definicion"></span>
+<img src="figuras_original/23-geotiff-almacen-definicion.png" alt="Definición de un archivo GeoTIFF como almacén de datos." width="100%" />
+<p class="caption">
+Figura 4.8: Definición de un archivo <em>GeoTIFF</em> como almacén de datos.
+</p>
+</div>
+<p>En la figura <a href="añadir-información-geográfica.html#fig:geosvr-22-geotiff-almacen">4.7</a>, se muestra la selección de un archivo <em>GeoTIFF</em> como almacén de datos. En la figura <a href="añadir-información-geográfica.html#fig:geosvr-23-geotiff-almacen-definicion">4.8</a>, se definen los parámetros del nuevo almacén de datos. En este caso, los parámetros de conexión son solo la URL del archivo.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-24-capa-en-almacen"></span>
+<img src="figuras_original/24-capa-en-almacen.png" alt="Capa disponible en el almacén de datos." width="100%" />
+<p class="caption">
+Figura 4.9: Capa disponible en el almacén de datos.
+</p>
+</div>
+<p>En este caso, la única capa disponible en el almacén de datos se muestra en la figura <a href="añadir-información-geográfica.html#fig:geosvr-24-capa-en-almacen">4.9</a>.</p>
+</div>
+<div id="presentar-datos-capas" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Capas<a href="añadir-información-geográfica.html#presentar-datos-capas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una vez definido un almacén de datos, podemos gestionar la publicación de sus capas. Al añadir un nuevo almacén de datos, automáticamente se muestran las capas que contiene, como se presenta en las figuras <a href="añadir-información-geográfica.html#fig:geosvr-14-lista-capas-almacen">4.6</a> y <a href="añadir-información-geográfica.html#fig:geosvr-24-capa-en-almacen">4.9</a>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-15-lista-capas-publicadas"></span>
+<img src="figuras_original/15-lista-capas-publicadas.png" alt="Lista de capas publicadas." width="100%" />
+<p class="caption">
+Figura 4.10: Lista de capas publicadas.
+</p>
+</div>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-16-agregar-nueva-capa"></span>
+<img src="figuras_original/16-agregar-nueva-capa.png" alt="Agregar una nueva capa." width="100%" />
+<p class="caption">
+Figura 4.11: Agregar una nueva capa.
+</p>
+</div>
+<p>También podemos acceder a la lista de capas de cualquier almacén pulsando sobre la opción <em>Datos &gt; Capas</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-15-lista-capas-publicadas">4.10</a>) y pulsando, a continuación, sobre el enlace <em>Agregar nuevo recurso</em>. En la nueva pantalla a la que accedemos, seleccionamos el almacén de datos que contiene la nueva capa (figura <a href="añadir-información-geográfica.html#fig:geosvr-16-agregar-nueva-capa">4.11</a>) y nos aparece la lista de capas del almacén seleccionado: en este caso la lista de la figura <a href="añadir-información-geográfica.html#fig:geosvr-14-lista-capas-almacen">4.6</a>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-17-publicar-nueva-capa"></span>
+<img src="figuras_original/17-publicar-nueva-capa.png" alt="Publicar una nueva capa." width="100%" />
+<p class="caption">
+Figura 4.12: Publicar una nueva capa.
+</p>
+</div>
+<p>Pulsando sobre el enlace <em>Publicación</em>, situado a la derecha del nombre de la capa que queremos publicar (figura <a href="añadir-información-geográfica.html#fig:geosvr-14-lista-capas-almacen">4.6</a>), se abre la ventana donde podemos configurar los parámetros de publicación de la capa (figura <a href="añadir-información-geográfica.html#fig:geosvr-17-publicar-nueva-capa">4.12</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-18-definir-encuadres"></span>
+<img src="figuras_original/18-definir-encuadres.png" alt="Definir Encuadres." width="70%" />
+<p class="caption">
+Figura 4.13: Definir <em>Encuadres</em>.
+</p>
+</div>
+<p>Para las capas vectoriales, tenemos que definir necesariamente el apartado <em>Encuadres</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-18-definir-encuadres">4.13</a>). Se puede definir fácilmente pulsando sobre los enlaces <em>Calcular desde los datos</em> y <em>Calcular desde el encuadre nativo</em>.</p>
+</div>
+<div id="previsualización-de-capas" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Previsualización de capas<a href="añadir-información-geográfica.html#previsualización-de-capas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-20-previsualiza-capas"></span>
+<img src="figuras_original/20-previsualiza-capas.png" alt="Previsualización de capas." width="100%" />
+<p class="caption">
+Figura 4.14: Previsualización de capas.
+</p>
+</div>
+<p>Pulsando sobre <em>Datos &gt; Previsualización de capas</em> accedemos a la pantalla que nos permite ver o descargar las capas en cualquiera de los formatos disponibles (figura <a href="añadir-información-geográfica.html#fig:geosvr-20-previsualiza-capas">4.14</a>). Por ejemplo, para ver una capa mediante <em>OpenLayers</em>, pulsando sobre el enlace <em>OpenLayers</em> situado a la derecha del nombre de la capa, en la figura <a href="añadir-información-geográfica.html#fig:geosvr-20-previsualiza-capas">4.14</a>, se muestra en una nueva pestaña del navegador la capa.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>Puede ser una URL, aunque no es necesario que lo sea.<a href="añadir-información-geográfica.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>De acuerdo con el concepto de XML.<a href="añadir-información-geográfica.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Aunque estén las capas ráster en <em>PostGIS</em>, no lo soporta como almacén de datos ráster.<a href="añadir-información-geográfica.html#fnref6" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="información-de-contacto-y-estado-del-servidor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="consultar-información-geográfica-desde-otras-herramientas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

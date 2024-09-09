@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Consultar información geográfica desde otras herramientas | Servidores de Información Geográfica</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Consultar información geográfica desde otras herramientas | Servidores de Información Geográfica" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Consultar información geográfica desde otras herramientas | Servidores de Información Geográfica" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="añadir-información-geográfica.html"/>
+<link rel="next" href="ejercicios.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html"><i class="fa fa-check"></i><b>2</b> Iniciar y parar <em>GeoServer</em></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#iniciar-geoserver"><i class="fa fa-check"></i><b>2.1</b> Iniciar <em>GeoServer</em></a></li>
+<li class="chapter" data-level="2.2" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#acceder-a-la-página-de-administración-de-geoserver"><i class="fa fa-check"></i><b>2.2</b> Acceder a la página de administración de <em>GeoServer</em></a></li>
+<li class="chapter" data-level="2.3" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#parar-geoserver"><i class="fa fa-check"></i><b>2.3</b> Parar <em>GeoServer</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html"><i class="fa fa-check"></i><b>3</b> Información de contacto y estado del servidor</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html#cambiar-la-información-de-contacto"><i class="fa fa-check"></i><b>3.1</b> Cambiar la información de contacto</a></li>
+<li class="chapter" data-level="3.2" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html#estado-del-servidor"><i class="fa fa-check"></i><b>3.2</b> Estado del servidor</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html"><i class="fa fa-check"></i><b>4</b> Añadir información geográfica</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#espacios-de-trabajo"><i class="fa fa-check"></i><b>4.1</b> Espacios de trabajo</a></li>
+<li class="chapter" data-level="4.2" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#almacenes-de-datos"><i class="fa fa-check"></i><b>4.2</b> Almacenes de datos</a></li>
+<li class="chapter" data-level="4.3" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#presentar-datos-capas"><i class="fa fa-check"></i><b>4.3</b> Capas</a></li>
+<li class="chapter" data-level="4.4" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#previsualización-de-capas"><i class="fa fa-check"></i><b>4.4</b> Previsualización de capas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html"><i class="fa fa-check"></i><b>5</b> Consultar información geográfica desde otras herramientas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-qgis"><i class="fa fa-check"></i><b>5.1</b> Consulta desde <em>QGIS</em></a></li>
+<li class="chapter" data-level="5.2" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-una-aplicación-web"><i class="fa fa-check"></i><b>5.2</b> Consulta desde una aplicación Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Servidores de Información Geográfica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="consultar-información-geográfica-desde-otras-herramientas" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Consultar información geográfica desde otras herramientas<a href="consultar-información-geográfica-desde-otras-herramientas.html#consultar-información-geográfica-desde-otras-herramientas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Una vez hemos añadido las capas que deseemos al espacio de trabajo, podemos consultarlas por distintos medios. En esta sección, vamos a consultarlas desde <em>QGIS</em> y también desde una aplicación Web con <em>JavaScript</em>.</p>
+<div id="consulta-desde-qgis" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Consulta desde <em>QGIS</em><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-qgis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Desde <em>QGIS</em> podemos acceder al servidor <em>GeoServer</em> mediante los distintos estándar que soporta.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-26-conexion-wms"></span>
+<img src="figuras_original/26-conexion-wms.png" alt="Conexión WMS." width="35%" />
+<p class="caption">
+Figura 5.1: Conexión WMS.
+</p>
+</div>
+<p>En la figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-26-conexion-wms">5.1</a>, se muestra el procedimiento para establecer la conexión mediante un estándar, por ejemplo WMS: en la ventana del <em>Navegador</em>, en el menú contextual elegimos la opción <em>Conexión nueva…</em></p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-27-crear-conexion-wms"></span>
+<img src="figuras_original/27-crear-conexion-wms.png" alt="Crear una nueva conexión WMS." width="50%" />
+<p class="caption">
+Figura 5.2: Crear una nueva conexión WMS.
+</p>
+</div>
+<p>En la figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-27-crear-conexion-wms">5.2</a>, se muestra la ventana de configuración de la conexión. Indicamos el nombre que deseemos darle, la URL del servidor (en el ejemplo, <code>http://localhost:8080/geoserver/SIG/wms?</code>) compuesta por el nombre del espacio de trabajo que he usado (<code>SIG</code>) y el nombre del estándar mediante el que nos conectamos (en el ejemplo de la figura <code>wms</code>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-28-lista-capas-disponibles"></span>
+<img src="figuras_original/28-lista-capas-disponibles.png" alt="Lista de capas disponibles para el espacio de trabajo seleccionado." width="35%" />
+<p class="caption">
+Figura 5.3: Lista de capas disponibles para el espacio de trabajo seleccionado.
+</p>
+</div>
+<p>El resultado de la conexión es una lista de las capas disponibles bajo ese estándar para el espacio de trabajo (figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-28-lista-capas-disponibles">5.3</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-30-capas-geoserver-qgis"></span>
+<img src="figuras_original/30-capas-geoserver-qgis.png" alt="Capas de GeoServer mostradas en QGIS." width="100%" />
+<p class="caption">
+Figura 5.4: Capas de <em>GeoServer</em> mostradas en <em>QGIS</em>.
+</p>
+</div>
+<p>Estas capas pueden añadirse al lienzo de <em>QGIS</em> desde sus respectivos menús contextuales. El resultado del ejemplo se muestra en la figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-30-capas-geoserver-qgis">5.4</a>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-31-lista-capas-estandar"></span>
+<img src="figuras_original/31-lista-capas-estandar.png" alt="Lista de capas disponibles según los distintos estándar." width="35%" />
+<p class="caption">
+Figura 5.5: Lista de capas disponibles según los distintos estándar.
+</p>
+</div>
+<p>En la figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-31-lista-capas-estandar">5.5</a>, se muestran las capas de las conexiones establecidas con <em>GeoServer</em> según los distintos estándar para el espacio de trabajo del ejemplo considerado.</p>
+</div>
+<div id="consulta-desde-una-aplicación-web" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Consulta desde una aplicación Web<a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-una-aplicación-web" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vamos a utilizar el complemento <em>qgis2web</em> de <em>QGIS</em> para generar una aplicación Web a partir de las capas presentadas en el lienzo de <em>QGIS</em>. Funciona a partir de cualquier combinación de capas presentadas en <em>QGIS</em> (por supuesto, a partir de capas locales), pero lo vamos a usar con las capas obtenidas de la conexión establecida con <em>GeoServer</em>.</p>
+<p>Este complemento no está instalado en la instalación inicial de <em>QGIS</em>, tendremos que instalarlo. Una vez instalado, podemos acceder a él directamente desde la barra de herramientas o también pulsando sobre <em>Web &gt; qgis2web &gt; Create web map</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-33-qgis2web-parametros"></span>
+<img src="figuras_original/33-qgis2web-parametros.png" alt="Definición de parámetros del complemento qgis2web." width="50%" />
+<p class="caption">
+Figura 5.6: Definición de parámetros del complemento <em>qgis2web</em>.
+</p>
+</div>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-34-qgis2web-seleccion-capas"></span>
+<img src="figuras_original/34-qgis2web-seleccion-capas.png" alt="Selección de capas del complemento qgis2web." width="50%" />
+<p class="caption">
+Figura 5.7: Selección de capas del complemento <em>qgis2web</em>.
+</p>
+</div>
+<p>En primer lugar, en la parte inferior de la ventana que se abre, seleccionamos la librería <em>JavaScript</em> que queremos usar y, en la pestaña <em>Export</em>, indicamos la carpeta en la que se generará el código (figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-33-qgis2web-parametros">5.6</a>). En la pestaña <em>Layers and Groups</em> (figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-34-qgis2web-seleccion-capas">5.7</a>) seleccionamos las capas a exportar. Cuando pulsamos sobre el botón <em>Export</em> lleva a cabo el proceso de generación del código para presentar las capas seleccionadas de acuerdo a la configuración elegida.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-36-qgis2web-resultado"></span>
+<img src="figuras_original/36-qgis2web-resultado.png" alt="Presentación del resultado del complemento qgis2web." width="40%" />
+<p class="caption">
+Figura 5.8: Presentación del resultado del complemento <em>qgis2web</em>.
+</p>
+</div>
+<p>El resultado obtenido depende del estándar que usemos para acceder a <em>GeoServer</em>. En la figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-36-qgis2web-resultado">5.8</a>, se muestra el resultado para el ejemplo considerado.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-35-qgis2web-codigo-generado"></span>
+<img src="figuras_original/35-qgis2web-codigo-generado.png" alt="Código generado por el complemento qgis2web." width="100%" />
+<p class="caption">
+Figura 5.9: Código generado por el complemento <em>qgis2web</em>.
+</p>
+</div>
+<p>En la figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-35-qgis2web-codigo-generado">5.9</a>, se muestra el código generado por el complemento para este ejemplo, el correspondiente al archivo <code>index.html</code>. Podemos acceder a él en la carpeta donde hemos indicado que se lleve a cabo la generación.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-38-qgis2web-presenta-resultado"></span>
+<img src="figuras_original/38-qgis2web-presenta-resultado.png" alt="Presentación del nuevo resultado del complemento qgis2web." width="40%" />
+<p class="caption">
+Figura 5.10: Presentación del nuevo resultado del complemento <em>qgis2web</em>.
+</p>
+</div>
+<p>El resultado de la figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-36-qgis2web-resultado">5.8</a> no coincide exactamente con lo que se mostraba en <em>QGIS</em>, en este caso se muestran los distintos azulejos componentes del ráster. Si observamos el código de la figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-35-qgis2web-codigo-generado">5.9</a>, a partir de la línea 41 se hace la llamada a <em>GeoServer</em> para obtener el ráster: incluye un parámetro <code>tiled: true</code> en la línea 44. Si editamos el archivo y cambiamos ese parámetro para que sea <code>tiled: false</code>, el resultado que obtenemos es el que se presenta en la figura <a href="consultar-información-geográfica-desde-otras-herramientas.html#fig:geosvr-38-qgis2web-presenta-resultado">5.10</a>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="añadir-información-geográfica.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ejercicios.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
