@@ -103,7 +103,7 @@ div.csl-indent {
 <li><a href="./">SIG</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> <em>QGIS</em></a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
 <li class="chapter" data-level="2" data-path="obtencion-datos-qgis1.html"><a href="obtencion-datos-qgis1.html"><i class="fa fa-check"></i><b>2</b> Obtención de los datos</a></li>
 <li class="chapter" data-level="3" data-path="entorno-de-trabajo.html"><a href="entorno-de-trabajo.html"><i class="fa fa-check"></i><b>3</b> Entorno de trabajo</a>
 <ul>
@@ -170,13 +170,18 @@ div.csl-indent {
 <div id="ejercicios" class="section level1 unnumbered hasAnchor">
 <h1>Ejercicios<a href="ejercicios.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Realiza los ejercicios y entrega un solo documento en formato PDF en la tarea correspondiente de PRADO.</p>
-<div id="ejercicio-1.-datos-de-granada" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 1. Datos de Granada<a href="ejercicios.html#ejercicio-1.-datos-de-granada" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Descarga de <a href="https://doi.org/10.6084/m9.figshare.11295644.v1">https://doi.org/10.6084/m9.figshare.11295644.v1</a> el archivo <code>Granada.zip</code> que contiene los archivos de las capas que se usarán como fuente de datos. Extrae todos archivos y sitúalos en una carpeta de trabajo. No es necesario documentar la realización de este apartado.</p>
-<p>Obtén los datos del censo de los municipios de Granada para los años posteriores a 2018 en formato de tabla. Documenta este ejercicio mediante una captura de pantalla de la tabla de datos con las cabeceras de las columnas con nombres definidos según el criterio descrito en esta sección.</p>
+<div id="ejercicio.-datos-de-granada" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio. Datos de Granada<a href="ejercicios.html#ejercicio.-datos-de-granada" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Descarga de <a href="https://doi.org/10.6084/m9.figshare.11295644">https://doi.org/10.6084/m9.figshare.11295644</a>:</p>
+<ul>
+<li><p>El archivo <code>Granada.zip</code> que contiene los archivos de las capas que se usarán como fuente de datos en formato <em>Shapefile</em>.</p></li>
+<li><p>El archivo <code>actualiza censo GR 202X.zip</code> que contiene las actualizaciones del censo de los municipios de Granada disponibles en el año 202X en dos formatos, <em>CSV</em> y <em>Excel</em>.</p></li>
+</ul>
+<p>Extrae todos archivos y sitúalos en una carpeta de trabajo.</p>
+<p>No es necesario documentar la realización de este apartado.</p>
 </div>
-<div id="ejercicio-2.-representación-inicial" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 2. Representación inicial<a href="ejercicios.html#ejercicio-2.-representación-inicial" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="ejercicio-1.-representación-inicial" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 1. Representación inicial<a href="ejercicios.html#ejercicio-1.-representación-inicial" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Representa las capas de la provincia de Granada facilitadas junto a una capa obtenida de la Web (distinta a la utilizada en esta actividad).</p>
 <ul>
 <li>Define colores adecuados para los elementos representados en las capas.</li>
@@ -184,32 +189,31 @@ div.csl-indent {
 <li>Representa los datos a una escala definida por un número “redondo”.</li>
 <li>Guarda el proyecto de manera que tu usuario de correo electrónico de tu cuenta de la Universidad forme parte del nombre del archivo.</li>
 </ul>
-<p>Para documentar la realización del ejercicio, captura <strong>una pantalla completa de <em>QGIS</em></strong> donde se muestre la lista de capas representadas y el resultado obtenido (por ejemplo, las figuras <a href="entorno-de-trabajo.html#fig:qgis-pantalla-principal">3.3</a>, <a href="representación-de-capas.html#fig:qgis-representa-inicial">4.3</a> y <a href="representación-de-capas.html#fig:qgis-complementos-quickmap-capa">4.10</a> son capturas de pantallas completas de <em>QGIS</em>).</p>
+<p>Para documentar la realización del ejercicio, captura <strong>una pantalla completa de <em>QGIS</em></strong> donde se muestre la lista de capas representadas y el resultado obtenido (por ejemplo, las figuras <a href="entorno-de-trabajo.html#fig:qgis-pantalla-principal">3.3</a>, <a href="representación-de-capas.html#fig:qgis-representa-inicial">4.3</a> y <a href="representación-de-capas.html#fig:qgis-complementos-quickmap-capa">4.11</a> son capturas de pantallas completas de <em>QGIS</em>).</p>
 </div>
-<div id="ejercicio-3.-actualizar-datos-del-censo" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 3. Actualizar datos del censo<a href="ejercicios.html#ejercicio-3.-actualizar-datos-del-censo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="ejercicio-2.-actualizar-datos-del-censo" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 2. Actualizar datos del censo<a href="ejercicios.html#ejercicio-2.-actualizar-datos-del-censo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Para la capa de municipios, actualiza la tabla de atributos con los datos del censo para los últimos años disponibles (los posteriores a 2018).</p>
 <ul>
-<li><p>Una vez actualizada la tabla de atributos, define un campo llamado <code>Incremento</code> como el resultado de restar el total de la población del último año respecto al año anterior.</p></li>
-<li><p>Define un filtro que seleccione los municipios que hayan aumentado su población en el último año.</p></li>
+<li><p>Una vez actualizada la tabla de atributos, define un campo llamado <code>tpc_inc_202X</code> (sustituyendo ‘X’ por el dígito correspondiente al último año del que hay datos) como el porcentaje de incremento de población en el último año respecto al año anterior.</p></li>
+<li><p>Define un filtro que seleccione los municipios que hayan disminuido su población en el último año.</p></li>
 <li><p>Guarda la capa con todas las filas como un <em>shapefile</em> cuyo nombre incluya tu nombre de usuario de correo.</p></li>
 <li><p>Guarda la capa filtrada como un <em>shapefile</em> cuyo nombre incluya tu nombre de usuario de correo y la palabra “filtro”.</p></li>
 </ul>
 <p>Para documentar la realización del ejercicio, captura una pantalla completa de la tabla de atributos de cada una de las capas guardadas donde se vean los nuevos campos añadidos.</p>
 </div>
-<div id="ejercicio-4.-etiquetas-y-simbología" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 4. Etiquetas y simbología<a href="ejercicios.html#ejercicio-4.-etiquetas-y-simbología" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="ejercicio-3.-etiquetas-y-simbología" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 3. Etiquetas y simbología<a href="ejercicios.html#ejercicio-3.-etiquetas-y-simbología" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Para la capa de municipios, una vez actualizada con los datos del censo:</p>
 <ul>
-<li><p>Define un campo llamado <code>tpc_inc</code> que represente el porcentaje de incremento de la población del último año respecto al año anterior.</p></li>
-<li><p>Representa el mapa mediante coropletas basadas en el campo <code>tpc_inc</code> para todos los municipios de la provincia.</p></li>
+<li>Representa el mapa mediante coropletas basadas en el campo definido en el ejercicio anterior para todos los municipios de la provincia.</li>
 </ul>
 <p>Define etiquetas para alguna de las capas.</p>
 <p>Para documentar la realización del ejercicio, captura una pantalla completa de <em>QGIS</em> donde se muestre el resultado, junto con la leyenda de colores en la ventana <em>Capas</em>.</p>
 </div>
-<div id="ejercicio-5.-resultado-del-proyecto" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 5. Resultado del proyecto<a href="ejercicios.html#ejercicio-5.-resultado-del-proyecto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Genera una composición de impresión cuyo nombre sea tu nombre de usuario de correo, basada en el proyecto, que incluya un mapa, título, escala, leyenda y flecha del norte.</p>
+<div id="ejercicio-4.-resultado-del-proyecto" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 4. Resultado del proyecto<a href="ejercicios.html#ejercicio-4.-resultado-del-proyecto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Genera una composición de impresión cuyo nombre sea tu nombre de usuario de correo, basada en el proyecto, que incluya un mapa, título, escala (que sea un número “redondo”), leyenda y flecha del norte.</p>
 <p>Genera un mapa para la Web a partir del proyecto.</p>
 <p>Para documentar la realización del ejercicio, captura una pantalla completa de la herramienta de composición de impresión y otra del mapa para la Web generado.</p>
 

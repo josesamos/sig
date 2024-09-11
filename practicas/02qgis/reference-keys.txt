@@ -19,6 +19,7 @@ fig:qgis-herramientas-zoom
 fig:qgis-complementos-administrar
 fig:qgis-complementos-quickmap
 fig:qgis-complementos-quickmap-barra
+fig:QuickMapServices-Settings
 fig:qgis-complementos-quickmap-capa
 fig:qgis-identificar-objetos-espaciales
 fig:qgis-identificar-objetos-seleccion
@@ -49,7 +50,7 @@ fig:qgis-composicion-impresion-pantalla
 fig:qgis-composicion-impresion-leyenda
 fig:qgis-qgis2web
 fig:qgis-qgis2web-pantalla
-qgis
+introducción
 obtencion-datos-qgis1
 entorno-de-trabajo
 cambiar-el-idioma
