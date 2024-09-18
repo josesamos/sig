@@ -552,20 +552,21 @@ Figura 2.2: Ejecutar un nuevo script.
 <div id="guardar-un-data-frame-en-un-archivo-y-volverlo-a-leer" class="section level3 hasAnchor" number="2.6.1">
 <h3><span class="header-section-number">2.6.1</span> Guardar un data frame en un archivo y volverlo a leer<a href="intro-r-mediante-ejemplos.html#guardar-un-data-frame-en-un-archivo-y-volverlo-a-leer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Cuando trabajamos con archivos, es práctico configurar la carpeta de trabajo mediante <code>setwd()</code><a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> porque, de esta forma, basta con indicar el nombre del archivo. También se puede observar en el fragmento de código siguiente que, al escribir y leer un <em>data frame</em>, la estructura que se lee no coincide exactamente con la escrita: se le ha añadido una columna adicional con el número de línea. Si abrimos el archivo generado, se puede comprobar que la columna se ha generado al guardar los datos. Si queremos que no se almacene el número de fila lo tendremos que indicar al guardar el <em>data frame</em>, se hace mediante el parámetro <code>row.names</code>. Se puede observar que la clase del resultado que obtenemos es un <em>data frame</em>.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="intro-r-mediante-ejemplos.html#cb16-1" tabindex="-1"></a><span class="co"># setwd(&quot;datos/r&quot;)</span></span>
-<span id="cb16-2"><a href="intro-r-mediante-ejemplos.html#cb16-2" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="intro-r-mediante-ejemplos.html#cb16-3" tabindex="-1"></a>d</span>
-<span id="cb16-4"><a href="intro-r-mediante-ejemplos.html#cb16-4" tabindex="-1"></a><span class="fu">write.csv</span>(d, <span class="st">&quot;marcador.csv&quot;</span>)</span>
-<span id="cb16-5"><a href="intro-r-mediante-ejemplos.html#cb16-5" tabindex="-1"></a>(res <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;marcador.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>))</span>
-<span id="cb16-6"><a href="intro-r-mediante-ejemplos.html#cb16-6" tabindex="-1"></a>res<span class="sc">$</span>person</span>
-<span id="cb16-7"><a href="intro-r-mediante-ejemplos.html#cb16-7" tabindex="-1"></a><span class="fu">class</span>(res)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="intro-r-mediante-ejemplos.html#cb16-1" tabindex="-1"></a><span class="fu">getwd</span>()</span>
+<span id="cb16-2"><a href="intro-r-mediante-ejemplos.html#cb16-2" tabindex="-1"></a><span class="co"># setwd(&quot;sig/datos&quot;)</span></span>
+<span id="cb16-3"><a href="intro-r-mediante-ejemplos.html#cb16-3" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="intro-r-mediante-ejemplos.html#cb16-4" tabindex="-1"></a>d</span>
+<span id="cb16-5"><a href="intro-r-mediante-ejemplos.html#cb16-5" tabindex="-1"></a><span class="fu">write.csv</span>(d, <span class="st">&quot;marcador.csv&quot;</span>)</span>
+<span id="cb16-6"><a href="intro-r-mediante-ejemplos.html#cb16-6" tabindex="-1"></a>(res <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;marcador.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>))</span>
+<span id="cb16-7"><a href="intro-r-mediante-ejemplos.html#cb16-7" tabindex="-1"></a>res<span class="sc">$</span>person</span>
+<span id="cb16-8"><a href="intro-r-mediante-ejemplos.html#cb16-8" tabindex="-1"></a><span class="fu">class</span>(res)</span></code></pre></div>
 </div>
 <div id="guardar-y-leer-un-data-frame-e-interperetar-strings-como-factores" class="section level3 hasAnchor" number="2.6.2">
 <h3><span class="header-section-number">2.6.2</span> Guardar y leer un data frame, e interperetar strings como factores<a href="intro-r-mediante-ejemplos.html#guardar-y-leer-un-data-frame-e-interperetar-strings-como-factores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A continuación, escribe y lee el <em>data frame</em> con el mismo número de columnas. También se indica que interprete como <em>string</em> los valores de los factores que lea.</p>
+<p>A continuación, escribe y lee el <em>data frame</em> con el mismo número de columnas. También se indica que interprete como <em>factores</em> los valores de los strings que lea.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="intro-r-mediante-ejemplos.html#cb17-1" tabindex="-1"></a><span class="fu">write.csv</span>(d, <span class="st">&quot;marcador.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb17-2"><a href="intro-r-mediante-ejemplos.html#cb17-2" tabindex="-1"></a>(res <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;marcador.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>, </span>
-<span id="cb17-3"><a href="intro-r-mediante-ejemplos.html#cb17-3" tabindex="-1"></a>                 <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb17-3"><a href="intro-r-mediante-ejemplos.html#cb17-3" tabindex="-1"></a>                 <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>))</span>
 <span id="cb17-4"><a href="intro-r-mediante-ejemplos.html#cb17-4" tabindex="-1"></a>res<span class="sc">$</span>person</span></code></pre></div>
 </div>
 <div id="guardar-y-leer-una-matriz" class="section level3 hasAnchor" number="2.6.3">
