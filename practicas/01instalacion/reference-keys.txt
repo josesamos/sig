@@ -6,7 +6,6 @@ objetivo
 observaciones
 requisitos
 contenido
-vídeos
 herramientas
 qgis-desktop
 r-y-rstudio
