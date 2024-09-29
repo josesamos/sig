@@ -70,7 +70,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -447,12 +447,12 @@ Figura 2.2: Ejecutar un nuevo script.
 </div>
 <div id="factor" class="section level3 hasAnchor" number="2.3.4">
 <h3><span class="header-section-number">2.3.4</span> <em>Factor</em><a href="intro-r-mediante-ejemplos.html#factor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Cuando incluimos un vector de <em>strings</em> en un <em>data frame</em>, lo trata como un <em>factor</em>: considera los valores distintos (<em>levels</em>) y representa los datos en función de esos valores, como se muestra a continuación. Por defecto, asocia un número a cada nivel pero se puede indicar explícitamente que lo trate como <em>string</em> (mediante <code>stringsAsFactors</code>). Si definimos explícitamente los niveles a tener en cuenta en el <em>factor</em>, no se consideran los valores no incluidos entre los niveles.</p>
+<p>Cuando incluimos un vector de <em>strings</em> en un <em>data frame</em>, si incluimos el parámetro <code>stringsAsFactors = TRUE</code>, lo trata como un <em>factor</em>: considera los valores distintos (<em>levels</em>) y representa los datos en función de esos valores, como se muestra a continuación. Por defecto se trata como <em>string</em> (el valor por defecto del parámetro es <code>stringsAsFactors = FALSE</code>). Si definimos explícitamente los niveles a tener en cuenta en el <em>factor</em>, no se consideran los valores no incluidos entre los niveles.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="intro-r-mediante-ejemplos.html#cb9-1" tabindex="-1"></a>(d2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">persona =</span> n2, <span class="at">puntos =</span> r1))</span>
 <span id="cb9-2"><a href="intro-r-mediante-ejemplos.html#cb9-2" tabindex="-1"></a>d2<span class="sc">$</span>persona</span>
 <span id="cb9-3"><a href="intro-r-mediante-ejemplos.html#cb9-3" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="intro-r-mediante-ejemplos.html#cb9-4" tabindex="-1"></a>(d3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">persona =</span> n2, <span class="at">puntos =</span> r1, </span>
-<span id="cb9-5"><a href="intro-r-mediante-ejemplos.html#cb9-5" tabindex="-1"></a>                  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb9-5"><a href="intro-r-mediante-ejemplos.html#cb9-5" tabindex="-1"></a>                  <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>))</span>
 <span id="cb9-6"><a href="intro-r-mediante-ejemplos.html#cb9-6" tabindex="-1"></a>d3<span class="sc">$</span>persona</span>
 <span id="cb9-7"><a href="intro-r-mediante-ejemplos.html#cb9-7" tabindex="-1"></a></span>
 <span id="cb9-8"><a href="intro-r-mediante-ejemplos.html#cb9-8" tabindex="-1"></a>(f <span class="ot">&lt;-</span> <span class="fu">factor</span>(n2))</span>
