@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Datos, metadatos y zona de trabajo | Obtener Información Geográfica</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Datos, metadatos y zona de trabajo | Obtener Información Geográfica" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Datos, metadatos y zona de trabajo | Obtener Información Geográfica" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="capas-temáticas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="datos-metadatos.html"><a href="datos-metadatos.html"><i class="fa fa-check"></i><b>2</b> Datos, metadatos y zona de trabajo</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="datos-metadatos.html"><a href="datos-metadatos.html#datos"><i class="fa fa-check"></i><b>2.1</b> Datos</a></li>
+<li class="chapter" data-level="2.2" data-path="datos-metadatos.html"><a href="datos-metadatos.html#metadatos"><i class="fa fa-check"></i><b>2.2</b> Metadatos</a></li>
+<li class="chapter" data-level="2.3" data-path="datos-metadatos.html"><a href="datos-metadatos.html#zona-trabajo"><i class="fa fa-check"></i><b>2.3</b> Zona de trabajo</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="datos-metadatos.html"><a href="datos-metadatos.html#capa-de-términos-municipales"><i class="fa fa-check"></i><b>2.3.1</b> Capa de términos municipales</a></li>
+<li class="chapter" data-level="2.3.2" data-path="datos-metadatos.html"><a href="datos-metadatos.html#obtener-y-definir-termino-municipal"><i class="fa fa-check"></i><b>2.3.2</b> Término municipal y mínimo rectángulo que lo contiene</a></li>
+<li class="chapter" data-level="2.3.3" data-path="datos-metadatos.html"><a href="datos-metadatos.html#obtener-y-definir-mtn"><i class="fa fa-check"></i><b>2.3.3</b> Hojas del <em>Mapa Topográfico Nacional</em></a></li>
+<li class="chapter" data-level="2.3.4" data-path="datos-metadatos.html"><a href="datos-metadatos.html#hojas-del-mapa-topográfico-de-andalucía"><i class="fa fa-check"></i><b>2.3.4</b> Hojas del <em>Mapa Topográfico de Andalucía</em></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="datos-metadatos.html"><a href="datos-metadatos.html#obtener-y-definir-qgis"><i class="fa fa-check"></i><b>2.4</b> Operaciones en <em>QGIS</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="capas-temáticas.html"><a href="capas-temáticas.html"><i class="fa fa-check"></i><b>3</b> Capas temáticas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capas-temáticas.html"><a href="capas-temáticas.html#dera"><i class="fa fa-check"></i><b>3.1</b> <em>DERA</em></a></li>
+<li class="chapter" data-level="3.2" data-path="capas-temáticas.html"><a href="capas-temáticas.html#openstreetmap"><i class="fa fa-check"></i><b>3.2</b> OpenStreetMap</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><a href="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><i class="fa fa-check"></i><b>4</b> Ortofotografía, MDT, <em>CartoCiudad</em> y <em>CORINE Land Cover</em></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><a href="ortofotografía-mdt-cartociudad-y-corine-land-cover.html#centro-de-descargas-del-cnig"><i class="fa fa-check"></i><b>4.1</b> “Centro de Descargas” del <em>CNIG</em></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><a href="ortofotografía-mdt-cartociudad-y-corine-land-cover.html#ortofotografía"><i class="fa fa-check"></i><b>4.1.1</b> Ortofotografía</a></li>
+<li class="chapter" data-level="4.1.2" data-path="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><a href="ortofotografía-mdt-cartociudad-y-corine-land-cover.html#mdt"><i class="fa fa-check"></i><b>4.1.2</b> MDT</a></li>
+<li class="chapter" data-level="4.1.3" data-path="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><a href="ortofotografía-mdt-cartociudad-y-corine-land-cover.html#corine-land-cover"><i class="fa fa-check"></i><b>4.1.3</b> <em>CORINE Land Cover</em></a></li>
+<li class="chapter" data-level="4.1.4" data-path="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><a href="ortofotografía-mdt-cartociudad-y-corine-land-cover.html#cartociudad"><i class="fa fa-check"></i><b>4.1.4</b> <em>CartoCiudad</em></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><a href="ortofotografía-mdt-cartociudad-y-corine-land-cover.html#line"><i class="fa fa-check"></i><b>4.2</b> Line@</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><a href="ortofotografía-mdt-cartociudad-y-corine-land-cover.html#ortofotografía-1"><i class="fa fa-check"></i><b>4.2.1</b> Ortofotografía</a></li>
+<li class="chapter" data-level="4.2.2" data-path="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><a href="ortofotografía-mdt-cartociudad-y-corine-land-cover.html#mdt-1"><i class="fa fa-check"></i><b>4.2.2</b> MDT</a></li>
+<li class="chapter" data-level="4.2.3" data-path="ortofotografía-mdt-cartociudad-y-corine-land-cover.html"><a href="ortofotografía-mdt-cartociudad-y-corine-land-cover.html#obtener-y-definir-plano-callejero"><i class="fa fa-check"></i><b>4.2.3</b> Plano callejero</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html"><i class="fa fa-check"></i><b>5</b> Bandas de Satélite</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html#esa"><i class="fa fa-check"></i><b>5.1</b> ESA</a></li>
+<li class="chapter" data-level="5.2" data-path="bandas-de-satélite.html"><a href="bandas-de-satélite.html#usgs"><i class="fa fa-check"></i><b>5.2</b> USGS</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Obtener Información Geográfica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="datos-metadatos" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Datos, metadatos y zona de trabajo<a href="datos-metadatos.html#datos-metadatos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A continuación se describen los datos que vamos a obtener en esta actividad, los medatadatos que debemos registrar y cómo obtener la zona de trabajo correspondiente a nuestro municipio. En los apartados se indica cómo obtener los datos mediante <em>R</em>; en el último apartado se dan las indicaciones para obtenerlos usando <em>QGIS</em>, en caso de preferir usar esta herramienta.</p>
+<div id="datos" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Datos<a href="datos-metadatos.html#datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cuando finalicemos esta actividad, las capas siguientes de datos geográficos deberán estar disponibles para desarrollar las actividades del resto de actividades del curso.</p>
+<ul>
+<li><strong>Zona de trabajo</strong> (no se han de registrar metadatos): un archivo en formato <em>GeoPackage</em> con:
+<ul>
+<li><strong>término municipal</strong>,</li>
+<li><strong>mínimo rectángulo</strong> que contiene al término municipal,</li>
+<li><strong>cuadrículas</strong> de las hojas de los mapas topográficos (<strong>3 capas</strong>),</li>
+</ul></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><strong>capas temáticas</strong>: capa de <strong>líneas</strong> sobre vías de comunicación,</li>
+<li><strong>capas temáticas</strong>: capa de <strong>líneas</strong> sobre red hidrográfica,</li>
+<li><strong>capas temáticas</strong>: capa de <strong>puntos</strong> sobre cualquier tema,</li>
+<li><strong>capas temáticas</strong>: capa de <strong>polígonos</strong> sobre cualquier tema,</li>
+<li>archivos de <strong>ortofotografía reciente</strong> que abarque todo el rectángulo del municipio,</li>
+<li>archivos de <strong>MDT</strong> que abarque todo el rectángulo del municipio,</li>
+<li>un archivo de <strong><em>CartoCiudad</em></strong> con las capas <strong>manzana</strong> y <strong>portal</strong> de la provincia,</li>
+<li>un archivo de <strong><em>CORINE Land Cover</em></strong>, en formato <em>GeoPackage</em>,</li>
+<li><strong>bandas de satélite</strong>, de la última fecha disponible, que abarque todo el rectángulo del municipio, si es posible, sin nubes,</li>
+</ol>
+<ul>
+<li>un archivo de <strong>plano callejero</strong> (no se han de registrar metadatos), en formato <em>PDF</em>.</li>
+</ul>
+</div>
+<div id="metadatos" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Metadatos<a href="datos-metadatos.html#metadatos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para cada conjunto de datos obtenido (solo los numerados), trataremos de conseguir, al menos, los datos siguientes y elaboraremos <strong>una ficha para cada uno</strong>:</p>
+<ul>
+<li>número del conjunto de datos (lista del apartado anterior)</li>
+<li>ubicación y nombre de los archivos (donde se han almacenado al descargarlos)</li>
+<li>formato de los archivos</li>
+<li>tamaño total</li>
+<li>fecha de descarga</li>
+<li>descripción</li>
+<li>tipo de capa:
+<ul>
+<li>ráster: número de bandas, resolución espacial<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
+<li>vectorial: geometría</li>
+</ul></li>
+<li>CRS</li>
+<li>organismo de origen (incluir URL)</li>
+<li>condiciones legales de uso (incluir URL si está disponible)</li>
+<li>URL del archivo (si está disponible)</li>
+<li>fecha original de recopilación de los datos (si se conoce)</li>
+<li>origen de los datos (si se conoce).</li>
+</ul>
+</div>
+<div id="zona-trabajo" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Zona de trabajo<a href="datos-metadatos.html#zona-trabajo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Necesitamos una capa con los términos municipales. A partir de ella, vamos a obtener el <strong>polígono del término municipal de nuestro municipio</strong>.</p>
+<p>Para determinadas operaciones es interesante realizarlas sobre el rectángulo que contiene la zona de interés, por este motivo obtendremos el <strong>mínimo rectángulo que contenga al polígono del término municipal</strong>.</p>
+<p>Los mapas se dividen en hojas cartográficas donde se representan los datos de las zonas que les corresponden; el número de hoja cartográfica de una zona depende de la representación que se use en el mapa. En algunos sitios web se pueden seleccionar los datos por el número de hoja cartográfica. Por este motivo, obtendremos los <strong>números de hoja cartográfica</strong> según varias representaciones <strong>que contengan al rectángulo de nuestro municipio</strong>.</p>
+<p>Las operaciones siguientes se pueden hacer tanto en <em>QGIS</em> como en <em>R</em>. A continuación, se muestra cómo realizarlas en <em>R</em>. En el apartado <a href="datos-metadatos.html#obtener-y-definir-qgis">2.4</a>, se indica cómo realizarlas en <em>QGIS</em>. Solo hay que realizarlas <strong>una</strong> vez: con <em>QGIS</em> o con <em>R</em>.</p>
+<div id="capa-de-términos-municipales" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Capa de términos municipales<a href="datos-metadatos.html#capa-de-términos-municipales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Accedemos a la Web de <em>DERA</em>: <a href="https://www.juntadeandalucia.es/institutodeestadisticaycartografia/dega/datos-espaciales-de-referencia-de-andalucia-dera">https://www.juntadeandalucia.es/institutodeestadisticaycartografia/dega/datos-espaciales-de-referencia-de-andalucia-dera</a>.</p>
+<p>En la sección “Datos”, podemos acceder directamente al apartado “Descarga de información”: <a href="https://www.juntadeandalucia.es/institutodeestadisticaycartografia/dega/datos-espaciales-de-referencia-de-andalucia-dera/descarga-de-informacion">https://www.juntadeandalucia.es/institutodeestadisticaycartografia/dega/datos-espaciales-de-referencia-de-andalucia-dera/descarga-de-informacion</a>.</p>
+<p><em>DERA</em> permite descargar conjuntamente todas las capas disponibles sobre cada uno de los temas en los que las clasifica. En “Descarga de información”, se muestra la lista de temas que presenta e incluye enlaces para descargarlas en formato <em>Shapefile</em> y <em>GeoPackage</em>. Es suficiente con descargar las capas en uno de los formatos.</p>
+<p>En el apartado “13. Límites administrativos” podemos descargar todas las capas sobre ese tema. Una de las capas incluidas es <code>13_01_TerminoMunicipal</code> que incluye los términos municipales de Andalucía. <strong>Obtenemos esta capa</strong>.</p>
+</div>
+<div id="obtener-y-definir-termino-municipal" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Término municipal y mínimo rectángulo que lo contiene<a href="datos-metadatos.html#obtener-y-definir-termino-municipal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para obtener el término municipal, leemos los municipios de la capa que hemos obtenido previamente. Tenemos que comprobar que las palabras con tilde se vean correctamente. Por defecto, la función <code>st_read()</code> lee los datos en <code>UTF-8</code>. Si no se leen correctamente deberemos cambiar la codificación, generalmente a <code>WINDOWS-1252</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="datos-metadatos.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-2"><a href="datos-metadatos.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="datos-metadatos.html#cb1-3" tabindex="-1"></a>municipios <span class="ot">&lt;-</span></span>
+<span id="cb1-4"><a href="datos-metadatos.html#cb1-4" tabindex="-1"></a>  <span class="fu">st_read</span>(<span class="st">&quot;datos/Lanjaron/dera/13_01_TerminoMunicipal.shp&quot;</span>)</span></code></pre></div>
+<p>También podemos leer una capa del archivo comprimido, renombrando el archivo para incluir el tipo:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="datos-metadatos.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb2-2"><a href="datos-metadatos.html#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="datos-metadatos.html#cb2-3" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;datos/Lanjaron/dera/094-dera-13-limites-administrativos.shp.zip&quot;</span>)</span>
+<span id="cb2-4"><a href="datos-metadatos.html#cb2-4" tabindex="-1"></a>municipios <span class="ot">&lt;-</span></span>
+<span id="cb2-5"><a href="datos-metadatos.html#cb2-5" tabindex="-1"></a>  <span class="fu">st_read</span>(<span class="st">&quot;datos/Lanjaron/dera/094-dera-13-limites-administrativos.shp.zip&quot;</span>,</span>
+<span id="cb2-6"><a href="datos-metadatos.html#cb2-6" tabindex="-1"></a>          <span class="at">layer =</span> <span class="st">&quot;13_01_TerminoMunicipal&quot;</span>)</span></code></pre></div>
+<p>O bien, con formato <em>GeoPackage</em> (que hay que descomprimir):</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="datos-metadatos.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb3-2"><a href="datos-metadatos.html#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="datos-metadatos.html#cb3-3" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;datos/Lanjaron/dera/13_Limites_Administrativos.gpkg&quot;</span>)</span>
+<span id="cb3-4"><a href="datos-metadatos.html#cb3-4" tabindex="-1"></a>municipios <span class="ot">&lt;-</span></span>
+<span id="cb3-5"><a href="datos-metadatos.html#cb3-5" tabindex="-1"></a>  <span class="fu">st_read</span>(<span class="st">&quot;datos/Lanjaron/dera/13_Limites_Administrativos.gpkg&quot;</span>,</span>
+<span id="cb3-6"><a href="datos-metadatos.html#cb3-6" tabindex="-1"></a>          <span class="at">layer =</span> <span class="st">&quot;T13_01_TerminoMunicipal&quot;</span>)</span></code></pre></div>
+<p>Una vez leídos los datos de los municipios, seleccionamos el nuestro (<strong>el municipio asignado en <em>PRADO</em></strong>) y, mediante la combinación de las funciones <code>st_bbox()</code> y <code>st_as_sfc()</code>, obtenemos el mínimo rectángulo que lo contiene y una capa definida a partir de él. Podemos comprobar el resultado mediante la función <code>plot()</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="datos-metadatos.html#cb4-1" tabindex="-1"></a>lanjaron <span class="ot">&lt;-</span> municipios[municipios<span class="sc">$</span>nombre <span class="sc">==</span> <span class="st">&quot;Lanjarón&quot;</span>, ]</span>
+<span id="cb4-2"><a href="datos-metadatos.html#cb4-2" tabindex="-1"></a>lanjaron_bbox <span class="ot">&lt;-</span></span>
+<span id="cb4-3"><a href="datos-metadatos.html#cb4-3" tabindex="-1"></a>  <span class="fu">st_as_sfc</span>(<span class="fu">st_bbox</span>(lanjaron, <span class="at">crs =</span> <span class="fu">st_crs</span>(lanjaron)))</span>
+<span id="cb4-4"><a href="datos-metadatos.html#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="datos-metadatos.html#cb4-5" tabindex="-1"></a><span class="fu">plot</span>(lanjaron_bbox)</span>
+<span id="cb4-6"><a href="datos-metadatos.html#cb4-6" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">st_geometry</span>(lanjaron), <span class="at">add =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:web-lanjaron-bbox"></span>
+<img src="figuras_original/lanjaron-bbox.png" alt="Municipio de Lanjarón y mínimo rectángulo que lo contiene." width="35%" />
+<p class="caption">
+Figura 2.1: Municipio de Lanjarón y mínimo rectángulo que lo contiene.
+</p>
+</div>
+<p>En la figura <a href="datos-metadatos.html#fig:web-lanjaron-bbox">2.1</a>, se muestra el resultado para el municipio de Lanjarón.</p>
+<p>Vamos a guardar las capas obtenidas en un <em>GeoPackage</em>, que puede contener varias capas. El nombre del archivo y de la capa del polígono ha de ser el de nuestro municipio sin tildes ni espacios, seguido de nuestro usuario de correo electrónico (en mi caso <code>lanjaron-jsamos</code>). En el caso del rectángulo, insertamos <code>-bbox</code> entre el nombre del municipio y nuestro usuario.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="datos-metadatos.html#cb5-1" tabindex="-1"></a><span class="fu">st_write</span>(<span class="at">obj =</span> lanjaron,</span>
+<span id="cb5-2"><a href="datos-metadatos.html#cb5-2" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;datos/Lanjaron/lanjaron-jsamos.gpkg&quot;</span>,</span>
+<span id="cb5-3"><a href="datos-metadatos.html#cb5-3" tabindex="-1"></a>         <span class="at">layer =</span> <span class="st">&quot;lanjaron-jsamos&quot;</span>)</span>
+<span id="cb5-4"><a href="datos-metadatos.html#cb5-4" tabindex="-1"></a><span class="fu">st_write</span>(<span class="at">obj =</span> lanjaron_bbox,</span>
+<span id="cb5-5"><a href="datos-metadatos.html#cb5-5" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;datos/Lanjaron/lanjaron-jsamos.gpkg&quot;</span>,</span>
+<span id="cb5-6"><a href="datos-metadatos.html#cb5-6" tabindex="-1"></a>         <span class="at">layer =</span> <span class="st">&quot;lanjaron-bbox-jsamos&quot;</span>)</span>
+<span id="cb5-7"><a href="datos-metadatos.html#cb5-7" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="datos-metadatos.html#cb5-8" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;datos/Lanjaron/lanjaron-jsamos.gpkg&quot;</span>)</span></code></pre></div>
+</div>
+<div id="obtener-y-definir-mtn" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Hojas del <em>Mapa Topográfico Nacional</em><a href="datos-metadatos.html#obtener-y-definir-mtn" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Vamos a obtener <em>shapefiles</em> con las hojas del <em>MTN</em> (<em>Mapa Topográfico Nacional</em>), disponible en el <em>IGN</em> (<em>Instituto Geográfico Nacional</em>). A partir de ellos, obtendremos la intersección entre las hojas y el rectángulo del municipio. Cuando en una web podamos realizar consultas según el número de hoja del <em>MTN</em>, usaremos los números asociados a nuestro municipio.</p>
+<p>Accedemos al “Centro de Descargas” del <em>CNIG</em> <a href="https://centrodedescargas.cnig.es/CentroDescargas">https://centrodedescargas.cnig.es/CentroDescargas</a>. Pulsando sobre el enlace “Información Geográfica de Referencia”, accedemos a distintos conjuntos de datos de referencia. Uno de ellos es el titulado “Cuadrículas cartográficas MTN25 y MTN50” (figura <a href="datos-metadatos.html#fig:web-cnig02">2.2</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:web-cnig02"></span>
+<img src="figuras_original/cnig02.png" alt="Cuadrículas cartográficas MTN25 y MTN50." width="45%" />
+<p class="caption">
+Figura 2.2: Cuadrículas cartográficas MTN25 y MTN50.
+</p>
+</div>
+<p>Pulsando sobre “Descargar” (figura <a href="datos-metadatos.html#fig:web-cnig02">2.2</a>), obtenemos un archivo ZIP que contiene varias capas en formato <em>Shapefile</em> con las cuadrículas <em>MTN</em> de referencia a escala <span class="math inline">\(1:25000\)</span> y <span class="math inline">\(1:50000\)</span>.</p>
+<p>El procedimiento en ambos casos es el mismo:</p>
+<ul>
+<li>leer el <em>shapefile</em> de la cuadrícula con la codificación adecuada;</li>
+<li>transformar la capa mediante la función <code>st_transform()</code> para que tenga el mismo CRS que la capa del rectángulo;</li>
+<li>recortar la capa mediante la capa del rectángulo, mediante la función <code>st_crop()</code>.</li>
+</ul>
+<p>El número de las hojas se puede consultar en las variables <code>MTN25_CLAS</code> y <code>MTN50_CLAS</code>, respectivamente.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="datos-metadatos.html#cb6-1" tabindex="-1"></a>cuadricula25 <span class="ot">&lt;-</span></span>
+<span id="cb6-2"><a href="datos-metadatos.html#cb6-2" tabindex="-1"></a>  <span class="fu">st_read</span>(<span class="st">&quot;datos/Lanjaron/cnig/cuadriculas/MTN25_OFICIAL_ETRS89_Peninsula_Baleares_Canarias.shp&quot;</span>,</span>
+<span id="cb6-3"><a href="datos-metadatos.html#cb6-3" tabindex="-1"></a>          <span class="at">options =</span> <span class="st">&quot;ENCODING=WINDOWS-1252&quot;</span>)</span>
+<span id="cb6-4"><a href="datos-metadatos.html#cb6-4" tabindex="-1"></a>lanjaron_bbox_2 <span class="ot">&lt;-</span></span>
+<span id="cb6-5"><a href="datos-metadatos.html#cb6-5" tabindex="-1"></a>  <span class="fu">st_transform</span>(lanjaron_bbox, <span class="at">crs =</span> <span class="fu">st_crs</span>(cuadricula25))</span>
+<span id="cb6-6"><a href="datos-metadatos.html#cb6-6" tabindex="-1"></a>lanjaron_cuadricula25 <span class="ot">&lt;-</span> <span class="fu">st_crop</span>(cuadricula25, lanjaron_bbox_2)</span>
+<span id="cb6-7"><a href="datos-metadatos.html#cb6-7" tabindex="-1"></a><span class="fu">sort</span>(lanjaron_cuadricula25<span class="sc">$</span>MTN25_CLAS)</span>
+<span id="cb6-8"><a href="datos-metadatos.html#cb6-8" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="datos-metadatos.html#cb6-9" tabindex="-1"></a>cuadricula50 <span class="ot">&lt;-</span></span>
+<span id="cb6-10"><a href="datos-metadatos.html#cb6-10" tabindex="-1"></a>  <span class="fu">st_read</span>(<span class="st">&quot;datos/Lanjaron/cnig/cuadriculas/MTN50_OFICIAL_ETRS89_Peninsula_Baleares_Canarias.shp&quot;</span>,</span>
+<span id="cb6-11"><a href="datos-metadatos.html#cb6-11" tabindex="-1"></a>          <span class="at">options =</span> <span class="st">&quot;ENCODING=WINDOWS-1252&quot;</span>)</span>
+<span id="cb6-12"><a href="datos-metadatos.html#cb6-12" tabindex="-1"></a>lanjaron_cuadricula50 <span class="ot">&lt;-</span> <span class="fu">st_crop</span>(cuadricula50, lanjaron_bbox_2)</span>
+<span id="cb6-13"><a href="datos-metadatos.html#cb6-13" tabindex="-1"></a><span class="fu">sort</span>(lanjaron_cuadricula50<span class="sc">$</span>MTN50_CLAS)</span></code></pre></div>
+<p>Para tener disponible esta información basta con anotar los números. Guardamos las capas en el archivo <em>GeoPackage</em>, donde hemos guardado las capas del término municipal y el rectángulo que lo contiene, y consultarlos cuando lo necesitemos.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="datos-metadatos.html#cb7-1" tabindex="-1"></a><span class="fu">st_write</span>(<span class="at">obj =</span> lanjaron_cuadricula25,</span>
+<span id="cb7-2"><a href="datos-metadatos.html#cb7-2" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;datos/Lanjaron/lanjaron-jsamos.gpkg&quot;</span>,</span>
+<span id="cb7-3"><a href="datos-metadatos.html#cb7-3" tabindex="-1"></a>         <span class="at">layer =</span> <span class="st">&quot;lanjaron-cuadricula-25&quot;</span>)</span>
+<span id="cb7-4"><a href="datos-metadatos.html#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="datos-metadatos.html#cb7-5" tabindex="-1"></a><span class="fu">st_write</span>(<span class="at">obj =</span> lanjaron_cuadricula50,</span>
+<span id="cb7-6"><a href="datos-metadatos.html#cb7-6" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;datos/Lanjaron/lanjaron-jsamos.gpkg&quot;</span>,</span>
+<span id="cb7-7"><a href="datos-metadatos.html#cb7-7" tabindex="-1"></a>         <span class="at">layer =</span> <span class="st">&quot;lanjaron-cuadricula-50&quot;</span>)</span>
+<span id="cb7-8"><a href="datos-metadatos.html#cb7-8" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="datos-metadatos.html#cb7-9" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;datos/Lanjaron/lanjaron-jsamos.gpkg&quot;</span>)</span></code></pre></div>
+</div>
+<div id="hojas-del-mapa-topográfico-de-andalucía" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Hojas del <em>Mapa Topográfico de Andalucía</em><a href="datos-metadatos.html#hojas-del-mapa-topográfico-de-andalucía" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Accedemos a la Web de <em>DERA</em>, como hemos hecho antes: <a href="https://www.juntadeandalucia.es/institutodeestadisticaycartografia/dega/datos-espaciales-de-referencia-de-andalucia-dera">https://www.juntadeandalucia.es/institutodeestadisticaycartografia/dega/datos-espaciales-de-referencia-de-andalucia-dera</a>.</p>
+<p>En la sección “Datos”, podemos acceder directamente al apartado “Descarga de información”: <a href="https://www.juntadeandalucia.es/institutodeestadisticaycartografia/dega/datos-espaciales-de-referencia-de-andalucia-dera/descarga-de-informacion">https://www.juntadeandalucia.es/institutodeestadisticaycartografia/dega/datos-espaciales-de-referencia-de-andalucia-dera/descarga-de-informacion</a>.</p>
+<p>En el apartado “2. Infraestructura geográfica”, una de las capas incluidas es <code>02_05_Cuadricula10</code>.</p>
+<p>Repetimos el procedimiento llevado a cabo antes, para las otras cuadrículas.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="datos-metadatos.html#cb8-1" tabindex="-1"></a>cuadricula10 <span class="ot">&lt;-</span></span>
+<span id="cb8-2"><a href="datos-metadatos.html#cb8-2" tabindex="-1"></a>  <span class="fu">st_read</span>(<span class="st">&quot;datos/Lanjaron/dera/02_05_Cuadricula10.shp&quot;</span>)</span>
+<span id="cb8-3"><a href="datos-metadatos.html#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="datos-metadatos.html#cb8-4" tabindex="-1"></a>lanjaron_cuadricula10 <span class="ot">&lt;-</span> <span class="fu">st_crop</span>(cuadricula10, lanjaron_bbox)</span>
+<span id="cb8-5"><a href="datos-metadatos.html#cb8-5" tabindex="-1"></a><span class="fu">sort</span>(lanjaron_cuadricula10<span class="sc">$</span>clasica_10)</span>
+<span id="cb8-6"><a href="datos-metadatos.html#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="datos-metadatos.html#cb8-7" tabindex="-1"></a><span class="fu">st_write</span>(<span class="at">obj =</span> lanjaron_cuadricula10,</span>
+<span id="cb8-8"><a href="datos-metadatos.html#cb8-8" tabindex="-1"></a>         <span class="at">dsn =</span> <span class="st">&quot;datos/Lanjaron/lanjaron-jsamos.gpkg&quot;</span>,</span>
+<span id="cb8-9"><a href="datos-metadatos.html#cb8-9" tabindex="-1"></a>         <span class="at">layer =</span> <span class="st">&quot;lanjaron-cuadricula-10&quot;</span>)</span>
+<span id="cb8-10"><a href="datos-metadatos.html#cb8-10" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="datos-metadatos.html#cb8-11" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;datos/Lanjaron/lanjaron-jsamos.gpkg&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="obtener-y-definir-qgis" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Operaciones en <em>QGIS</em><a href="datos-metadatos.html#obtener-y-definir-qgis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Si se desea realizar en <em>QGIS</em> las operaciones descritas en los apartados anteriores para <em>R</em>, en el tema sobre <em>QGIS</em>, se ha mostrado cómo leer una capa, seleccionar un elemento (el municipio elegido) y guardar una capa con el formato que se desee.</p>
+<p>Para obtener el mínimo rectángulo que envuelve al término municipal, se puede utilizar la operación <em>Vector &gt; Research Tools &gt; Extraer extensión de la capa…</em></p>
+<p>Para recortar las capas mediante la capa del rectángulo, se puede utilizar la operación <em>Vector &gt; Geoprocessing Tools &gt; Intersección…</em></p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Para las de satélite, basta con indicar el satélite del que proceden.<a href="datos-metadatos.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="capas-temáticas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
