@@ -5,8 +5,8 @@ fig:qgis-construir-raster-virtual2
 fig:qgis-guardar-estilo
 introducción
 datos-de-partida-y-transformaciones-a-realizar
-transformar-e-integrar-datos-partida
-transformaciones-a-realizar
+datos-partida
+transformaciones
 transformaciones-básicas-con-r
 leer-una-capa
 leer-una-capa-vectorial

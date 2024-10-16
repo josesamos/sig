@@ -35,7 +35,7 @@ Universidad de Granada</p>" />
   
   
 <link rel="prev" href="transformaciones-básicas-con-qgis.html"/>
-<link rel="next" href="referencias.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -147,8 +147,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
 <li class="chapter" data-level="2" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html"><i class="fa fa-check"></i><b>2</b> Datos de partida y transformaciones a realizar</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html#transformar-e-integrar-datos-partida"><i class="fa fa-check"></i><b>2.1</b> Datos de partida</a></li>
-<li class="chapter" data-level="2.2" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html#transformaciones-a-realizar"><i class="fa fa-check"></i><b>2.2</b> Transformaciones a realizar</a></li>
+<li class="chapter" data-level="2.1" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html#datos-partida"><i class="fa fa-check"></i><b>2.1</b> Datos de partida</a></li>
+<li class="chapter" data-level="2.2" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html#transformaciones"><i class="fa fa-check"></i><b>2.2</b> Transformaciones a realizar</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html"><i class="fa fa-check"></i><b>3</b> Transformaciones básicas con <em>R</em></a>
 <ul>
@@ -204,12 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5.2" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#copiar-y-pegar-el-estilo-de-una-capa-vectorial"><i class="fa fa-check"></i><b>4.5.2</b> Copiar y pegar el estilo de una capa vectorial</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a>
-<ul>
-<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#consideraciones-previas"><i class="fa fa-check"></i>Consideraciones previas</a></li>
-<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#enunciados"><i class="fa fa-check"></i>Enunciados</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -232,109 +227,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ejercicios" class="section level1 unnumbered hasAnchor">
 <h1>Ejercicios<a href="ejercicios.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="consideraciones-previas" class="section level3 unnumbered hasAnchor">
-<h3>Consideraciones previas<a href="ejercicios.html#consideraciones-previas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="herramientas-para-realizar-los-ejercicios" class="section level4 unnumbered hasAnchor">
-<h4>Herramientas para realizar los ejercicios<a href="ejercicios.html#herramientas-para-realizar-los-ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="herramientas" class="section level4 unnumbered hasAnchor">
+<h4>Herramientas<a href="ejercicios.html#herramientas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Los ejercicios se podrán realizar con <em>QGIS</em> o <em>R</em>, o con una combinación de ambas, según las preferencias de cada persona.</p>
+<p>Recomiendo realizarlas en <em>R</em>, entre otros motivos, porque es mucho más fácil (aunque pueda parecer que no).</p>
 </div>
-<div id="nombres-de-los-archivos-generados-en-los-ejercicios" class="section level4 unnumbered hasAnchor">
-<h4>Nombres de los archivos generados en los ejercicios<a href="ejercicios.html#nombres-de-los-archivos-generados-en-los-ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Los nombres de los archivos generados en los ejercicios han de tener la siguiente estructura:</p>
+<div id="ejercicio-1.-capas-del-municipio" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 1. Capas del municipio<a href="ejercicios.html#ejercicio-1.-capas-del-municipio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para los datos de tu municipio asignado, transforma las capas de datos numeradas de lista del apartado <a href="datos-de-partida-y-transformaciones-a-realizar.html#datos-partida">2.1</a>, según las indicaciones del apartado <a href="datos-de-partida-y-transformaciones-a-realizar.html#transformaciones">2.2</a>.</p>
+<p>Para documentar la realización del ejercicio:</p>
 <ul>
-<li>prefijo que exprese el contenido del archivo (p.e.: “vias_com_”) que <strong>se indicará en cada ejercicio</strong> el que hay que utilizar,</li>
-<li>municipio asignado (p.e., en mi caso “lanjaron_”), si el nombre es muy largo o tiene varias palabras se considerarán solo las primeras 8 letras sin espacios.</li>
-<li>usuario de correo electrónico de la persona que lo realiza (p.e., en mi caso “jsamos”).</li>
-</ul>
-<p>Cada capa <strong>vectorial</strong> de partida, una vez transformada, se almacenará en un <em>GeoPackage</em> con dos capas:</p>
-<ul>
-<li>una tendrá el mismo nombre del archivo y se corresponderá con la capa recortada por el polígono del municipio,</li>
-<li>otra contendrá “bbox_” entre el nombre del municipio y el usuario de correo, se corresponderá con la capa recortada por el rectángulo del municipio.</li>
-</ul>
-<p>Por ejemplo, en mi caso, para la capa con datos de vías de comunicación:</p>
-<ul>
-<li>nombre del archivo: <code>vias_com_lanjaron_jsamos.gpkg</code></li>
-<li>nombre de las capas: <code>vias_com_lanjaron_jsamos</code> y <code>vias_com_lanjaron_bbox_jsamos</code>.</li>
-</ul>
-<p>Cada <strong>ráster</strong> recortado se almacenará en un archivo distinto, con el mismo criterio de nombres que el descrito para las capas vectoriales.</p>
-<p>Por ejemplo, en mi caso, para la ortofotografía (ráster multibanda), tendré dos archivos: <code>ortofoto_lanjaron_jsamos.tif</code> y <code>ortofoto_lanjaron_bbox_jsamos.tif</code>.</p>
-</div>
-<div id="documentar-la-realización-de-los-ejercicios" class="section level4 unnumbered hasAnchor">
-<h4>Documentar la realización de los ejercicios<a href="ejercicios.html#documentar-la-realización-de-los-ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Para documentar la realización de los ejercicios:</p>
-<ul>
-<li><p>Para cada capa generada, se incluirá una captura de <strong>pantalla completa</strong> de <em>QGIS</em> o <em>RStudio</em> donde se muestre:</p>
+<li><p>genera un documento PDF</p></li>
+<li><p>con un apartado para cada conjunto de datos numerado de lista del apartado <a href="datos-de-partida-y-transformaciones-a-realizar.html#datos-partida">2.1</a></p></li>
+<li><p>para cada capa generada, incluye una captura de <strong>pantalla completa</strong> de <em>QGIS</em> o <em>RStudio</em> donde se muestre:</p>
 <ul>
 <li>el <strong>nombre de la capa</strong> y</li>
 <li>la <strong>representación gráfica de la capa (mediante <code>plot</code> o mostrándola en <em>QGIS</em>) conjuntamente con la capa del contorno del municipio</strong> (no es necesario mostrar la tabla de datos ni sus metadatos). Para mostrar las capas se puede usar una herramienta distinta a la que se ha usado para obtenerlas (por ejemplo, se puede desarrollar en <em>R</em> y mostrala desde <em>QGIS</em>).</li>
 </ul></li>
-<li><p>Si se ha desarrollado con <em>R</em> se incluirá para en el ejercicio el fragmento de código correspondiente.</p></li>
-<li><p>Si se ha desarrollado con <em>QGIS</em> se indicarán las opciones de menú o apartados que se han utilizado para realizar las operaciones de transformación, indicando la configuración seleccionada en cada caso.</p></li>
-<li><p>Para cada capa se indicará su CRS (las vectoriales han de tener todas el mismo, las ráster no).</p></li>
-</ul>
-</div>
-</div>
-<div id="enunciados" class="section level3 unnumbered hasAnchor">
-<h3>Enunciados<a href="ejercicios.html#enunciados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Realiza los ejercicios siguientes con los datos de tu municipio asignado siguiendo los criterios descritos en los apartados anteriores en lo referido a herramientas a usar, nomenclatura y documentación de su realización.</p>
-<div id="ejercicio-1.-vías-de-comunicación" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 1. Vías de comunicación<a href="ejercicios.html#ejercicio-1.-vías-de-comunicación" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Genera los archivos siguientes con el prefijo que se indica:</p>
+<li><p>Consideraciones para las <strong>bandas de satélite</strong>:</p>
 <ul>
-<li>vías de comunicación: <code>vias_com</code> y</li>
-<li>red hidrográfica: <code>red_hidro</code>.</li>
+<li><p>para documentar la realización del ejercicio, es suficiente con mostrar <strong>una</strong> de las bandas</p></li>
+<li><p>en caso de haber generado cada banda en un archivo, añade el nombre de la banda a cada uno (p.e., <code>sat-b1-</code>, <code>sat-b2-</code>, etc.)</p></li>
+<li><p>en el caso de <em>Sentinel-2</em>, donde puede haber varias resoluciones espaciales para cada banda, es suficiente con considerar las bandas de 60 m. de resolución.</p></li>
+</ul></li>
 </ul>
-</div>
-<div id="ejercicio-2.-ortofotografía" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 2. Ortofotografía<a href="ejercicios.html#ejercicio-2.-ortofotografía" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Genera el archivo siguiente con el prefijo que se indica:</p>
-<ul>
-<li>ortofotografía: <code>ortofoto</code>.</li>
-</ul>
-</div>
-<div id="ejercicio-3.-mdt" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 3. MDT<a href="ejercicios.html#ejercicio-3.-mdt" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Genera el archivo siguiente con el prefijo que se indica:</p>
-<ul>
-<li>MDT: <code>mdt</code>.</li>
-</ul>
-</div>
-<div id="ejercicio-4.-cartociudad" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 4. Cartociudad<a href="ejercicios.html#ejercicio-4.-cartociudad" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Genera los archivos siguientes con el prefijo que se indica:</p>
-<ul>
-<li>CartoCiudad para manzana: <code>cc_manzana</code> y</li>
-<li>CartoCiudad para portal: <code>cc_portal</code>.</li>
-</ul>
-</div>
-<div id="ejercicio-5.-corine-land-cover" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 5. CORINE Land Cover<a href="ejercicios.html#ejercicio-5.-corine-land-cover" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Genera el archivo siguiente con el prefijo que se indica:</p>
-<ul>
-<li>CORINE Land Cover: <code>clc</code>. Incluye en el <em>GeoPackage</em> el <strong>estilo</strong> de la capa.</li>
-</ul>
-</div>
-<div id="ejercicio-6.-bandas-de-satélite" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 6. Bandas de satélite<a href="ejercicios.html#ejercicio-6.-bandas-de-satélite" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Genera el archivo o los archivos siguientes con el prefijo que se indica:</p>
-<ul>
-<li>Bandas de satélite: <code>sat</code>. Si cada banda está en un archivo, añade el nombre de la banda correspondiente en cada uno (p.e., <code>sat_b2</code>).</li>
-</ul>
-<p>En el caso de <em>Sentinel-2</em>, donde puede haber varias resoluciones espaciales para cada bada, es suficiente con considerar las bandas de 60 m. de resolución.</p>
-<p>Para documentar la realización del ejercicio, es suficiente con mostrar una de las bandas.</p>
 <hr />
 <p><strong>Los datos obtenidos en este tema deberán conservarse y estar disponibles para ser utilizados en las actividades que desarrollaremos en los temas siguientes</strong>.</p>
 
 </div>
 </div>
-</div>
+
+
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="transformaciones-básicas-con-qgis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="transformaciones-básicas-con-qgis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

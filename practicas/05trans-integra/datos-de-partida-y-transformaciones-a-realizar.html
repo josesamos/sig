@@ -147,8 +147,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
 <li class="chapter" data-level="2" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html"><i class="fa fa-check"></i><b>2</b> Datos de partida y transformaciones a realizar</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html#transformar-e-integrar-datos-partida"><i class="fa fa-check"></i><b>2.1</b> Datos de partida</a></li>
-<li class="chapter" data-level="2.2" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html#transformaciones-a-realizar"><i class="fa fa-check"></i><b>2.2</b> Transformaciones a realizar</a></li>
+<li class="chapter" data-level="2.1" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html#datos-partida"><i class="fa fa-check"></i><b>2.1</b> Datos de partida</a></li>
+<li class="chapter" data-level="2.2" data-path="datos-de-partida-y-transformaciones-a-realizar.html"><a href="datos-de-partida-y-transformaciones-a-realizar.html#transformaciones"><i class="fa fa-check"></i><b>2.2</b> Transformaciones a realizar</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html"><i class="fa fa-check"></i><b>3</b> Transformaciones básicas con <em>R</em></a>
 <ul>
@@ -204,12 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5.2" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html#copiar-y-pegar-el-estilo-de-una-capa-vectorial"><i class="fa fa-check"></i><b>4.5.2</b> Copiar y pegar el estilo de una capa vectorial</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a>
-<ul>
-<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#consideraciones-previas"><i class="fa fa-check"></i>Consideraciones previas</a></li>
-<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#enunciados"><i class="fa fa-check"></i>Enunciados</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -233,54 +228,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="datos-de-partida-y-transformaciones-a-realizar" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">2</span> Datos de partida y transformaciones a realizar<a href="datos-de-partida-y-transformaciones-a-realizar.html#datos-de-partida-y-transformaciones-a-realizar" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>En este apartado se listan los datos de partida y se indican de forma general las transformaciones a realizar sobre ellos. En el resto de apartados de este capítulo se muestra cómo realizar las operaciones necesarias para llevar a cabo las transformaciones indicadas usando <em>R</em> y <em>QGIS</em>.</p>
-<p>Las transformaciones concretas, la herramienta a usar en cada caso y los resultados a obtener se detallan en los ejercicios del capítulo.</p>
-<div id="transformar-e-integrar-datos-partida" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Datos de partida<a href="datos-de-partida-y-transformaciones-a-realizar.html#transformar-e-integrar-datos-partida" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Para el municipio seleccionado, los datos de partida que necesitamos, obtenidos en el capítulo <a href="#obtener-y-definir"><strong>??</strong></a>, son los siguientes:</p>
-<ol style="list-style-type: decimal">
-<li>Un archivo en formato <em>GeoPackage</em> con:
+<div id="datos-partida" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Datos de partida<a href="datos-de-partida-y-transformaciones-a-realizar.html#datos-partida" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para el municipio seleccionado, los datos de partida que necesitamos los hemos obtenido en el capítulo <em>Obtener Información Geográfica</em>. Para cada elemento, se indica el <strong>primer componente del nombre</strong> que ha de tener el elemento que obtengamos al realizar la transformación, el resto de componentes del nombre se indican en el apartado siguiente. Son los siguientes:</p>
 <ul>
-<li><strong>término municipal</strong> y</li>
+<li><strong>Zona de trabajo</strong>, un archivo en formato <em>GeoPackage</em> con:
+<ul>
+<li><strong>término municipal</strong>,</li>
 <li><strong>mínimo rectángulo</strong> que contiene al término municipal,</li>
 </ul></li>
-<li>una capa compuesta por líneas sobre <strong>vías de comunicación</strong>,</li>
-<li>una capa compuesta por líneas sobre <strong>red hidrográfica</strong>,</li>
-<li>archivos de <strong>ortofotografía reciente</strong> que abarque todo el rectángulo del municipio,</li>
-<li>archivos de <strong>MDT</strong> que abarque todo el rectángulo del municipio,</li>
-<li>un archivo de <strong>CartoCiudad</strong> con las capas <strong>manzana</strong> y <strong>portal</strong> de la provincia,</li>
-<li>un archivo de <strong>CORINE Land Cover</strong>, en formato <em>GeoPackage</em>,</li>
-<li><strong>bandas de satélite</strong> <em>Sentinel-2</em> o <em>Landsat 8</em> del municipio, actuales y sin nubes.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><strong>capas temáticas</strong>: capa de <strong>líneas</strong> sobre vías de comunicación,
+<ul>
+<li>nombre: <code>tem-viac-</code></li>
+</ul></li>
+<li><strong>capas temáticas</strong>: capa de <strong>líneas</strong> sobre red hidrográfica,
+<ul>
+<li>nombre: <code>tem-redh-</code></li>
+</ul></li>
+<li><strong>capas temáticas</strong>: capa de <strong>puntos</strong> sobre cualquier tema,
+<ul>
+<li>nombre: <code>tem-punt-</code></li>
+</ul></li>
+<li><strong>capas temáticas</strong>: capa de <strong>polígonos</strong> sobre cualquier tema,
+<ul>
+<li>nombre: <code>tem-poli-</code></li>
+</ul></li>
+<li>archivos de <strong>ortofotografía reciente</strong> que abarque todo el rectángulo del municipio,
+<ul>
+<li>nombre: <code>ort-</code></li>
+</ul></li>
+<li>archivos de <strong>MDT</strong> que abarque todo el rectángulo del municipio,
+<ul>
+<li>nombre: <code>mdt-</code></li>
+</ul></li>
+<li>un archivo de <strong><em>CartoCiudad</em></strong> con las capas <strong>manzana</strong> y <strong>portal</strong> de la provincia,
+<ul>
+<li>nombres: <code>ccmanzan</code> y <code>ccportal</code>, respectivamente</li>
+</ul></li>
+<li>un archivo de <strong><em>CORINE Land Cover</em></strong>, en formato <em>GeoPackage</em>,
+<ul>
+<li>nombre: <code>clc-</code></li>
+</ul></li>
+<li><strong>bandas de satélite</strong>, de la última fecha disponible, que abarque todo el rectángulo del municipio, si es posible, sin nubes,
+<ul>
+<li>nombre: <code>sat-</code></li>
+</ul></li>
 </ol>
 </div>
-<div id="transformaciones-a-realizar" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Transformaciones a realizar<a href="datos-de-partida-y-transformaciones-a-realizar.html#transformaciones-a-realizar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="transformaciones" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Transformaciones a realizar<a href="datos-de-partida-y-transformaciones-a-realizar.html#transformaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Las transformaciones generales que realizaremos sobre nuestro conjunto de datos serán:</p>
 <ul>
-<li>Recortar todas las capas mediante (a partir de cada capa obtendremos dos):
+<li>Recortar todas las capas usando los <strong>dos polígonos</strong> siguientes (a partir de cada capa obtendremos dos capas):
 <ul>
-<li>la capa del mínimo rectángulo que contiene el término municipal,</li>
-<li>el polígono de la capa del término municipal.</li>
+<li>el <strong>polígono</strong> de la capa del término municipal,</li>
+<li>la capa del <strong>mínimo rectángulo</strong> que contiene al término municipal.</li>
+</ul></li>
+<li>Los <strong>nombres de las capas</strong> resultantes estarán compuestos por:
+<ul>
+<li>el <strong>nombre que se indica en el apartado anterior</strong> para cada capa,</li>
+<li><strong>seguidos del nombre de la capa con la que se recorta</strong>.</li>
 </ul></li>
 <li>Datos vectoriales:
 <ul>
 <li>Revisar la codificación para comprobar que las palabras con tilde se muestran correctamente, en caso necesario, cambiarla adecuadamente. La revisión hay que hacerla <strong>antes</strong> de recortar la capa.</li>
-<li>Proyectarlos de manera que todos tengan el CRS de la proyección UTM del datum ETRS89 de la zona del municipio.</li>
-<li>Almacenarlos en formato <em>GeoPackage</em>, el resultado de cada capa original en un archivo distinto: en cada archivo tendremos la capa recortada por el polígono del término municipal y por el mínimo rectángulo que lo contiene.</li>
+<li>Proyectarlos de manera que todos tengan el CRS de la proyección <em>UTM</em> del datum <em>ETRS89</em> de la zona del municipio.</li>
+<li>Se almacenan en formato <em>GeoPackage</em>, <strong>el resultado de cada capa original en un archivo distinto</strong>:
+<ul>
+<li>en cada archivo tendremos las dos capas obtenidas a partir de la capa original,</li>
+<li>el nombre del archivo coincidirá con el nombre de la capa obtenida al recortar usando el polígono.</li>
+</ul></li>
 </ul></li>
 <li>Datos ráster:
 <ul>
-<li>Si hemos necesitado obtener varios archivos para cubrir la zona del municipio, fusionarlos en un solo archivo.<br />
+<li>Si hemos necesitado obtener varios archivos para cubrir la zona del municipio, <strong>fusionarlos</strong> en un solo archivo.<br />
 </li>
-<li>Los conservaremos con el CRS con el que los hayamos obtenido. Es posible que en algún caso haya que corregirlo por no estar completo.</li>
-<li>Almacenarlos en formato <em>GeoTIFF</em>.</li>
-<li>Cada capa obtenida a partir de la capa original (al recortarla) en un archivo distinto.</li>
+<li>Los conservaremos con el <strong>CRS original</strong> (con el que los hayamos obtenido). Es posible que en algún caso haya que corregirlo por no estar completo.</li>
+<li>Almacenarlos en formato <strong><em>GeoTIFF</em></strong>.</li>
+<li>De cada capa original, obtendremos dos:
+<ul>
+<li>cada capa en un archivo,</li>
+<li>el nombre del archivo depende de la capa de recorte (como se ha descrito).</li>
+</ul></li>
 </ul></li>
 </ul>
-<p>Las transformaciones habrá que realizarlas en el orden adecuado (no necesariamente el indicado en la lista anterior):</p>
+<p>Las transformaciones habrá que realizarlas en el orden adecuado (no necesariamente el indicado en la lista anterior). <strong>Se recomienda considerar lo siguiente</strong>:</p>
 <ul>
 <li><p>Para las capas vectoriales lo primero deberá ser comprobar que la codificación es correcta<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p></li>
 <li><p>Si la capa es muy grande, nos puede interesar recortarla primero y después proyectarla, así evitamos la operación de proyección sobre los puntos que no vamos a usar.</p></li>
-<li><p>La última operación será guardarla en el formato indicado.</p></li>
+<li><p>Como todas las capas las tenemos que recortar dos veces (por el polígono y el rectángulo) y el polígono está contenido en el rectángulo, seguramente nos va a interesar recortarlas primero por el rectángulo y el resultado recortarlo por el polígono.</p></li>
 </ul>
 
 </div>
