@@ -25,6 +25,8 @@ recortar-una-capa
 recortar-una-capa-vectorial
 mediante-un-rectángulo
 mediante-cualquier-polígono
+caso-especial-de-corine-land-cover
+copiar-estilos
 recortar-una-capa-ráster
 mediante-un-rectángulo-1
 mediante-cualquier-polígono-1
@@ -33,8 +35,6 @@ tratar-los-archivos-de-una-o-varias-carpetas
 obtener-y-tratar-los-archivos-de-una-carpeta
 obtener-y-tratar-los-archivos-de-varias-carpetas
 descomprimir-todos-los-archivos-de-una-carpeta
-otras-operaciones
-copiar-estilos-entre-archivos-geopackage
 transformaciones-básicas-con-qgis
 codificación-de-los-caracteres-en-una-capa
 reproyectar-una-capa-1

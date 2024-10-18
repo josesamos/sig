@@ -183,10 +183,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5.2" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#obtener-y-tratar-los-archivos-de-varias-carpetas"><i class="fa fa-check"></i><b>3.5.2</b> Obtener y tratar los archivos de varias carpetas</a></li>
 <li class="chapter" data-level="3.5.3" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#descomprimir-todos-los-archivos-de-una-carpeta"><i class="fa fa-check"></i><b>3.5.3</b> Descomprimir todos los archivos de una carpeta</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#otras-operaciones"><i class="fa fa-check"></i><b>3.6</b> Otras operaciones</a>
-<ul>
-<li class="chapter" data-level="3.6.1" data-path="transformaciones-básicas-con-r.html"><a href="transformaciones-básicas-con-r.html#copiar-estilos-entre-archivos-geopackage"><i class="fa fa-check"></i><b>3.6.1</b> Copiar estilos entre archivos <em>GeoPackage</em></a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="transformaciones-básicas-con-qgis.html"><a href="transformaciones-básicas-con-qgis.html"><i class="fa fa-check"></i><b>4</b> Transformaciones básicas con <em>QGIS</em></a>
 <ul>
@@ -232,48 +228,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> Datos de partida<a href="datos-de-partida-y-transformaciones-a-realizar.html#datos-partida" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Para el municipio seleccionado, los datos de partida que necesitamos los hemos obtenido en el capítulo <em>Obtener Información Geográfica</em>. Para cada elemento, se indica el <strong>primer componente del nombre</strong> que ha de tener el elemento que obtengamos al realizar la transformación, el resto de componentes del nombre se indican en el apartado siguiente. Son los siguientes:</p>
 <ul>
-<li><strong>Zona de trabajo</strong>, un archivo en formato <em>GeoPackage</em> con:
+<li><strong>Zona de trabajo</strong>, un archivo en formato <em>GeoPackage</em> con dos capas:
 <ul>
-<li><strong>término municipal</strong>,</li>
-<li><strong>mínimo rectángulo</strong> que contiene al término municipal,</li>
+<li><strong>término municipal</strong></li>
+<li><strong>mínimo rectángulo</strong> que contiene al término municipal</li>
 </ul></li>
 </ul>
 <ol style="list-style-type: decimal">
-<li><strong>capas temáticas</strong>: capa de <strong>líneas</strong> sobre vías de comunicación,
+<li><strong>capas temáticas</strong>: capa de <strong>líneas</strong> sobre vías de comunicación
 <ul>
 <li>nombre: <code>tem-viac-</code></li>
 </ul></li>
-<li><strong>capas temáticas</strong>: capa de <strong>líneas</strong> sobre red hidrográfica,
+<li><strong>capas temáticas</strong>: capa de <strong>líneas</strong> sobre red hidrográfica
 <ul>
 <li>nombre: <code>tem-redh-</code></li>
 </ul></li>
-<li><strong>capas temáticas</strong>: capa de <strong>puntos</strong> sobre cualquier tema,
+<li><strong>capas temáticas</strong>: capa de <strong>puntos</strong> sobre cualquier tema
 <ul>
 <li>nombre: <code>tem-punt-</code></li>
 </ul></li>
-<li><strong>capas temáticas</strong>: capa de <strong>polígonos</strong> sobre cualquier tema,
+<li><strong>capas temáticas</strong>: capa de <strong>polígonos</strong> sobre cualquier tema
 <ul>
 <li>nombre: <code>tem-poli-</code></li>
 </ul></li>
-<li>archivos de <strong>ortofotografía reciente</strong> que abarque todo el rectángulo del municipio,
+<li>archivos de <strong>ortofotografía reciente</strong> que abarque todo el rectángulo del municipio
 <ul>
 <li>nombre: <code>ort-</code></li>
 </ul></li>
-<li>archivos de <strong>MDT</strong> que abarque todo el rectángulo del municipio,
+<li>archivos de <strong>MDT</strong> que abarque todo el rectángulo del municipio
 <ul>
 <li>nombre: <code>mdt-</code></li>
 </ul></li>
-<li>un archivo de <strong><em>CartoCiudad</em></strong> con las capas <strong>manzana</strong> y <strong>portal</strong> de la provincia,
+<li>un archivo de <strong><em>CartoCiudad</em></strong> con las capas con datos de <strong>manzana</strong> y <strong>portal</strong> de la provincia
 <ul>
 <li>nombres: <code>cc-manz-</code> y <code>cc-port-</code>, respectivamente</li>
 </ul></li>
-<li>un archivo de <strong><em>CORINE Land Cover</em></strong>, en formato <em>GeoPackage</em>,
+<li>un archivo de <strong><em>CORINE Land Cover</em></strong>, en formato <em>GeoPackage</em>, solo la capa <code>CLC18_ES</code>
 <ul>
 <li>nombre: <code>clc-</code></li>
 </ul></li>
-<li><strong>bandas de satélite</strong>, de la última fecha disponible, que abarque todo el rectángulo del municipio, si es posible, sin nubes,
+<li><strong>bandas de satélite</strong>, de la última fecha disponible, que abarque todo el rectángulo del municipio, si es posible, sin nubes
 <ul>
-<li>nombre: <code>sat-</code></li>
+<li><p>nombre: <code>sat-</code></p>
+<ul>
+<li><p>si se ha generado cada banda en un archivo, añadir el nombre de la banda a cada uno (p.e., <code>sat-b1-</code>, <code>sat-b2-</code>, etc.)</p></li>
+<li><p>si se han generado las bandas en archivos, clasificadas por su resolución, añadir el identificador de la resolución a cada uno (p.e., <code>sat-r10m-</code>, <code>sat-r20m-</code>, etc.)</p></li>
+</ul></li>
 </ul></li>
 </ol>
 </div>
@@ -289,7 +289,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Los <strong>nombres de las capas</strong> resultantes estarán compuestos por:
 <ul>
 <li>el <strong>nombre que se indica en el apartado anterior</strong> para cada capa,</li>
-<li><strong>seguidos del nombre de la capa con la que se recorta</strong>.</li>
+<li><strong>seguidos del nombre de la capa con la que se recorta</strong> (este nombre se definió en el tema anterior, p.e., en mi caso, <code>lanjaron-jsamos</code> y <code>lanjaron-bbox-jsamos</code>).</li>
 </ul></li>
 <li>Datos vectoriales:
 <ul>
@@ -298,7 +298,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Se almacenan en formato <em>GeoPackage</em>, <strong>el resultado de cada capa original en un archivo distinto</strong>:
 <ul>
 <li>en cada archivo tendremos las dos capas obtenidas a partir de la capa original,</li>
-<li>el nombre del archivo coincidirá con el nombre de la capa obtenida al recortar usando el polígono.</li>
+<li>el <strong>nombre del archivo</strong> coincidirá con el <strong>nombre de la capa obtenida al recortar usando el polígono del municipio</strong>.</li>
 </ul></li>
 </ul></li>
 <li>Datos ráster:
@@ -316,7 +316,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Las transformaciones habrá que realizarlas en el orden adecuado (no necesariamente el indicado en la lista anterior). <strong>Se recomienda considerar lo siguiente</strong>:</p>
 <ul>
-<li><p>Para las capas vectoriales lo primero deberá ser comprobar que la codificación es correcta<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p></li>
+<li><p>Para las capas vectoriales, en primer lugar, comprobar que la codificación es correcta<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p></li>
 <li><p>Si la capa es muy grande, nos puede interesar recortarla primero y después proyectarla, así evitamos la operación de proyección sobre los puntos que no vamos a usar.</p></li>
 <li><p>Como todas las capas las tenemos que recortar dos veces (por el polígono y el rectángulo) y el polígono está contenido en el rectángulo, seguramente nos va a interesar recortarlas primero por el rectángulo y el resultado recortarlo por el polígono.</p></li>
 </ul>
