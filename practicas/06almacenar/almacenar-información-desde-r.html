@@ -286,6 +286,13 @@ div.csl-indent {
 <h2><span class="header-section-number">4.5</span> Funciones de ayuda<a href="almacenar-información-desde-r.html#funciones-de-ayuda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En los <em>GeoPackage</em> y los archivos <em>GeoTIFF</em>, en el criterio de nombres que usamos, el separador era el carácter “-”. Para los nombres de tablas en la BD usamos como separador el carácter “_” (en algún caso no hay opción, no puede ser “-”). Mediante la función siguiente se sustituye un carácter por otro en una cadena de caracteres.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="almacenar-información-desde-r.html#cb7-1" tabindex="-1"></a>layer <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot;_&quot;</span>, layer)</span></code></pre></div>
+<p>Para reconocer si una cadena está contenida en otra, podemos usar la función siguiente que, si conocemos la estructura de los nombres, nos sirve para determinar si un nombre tiene un prefijo o sufijo determinado.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="almacenar-información-desde-r.html#cb8-1" tabindex="-1"></a>layer <span class="ot">&lt;-</span> <span class="st">&quot;sat_r30m_lanjaron_bbox_jsamos&quot;</span></span>
+<span id="cb8-2"><a href="almacenar-información-desde-r.html#cb8-2" tabindex="-1"></a>prefix <span class="ot">&lt;-</span> <span class="st">&quot;sat_r30m_&quot;</span></span>
+<span id="cb8-3"><a href="almacenar-información-desde-r.html#cb8-3" tabindex="-1"></a>sufix <span class="ot">&lt;-</span> <span class="st">&quot;_lanjaron_bbox_jsamos&quot;</span></span>
+<span id="cb8-4"><a href="almacenar-información-desde-r.html#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="almacenar-información-desde-r.html#cb8-5" tabindex="-1"></a>is_prefix <span class="ot">&lt;-</span> <span class="fu">grepl</span>(prefix, layer)</span>
+<span id="cb8-6"><a href="almacenar-información-desde-r.html#cb8-6" tabindex="-1"></a>is_sufix <span class="ot">&lt;-</span> <span class="fu">grepl</span>(prefix, layer)</span></code></pre></div>
 
 </div>
 </div>
