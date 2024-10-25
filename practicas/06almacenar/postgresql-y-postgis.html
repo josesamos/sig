@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ejercicios | Almacenar Información Geográfica en PostGIS</title>
+  <title>3 PostgreSQL y PostGIS | Almacenar Información Geográfica en PostGIS</title>
   <meta name="description" content="<p>Sistemas de Información Geográfica.
 Dpto. de Lenguajes y Sistemas Informáticos
 Universidad de Granada</p>" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ejercicios | Almacenar Información Geográfica en PostGIS" />
+  <meta property="og:title" content="3 PostgreSQL y PostGIS | Almacenar Información Geográfica en PostGIS" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>Sistemas de Información Geográfica.
@@ -19,7 +19,7 @@ Universidad de Granada</p>" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ejercicios | Almacenar Información Geográfica en PostGIS" />
+  <meta name="twitter:title" content="3 PostgreSQL y PostGIS | Almacenar Información Geográfica en PostGIS" />
   
   <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
 Dpto. de Lenguajes y Sistemas Informáticos
@@ -34,8 +34,8 @@ Universidad de Granada</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="almacenar-acceder-mostrar-info.html"/>
-<link rel="next" href="referencias.html"/>
+<link rel="prev" href="datos-partida.html"/>
+<link rel="next" href="almacenar-información-desde-r.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -220,49 +220,75 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ejercicios" class="section level1 unnumbered hasAnchor">
-<h1>Ejercicios<a href="ejercicios.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="herramientas" class="section level4 unnumbered hasAnchor">
-<h4>Herramientas<a href="ejercicios.html#herramientas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Los ejercicios se podrán realizar con <em>QGIS</em> o <em>R</em>, o con una combinación de ambas, según las preferencias de cada persona.</p>
-<p>Recomiendo realizarlos en <em>R</em>, entre otros motivos, porque es mucho más fácil (aunque pueda parecer que no).</p>
+<div id="postgresql-y-postgis" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> <em>PostgreSQL</em> y <em>PostGIS</em><a href="postgresql-y-postgis.html#postgresql-y-postgis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>PostgreSQL</em> es un sistema de gestión de SGBD relacional de código abierto. <em>PostGIS</em> es una extensión de <em>PostgreSQL</em> que permite definir datos y consultas espaciales<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Mediante <em>PostGIS</em> podemos almacenar directamente capas vectoriales en <em>PostgreSQL</em>, también permite almacenar datos ráster pero transformándolos previamente mediante una utilidad (<code>raster2pgsql</code>) para obtener un archivo SQL. Mediante una extensión de <em>PostGIS</em>, llamada <code>postgis_raster</code>, también se pueden almacenar directamente capas ráster.</p>
+<p>Antes de trabajar con QGIS o R, tenemos que crear una BD <em>PostGIS</em> que soporte tanto datos vectoriales como datos ráster. A continuación se explica cómo hacerlo, también cómo salvar la BD si, por ejemplo, queremos guardar nuestro trabajo para continuar en otro ordenador.</p>
+<div id="crear-una-bd-postgresql-con-las-extensiones-postgis-y-postgis_raster" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Crear una BD <em>PostgreSQL</em> con las extensiones <code>postgis</code> y <code>postgis_raster</code><a href="postgresql-y-postgis.html#crear-una-bd-postgresql-con-las-extensiones-postgis-y-postgis_raster" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para almacenar la información en <em>PostGIS</em>, en primer lugar, deberemos crear una BD y un esquema desde el administrador de <em>PostgreSQL</em>, <em>pgAdmin 4</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pg-pgadmin-server"></span>
+<img src="figuras_original/pgadmin-server.png" alt="Conectarse a PostgreSQL." width="100%" />
+<p class="caption">
+Figura 3.1: Conectarse a <em>PostgreSQL</em>.
+</p>
 </div>
-<div id="ejercicio-1.-almacenar-en-postgis" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 1. Almacenar en PostGIS<a href="ejercicios.html#ejercicio-1.-almacenar-en-postgis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Almacena todas las capas del apartado <a href="datos-partida.html#datos-partida">2</a> (la zona de trabajo y las capas numeradas, <strong>excepto la ortofotografía</strong>) en una BD <em>PostGIS</em> cuyo nombre sea el nombre del municipio (8 letras, sin espacios), “_” y tu usuario de correo (p.e., en mi caso <code>lanjaron_jsamos</code>).</p>
-<ul>
-<li><p>El nombre de las capas en la BD deberá coincidir con el nombre de los archivos sin extensión (o de las capas en los archivos) de los que proceden, sustituyendo “-” por “_“.</p></li>
-<li><p><strong>Para las bandas de satélite</strong>, el nombre de las capas en la BD estará compuesto por el nombre de la banda, con el prefijo compuesto por <code>sat_</code> y la resolución (p.e., <code>sat_r30m_</code>), y el sufijo correspondiente al nombre de la capa de recorte que su usó. Por ejemplo, en mi caso, los nombres para la banda 1, para <em>Landasat 8</em> son <code>sat_r30m_B1_lanjaron_bbox_jsamos</code> y <code>sat_r30m_B1_lanjaron_jsamos</code>.</p></li>
-<li><p>Ortofotografía (<code>ort-</code>) <span class="math inline">\(\rightarrow\)</span> <strong>Por su gran tamaño, NO es necesario almacenarla en la BD para completar el ejercicio</strong>.</p></li>
-</ul>
-<p>Para documentar la realización del ejercicio:</p>
-<ul>
-<li><p>genera un documento PDF</p></li>
-<li><p>incluye en primer lugar un apartado con las capturas de pantalla de <em>pgAdmin</em> donde se muestren los nombres de <strong>todas las tablas de la BD</strong> (2 capturas deben ser suficientes)</p></li>
-<li><p>con un apartado para cada conjunto de datos almacenado, de la lista del apartado <a href="datos-partida.html#datos-partida">2</a></p>
-<ul>
-<li><p>en el apartado de la ortofotografía, incluye en su lugar las capas de la zona de trabajo</p></li>
-<li><p>en cada apartado, para cada capa almacenada (2 capas), incluye una captura de <strong>pantalla completa</strong> de <em>QGIS</em> donde se muestre la previsualización, en el <em>Administrador de BBDD</em>, tal y como se explica en el apartado <a href="almacenar-acceder-mostrar-info.html#almacenar-acceder-mostrar-info">6</a></p></li>
-<li><p>para las <strong>bandas de satélite</strong>, para documentar la realización del ejercicio, es suficiente con mostrar <strong>una</strong> de las bandas (si está disponible a varias resoluciones, a una de las resoluciones)</p></li>
-</ul></li>
-<li><p>En un apartado final (<strong>también se puntuará</strong>)</p>
-<ul>
-<li>si se ha desarrollado mediante <em>R</em>, <strong>incluye el código <em>R</em></strong> generado para realizar la actividad</li>
-<li>si se ha desarrollado mediante <em>QGIS</em>, <strong>en cada apartado</strong> de los conjuntos de datos almacenados, incluye adicionalmente <strong>una captura de pantalla de la operación realizada</strong>.</li>
-</ul></li>
-</ul>
-<hr />
-<p><strong>La BD obtenida en este tema deberá conservarse y estar disponible para ser utilizada en las actividades que desarrollaremos en los temas siguientes</strong>.</p>
+<p>Pulsando sobre la flecha a la izquierda de <em>Servers</em>, en la columna de la izquierda de la figura <a href="postgresql-y-postgis.html#fig:pg-pgadmin-server">3.1</a>, se muestran los datos de los servidores disponibles y, si seguimos desplegando de la misma forma, las BD de cada servidor. Al conectarse a un servidor, solicita el usuario y la contraseña (salvo que se le haya indicado antes que la guarde).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pg-pgadmin-crea-db"></span>
+<img src="figuras_original/pgadmin-crea-db.png" alt="Crear la BD." width="60%" />
+<p class="caption">
+Figura 3.2: Crear la BD.
+</p>
+</div>
+<p>Para crear una nueva BD, pulsamos sobre <em>Create &gt; Database…</em> del menú contextual del apartado <code>Databases</code> (figura <a href="postgresql-y-postgis.html#fig:pg-pgadmin-crea-db">3.2</a>).</p>
+<p>En la ventana que se abre, indicamos el nombre de la BD, se muestra el propietario de la BD, en este caso es el administrador cuyo usuario es <code>postgres</code> (no tenemos que cambiarlo) y pulsamos sobre el botón <em>Save</em>. Con esta operación tenemos una BD <em>PostgreSQL</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pg-pgadmin-crea-extension"></span>
+<img src="figuras_original/pgadmin-crea-extension.png" alt="Crear una extensión a la BD." width="60%" />
+<p class="caption">
+Figura 3.3: Crear una extensión a la BD.
+</p>
+</div>
+<p>Para tener una BD con soporte para información geográfica, debemos añadir una extensión <em>PostGIS</em> a la BD <em>PostgreSQL</em> que acabamos de crear. Esto lo hacemos desde el apartado <code>Extensions</code>, pulsando sobre <em>Create &gt; Extension…</em> en el menú contextual (figura <a href="postgresql-y-postgis.html#fig:pg-pgadmin-add-extension">3.4</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pg-pgadmin-add-extension"></span>
+<img src="figuras_original/pgadmin-add-extension.png" alt="Añadir la extensión a la BD." width="50%" />
+<p class="caption">
+Figura 3.4: Añadir la extensión a la BD.
+</p>
+</div>
+<p>En la ventana de creación de extensiones, seleccionamos la extensión <code>postgis</code> y pulsamos sobre el botón <em>Save</em> (figura <a href="postgresql-y-postgis.html#fig:pg-pgadmin-add-extension">3.4</a>).</p>
+<p>Para que la BD permita trabajar con datos ráster directamente, debemos añadir también la extensión <code>postgis_raster</code> (de la misma forma que acabamos de añadir la extensión <code>postgis</code>). Es decir, la BD ha de tener las extensiones <code>postgis</code> y <code>postgis_raster</code>, además del resto de extensiones que tenga.</p>
+</div>
+<div id="guardar-en-un-archivo-y-restaurar-una-bd-postgresql" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Guardar en un archivo y restaurar una BD <em>PostgreSQL</em><a href="postgresql-y-postgis.html#guardar-en-un-archivo-y-restaurar-una-bd-postgresql" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Si trabajamos con <em>PostgreSQL</em> en un ordenador y queremos llevar nuestro trabajo a otro, debemos hacer un <em>Backup</em> de la BD para guardar nuestro trabajo y después hacer <em>Restore</em>.</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pg-pgadmin-backup"></span>
+<img src="figuras_original/pgadmin-backup.png" alt="Backup y Restore." width="45%" />
+<p class="caption">
+Figura 3.5: <em>Backup</em> y <em>Restore</em>.
+</p>
+</div>
+<p>En el menú contextual de la BD (figura <a href="postgresql-y-postgis.html#fig:pg-pgadmin-backup">3.5</a>) encontramos las opciones para realizar estas operaciones.</p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="https://postgis.net/">https://postgis.net/</a><a href="postgresql-y-postgis.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="almacenar-acceder-mostrar-info.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="datos-partida.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="almacenar-información-desde-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

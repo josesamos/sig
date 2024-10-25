@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Acceder y mostrar información de una BD desde el Administrador de BBDD de QGIS | Almacenar Información Geográfica</title>
+  <title>6 Acceder y mostrar información de una BD desde el Administrador de BBDD de QGIS | Almacenar Información Geográfica en PostGIS</title>
   <meta name="description" content="<p>Sistemas de Información Geográfica.
 Dpto. de Lenguajes y Sistemas Informáticos
 Universidad de Granada</p>" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Acceder y mostrar información de una BD desde el Administrador de BBDD de QGIS | Almacenar Información Geográfica" />
+  <meta property="og:title" content="6 Acceder y mostrar información de una BD desde el Administrador de BBDD de QGIS | Almacenar Información Geográfica en PostGIS" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>Sistemas de Información Geográfica.
@@ -19,7 +19,7 @@ Universidad de Granada</p>" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Acceder y mostrar información de una BD desde el Administrador de BBDD de QGIS | Almacenar Información Geográfica" />
+  <meta name="twitter:title" content="6 Acceder y mostrar información de una BD desde el Administrador de BBDD de QGIS | Almacenar Información Geográfica en PostGIS" />
   
   <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
 Dpto. de Lenguajes y Sistemas Informáticos
@@ -168,41 +168,33 @@ div.csl-indent {
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
-<li class="chapter" data-level="2" data-path="almacenar-capas-trabajo.html"><a href="almacenar-capas-trabajo.html"><i class="fa fa-check"></i><b>2</b> Capas de trabajo</a></li>
-<li class="chapter" data-level="3" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html"><i class="fa fa-check"></i><b>3</b> BD <em>SpatiaLite</em>, <em>GeoPackage</em> y <em>PostGIS</em></a>
+<li class="chapter" data-level="2" data-path="datos-partida.html"><a href="datos-partida.html"><i class="fa fa-check"></i><b>2</b> Datos de partida</a></li>
+<li class="chapter" data-level="3" data-path="postgresql-y-postgis.html"><a href="postgresql-y-postgis.html"><i class="fa fa-check"></i><b>3</b> <em>PostgreSQL</em> y <em>PostGIS</em></a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#spatialite"><i class="fa fa-check"></i><b>3.1</b> <em>SpatiaLite</em></a></li>
-<li class="chapter" data-level="3.2" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#geopackage"><i class="fa fa-check"></i><b>3.2</b> <em>GeoPackage</em></a></li>
-<li class="chapter" data-level="3.3" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#postgis"><i class="fa fa-check"></i><b>3.3</b> <em>PostGIS</em></a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#instalar-la-extensión-postgis-raster"><i class="fa fa-check"></i><b>3.3.1</b> Instalar la extensión <em>PostGIS Raster</em></a></li>
-<li class="chapter" data-level="3.3.2" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#actualizar-postgis-a-una-versión-10-y-conectarse-desde-r"><i class="fa fa-check"></i><b>3.3.2</b> Actualizar <em>PostGIS</em> a una versión &gt;= 10 y conectarse desde <em>R</em></a></li>
-<li class="chapter" data-level="3.3.3" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#crear-una-bd-postgresql-con-las-extensiones-postgis-y-postgis-raster"><i class="fa fa-check"></i><b>3.3.3</b> Crear una BD <em>PostgreSQL</em> con las extensiones <em>PostGIS</em> y <em>PostGIS Raster</em></a></li>
-<li class="chapter" data-level="3.3.4" data-path="bd-spatialite-geopackage-y-postgis.html"><a href="bd-spatialite-geopackage-y-postgis.html#guardar-en-un-archivo-y-restaurar-una-bd-postgresql"><i class="fa fa-check"></i><b>3.3.4</b> Guardar en un archivo y restaurar una BD <em>PostgreSQL</em></a></li>
-</ul></li>
+<li class="chapter" data-level="3.1" data-path="postgresql-y-postgis.html"><a href="postgresql-y-postgis.html#crear-una-bd-postgresql-con-las-extensiones-postgis-y-postgis_raster"><i class="fa fa-check"></i><b>3.1</b> Crear una BD <em>PostgreSQL</em> con las extensiones <code>postgis</code> y <code>postgis_raster</code></a></li>
+<li class="chapter" data-level="3.2" data-path="postgresql-y-postgis.html"><a href="postgresql-y-postgis.html#guardar-en-un-archivo-y-restaurar-una-bd-postgresql"><i class="fa fa-check"></i><b>3.2</b> Guardar en un archivo y restaurar una BD <em>PostgreSQL</em></a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html"><i class="fa fa-check"></i><b>4</b> Almacenar información desde <em>R</em></a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#spatialite-y-geopackage"><i class="fa fa-check"></i><b>4.1</b> <em>SpatiaLite</em> y <em>GeoPackage</em></a>
+<li class="chapter" data-level="4.1" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#definir-la-conexión-con-la-bd"><i class="fa fa-check"></i><b>4.1</b> Definir la conexión con la BD</a></li>
+<li class="chapter" data-level="4.2" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#almacenar-una-capa-vectorial"><i class="fa fa-check"></i><b>4.2</b> Almacenar una capa vectorial</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#almacenar-una-capa-vectorial"><i class="fa fa-check"></i><b>4.1.1</b> Almacenar una capa vectorial</a></li>
-<li class="chapter" data-level="4.1.2" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#almacenar-una-banda-ráster"><i class="fa fa-check"></i><b>4.1.2</b> Almacenar una banda ráster</a></li>
+<li class="chapter" data-level="4.2.1" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#copiar-estilos"><i class="fa fa-check"></i><b>4.2.1</b> Copiar estilos de <em>CORINE Land Cover</em></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#postgis-1"><i class="fa fa-check"></i><b>4.2</b> <em>PostGIS</em></a>
+<li class="chapter" data-level="4.3" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#almacenar-un-ráster"><i class="fa fa-check"></i><b>4.3</b> Almacenar un ráster</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#definir-la-conexión-con-la-bd"><i class="fa fa-check"></i><b>4.2.1</b> Definir la conexión con la BD</a></li>
-<li class="chapter" data-level="4.2.2" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#almacenar-una-capa-vectorial-1"><i class="fa fa-check"></i><b>4.2.2</b> Almacenar una capa vectorial</a></li>
-<li class="chapter" data-level="4.2.3" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#almacenar-un-ráster"><i class="fa fa-check"></i><b>4.2.3</b> Almacenar un ráster</a></li>
-<li class="chapter" data-level="4.2.4" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#finalizar-la-conexión-con-la-bd"><i class="fa fa-check"></i><b>4.2.4</b> Finalizar la conexión con la BD</a></li>
+<li class="chapter" data-level="4.3.1" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#bandas-de-satélite"><i class="fa fa-check"></i><b>4.3.1</b> Bandas de satélite</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#finalizar-la-conexión-con-la-bd"><i class="fa fa-check"></i><b>4.4</b> Finalizar la conexión con la BD</a></li>
+<li class="chapter" data-level="4.5" data-path="almacenar-información-desde-r.html"><a href="almacenar-información-desde-r.html#funciones-de-ayuda"><i class="fa fa-check"></i><b>4.5</b> Funciones de ayuda</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html"><i class="fa fa-check"></i><b>5</b> Almacenar información desde <em>QGIS</em></a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#tratamiento-como-formato-de-datos"><i class="fa fa-check"></i><b>5.1</b> Tratamiento como formato de datos</a></li>
-<li class="chapter" data-level="5.2" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#tratamiento-como-bd"><i class="fa fa-check"></i><b>5.2</b> Tratamiento como BD</a>
+<li class="chapter" data-level="5.1" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#almacenar-conexion-bd"><i class="fa fa-check"></i><b>5.1</b> Conexión a la BD o creación de la BD</a></li>
+<li class="chapter" data-level="5.2" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#añadir-capas"><i class="fa fa-check"></i><b>5.2</b> Añadir capas</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#almacenar-conexion-bd"><i class="fa fa-check"></i><b>5.2.1</b> Conexión a la BD o creación de la BD</a></li>
-<li class="chapter" data-level="5.2.2" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#añadir-capas"><i class="fa fa-check"></i><b>5.2.2</b> Añadir capas</a></li>
+<li class="chapter" data-level="5.2.1" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#añadir-capas-vectoriales"><i class="fa fa-check"></i><b>5.2.1</b> Añadir capas vectoriales</a></li>
+<li class="chapter" data-level="5.2.2" data-path="almacenar-información-desde-qgis.html"><a href="almacenar-información-desde-qgis.html#añadir-capas-ráster"><i class="fa fa-check"></i><b>5.2.2</b> Añadir capas ráster</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="almacenar-acceder-mostrar-info.html"><a href="almacenar-acceder-mostrar-info.html"><i class="fa fa-check"></i><b>6</b> Acceder y mostrar información de una BD desde el <em>Administrador de BBDD</em> de <em>QGIS</em></a></li>
@@ -220,7 +212,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Almacenar Información Geográfica</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Almacenar Información Geográfica en <em>PostGIS</em></a>
           </h1>
         </div>
 
@@ -231,7 +223,7 @@ div.csl-indent {
 <div id="almacenar-acceder-mostrar-info" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> Acceder y mostrar información de una BD desde el <em>Administrador de BBDD</em> de <em>QGIS</em><a href="almacenar-acceder-mostrar-info.html#almacenar-acceder-mostrar-info" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Podemos usar el <em>Administrador de BBDD</em> de <em>QGIS</em> para acceder al contenido de las capas y mostrar una vista previa de estas sin necesidad de añadirlas a un proyecto.</p>
-<p>Para poder acceder a una BD, debemos definir previamente una conexión a esta, como se describe en el apartado <a href="almacenar-información-desde-qgis.html#almacenar-conexion-bd">5.2.1</a>.</p>
+<p>Para poder acceder a una BD, debemos definir previamente una conexión a esta, como se describe en el apartado <a href="almacenar-información-desde-qgis.html#almacenar-conexion-bd">5.1</a>.</p>
 <p>Accedemos al <em>Administrador de BBDD</em> pulsando sobre <em>Base de datos &gt; Administrador de bases de datos…</em></p>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:qgis-administrador-de-bbdd-vista-previa"></span>
