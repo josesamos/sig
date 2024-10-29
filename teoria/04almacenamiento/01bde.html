@@ -5927,8 +5927,8 @@ Vídeo: <a href="https://youtu.be/S_JvYMznxPU" class="uri">https://youtu.be/S_Jv
 </section>
 <section id="ejemplo-de-datos-geográficos-i" class="slide level2">
 <h2>Ejemplo de datos geográficos (i)</h2>
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-9ee3c817297baa1c5f4d" style="width:100%;height:576px;"></div>
-<script type="application/json" data-for="htmlwidget-9ee3c817297baa1c5f4d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addWMSTiles","args":["https://ows.terrestris.de/osm/service?",null,null,{"styles":"","format":"image/png","transparent":true,"version":"1.1.1","attribution":"OpenStreetMap","layers":"OSM-WMS"}]},{"method":"addMarkers","args":[37.1751,-3.5982,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"C. Mariana Pineda, 21<br>18009 Granada",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[41.3917,2.1649,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Pg. de Gràcia, 43<br>08007 Barcelona",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[40.4166,-3.7038,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Prta del Sol, 7<br>28013 Madrid",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.1751,41.3917],"lng":[-3.7038,2.1649]},"setView":[[40.4166,-3.7038],6,[]]},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-832251c36ae00caedebd" style="width:100%;height:576px;"></div>
+<script type="application/json" data-for="htmlwidget-832251c36ae00caedebd">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addWMSTiles","args":["https://ows.terrestris.de/osm/service?",null,null,{"styles":"","format":"image/png","transparent":true,"version":"1.1.1","attribution":"OpenStreetMap","layers":"OSM-WMS"}]},{"method":"addMarkers","args":[37.1751,-3.5982,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"C. Mariana Pineda, 21<br>18009 Granada",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[41.3917,2.1649,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Pg. de Gràcia, 43<br>08007 Barcelona",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[40.4166,-3.7038,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Prta del Sol, 7<br>28013 Madrid",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.1751,41.3917],"lng":[-3.7038,2.1649]},"setView":[[40.4166,-3.7038],6,[]]},"evals":[],"jsHooks":[]}</script>
 </section>
 <section id="ejemplo-de-datos-geográficos-y-ii" class="slide level2">
 <h2>Ejemplo de datos geográficos (y ii)</h2>
@@ -6292,93 +6292,6 @@ quad-tree</p>
 <code>ST_Difference</code></li>
 </ul></li>
 </ul>
-</section>
-<section id="geography-vs.-geometry-i" class="slide level2">
-<h2><code>geography</code> vs. <code>geometry</code> (i)</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    d1.<span class="kw">id</span> <span class="kw">AS</span> punto1_id,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    d2.<span class="kw">id</span> <span class="kw">AS</span> punto2_id,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    ST_Distance(d1.geom:<span class="ch">:geography</span>, </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                d2.geom:<span class="ch">:geography</span>) <span class="kw">AS</span> m_geog,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    ST_Distance(ST_Transform(d1.geom, <span class="dv">25830</span>), </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                ST_Transform(d2.geom, <span class="dv">25830</span>)) <span class="kw">AS</span> m_geom,</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    ST_Distance(d1.geom, d2.geom) <span class="kw">AS</span> gr_geom</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> </span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    direcciones <span class="kw">AS</span> d1,</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    direcciones <span class="kw">AS</span> d2</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> </span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    d1.<span class="kw">id</span> <span class="op">&lt;</span> d2.<span class="kw">id</span>;</span></code></pre></div>
-<div style="font-size: 0.7em;">
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 15%" />
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 23%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>punto1_id</th>
-<th>punto2_id</th>
-<th>m_geog</th>
-<th>m_geom</th>
-<th>gr_geom</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>2</td>
-<td>506093.13598968</td>
-<td>506231.6361476034</td>
-<td>5.949220089752805</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>3</td>
-<td>359967.76000813</td>
-<td>359837.8955218233</td>
-<td>3.243279523994537</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>3</td>
-<td>682634.00542604</td>
-<td>682826.9493757648</td>
-<td>7.141047288923869</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="geography-vs.-geometry-y-ii" class="slide level2">
-<h2><code>geography</code> vs. <code>geometry</code> (y ii)</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> g.d_geog, m.d_geom</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> (<span class="kw">SELECT</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            ST_Distance(</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                ST_SetSRID(ST_Point(<span class="dv">180</span>, <span class="dv">0</span>), <span class="dv">4326</span>):<span class="ch">:geography</span>, </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                ST_SetSRID(ST_Point(<span class="op">-</span><span class="dv">180</span>, <span class="dv">0</span>), <span class="dv">4326</span>):<span class="ch">:geography</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            ) <span class="kw">as</span> d_geog) <span class="kw">AS</span> g,</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">SELECT</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>            ST_Distance(</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                ST_SetSRID(ST_Point(<span class="dv">180</span>, <span class="dv">0</span>), <span class="dv">4326</span>), </span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                ST_SetSRID(ST_Point(<span class="op">-</span><span class="dv">180</span>, <span class="dv">0</span>), <span class="dv">4326</span>)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>            ) <span class="kw">as</span> d_geom) <span class="kw">AS</span> m;</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th>d_geog</th>
-<th>d_geom</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>360</td>
-</tr>
-</tbody>
-</table>
 </section></section>
 <section>
 <section id="historia-de-las-bd-espaciales" class="title-slide slide level1">
@@ -6408,10 +6321,10 @@ quad-tree</p>
 <div style="font-size: 0.8em;">
 <table>
 <colgroup>
-<col style="width: 26%" />
+<col style="width: 24%" />
 <col style="width: 14%" />
 <col style="width: 16%" />
-<col style="width: 27%" />
+<col style="width: 29%" />
 <col style="width: 15%" />
 </colgroup>
 <thead>
@@ -6484,14 +6397,14 @@ quad-tree</p>
 <td><strong>Google BigQuery</strong></td>
 <td>SQL (columnar)</td>
 <td>Privativo</td>
-<td>Vectorial (GEOGRAPHY)</td>
+<td>Vectorial (WKT, GeoJSON)</td>
 <td>Muy alta</td>
 </tr>
 <tr class="even">
 <td><strong>Amazon Redshift</strong></td>
 <td>SQL (columnar)</td>
 <td>Privativo</td>
-<td>Vectorial (GEOMETRY)</td>
+<td>Vectorial (WKT, WKB)</td>
 <td>Muy alta</td>
 </tr>
 </tbody>
