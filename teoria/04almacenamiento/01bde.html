@@ -5927,8 +5927,8 @@ Vídeo: <a href="https://youtu.be/0S_eQEX4uWI" class="uri">https://youtu.be/0S_e
 </section>
 <section id="ejemplo-de-datos-geográficos-i" class="slide level2">
 <h2>Ejemplo de datos geográficos (i)</h2>
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-668874050e9a2c691714" style="width:100%;height:576px;"></div>
-<script type="application/json" data-for="htmlwidget-668874050e9a2c691714">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addWMSTiles","args":["https://ows.terrestris.de/osm/service?",null,null,{"styles":"","format":"image/png","transparent":true,"version":"1.1.1","attribution":"OpenStreetMap","layers":"OSM-WMS"}]},{"method":"addMarkers","args":[37.1751,-3.5982,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"C. Mariana Pineda, 21<br>18009 Granada",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[41.3917,2.1649,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Pg. de Gràcia, 43<br>08007 Barcelona",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[40.4166,-3.7038,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Prta del Sol, 7<br>28013 Madrid",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.1751,41.3917],"lng":[-3.7038,2.1649]},"setView":[[40.4166,-3.7038],6,[]]},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-98b6f1ecf2856863e7eb" style="width:100%;height:576px;"></div>
+<script type="application/json" data-for="htmlwidget-98b6f1ecf2856863e7eb">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addWMSTiles","args":["https://ows.terrestris.de/osm/service?",null,null,{"styles":"","format":"image/png","transparent":true,"version":"1.1.1","attribution":"OpenStreetMap","layers":"OSM-WMS"}]},{"method":"addMarkers","args":[37.1751,-3.5982,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"C. Mariana Pineda, 21<br>18009 Granada",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[41.3917,2.1649,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Pg. de Gràcia, 43<br>08007 Barcelona",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[40.4166,-3.7038,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Prta del Sol, 7<br>28013 Madrid",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.1751,41.3917],"lng":[-3.7038,2.1649]},"setView":[[40.4166,-3.7038],6,[]]},"evals":[],"jsHooks":[]}</script>
 </section>
 <section id="ejemplo-de-datos-geográficos-y-ii" class="slide level2">
 <h2>Ejemplo de datos geográficos (y ii)</h2>
@@ -6297,16 +6297,19 @@ quad-tree</p>
 </tr>
 <tr class="odd">
 <td><strong>Transformaciones</strong></td>
-<td><code>ST_Area</code>, <code>ST_Centroid</code>,
-<code>ST_ConvexHull</code>, <code>ST_Difference</code>,
-<code>ST_Envelope</code>, <code>ST_Intersection</code>,
-<code>ST_Union</code></td>
+<td>- <code>ST_AsBinary</code>, <code>ST_AsText</code><br>-
+<code>ST_Area</code>, <code>ST_Length</code>, <code>ST_Perimeter</code>
+<br>- <code>ST_Centroid</code>, <code>ST_ConvexHull</code>,
+<code>ST_Envelope</code> <br>- <code>ST_Difference</code>,
+<code>ST_Intersection</code>, <code>ST_Union</code></td>
 </tr>
 <tr class="even">
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
 <td><strong>Operaciones adicionales (no OGC)</strong></td>
-<td><code>ST_AsBinary</code>, <code>ST_AsGeoJSON</code>,
-<code>ST_AsText</code>, <code>ST_Length</code>,
-<code>ST_Perimeter</code>, <code>ST_Simplify</code>,
+<td><code>ST_AsGeoJSON</code>, <code>ST_Simplify</code>,
 <code>ST_Transform</code></td>
 </tr>
 </tbody>
