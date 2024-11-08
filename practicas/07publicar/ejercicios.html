@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ejercicios | Publicar Información Geográfica en la Web mediante GeoServer</title>
+  <meta name="description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Ejercicios | Publicar Información Geográfica en la Web mediante GeoServer" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ejercicios | Publicar Información Geográfica en la Web mediante GeoServer" />
+  
+  <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
+Dpto. de Lenguajes y Sistemas Informáticos
+Universidad de Granada</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="consultar-información-geográfica-desde-otras-herramientas.html"/>
+<link rel="next" href="referencias.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SIG</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html"><i class="fa fa-check"></i><b>2</b> Iniciar y parar <em>GeoServer</em></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#iniciar-geoserver"><i class="fa fa-check"></i><b>2.1</b> Iniciar <em>GeoServer</em></a></li>
+<li class="chapter" data-level="2.2" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#acceder-a-la-página-de-administración-de-geoserver"><i class="fa fa-check"></i><b>2.2</b> Acceder a la página de administración de <em>GeoServer</em></a></li>
+<li class="chapter" data-level="2.3" data-path="iniciar-y-parar-geoserver.html"><a href="iniciar-y-parar-geoserver.html#parar-geoserver"><i class="fa fa-check"></i><b>2.3</b> Parar <em>GeoServer</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html"><i class="fa fa-check"></i><b>3</b> Información de contacto y estado del servidor</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html#cambiar-la-información-de-contacto"><i class="fa fa-check"></i><b>3.1</b> Cambiar la información de contacto</a></li>
+<li class="chapter" data-level="3.2" data-path="información-de-contacto-y-estado-del-servidor.html"><a href="información-de-contacto-y-estado-del-servidor.html#estado-del-servidor"><i class="fa fa-check"></i><b>3.2</b> Estado del servidor</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html"><i class="fa fa-check"></i><b>4</b> Añadir información geográfica</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#espacios-de-trabajo"><i class="fa fa-check"></i><b>4.1</b> Espacios de trabajo</a></li>
+<li class="chapter" data-level="4.2" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#almacenes-de-datos"><i class="fa fa-check"></i><b>4.2</b> Almacenes de datos</a></li>
+<li class="chapter" data-level="4.3" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#presentar-datos-capas"><i class="fa fa-check"></i><b>4.3</b> Capas</a></li>
+<li class="chapter" data-level="4.4" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#previsualización-de-capas"><i class="fa fa-check"></i><b>4.4</b> Previsualización de capas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html"><i class="fa fa-check"></i><b>5</b> Consultar información geográfica desde otras herramientas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-qgis"><i class="fa fa-check"></i><b>5.1</b> Consulta desde <em>QGIS</em></a></li>
+<li class="chapter" data-level="5.2" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-una-aplicación-web"><i class="fa fa-check"></i><b>5.2</b> Consulta desde una aplicación Web</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#datos-de-trabajo"><i class="fa fa-check"></i>Datos de trabajo</a>
+<ul>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#capas-vectoriales"><i class="fa fa-check"></i>Capas vectoriales</a></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#capas-ráster"><i class="fa fa-check"></i>Capas ráster</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Publicar Información Geográfica en la Web mediante <em>GeoServer</em></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ejercicios" class="section level1 unnumbered hasAnchor">
+<h1>Ejercicios<a href="ejercicios.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="datos-de-trabajo" class="section level2 unnumbered hasAnchor">
+<h2>Datos de trabajo<a href="ejercicios.html#datos-de-trabajo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para el municipio seleccionado, los datos de partida los hemos obtenido en actividades anteriores. Aquí se detallan por tipo.</p>
+<p>Utilizaremos los datos almacenados en <em>PostGIS</em> para las capas vectoriales y los datos almacenados en archivos en formato <em>GeoTIFF</em> para los datos ráster.</p>
+<ul>
+<li><strong>Zona de trabajo</strong>:
+<ul>
+<li><strong>término municipal</strong>
+<ul>
+<li>nombre: compuesto por el nombre del municipio (8 letras, sin espacios), <code>-</code>, y usuario de correo (p.e, <code>lanjaron-jsamos</code>)</li>
+</ul></li>
+<li><strong>mínimo rectángulo</strong> que contiene al término municipal
+<ul>
+<li>nombre: nombre anterior pero con <code>-bbox-</code> en lugar de <code>-</code> (p.e, <code>lanjaron-bbox-jsamos</code>)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Para cada capa de los apartados siguientes, se indica el <strong>primer componente del nombre</strong>, el resto del nombre depende de los nombres de las capas de la zona de trabajo.</p>
+<div id="capas-vectoriales" class="section level3 unnumbered hasAnchor">
+<h3>Capas vectoriales<a href="ejercicios.html#capas-vectoriales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>capas temáticas</strong>: capa de <strong>líneas</strong> sobre vías de comunicación
+<ul>
+<li>nombre: <code>tem-viac-</code></li>
+</ul></li>
+<li><strong>capas temáticas</strong>: capa de <strong>líneas</strong> sobre red hidrográfica
+<ul>
+<li>nombre: <code>tem-redh-</code></li>
+</ul></li>
+<li><strong>capas temáticas</strong>: capa de <strong>puntos</strong> sobre cualquier tema
+<ul>
+<li>nombre: <code>tem-punt-</code></li>
+</ul></li>
+<li><strong>capas temáticas</strong>: capa de <strong>polígonos</strong> sobre cualquier tema
+<ul>
+<li>nombre: <code>tem-poli-</code></li>
+</ul></li>
+<li><strong><em>CartoCiudad</em></strong> con las capas con datos de <strong>manzana</strong> y <strong>portal</strong>
+<ul>
+<li>nombres: <code>cc-manz-</code> y <code>cc-port-</code>, respectivamente</li>
+</ul></li>
+<li><strong><em>CORINE Land Cover</em></strong>
+<ul>
+<li>nombre: <code>clc-</code></li>
+</ul></li>
+</ol>
+</div>
+<div id="capas-ráster" class="section level3 unnumbered hasAnchor">
+<h3>Capas ráster<a href="ejercicios.html#capas-ráster" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>archivos de <strong>ortofotografía</strong>
+<ul>
+<li>nombre: <code>ort-</code></li>
+</ul></li>
+<li>archivos de <strong>MDT</strong>
+<ul>
+<li>nombre: <code>mdt-</code></li>
+</ul></li>
+<li><strong>bandas de satélite</strong>
+<ul>
+<li>nombre: <code>sat-</code>
+<ul>
+<li>si se ha generado cada banda en un archivo, tiene el nombre de la banda en cada uno (p.e., <code>sat-b1-</code>, <code>sat-b2-</code>, etc.)</li>
+<li>si se han generado las bandas en archivos, clasificadas por su resolución, tiene el identificador de la resolución en cada uno (p.e., <code>sat-r10m-</code>, <code>sat-r20m-</code>, etc.)
+<ul>
+<li><strong>Las bandas de satélite necesitan estar almacenadas en archivos separados para poder ser tratadas de forma individual</strong>, el nombre de las capas estará compuesto por el nombre de la banda, con el prefijo compuesto por <code>sat_</code>, y el sufijo con la resolución (p.e., <code>_r30m</code>) y la parte correspondiente al nombre de la capa de recorte que su usó. Por ejemplo, en mi caso, los nombres para los archivos la banda 1, para <em>Landasat 8</em> son <code>sat_B1_r30m_lanjaron_bbox_jsamos</code> y <code>sat_B1_r30m_lanjaron_jsamos</code>.</li>
+<li>En caso de disponer de las bandas en varias resoluciones espaciales, <strong>cada banda</strong> se ha de incluir <strong>una sola vez, con la resolución más fina disponible</strong>.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="ejercicios-1" class="section level2 unnumbered hasAnchor">
+<h2>Ejercicios<a href="ejercicios.html#ejercicios-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ejercicio-1.-añadir-capas-80" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 1. Añadir capas (80%)<a href="ejercicios.html#ejercicio-1.-añadir-capas-80" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>Crea un espacio de trabajo cuyo nombre sea el nombre del municipio y tu usuario de correo de la UGR (p.e., en mi caso <code>lanjaron-jsamos</code>).</p></li>
+<li><p>Añade al espacio de trabajo, <strong>conservando el nombre de cada capa</strong>, las capas que se indican en apartado anterior (<em>Datos de trabajo</em>):</p>
+<ul>
+<li><p><strong>para las capas vectoriales, añade solo las capas recortadas por el polígono del municipio</strong> (vectoriales: solo las capas que <strong>no</strong> son <code>bbox</code>), incluyendo la capa de la zona de trabajo (el polígono del municipio),</p></li>
+<li><p><strong>para las capas ráster, añade solo las recortadas por el rectángulo envolvente</strong> (ráster: solo las capas <code>bbox</code>).</p></li>
+</ul></li>
+</ul>
+<p>Para el resto de nombres que no se indican en este enunciado, usa los que consideres más adecuados.</p>
+<p>Para documentar la realización del ejercicio, <strong>siguiendo la estructura del apartado <em>Datos de trabajo</em></strong>, <strong>para cada capa añadida</strong>:</p>
+<ul>
+<li>incluye una <strong>captura de pantalla completa</strong> de la ventana que abre al realizar de la <em>Previsualización de capas</em> usando <em>OpenLayers</em> de la capa correspondiente.</li>
+</ul>
+</div>
+<div id="ejercicio-2.-consultas-desde-qgis-10" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 2. Consultas desde <em>QGIS</em> (10%)<a href="ejercicios.html#ejercicio-2.-consultas-desde-qgis-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Consulta y muestra en <em>QGIS</em> la capa ráster <code>mdt-</code> y la del polígono del <strong>término municipal</strong> de tu espacio de trabajo en <em>Geoserver</em>.</p>
+<p>Para documentar la realización del ejercicio, incluye dos <strong>capturas de pantalla completa</strong> donde se muestre:</p>
+<ul>
+<li>las capas disponibles de la conexión con <em>Geoserver</em> y</li>
+<li>las dos capas indicadas en el área de visualización de <em>QGIS</em>.</li>
+</ul>
+</div>
+<div id="ejercicio-3.-consultas-web-10" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 3. Consultas Web (10%)<a href="ejercicios.html#ejercicio-3.-consultas-web-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Muestra mediante una aplicación Web (se puede desarrollar mediante <em>QGIS</em> o <em>R</em>) la capa ráster <code>mdt-</code> y la del polígono del <strong>término municipal</strong> de tu espacio de trabajo en <em>Geoserver</em>.</p>
+<p>Para documentar la realización del ejercicio, incluye dos <strong>capturas de pantalla completa</strong> donde se muestre:</p>
+<ul>
+<li>la definición (mediante <em>QGIS</em> o <em>R</em>),</li>
+<li>las capas en la aplicación Web.</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="consultar-información-geográfica-desde-otras-herramientas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

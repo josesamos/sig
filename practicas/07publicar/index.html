@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ejercicios | Servidores de Información Geográfica</title>
+  <title>Publicar Información Geográfica en la Web mediante GeoServer</title>
   <meta name="description" content="<p>Sistemas de Información Geográfica.
 Dpto. de Lenguajes y Sistemas Informáticos
 Universidad de Granada</p>" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ejercicios | Servidores de Información Geográfica" />
+  <meta property="og:title" content="Publicar Información Geográfica en la Web mediante GeoServer" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>Sistemas de Información Geográfica.
@@ -19,7 +19,7 @@ Universidad de Granada</p>" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ejercicios | Servidores de Información Geográfica" />
+  <meta name="twitter:title" content="Publicar Información Geográfica en la Web mediante GeoServer" />
   
   <meta name="twitter:description" content="<p>Sistemas de Información Geográfica.
 Dpto. de Lenguajes y Sistemas Informáticos
@@ -34,8 +34,8 @@ Universidad de Granada</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="consultar-información-geográfica-desde-otras-herramientas.html"/>
-<link rel="next" href="referencias.html"/>
+
+<link rel="next" href="iniciar-y-parar-geoserver.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -127,7 +127,15 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-qgis"><i class="fa fa-check"></i><b>5.1</b> Consulta desde <em>QGIS</em></a></li>
 <li class="chapter" data-level="5.2" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html#consulta-desde-una-aplicación-web"><i class="fa fa-check"></i><b>5.2</b> Consulta desde una aplicación Web</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#datos-de-trabajo"><i class="fa fa-check"></i>Datos de trabajo</a>
+<ul>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#capas-vectoriales"><i class="fa fa-check"></i>Capas vectoriales</a></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#capas-ráster"><i class="fa fa-check"></i>Capas ráster</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -141,7 +149,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Servidores de Información Geográfica</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Publicar Información Geográfica en la Web mediante <em>GeoServer</em></a>
           </h1>
         </div>
 
@@ -149,28 +157,37 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ejercicios" class="section level1 unnumbered hasAnchor">
-<h1>Ejercicios<a href="ejercicios.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="ejercicio-1.-presentar-datos-de-contacto" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 1. Presentar datos de contacto<a href="ejercicios.html#ejercicio-1.-presentar-datos-de-contacto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Inicia <em>Geoserver</em>, abre la aplicación de administración en el navegador e identifícate como administrador. Cambia la información de contacto con tus datos (de forma similar a como se muestra en la figura <a href="información-de-contacto-y-estado-del-servidor.html#fig:geosvr-07-contacto">3.2</a>, particularizado a tus datos).</p>
-<p>Para documentar la realización del ejercicio, incluye una captura de pantalla donde se muestren tus datos en <em>Geoserver</em>.</p>
+<div id="header">
+<h1 class="title">Publicar Información Geográfica en la Web mediante <em>GeoServer</em></h1>
+<h2 class="subtitle"><em><p>Sistemas de Información Geográfica</p></em></h2>
+<p class="author"><em><p>José Samos Jiménez (<a href="mailto:jsamos@ugr.es" class="email">jsamos@ugr.es</a>)<br>
+Dpto. de Lenguajes y Sistemas Informáticos<br>
+Universidad de Granada</p></em></p>
+<p class="date"><em><p>Curso 2024-2025<br><br>
+Citar y Licencia: <a href="https://doi.org/10.6084/m9.figshare.26967223.v4" class="uri">https://doi.org/10.6084/m9.figshare.26967223.v4</a></p></em></p>
 </div>
-<div id="ejercicio-2.-añadir-capas" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 2. Añadir capas<a href="ejercicios.html#ejercicio-2.-añadir-capas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Añade las capas de tu municipio que se indican en el tema de almacenar información geográfica, al espacio de trabajo cuyo nombre sea el nombre del municipio y tu usuario de correo de la UGR (p.e., en mi caso <code>lanjaron-jsamos</code>). Usa los almacenes de datos que consideres más adecuados.</p>
-<p>Para documentar la realización del ejercicio, incluye una captura de pantalla donde se muestren los almacenes de datos del espacio de trabajo que has creado.</p>
-</div>
-<div id="ejercicio-3.-consultas-desde-qgis" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 3. Consultas desde <em>QGIS</em><a href="ejercicios.html#ejercicio-3.-consultas-desde-qgis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Consulta y muestra en <em>QGIS</em> una capa ráster y otra vectorial de tu espacio de trabajo en <em>Geoserver</em>.</p>
-<p>Para documentar la realización del ejercicio, incluye una captura de pantalla donde se muestren las capas disponibles de la conexión con <em>Geoserver</em> y las dos capas en <em>QGIS</em>.</p>
-</div>
-<div id="ejercicio-3.-consultas-web" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 3. Consultas Web<a href="ejercicios.html#ejercicio-3.-consultas-web" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Muestra mediante una aplicación Web una capa ráster y otra vectorial de tu espacio de trabajo en <em>Geoserver</em>.</p>
-<p>Para documentar la realización del ejercicio, incluye una captura de pantalla donde se muestren las capas en la aplicación Web.</p>
+<div id="introducción" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Introducción<a href="index.html#introducción" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Disponemos de la información geográfica de nuestro municipio almacenada como archivos y en <em>PostGIS</em>. En esta actividad, vamos a ofrecer esa información mediante servidor Web de datos espaciales: <em>GeoServer</em>.</p>
+<div id="objetivos" class="section level4 unnumbered hasAnchor">
+<h4>Objetivos<a href="index.html#objetivos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>El objetivo principal es repasar los conceptos sobre publicación de Información Geográfica en la Web materializados en un servidor concreto, <em>GeoServer</em>.</li>
+<li>Configurar en <em>GeoServer</em> distintas fuentes de datos: vectorial y ráster.</li>
+<li>Acceder a <em>GeoServer</em> desde <em>QGIS</em>.</li>
+<li>Acceder a <em>GeoServer</em> desde una aplicación Web.</li>
+</ul>
+<p>Las actividades planteadas se basan en <span class="citation">Iacovella and Youngblood (<a href="#ref-iacovella2013">2013</a>)</span> y <span class="citation">Iacovella (<a href="#ref-iacovella2014">2014</a>)</span>.</p>
 
+</div>
+</div>
+<h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-iacovella2014" class="csl-entry">
+Iacovella, Stefano. 2014. <em>GeoServer Cookbook</em>. Packt Publishing.
+</div>
+<div id="ref-iacovella2013" class="csl-entry">
+Iacovella, Stefano, and Brian Youngblood. 2013. <em>GeoServer Beginner’s Guide</em>. Packt Publishing.
 </div>
 </div>
             </section>
@@ -178,8 +195,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="consultar-información-geográfica-desde-otras-herramientas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="iniciar-y-parar-geoserver.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
