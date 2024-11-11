@@ -58,6 +58,70 @@ Universidad de Granada</p>" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -118,8 +182,16 @@ div.csl-indent {
 <li class="chapter" data-level="4" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html"><i class="fa fa-check"></i><b>4</b> Añadir información geográfica</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#espacios-de-trabajo"><i class="fa fa-check"></i><b>4.1</b> Espacios de trabajo</a></li>
-<li class="chapter" data-level="4.2" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#almacenes-de-datos"><i class="fa fa-check"></i><b>4.2</b> Almacenes de datos</a></li>
-<li class="chapter" data-level="4.3" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#presentar-datos-capas"><i class="fa fa-check"></i><b>4.3</b> Capas</a></li>
+<li class="chapter" data-level="4.2" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#almacenes-de-datos"><i class="fa fa-check"></i><b>4.2</b> Almacenes de datos</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#postgis-como-almacén-de-datos"><i class="fa fa-check"></i><b>4.2.1</b> <em>PostGIS</em> como almacén de datos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#archivo-geotiff-como-almacén-de-datos"><i class="fa fa-check"></i><b>4.2.2</b> Archivo <em>GeoTIFF</em> como almacén de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#presentar-datos-capas"><i class="fa fa-check"></i><b>4.3</b> Capas</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#postgis-como-almacén-de-datos-1"><i class="fa fa-check"></i><b>4.3.1</b> <em>PostGIS</em> como almacén de datos</a></li>
+<li class="chapter" data-level="4.3.2" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#archivo-geotiff-como-almacén-de-datos-1"><i class="fa fa-check"></i><b>4.3.2</b> Archivo <em>GeoTIFF</em> como almacén de datos</a></li>
+</ul></li>
 <li class="chapter" data-level="4.4" data-path="añadir-información-geográfica.html"><a href="añadir-información-geográfica.html#previsualización-de-capas"><i class="fa fa-check"></i><b>4.4</b> Previsualización de capas</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="consultar-información-geográfica-desde-otras-herramientas.html"><a href="consultar-información-geográfica-desde-otras-herramientas.html"><i class="fa fa-check"></i><b>5</b> Consultar información geográfica desde otras herramientas</a>
@@ -207,6 +279,8 @@ Figura 4.4: Nuevo almacén de datos.
 </div>
 <p>Para crear un nuevo almacén de datos, pulsamos sobre el enlace <em>Agregar un nuevo almacén</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-11-almacenes-datos">4.3</a>) y, según los datos sean vectoriales o ráster, seleccionamos el tipo de almacén (figura <a href="añadir-información-geográfica.html#fig:geosvr-12-nuevo-almacen-datos">4.4</a>). También se pueden configurar servidores en cascada si se selecciona como origen de datos otro servidor.</p>
 <p>En este ejemplo, se ha usado <em>PostGIS</em> como almacén de datos vectoriales y archivos <em>GeoTIFF</em> como almacén de datos ráster<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
+<div id="postgis-como-almacén-de-datos" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> <em>PostGIS</em> como almacén de datos<a href="añadir-información-geográfica.html#postgis-como-almacén-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-13-postgis-almacen"></span>
 <img src="figuras_original/13-postgis-almacen.png" alt="PostGIS como almacén de datos." width="100%" />
@@ -223,6 +297,9 @@ Figura 4.6: Lista de capas disponibles en el almacén de datos.
 </p>
 </div>
 <p>Una vez realizada la conexión, aparece una lista con las capas disponibles en el almacén de datos (figura <a href="añadir-información-geográfica.html#fig:geosvr-14-lista-capas-almacen">4.6</a>). A esta lista también podemos acceder desde la opción Datos &gt; Capas (la veremos en el apartado <a href="añadir-información-geográfica.html#presentar-datos-capas">4.3</a>).</p>
+</div>
+<div id="archivo-geotiff-como-almacén-de-datos" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Archivo <em>GeoTIFF</em> como almacén de datos<a href="añadir-información-geográfica.html#archivo-geotiff-como-almacén-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-22-geotiff-almacen"></span>
 <img src="figuras_original/22-geotiff-almacen.png" alt="Archivo GeoTIFF como almacén de datos." width="100%" />
@@ -246,6 +323,8 @@ Figura 4.9: Capa disponible en el almacén de datos.
 </p>
 </div>
 <p>En este caso, la única capa disponible en el almacén de datos se muestra en la figura <a href="añadir-información-geográfica.html#fig:geosvr-24-capa-en-almacen">4.9</a>.</p>
+<p>En el caso de que queramos publicar conjuntamente <strong>todas</strong> las bandas del archivo (MDT, ortofotografía, banda individual de satélite), podemos publicarlas directamente pulsando sobre el enlace <em>Publicación</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-24-capa-en-almacen">4.9</a>). En caso contrario (el archivo tiene varias bandas para publicar de forma individual o en subconjuntos), deberemos acceder a la publicación de las capas para publicar las bandas que nos interese seleccionar.</p>
+</div>
 </div>
 <div id="presentar-datos-capas" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Capas<a href="añadir-información-geográfica.html#presentar-datos-capas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -264,7 +343,10 @@ Figura 4.10: Lista de capas publicadas.
 Figura 4.11: Agregar una nueva capa.
 </p>
 </div>
-<p>También podemos acceder a la lista de capas de cualquier almacén pulsando sobre la opción <em>Datos &gt; Capas</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-15-lista-capas-publicadas">4.10</a>) y pulsando, a continuación, sobre el enlace <em>Agregar nueva capa</em>. En la nueva pantalla a la que accedemos, seleccionamos el almacén de datos que contiene la nueva capa (figura <a href="añadir-información-geográfica.html#fig:geosvr-16-agregar-nueva-capa">4.11</a>) y nos aparece la lista de capas del almacén seleccionado: en este caso la lista de la figura <a href="añadir-información-geográfica.html#fig:geosvr-14-lista-capas-almacen">4.6</a>.</p>
+<p>También podemos acceder a la lista de capas de cualquier almacén pulsando sobre la opción <em>Datos &gt; Capas</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-15-lista-capas-publicadas">4.10</a>) y pulsando, a continuación, sobre el enlace <em>Agregar nueva capa</em>. En la nueva pantalla a la que accedemos, seleccionamos el almacén de datos que contiene la nueva capa (figura <a href="añadir-información-geográfica.html#fig:geosvr-16-agregar-nueva-capa">4.11</a>)</p>
+<div id="postgis-como-almacén-de-datos-1" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> <em>PostGIS</em> como almacén de datos<a href="añadir-información-geográfica.html#postgis-como-almacén-de-datos-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si tenemos <em>PostGIS</em> como almacén de datos, nos aparece la lista de capas del almacén seleccionado: en este caso la lista de la figura <a href="añadir-información-geográfica.html#fig:geosvr-14-lista-capas-almacen">4.6</a>.</p>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-17-publicar-nueva-capa"></span>
 <img src="figuras_original/17-publicar-nueva-capa.png" alt="Publicar una nueva capa." width="100%" />
@@ -281,6 +363,71 @@ Figura 4.13: Definir <em>Encuadres</em>.
 </p>
 </div>
 <p>Para las capas vectoriales, tenemos que definir necesariamente el apartado <em>Encuadres</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-18-definir-encuadres">4.13</a>). Se puede definir fácilmente pulsando sobre los enlaces <em>Calcular desde los datos</em> y <em>Calcular desde el encuadre nativo</em>.</p>
+<div id="publicación-mediante-la-api-rest-de-geoserver" class="section level4 hasAnchor" number="4.3.1.1">
+<h4><span class="header-section-number">4.3.1.1</span> Publicación mediante la API REST de <em>GeoServer</em><a href="añadir-información-geográfica.html#publicación-mediante-la-api-rest-de-geoserver" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Podemos publicar las capas vectoriales almacenadas en <em>PostGIS</em> mediante la API REST de <em>GeoServer</em>.</p>
+<p>A continuación se muestra el código ejemplo para una de las capas, una vez definida la base de datos como almacén de datos.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="añadir-información-geográfica.html#cb1-1" tabindex="-1"></a><span class="co"># acceso a GeoServer</span></span>
+<span id="cb1-2"><a href="añadir-información-geográfica.html#cb1-2" tabindex="-1"></a>geoserver_url <span class="ot">&lt;-</span> <span class="st">&quot;http://localhost:8080/geoserver&quot;</span></span>
+<span id="cb1-3"><a href="añadir-información-geográfica.html#cb1-3" tabindex="-1"></a>user <span class="ot">&lt;-</span> <span class="st">&quot;admin&quot;</span> </span>
+<span id="cb1-4"><a href="añadir-información-geográfica.html#cb1-4" tabindex="-1"></a>password <span class="ot">&lt;-</span> <span class="st">&quot;geoserver&quot;</span></span>
+<span id="cb1-5"><a href="añadir-información-geográfica.html#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="añadir-información-geográfica.html#cb1-6" tabindex="-1"></a><span class="co"># espacio de nombres y almacén de datos </span></span>
+<span id="cb1-7"><a href="añadir-información-geográfica.html#cb1-7" tabindex="-1"></a>workspace <span class="ot">&lt;-</span> <span class="st">&quot;lanjaron_jsamos&quot;</span></span>
+<span id="cb1-8"><a href="añadir-información-geográfica.html#cb1-8" tabindex="-1"></a>data_store <span class="ot">&lt;-</span> <span class="st">&quot;lanjaron_jsamos&quot;</span></span>
+<span id="cb1-9"><a href="añadir-información-geográfica.html#cb1-9" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="añadir-información-geográfica.html#cb1-10" tabindex="-1"></a><span class="co"># nombre de capa a publicar</span></span>
+<span id="cb1-11"><a href="añadir-información-geográfica.html#cb1-11" tabindex="-1"></a>layer_name <span class="ot">&lt;-</span> <span class="st">&quot;cc_manz_lanjaron_jsamos&quot;</span></span>
+<span id="cb1-12"><a href="añadir-información-geográfica.html#cb1-12" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="añadir-información-geográfica.html#cb1-13" tabindex="-1"></a>layer_config <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb1-14"><a href="añadir-información-geográfica.html#cb1-14" tabindex="-1"></a>  <span class="at">featureType =</span> <span class="fu">list</span>(</span>
+<span id="cb1-15"><a href="añadir-información-geográfica.html#cb1-15" tabindex="-1"></a>    <span class="at">name =</span> layer_name,</span>
+<span id="cb1-16"><a href="añadir-información-geográfica.html#cb1-16" tabindex="-1"></a>    <span class="at">nativeName =</span> layer_name,</span>
+<span id="cb1-17"><a href="añadir-información-geográfica.html#cb1-17" tabindex="-1"></a>    <span class="at">title =</span> layer_name</span>
+<span id="cb1-18"><a href="añadir-información-geográfica.html#cb1-18" tabindex="-1"></a>  )</span>
+<span id="cb1-19"><a href="añadir-información-geográfica.html#cb1-19" tabindex="-1"></a>)</span>
+<span id="cb1-20"><a href="añadir-información-geográfica.html#cb1-20" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="añadir-información-geográfica.html#cb1-21" tabindex="-1"></a>layer_config_json <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">toJSON</span>(layer_config, <span class="at">auto_unbox =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-22"><a href="añadir-información-geográfica.html#cb1-22" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="añadir-información-geográfica.html#cb1-23" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(geoserver_url, <span class="st">&quot;/rest/workspaces/&quot;</span>, workspace, <span class="st">&quot;/datastores/&quot;</span>, data_store, <span class="st">&quot;/featuretypes&quot;</span>)</span>
+<span id="cb1-24"><a href="añadir-información-geográfica.html#cb1-24" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="añadir-información-geográfica.html#cb1-25" tabindex="-1"></a>response <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">POST</span>(</span>
+<span id="cb1-26"><a href="añadir-información-geográfica.html#cb1-26" tabindex="-1"></a>  url,</span>
+<span id="cb1-27"><a href="añadir-información-geográfica.html#cb1-27" tabindex="-1"></a>  httr<span class="sc">::</span><span class="fu">authenticate</span>(user, password),</span>
+<span id="cb1-28"><a href="añadir-información-geográfica.html#cb1-28" tabindex="-1"></a>  httr<span class="sc">::</span><span class="fu">add_headers</span>(<span class="st">&quot;Content-Type&quot;</span> <span class="ot">=</span> <span class="st">&quot;application/json&quot;</span>),</span>
+<span id="cb1-29"><a href="añadir-información-geográfica.html#cb1-29" tabindex="-1"></a>  <span class="at">body =</span> layer_config_json,</span>
+<span id="cb1-30"><a href="añadir-información-geográfica.html#cb1-30" tabindex="-1"></a>  <span class="at">encode =</span> <span class="st">&quot;json&quot;</span></span>
+<span id="cb1-31"><a href="añadir-información-geográfica.html#cb1-31" tabindex="-1"></a>)</span>
+<span id="cb1-32"><a href="añadir-información-geográfica.html#cb1-32" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="añadir-información-geográfica.html#cb1-33" tabindex="-1"></a><span class="cf">if</span> (httr<span class="sc">::</span><span class="fu">status_code</span>(response) <span class="sc">==</span> <span class="dv">201</span>) {</span>
+<span id="cb1-34"><a href="añadir-información-geográfica.html#cb1-34" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Capa publicada.&quot;</span>)</span>
+<span id="cb1-35"><a href="añadir-información-geográfica.html#cb1-35" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb1-36"><a href="añadir-información-geográfica.html#cb1-36" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Error:&quot;</span>, httr<span class="sc">::</span><span class="fu">content</span>(response, <span class="st">&quot;text&quot;</span>))</span>
+<span id="cb1-37"><a href="añadir-información-geográfica.html#cb1-37" tabindex="-1"></a>}</span></code></pre></div>
+<p>Podemos definir una función y llamarla con el nombre de cada capa.</p>
+</div>
+</div>
+<div id="archivo-geotiff-como-almacén-de-datos-1" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Archivo <em>GeoTIFF</em> como almacén de datos<a href="añadir-información-geográfica.html#archivo-geotiff-como-almacén-de-datos-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-vista-cobertura-nueva"></span>
+<img src="figuras_original/vista-cobertura-nueva.png" alt="Configurar una nueva vista de Cobertura." width="100%" />
+<p class="caption">
+Figura 4.14: <em>Configurar una nueva vista de Cobertura</em>.
+</p>
+</div>
+<p>Si tenemos un archivo <em>GeoTIFF</em> como almacén de datos y queremos publicar todas las bandas conjuntamente, pulsamos sobre el enlace <em>Publicación</em> o, si ya lo habíamos publicado antes y queremos volver a publicarlo cambiando la configuración, el enlace será <em>Publicar de nuevo</em> (figura <a href="añadir-información-geográfica.html#fig:geosvr-vista-cobertura-nueva">4.14</a>).</p>
+<p>Pero si queremos publicar una selección de las bandas contenidas en el archivo <em>GeoTIFF</em>, deberemos pulsar cobre el enlace <em>Configurar una nueva vista de Cobertura</em> que aparece en el texto explicativo (figura <a href="añadir-información-geográfica.html#fig:geosvr-vista-cobertura-nueva">4.14</a>).</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-vista-cobertura-def"></span>
+<img src="figuras_original/vista-cobertura-def.png" alt="Crear nueva vista de cobertura." width="100%" />
+<p class="caption">
+Figura 4.15: <em>Crear nueva vista de cobertura</em>.
+</p>
+</div>
+<p>En la ventana “Crear nueva vista de cobertura” (figura <a href="añadir-información-geográfica.html#fig:geosvr-vista-cobertura-def">4.15</a>), seleccionamos las bandas de salida y le podemos asignar el nombre que corresponda según la selección realizada.</p>
+<p>Los nombres de las bandas no aparecen, solo está disponible el índice de cada banda en la estructura del archivo <em>GeoTIFF</em>. Deberemos consultarlos usando <em>QGIS</em> o <em>R</em>, para asignarlos correctamente.</p>
+</div>
 </div>
 <div id="previsualización-de-capas" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> Previsualización de capas<a href="añadir-información-geográfica.html#previsualización-de-capas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -288,10 +435,10 @@ Figura 4.13: Definir <em>Encuadres</em>.
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:geosvr-20-previsualiza-capas"></span>
 <img src="figuras_original/20-previsualiza-capas.png" alt="Previsualización de capas." width="100%" />
 <p class="caption">
-Figura 4.14: Previsualización de capas.
+Figura 4.16: Previsualización de capas.
 </p>
 </div>
-<p>Pulsando sobre <em>Datos &gt; Previsualización de capas</em> accedemos a la pantalla que nos permite ver o descargar las capas en cualquiera de los formatos disponibles (figura <a href="añadir-información-geográfica.html#fig:geosvr-20-previsualiza-capas">4.14</a>). Por ejemplo, para ver una capa mediante <em>OpenLayers</em>, pulsando sobre el enlace <em>OpenLayers</em> situado a la derecha del nombre de la capa, en la figura <a href="añadir-información-geográfica.html#fig:geosvr-20-previsualiza-capas">4.14</a>, se muestra en una nueva pestaña del navegador la capa.</p>
+<p>Pulsando sobre <em>Datos &gt; Previsualización de capas</em> accedemos a la pantalla que nos permite ver o descargar las capas en cualquiera de los formatos disponibles (figura <a href="añadir-información-geográfica.html#fig:geosvr-20-previsualiza-capas">4.16</a>). Por ejemplo, para ver una capa mediante <em>OpenLayers</em>, pulsando sobre el enlace <em>OpenLayers</em> situado a la derecha del nombre de la capa, en la figura <a href="añadir-información-geográfica.html#fig:geosvr-20-previsualiza-capas">4.16</a>, se muestra en una nueva pestaña del navegador la capa.</p>
 
 </div>
 </div>

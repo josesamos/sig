@@ -19,6 +19,8 @@ fig:geosvr-15-lista-capas-publicadas
 fig:geosvr-16-agregar-nueva-capa
 fig:geosvr-17-publicar-nueva-capa
 fig:geosvr-18-definir-encuadres
+fig:geosvr-vista-cobertura-nueva
+fig:geosvr-vista-cobertura-def
 fig:geosvr-20-previsualiza-capas
 fig:geosvr-26-conexion-wms
 fig:geosvr-27-crear-conexion-wms
@@ -41,7 +43,12 @@ estado-del-servidor
 añadir-información-geográfica
 espacios-de-trabajo
 almacenes-de-datos
+postgis-como-almacén-de-datos
+archivo-geotiff-como-almacén-de-datos
 presentar-datos-capas
+postgis-como-almacén-de-datos-1
+publicación-mediante-la-api-rest-de-geoserver
+archivo-geotiff-como-almacén-de-datos-1
 previsualización-de-capas
 consultar-información-geográfica-desde-otras-herramientas
 consulta-desde-qgis
