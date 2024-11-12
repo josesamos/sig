@@ -427,6 +427,39 @@ Figura 4.15: <em>Crear nueva vista de cobertura</em>.
 </div>
 <p>En la ventana “Crear nueva vista de cobertura” (figura <a href="añadir-información-geográfica.html#fig:geosvr-vista-cobertura-def">4.15</a>), seleccionamos las bandas de salida y le podemos asignar el nombre que corresponda según la selección realizada.</p>
 <p>Los nombres de las bandas no aparecen, solo está disponible el índice de cada banda en la estructura del archivo <em>GeoTIFF</em>. Deberemos consultarlos usando <em>QGIS</em> o <em>R</em>, para asignarlos correctamente.</p>
+<div id="publicación-mediante-la-api-rest-de-geoserver-1" class="section level4 hasAnchor" number="4.3.2.1">
+<h4><span class="header-section-number">4.3.2.1</span> Publicación mediante la API REST de <em>GeoServer</em><a href="añadir-información-geográfica.html#publicación-mediante-la-api-rest-de-geoserver-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Podemos publicar las capas ráster en formato <em>GeoTIFF</em> mediante la API REST de <em>GeoServer</em>. Crea el almacén de datos y publica la combinación de sus bandas como una capa.</p>
+<p>A continuación se muestra el código ejemplo para uno de los archivos.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="añadir-información-geográfica.html#cb2-1" tabindex="-1"></a><span class="co"># acceso a GeoServer</span></span>
+<span id="cb2-2"><a href="añadir-información-geográfica.html#cb2-2" tabindex="-1"></a>geoserver_url <span class="ot">&lt;-</span> <span class="st">&quot;http://localhost:8080/geoserver&quot;</span></span>
+<span id="cb2-3"><a href="añadir-información-geográfica.html#cb2-3" tabindex="-1"></a>user <span class="ot">&lt;-</span> <span class="st">&quot;admin&quot;</span> </span>
+<span id="cb2-4"><a href="añadir-información-geográfica.html#cb2-4" tabindex="-1"></a>password <span class="ot">&lt;-</span> <span class="st">&quot;geoserver&quot;</span></span>
+<span id="cb2-5"><a href="añadir-información-geográfica.html#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="añadir-información-geográfica.html#cb2-6" tabindex="-1"></a><span class="co"># espacio de nombres  </span></span>
+<span id="cb2-7"><a href="añadir-información-geográfica.html#cb2-7" tabindex="-1"></a>workspace <span class="ot">&lt;-</span> <span class="st">&quot;lanjaron-jsamos&quot;</span></span>
+<span id="cb2-8"><a href="añadir-información-geográfica.html#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="añadir-información-geográfica.html#cb2-9" tabindex="-1"></a><span class="co"># nombre del archivo y almacén de datos</span></span>
+<span id="cb2-10"><a href="añadir-información-geográfica.html#cb2-10" tabindex="-1"></a>geotiff_file <span class="ot">&lt;-</span> <span class="st">&quot;datos/Lanjaron/p03out/ort-lanjaron-bbox-jsamos.tif&quot;</span></span>
+<span id="cb2-11"><a href="añadir-información-geográfica.html#cb2-11" tabindex="-1"></a>store_name <span class="ot">&lt;-</span> <span class="st">&quot;ort-lanjaron-bbox-jsamos&quot;</span>  </span>
+<span id="cb2-12"><a href="añadir-información-geográfica.html#cb2-12" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="añadir-información-geográfica.html#cb2-13" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(geoserver_url, <span class="st">&quot;/rest/workspaces/&quot;</span>, workspace, <span class="st">&quot;/coveragestores/&quot;</span>, store_name, <span class="st">&quot;/file.geotiff&quot;</span>)</span>
+<span id="cb2-14"><a href="añadir-información-geográfica.html#cb2-14" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="añadir-información-geográfica.html#cb2-15" tabindex="-1"></a>response <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">PUT</span>(</span>
+<span id="cb2-16"><a href="añadir-información-geográfica.html#cb2-16" tabindex="-1"></a>  url,</span>
+<span id="cb2-17"><a href="añadir-información-geográfica.html#cb2-17" tabindex="-1"></a>  httr<span class="sc">::</span><span class="fu">authenticate</span>(user, password),</span>
+<span id="cb2-18"><a href="añadir-información-geográfica.html#cb2-18" tabindex="-1"></a>  httr<span class="sc">::</span><span class="fu">add_headers</span>(<span class="st">&quot;Content-Type&quot;</span> <span class="ot">=</span> <span class="st">&quot;image/tiff&quot;</span>),</span>
+<span id="cb2-19"><a href="añadir-información-geográfica.html#cb2-19" tabindex="-1"></a>  <span class="at">body =</span> httr<span class="sc">::</span><span class="fu">upload_file</span>(geotiff_file)</span>
+<span id="cb2-20"><a href="añadir-información-geográfica.html#cb2-20" tabindex="-1"></a>)</span>
+<span id="cb2-21"><a href="añadir-información-geográfica.html#cb2-21" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="añadir-información-geográfica.html#cb2-22" tabindex="-1"></a><span class="cf">if</span> (httr<span class="sc">::</span><span class="fu">status_code</span>(response) <span class="sc">==</span> <span class="dv">201</span>) {</span>
+<span id="cb2-23"><a href="añadir-información-geográfica.html#cb2-23" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;Almacén de datos creado.&quot;</span>)</span>
+<span id="cb2-24"><a href="añadir-información-geográfica.html#cb2-24" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb2-25"><a href="añadir-información-geográfica.html#cb2-25" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">&quot;Error: &quot;</span>, httr<span class="sc">::</span><span class="fu">content</span>(response, <span class="st">&quot;text&quot;</span>))</span>
+<span id="cb2-26"><a href="añadir-información-geográfica.html#cb2-26" tabindex="-1"></a>}</span></code></pre></div>
+<p>Para el MDT lo crea y publica la capa sin problemas. Para la ortofotografía, también crea el almacén de datos, da un error al publicar la capa pero, si lo comprobamos, la capa está publicada correctamente.</p>
+<p>En las pruebas que he hecho, no he encontrado la forma de publicar individualmente las bandas de un archivo <em>GeoTIFF</em> mediante la API REST de <em>GeoServer</em>.</p>
+</div>
 </div>
 </div>
 <div id="previsualización-de-capas" class="section level2 hasAnchor" number="4.4">

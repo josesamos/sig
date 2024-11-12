@@ -49,6 +49,7 @@ presentar-datos-capas
 postgis-como-almacén-de-datos-1
 publicación-mediante-la-api-rest-de-geoserver
 archivo-geotiff-como-almacén-de-datos-1
+publicación-mediante-la-api-rest-de-geoserver-1
 previsualización-de-capas
 consultar-información-geográfica-desde-otras-herramientas
 consulta-desde-qgis

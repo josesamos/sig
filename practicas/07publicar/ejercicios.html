@@ -313,15 +313,16 @@ div.csl-indent {
 <li><p>Crea un espacio de trabajo cuyo nombre sea el nombre del municipio y tu usuario de correo de la UGR (p.e., en mi caso <code>lanjaron-jsamos</code>).</p></li>
 <li><p>Añade al espacio de trabajo, <strong>conservando el nombre de cada capa</strong>, las capas que se indican en apartado anterior (<em>Datos de trabajo</em>):</p>
 <ul>
-<li><p><strong>para las capas vectoriales, añade solo las capas recortadas por el polígono del municipio</strong> (vectoriales: solo las capas que <strong>no</strong> son <code>bbox</code>), incluyendo la capa de la zona de trabajo (el polígono del municipio),</p></li>
-<li><p><strong>para las capas ráster, añade solo las recortadas por el rectángulo envolvente</strong> (ráster: solo las capas <code>bbox</code>).</p></li>
+<li><p><strong>para las capas vectoriales, añade solo las capas recortadas por el polígono del municipio</strong> (vectoriales: solo las capas que <strong>no</strong> son <code>bbox</code>), incluyendo la capa de la zona de trabajo (el polígono del municipio), asigna al almacén de datos el mismo nombre de la base de datos;</p></li>
+<li><p><strong>para las capas ráster, añade solo las recortadas por el rectángulo envolvente</strong> (ráster: solo las capas <code>bbox</code>), asigna al almacén de datos el mismo nombre del archivo <em>GeoTIFF</em> (sin la extensión).</p></li>
 </ul></li>
+<li><p>Añade <strong>al menos una de las capas</strong> (ráster o vectorial) mediante la API REST de <em>GeoServer</em>.</p></li>
 </ul>
-<p>Para el resto de nombres que no se indican en este enunciado, usa los que consideres más adecuados.</p>
 <p>Para documentar la realización del ejercicio, <strong>siguiendo la estructura del apartado <em>Datos de trabajo</em></strong>, <strong>para cada capa añadida</strong>:</p>
 <ul>
 <li>incluye una <strong>captura de pantalla completa</strong> de la ventana que abre al realizar de la <em>Previsualización de capas</em> usando <em>OpenLayers</em> de la capa correspondiente.</li>
 </ul>
+<p><strong>En caso de usar <em>R</em> para la publicación de las capas</strong> (al menos habrá una capa añadida con <em>R</em>), incluye el código generado e indica al principio del documento las capas que se han añadido mediante <em>R</em>.</p>
 </div>
 <div id="ejercicio-2.-consultas-desde-qgis-10" class="section level4 unnumbered hasAnchor">
 <h4>Ejercicio 2. Consultas desde <em>QGIS</em> (10%)<a href="ejercicios.html#ejercicio-2.-consultas-desde-qgis-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
