@@ -8,7 +8,7 @@
   <meta name="description" content="<p>Sistemas de Información Geográfica.
 Dpto. de Lenguajes y Sistemas Informáticos
 Universidad de Granada</p>" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Ejercicios | Presentar Información Geográfica en 2.5D y 3D" />
   <meta property="og:type" content="book" />
@@ -34,8 +34,8 @@ Universidad de Granada</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="representación-3d-web-con-qgis.html"/>
-<link rel="next" href="referencias.html"/>
+<link rel="prev" href="geometría-3d-con-r-y-postgis.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -150,8 +150,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="d-con-r.html"><a href="d-con-r.html"><i class="fa fa-check"></i><b>4</b> 3D con <em>R</em></a></li>
 <li class="chapter" data-level="5" data-path="d-para-imprimir-con-qgis.html"><a href="d-para-imprimir-con-qgis.html"><i class="fa fa-check"></i><b>5</b> 3D para imprimir con <em>QGIS</em></a></li>
 <li class="chapter" data-level="6" data-path="representación-3d-web-con-qgis.html"><a href="representación-3d-web-con-qgis.html"><i class="fa fa-check"></i><b>6</b> Representación 3D Web con <em>QGIS</em></a></li>
+<li class="chapter" data-level="7" data-path="geometría-3d-con-r-y-postgis.html"><a href="geometría-3d-con-r-y-postgis.html"><i class="fa fa-check"></i><b>7</b> Geometría 3D con <em>R</em> y <em>PostGIS</em></a></li>
 <li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -174,50 +174,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ejercicios" class="section level1 unnumbered hasAnchor">
 <h1>Ejercicios<a href="ejercicios.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="ejercicio-1.-2.5d-en-qgis" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 1. 2.5D en <em>QGIS</em><a href="ejercicios.html#ejercicio-1.-2.5d-en-qgis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="exercise">
-<p><span id="exr:presentar-qgis-25d" class="exercise"><strong>Ejercicio 6.1  </strong></span>Representa mediante 2.5D la capa vectorial similar a la capa <code>manzana</code> para tu municipio. Utiliza como fondo una capa ráster adecuada.</p>
-<p>Para documentar la realización del ejercicio, incluye una captura de pantalla donde se muestre el resultado.</p>
+<div id="ejercicio-1.-2.5d-en-qgis-10" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 1. 2.5D en <em>QGIS</em> (10%)<a href="ejercicios.html#ejercicio-1.-2.5d-en-qgis-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Representa mediante 2.5D la capa vectorial <strong>manzana</strong> para tu municipio (<code>cc-manz-</code>). Utiliza como fondo una capa ráster adecuada.</p>
+<p>Para documentar la realización del ejercicio, incluye una <strong>captura de pantalla completa</strong> donde se muestre el resultado.</p>
 </div>
+<div id="ejercicio-2.-3d-en-r-10" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 2. 3D en <em>R</em> (10%)<a href="ejercicios.html#ejercicio-2.-3d-en-r-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Genera un modelo 3D mediante <em>R</em> de tu municipio.</p>
+<p>Para documentar la realización del ejercicio, incluye una <strong>captura de pantalla completa</strong> donde se muestre el resultado.</p>
 </div>
-<div id="ejercicio-2.-3d-en-r" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 2. 3D en <em>R</em><a href="ejercicios.html#ejercicio-2.-3d-en-r" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="exercise">
-<p><span id="exr:presentar-r-3d" class="exercise"><strong>Ejercicio 6.2  </strong></span>Genera un modelo 3D mediante <em>R</em> de tu municipio.</p>
-<p>Para documentar la realización del ejercicio, incluye una captura de pantalla donde se muestre el resultado.</p>
+<div id="ejercicio-3.-3d-para-imprimir-10" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 3. 3D para imprimir (10%)<a href="ejercicios.html#ejercicio-3.-3d-para-imprimir-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Genera un modelo 3D para imprimir de tu municipio.</p>
+<p>Para documentar la realización del ejercicio, incluye una <strong>captura de pantalla completa</strong> donde se muestre el resultado con alguna herramienta de visualización.</p>
 </div>
-</div>
-<div id="ejercicio-3.-3d-para-imprimir" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 3. 3D para imprimir<a href="ejercicios.html#ejercicio-3.-3d-para-imprimir" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="exercise">
-<p><span id="exr:presentar-print-3d" class="exercise"><strong>Ejercicio 6.3  </strong></span>Genera un modelo 3D para imprimir de tu municipio.</p>
-<p>Para documentar la realización del ejercicio, incluye una captura de pantalla donde se muestre el resultado con alguna herramienta de visualización.</p>
-</div>
-</div>
-<div id="ejercicio-4.-3d-web-mdt" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 4. 3D Web MDT<a href="ejercicios.html#ejercicio-4.-3d-web-mdt" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="exercise">
-<p><span id="exr:presentar-web-3d" class="exercise"><strong>Ejercicio 6.4  </strong></span>Genera la versión Web de la representación 3D a partir solo del MDT de tu municipio.</p>
-<p>Para documentar la realización del ejercicio, incluye una captura de pantalla donde se muestre el resultado.</p>
-</div>
-</div>
-<div id="ejercicio-5.-3d-web-con-capas" class="section level4 unnumbered hasAnchor">
-<h4>Ejercicio 5. 3D Web con capas<a href="ejercicios.html#ejercicio-5.-3d-web-con-capas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="exercise">
-<p><span id="exr:presentar-web-3d-bis" class="exercise"><strong>Ejercicio 6.5  </strong></span>Genera la versión Web de la representación 3D a partir de la ortofotografía o bien el MDT y el mapa de sombras, añadiendo también alguna capa vectorial de tu municipio.</p>
-<p>Para documentar la realización del ejercicio, incluye una captura de pantalla donde se muestre el resultado.</p>
-</div>
+<div id="ejercicio-4.-geometría-3d-con-r-y-postgis-70" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 4. Geometría 3D con <em>R</em> y <em>PostGIS</em> (70%)<a href="ejercicios.html#ejercicio-4.-geometría-3d-con-r-y-postgis-70" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p>Obtén una muestra de puntos 3D a partir del MDT de tu municipio y represéntala en 3D desde <em>R</em>. Para documentar la realización del ejercicio, incluye una <strong>captura de pantalla completa</strong> donde se muestre el resultado.</p></li>
+<li><p>Almacena los puntos 3D en <em>PostGIS</em> y muestra mediante una consulta desde <em>PgAdmin</em> los 10 primeros puntos en formato WKT. Para documentar la realización del ejercicio, incluye una <strong>captura de pantalla completa</strong> donde se muestre la consulta y el resultado.</p></li>
+<li><p>A partir de los puntos almacenados en <em>PostGIS</em> obtén la Triangulación de Delaunay y muéstrala en <em>QGIS</em>. Para documentar la realización del ejercicio, incluye <strong>dos capturas de pantalla completa</strong> donde se muestre la definición y el resultado.</p></li>
+<li><p>A partir de los puntos almacenados en <em>PostGIS</em> obtén el Diagrama de Voronoi y muéstralo en <em>QGIS</em>. Para documentar la realización del ejercicio, incluye <strong>dos capturas de pantalla completa</strong> donde se muestre la definición y el resultado.</p></li>
+</ol>
 
 </div>
 </div>
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="representación-3d-web-con-qgis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="geometría-3d-con-r-y-postgis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

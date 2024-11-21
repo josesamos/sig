@@ -15,14 +15,11 @@ fig:3d-14-qgis2threejs-preview
 fig:3d-15-qgis2threejs-export-web
 fig:3d-16-qgis2threejs-web
 fig:3d-17-qgis2threejs-web-2
-exr:presentar-qgis-25d
-exr:presentar-r-3d
-exr:presentar-print-3d
-exr:presentar-web-3d
-exr:presentar-web-3d-bis
+fig:3d-r-puntos
 introducción
 d-con-qgis
 d-con-saga-gis
 d-con-r
 d-para-imprimir-con-qgis
 representación-3d-web-con-qgis
+geometría-3d-con-r-y-postgis
