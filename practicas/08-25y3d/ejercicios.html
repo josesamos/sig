@@ -151,7 +151,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5" data-path="d-para-imprimir-con-qgis.html"><a href="d-para-imprimir-con-qgis.html"><i class="fa fa-check"></i><b>5</b> 3D para imprimir con <em>QGIS</em></a></li>
 <li class="chapter" data-level="6" data-path="representación-3d-web-con-qgis.html"><a href="representación-3d-web-con-qgis.html"><i class="fa fa-check"></i><b>6</b> Representación 3D Web con <em>QGIS</em></a></li>
 <li class="chapter" data-level="7" data-path="geometría-3d-con-r-y-postgis.html"><a href="geometría-3d-con-r-y-postgis.html"><i class="fa fa-check"></i><b>7</b> Geometría 3D con <em>R</em> y <em>PostGIS</em></a></li>
-<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i>Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#datos-de-trabajo"><i class="fa fa-check"></i>Datos de trabajo</a>
+<ul>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#capas-vectoriales"><i class="fa fa-check"></i>Capas vectoriales</a></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#capas-ráster"><i class="fa fa-check"></i>Capas ráster</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -174,9 +182,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ejercicios" class="section level1 unnumbered hasAnchor">
 <h1>Ejercicios<a href="ejercicios.html#ejercicios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="datos-de-trabajo" class="section level2 unnumbered hasAnchor">
+<h2>Datos de trabajo<a href="ejercicios.html#datos-de-trabajo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para el municipio seleccionado, los datos de partida los hemos obtenido en actividades anteriores. Se indican solo los datos que usaremos en esta actividad.</p>
+<ul>
+<li><strong>Zona de trabajo</strong>:
+<ul>
+<li><strong>término municipal</strong>
+<ul>
+<li>nombre: compuesto por el nombre del municipio (8 letras, sin espacios), <code>-</code>, y usuario de correo (p.e, <code>lanjaron-jsamos</code>)</li>
+</ul></li>
+<li><strong>mínimo rectángulo</strong> que contiene al término municipal
+<ul>
+<li>nombre: nombre anterior pero con <code>-bbox-</code> en lugar de <code>-</code> (p.e, <code>lanjaron-bbox-jsamos</code>)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Para cada capa de los apartados siguientes, se indica el <strong>primer componente del nombre</strong>, el resto del nombre depende de los nombres de las capas de la zona de trabajo.</p>
+<div id="capas-vectoriales" class="section level3 unnumbered hasAnchor">
+<h3>Capas vectoriales<a href="ejercicios.html#capas-vectoriales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong><em>CartoCiudad</em></strong> con las capas con datos de <strong>manzana</strong> recortado por el <strong>término municipal</strong>
+<ul>
+<li>nombre: <code>cc-manz-</code></li>
+</ul></li>
+</ol>
+</div>
+<div id="capas-ráster" class="section level3 unnumbered hasAnchor">
+<h3>Capas ráster<a href="ejercicios.html#capas-ráster" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>archivos de <strong>MDT</strong> recortado por el <strong>mínimo rectángulo</strong>
+<ul>
+<li>nombre: <code>mdt-</code></li>
+</ul></li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="ejercicios-1" class="section level2 unnumbered hasAnchor">
+<h2>Ejercicios<a href="ejercicios.html#ejercicios-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="ejercicio-1.-2.5d-en-qgis-10" class="section level4 unnumbered hasAnchor">
 <h4>Ejercicio 1. 2.5D en <em>QGIS</em> (10%)<a href="ejercicios.html#ejercicio-1.-2.5d-en-qgis-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Representa mediante 2.5D la capa vectorial <strong>manzana</strong> para tu municipio (<code>cc-manz-</code>). Utiliza como fondo una capa ráster adecuada.</p>
+<p>Representa mediante 2.5D la capa vectorial <strong>manzana</strong> para tu municipio. Incluye las capas del <strong>término municipal</strong> y el <strong>mínimo rectángulo</strong>. Utiliza como fondo una capa ráster adecuada.</p>
 <p>Para documentar la realización del ejercicio, incluye una <strong>captura de pantalla completa</strong> donde se muestre el resultado.</p>
 </div>
 <div id="ejercicio-2.-3d-en-r-10" class="section level4 unnumbered hasAnchor">
@@ -193,11 +240,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4>Ejercicio 4. Geometría 3D con <em>R</em> y <em>PostGIS</em> (70%)<a href="ejercicios.html#ejercicio-4.-geometría-3d-con-r-y-postgis-70" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
 <li><p>Obtén una muestra de puntos 3D a partir del MDT de tu municipio y represéntala en 3D desde <em>R</em>. Para documentar la realización del ejercicio, incluye una <strong>captura de pantalla completa</strong> donde se muestre el resultado.</p></li>
-<li><p>Almacena los puntos 3D en <em>PostGIS</em> y muestra mediante una consulta desde <em>PgAdmin</em> los 10 primeros puntos en formato WKT. Para documentar la realización del ejercicio, incluye una <strong>captura de pantalla completa</strong> donde se muestre la consulta y el resultado.</p></li>
-<li><p>A partir de los puntos almacenados en <em>PostGIS</em> obtén la Triangulación de Delaunay y muéstrala en <em>QGIS</em>. Para documentar la realización del ejercicio, incluye <strong>dos capturas de pantalla completa</strong> donde se muestre la definición y el resultado.</p></li>
-<li><p>A partir de los puntos almacenados en <em>PostGIS</em> obtén el Diagrama de Voronoi y muéstralo en <em>QGIS</em>. Para documentar la realización del ejercicio, incluye <strong>dos capturas de pantalla completa</strong> donde se muestre la definición y el resultado.</p></li>
+<li><p>Almacena los puntos 3D en <em>PostGIS</em>, en la base de datos utilizada en las prácticas anteriores (p.e, en mi caso <code>lanjaron_jsamos</code>), utilizando el prefijo <code>p3d_</code> para el nombre de la capa y siguiendo el criterio de nombres que hemos usado para las capas (p.e., en mi caso se llamaría <code>p3d_lanjaron_bbox_jsamos</code>) y muestra mediante una consulta desde <em>PgAdmin</em> los 10 primeros puntos en formato WKT. Para documentar la realización del ejercicio, incluye una <strong>captura de pantalla completa</strong> donde se muestre la consulta y el resultado. <strong>Esta capa deberá estar disponible para actividades posteriores</strong>.</p></li>
+<li><p>A partir de los puntos almacenados en <em>PostGIS</em> obtén la <em>Triangulación de Delaunay</em> y muéstrala en <em>QGIS</em>. Para documentar la realización del ejercicio, incluye <strong>dos capturas de pantalla completa</strong> donde se muestre la definición y el resultado.</p></li>
+<li><p>A partir de los puntos almacenados en <em>PostGIS</em> obtén el <em>Diagrama de Voronoi</em> y muéstralo en <em>QGIS</em>. Para documentar la realización del ejercicio, incluye <strong>dos capturas de pantalla completa</strong> donde se muestre la definición y el resultado.</p></li>
 </ol>
 
+</div>
 </div>
 </div>
 
