@@ -183,7 +183,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="d-con-r" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">4</span> 3D con <em>R</em><a href="d-con-r.html#d-con-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Podemos obtener un modelo 3D en <em>R</em> mediante el paquete <code>rayshader</code>. A continuación se muestra el código necesario para generarlo a partir del MDT almacenado en un archivo y el resultado obtenido.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="d-con-r.html#cb1-1" tabindex="-1"></a>file <span class="ot">&lt;-</span> <span class="st">&#39;Pr04/mdt_lanjaron_bbox_jsamos.tif&#39;</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="d-con-r.html#cb1-1" tabindex="-1"></a>file <span class="ot">&lt;-</span> <span class="st">&#39;datos/Lanjaron/p03out/mdt-lanjaron-bbox-jsamos.tif&#39;</span></span>
 <span id="cb1-2"><a href="d-con-r.html#cb1-2" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="d-con-r.html#cb1-3" tabindex="-1"></a>mdt <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(file)</span>
 <span id="cb1-4"><a href="d-con-r.html#cb1-4" tabindex="-1"></a>rs <span class="ot">&lt;-</span> rayshader<span class="sc">::</span><span class="fu">raster_to_matrix</span>(mdt)</span>
