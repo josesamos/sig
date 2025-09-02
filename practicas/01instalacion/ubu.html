@@ -8,7 +8,7 @@
   <meta name="description" content="<p>Sistemas de Información Geográfica.
 Dpto. de Lenguajes y Sistemas Informáticos
 Universidad de Granada</p>" />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Instalación en Ubuntu | Instalación del Entorno de Prácticas" />
   <meta property="og:type" content="book" />
@@ -197,8 +197,8 @@ div.csl-indent {
 <li class="chapter" data-level="4.3" data-path="ubu.html"><a href="ubu.html#postgresql-postgis-y-pgadmin-2"><i class="fa fa-check"></i><b>4.3</b> <em>PostgreSQL</em>, <em>PostGIS</em> y <em>PgAdmin</em></a></li>
 <li class="chapter" data-level="4.4" data-path="ubu.html"><a href="ubu.html#geoserver-2"><i class="fa fa-check"></i><b>4.4</b> <em>GeoServer</em></a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="ubu.html"><a href="ubu.html#aplicación-web-independiente"><i class="fa fa-check"></i><b>4.4.1</b> Aplicación web independiente</a></li>
-<li class="chapter" data-level="4.4.2" data-path="ubu.html"><a href="ubu.html#aplicación-tomcat"><i class="fa fa-check"></i><b>4.4.2</b> Aplicación <em>Tomcat</em></a></li>
+<li class="chapter" data-level="4.4.1" data-path="03-ubuntu.html"><a href="#aplicaci%C3%B3n-web-independiente"><i class="fa fa-check"></i><b>4.4.1</b> Aplicación web independiente</a></li>
+<li class="chapter" data-level="4.4.2" data-path="03-ubuntu.html"><a href="#aplicaci%C3%B3n-tomcat"><i class="fa fa-check"></i><b>4.4.2</b> Aplicación <em>Tomcat</em></a></li>
 <li class="chapter" data-level="4.4.3" data-path="ubu.html"><a href="ubu.html#comprobar-que-funciona"><i class="fa fa-check"></i><b>4.4.3</b> Comprobar que funciona</a></li>
 </ul></li>
 </ul></li>
@@ -287,7 +287,7 @@ div.csl-indent {
 </ul></li>
 <li><p>En <em>Ubuntu 24.04 LTS</em> al iniciar la aplicación aparece una ventana de error. Siguiendo las indicaciones de <a href="https://www.youtube.com/watch?v=prWscR1WAaw">https://www.youtube.com/watch?v=prWscR1WAaw</a>, se corrige mediante el comando siguiente:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="ubu.html#cb13-1" tabindex="-1"></a><span class="fu">sudo</span> chmod 4755 /usr/lib/rstudio/chrome-sandbox</span></code></pre></div></li>
-<li><p>Para comprobar que la instalación está bien instalaremos dos paquetes <em>R</em> que son los que usaremos principalmente: <code>sf</code> <span class="citation">(<a href="#ref-sf2018">Pebesma 2018</a>, <a href="#ref-R-sf">2024</a>; <a href="#ref-sf2023">Pebesma and Bivand 2023</a>)</span> y <code>terra</code> <span class="citation">(<a href="#ref-R-terra">Hijmans 2024</a>)</span>.</p></li>
+<li><p>Para comprobar que la instalación está bien instalaremos dos paquetes <em>R</em> que son los que usaremos principalmente: <code>sf</code> <span class="citation">(<a href="#ref-sf2018">Pebesma 2018</a>, <a href="#ref-R-sf">2025</a>; <a href="#ref-sf2023">Pebesma and Bivand 2023</a>)</span> y <code>terra</code> <span class="citation">(<a href="#ref-R-terra">Hijmans 2025</a>)</span>.</p></li>
 <li><p>Usamos directamente <em>RStudio</em> que trabaja sobre <em>R</em>.</p></li>
 <li><p>En la figura <a href="win.html#fig:rstudio-01">3.1</a> se muestra una posible forma de instalarlos en <em>RStudio</em>:</p>
 <ul>
@@ -380,7 +380,7 @@ Figura 3.2: Definir conexión al servirdor <em>PostgreSQL</em>.
 <li><p><em>GeoServer</em> se puede instalar como una aplicación web independiente (usa <em>Jetty</em>) o bien como una aplicación en un servidor de aplicaciones como <em>Tomcat</em>. Solo necesitamos <strong>una</strong> instalación. Se describen ambas a continuación y por último se indica cómo comprobar que está correctamente realizada.</p></li>
 </ul>
 <div id="aplicación-web-independiente" class="section level3 hasAnchor" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Aplicación web independiente<a href="ubu.html#aplicación-web-independiente" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">4.4.1</span> Aplicación web independiente<a href="#aplicaci%C3%B3n-web-independiente" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>Obtener el nombre del archivo de <a href="https://geoserver.org/release/stable/">https://geoserver.org/release/stable/</a> (<em>Platform Independent Binary</em>):</p>
 <ul>
@@ -410,7 +410,7 @@ Figura 3.2: Definir conexión al servirdor <em>PostgreSQL</em>.
 </ul>
 </div>
 <div id="aplicación-tomcat" class="section level3 hasAnchor" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> Aplicación <em>Tomcat</em><a href="ubu.html#aplicación-tomcat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">4.4.2</span> Aplicación <em>Tomcat</em><a href="#aplicaci%C3%B3n-tomcat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>Si no tenemos instalado <em>Tomcat</em>, instalarlo y comprobar que funciona:</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="ubu.html#cb44-1" tabindex="-1"></a><span class="fu">sudo</span> apt-get install tomcat9</span></code></pre></div>
@@ -454,13 +454,13 @@ Figura 3.4: Estado de <em>GeoServer</em>.
 <h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-R-terra" class="csl-entry">
-Hijmans, Robert J. 2024. <em>Terra: Spatial Data Analysis</em>. <a href="https://rspatial.org/">https://rspatial.org/</a>.
+Hijmans, Robert J. 2025. <em>Terra: Spatial Data Analysis</em>. <a href="https://rspatial.org/">https://rspatial.org/</a>.
 </div>
 <div id="ref-sf2018" class="csl-entry">
 Pebesma, Edzer. 2018. <span>“<span class="nocase">Simple Features for R: Standardized Support for Spatial Vector Data</span>.”</span> <em><span>The R Journal</span></em> 10 (1): 439–46. <a href="https://doi.org/10.32614/RJ-2018-009">https://doi.org/10.32614/RJ-2018-009</a>.
 </div>
 <div id="ref-R-sf" class="csl-entry">
-———. 2024. <em>Sf: Simple Features for r</em>. <a href="https://r-spatial.github.io/sf/">https://r-spatial.github.io/sf/</a>.
+———. 2025. <em>Sf: Simple Features for r</em>. <a href="https://r-spatial.github.io/sf/">https://r-spatial.github.io/sf/</a>.
 </div>
 <div id="ref-sf2023" class="csl-entry">
 Pebesma, Edzer, and Roger Bivand. 2023. <em><span class="nocase">Spatial Data Science: With applications in R</span></em>. <span>Chapman and Hall/CRC</span>. <a href="https://doi.org/10.1201/9780429459016">https://doi.org/10.1201/9780429459016</a>.
@@ -486,42 +486,42 @@ Pebesma, Edzer, and Roger Bivand. 2023. <em><span class="nocase">Spatial Data Sc
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": false,
-"twitter": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": {}
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": {}
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
